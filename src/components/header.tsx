@@ -2,38 +2,36 @@
 
 import { Link } from 'gatsby'
 import React from 'react'
+import { useStyles } from 'react-treat'
 
-interface HeaderProps {
-  siteTitle: string
-}
+import * as styleRefs from './header.treat'
 
-function Header(props: HeaderProps) {
+function Header() {
+  const styles = useStyles(styleRefs)
+
   return (
-    <header
-      style={{
-        background: `rebeccapurple`,
-        marginBottom: `1.45rem`,
-      }}
-    >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
+    <header className={styles.header}>
+      <Link to="/">
+        <div className={styles.nameWrapper}>
+          <svg
+            className={styles.triangle}
+            viewBox="-20 -10 240 180"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
-            {props.siteTitle}
-          </Link>
-        </h1>
-      </div>
+            <polygon
+              points="0,0, 100,173.205 200,0"
+              fill="none"
+              stroke-width="20px"
+            />
+          </svg>
+
+          <div className={styles.name}>
+            <h1>Sean Bailey</h1>
+            <p>Digital Designer &amp; Software Developer</p>
+          </div>
+        </div>
+      </Link>
     </header>
   )
 }
