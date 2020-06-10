@@ -26,4 +26,8 @@ export default createTheme({
   grey30: '#7c8a93',
   grey20: '#9da7ae',
   grey10: '#bdc4c9',
+
+  typeColourStrong: '#ffffff',
+  typeColour: '#bdc4c9',
+  typeColourLight: 'hsl(358.2, 10%, 30%)',
 })

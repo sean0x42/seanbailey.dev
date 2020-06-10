@@ -71,10 +71,10 @@ export const major = style(theme => ({
 
   '@media': {
     '(min-width: 1070px)': {
-      width: '2.4rem'
+      width: '2.4rem',
     },
     '(min-width: 1280px)': {
-      width: '3.2rem'
+      width: '3.2rem',
     },
   },
 }))

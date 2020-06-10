@@ -25,5 +25,9 @@ declare module string {
     grey30: string
     grey20: string
     grey10: string
+
+    typeColourStrong: string
+    typeColour: string
+    typeColourLight: string
   }
 }

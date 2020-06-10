@@ -4,6 +4,7 @@
 
 import React, { FunctionComponent } from 'react'
 import { TreatProvider, useStyles } from 'react-treat'
+import { Helmet } from 'react-helmet'
 import '../../node_modules/modern-normalize/modern-normalize.css'
 
 import Header from './header'
@@ -15,13 +16,15 @@ const Layout: FunctionComponent = props => {
 
   return (
     <div className={styles.layout}>
+      <Helmet>
+        <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+      </Helmet>
+
       <Header />
       <div>
         <main>{props.children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}
         </footer>
       </div>
     </div>
