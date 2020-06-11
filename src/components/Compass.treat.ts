@@ -4,8 +4,9 @@ import { style } from 'treat'
 
 export const compass = style(theme => ({
   // Positioning
-  position: 'relative',
-  gridRow: 1,
+  position: 'absolute',
+  top: '0',
+  right: '0',
 
   // Box model
   display: 'flex',

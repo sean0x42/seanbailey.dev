@@ -3,7 +3,7 @@
 import React from 'react'
 import { useStyles } from 'react-treat'
 
-import * as styleRefs from './compass.treat'
+import * as styleRefs from './Compass.treat'
 
 function* range(start: number, end: number) {
   for (let i = start; i <= end; i++) {
