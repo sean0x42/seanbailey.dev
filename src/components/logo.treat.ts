@@ -107,7 +107,7 @@ export const triangle = style(theme => ({
       // Box model
       display: 'block',
       marginBottom: 0,
-      marginRight: '2rem',
+      marginRight: '1.25rem',
       height: '82px',
       width: '82px',
 

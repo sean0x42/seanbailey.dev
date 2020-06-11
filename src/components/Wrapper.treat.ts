@@ -1,10 +1,12 @@
-import { style, globalStyle } from 'treat'
+import { style} from 'treat'
 
-globalStyle('.wrapper', {
+export const wrapper = style(theme => ({
+  // Box model
   margin: '0 auto',
   width: '100%',
   maxWidth: '120ch',
   padding: '1.5rem',
-})
 
-export const wrapper = style({})
+  // Typography
+  color: theme.typeColour,
+}))

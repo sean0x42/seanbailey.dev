@@ -7,9 +7,10 @@ import { TreatProvider, useStyles } from 'react-treat'
 import { Helmet } from 'react-helmet'
 import '../../node_modules/modern-normalize/modern-normalize.css'
 
-import Header from './header'
+import Header from './Header'
 import darkTheme from '../dark.treat'
 import * as styleRefs from './Layout.treat'
+import Footer from './Footer'
 
 const Layout: FunctionComponent = props => {
   const styles = useStyles(styleRefs)
@@ -21,12 +22,8 @@ const Layout: FunctionComponent = props => {
       </Helmet>
 
       <Header />
-      <div>
-        <main>{props.children}</main>
-        <footer>
-          © {new Date().getFullYear()}
-        </footer>
-      </div>
+      <main>{props.children}</main>
+      <Footer />
     </div>
   )
 }
