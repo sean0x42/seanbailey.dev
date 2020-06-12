@@ -5,20 +5,22 @@ import { PageProps, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import BlogSummaries from '../components/BlogSummary'
+import ArticleCards from '../components/ArticleCards'
+import Wrapper from '../components/Wrapper'
 
-export interface PostSummary {
+export interface ArticleSummary {
   excerpt: string
   frontmatter: {
     slug: string
     title: string
     date: string
+    tags: string[]
   }
 }
 
 type Data = {
   allMarkdownRemark: {
-    edges: { node: PostSummary }[]
+    edges: { node: ArticleSummary }[]
   }
 }
 
@@ -35,6 +37,7 @@ export const pageQuery = graphql`
             slug
             title
             date(formatString: "MMMM DD, YYYY")
+            tags
           }
         }
       }
@@ -48,7 +51,11 @@ function IndexPage(props: PageProps<Data>) {
   return (
     <Layout>
       <SEO title="Home" />
-      <BlogSummaries posts={edges.map(edge => edge.node)} />
+
+      <Wrapper>
+        <h1>Recent Articles</h1>
+        <ArticleCards articles={edges.map(edge => edge.node)} />
+      </Wrapper>
     </Layout>
   )
 }

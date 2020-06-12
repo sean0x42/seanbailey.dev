@@ -3,7 +3,6 @@
 import { style, globalStyle } from 'treat'
 
 globalStyle('body', {
-  // Typography
   fontFamily: "'Inter', sans-serif",
 })
 
