@@ -5,13 +5,13 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import Wrapper from '../components/Wrapper'
+import Article from '../components/Article'
 
 type Data = {
-  markdownRemark: Blog
+  markdownRemark: Article
 }
 
-interface Blog {
+export interface Article {
   html: string
   frontmatter: {
     slug: string
@@ -26,7 +26,7 @@ interface TemplateProps {
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug }}) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
         slug
@@ -43,11 +43,7 @@ function BlogPost(props: TemplateProps) {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-
-      <Wrapper>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Wrapper>
+      <Article article={post} />
     </Layout>
   )
 }

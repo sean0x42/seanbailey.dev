@@ -1,11 +1,12 @@
 ---
-title: HSL is not the coolest kid on the block
+title: HSL—The Most Intuitive Colour Format
 date: 2020-06-11T19:46:00+10:00
 slug: hsl
 tags:
   - design
   - colour
   - css
+cover: './cover.png'
 ---
 
 <!-- @format -->

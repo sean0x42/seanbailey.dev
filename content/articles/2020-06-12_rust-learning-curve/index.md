@@ -5,6 +5,7 @@ date: 2020-06-12T10:25:00+10:00
 tags:
   - rust
   - programming
+cover: './cover.png'
 ---
 
 Rust is a great language! But learning it can be difficult. This article will

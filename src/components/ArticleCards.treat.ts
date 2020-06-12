@@ -15,26 +15,59 @@ export const articleCards = style({
 })
 
 export const articleCard = style(theme => ({
+  // Positioning
+  transform: 'translateY(0)',
+
   // Box model
   display: 'block',
-  padding: '1rem',
 
   // Typography
   color: theme.typeColour,
+  fontSize: '18px',
   textDecoration: 'none',
 
   // Visuals
   borderWidth: '1px',
   borderStyle: 'solid',
-  borderColor: theme.grey40,
-  borderRadius: '3px',
+  borderColor: theme.grey50,
+  cursor: 'pointer',
+  transition: 'transform 300ms',
+
+  ':hover': {
+    transform: 'translateY(-3px)',
+  },
+}))
+
+export const articleCardBody = style(theme => ({
+  // Box model
+  padding: '1.5rem',
+
+  // Visuals
+  borderTopStyle: 'solid',
+  borderTopWidth: '1px',
+  borderTopColor: theme.grey70,
 }))
 
 export const title = style(theme => ({
   // Box model
-  marginTop: 0,
+  margin: 0,
 
   // Typography
   color: theme.typeColourStrong,
-  fontSize: '18px',
+  fontSize: '22px',
+}))
+
+export const date = style(theme => ({
+  marginTop: '0.5rem',
+  color: theme.typeColourLight,
+}))
+
+export const readMore = style(theme => ({
+  // Box model
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: 0,
+
+  // Typography
+  color: theme.typeColourStrong,
 }))

@@ -3,8 +3,10 @@
 import React from 'react'
 import { useStyles } from 'react-treat'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
 import { ArticleSummary } from '../pages'
+import { ChevronRight } from 'react-feather'
 import * as styleRefs from './ArticleCards.treat'
 
 interface ArticleCardProps {
@@ -21,8 +23,18 @@ function ArticleCard(props: ArticleCardProps) {
         to={`/articles/${article.frontmatter.slug}`}
         className={styles.articleCard}
       >
-        <h2 className={styles.title}>{article.frontmatter.title}</h2>
-        <p>{article.excerpt}</p>
+        <Img fluid={article.frontmatter.cover.childImageSharp.fluid} />
+
+        <div className={styles.articleCardBody}>
+          <h2 className={styles.title}>{article.frontmatter.title}</h2>
+          <p className={styles.date}>{article.frontmatter.date}</p>
+          <p>{article.excerpt}</p>
+
+          <p className={styles.readMore}>
+            Read more
+            <ChevronRight />
+          </p>
+        </div>
       </Link>
     </li>
   )

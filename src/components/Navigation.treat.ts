@@ -32,6 +32,9 @@ export const navigation = style(theme => ({
 }))
 
 export const navigationItem = style(theme => ({
+  // Positioning
+  transform: 'translateY(0)',
+
   // Box model
   display: 'flex',
   alignItems: 'center',
@@ -45,8 +48,10 @@ export const navigationItem = style(theme => ({
 
   // Visuals
   cursor: 'pointer',
+  transition: 'transform 300ms',
 
   ':hover': {
+    transform: 'translateY(-1px)',
     color: theme.white,
   },
 }))

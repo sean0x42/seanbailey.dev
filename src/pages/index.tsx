@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
+import { FluidObject } from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -15,6 +16,12 @@ export interface ArticleSummary {
     title: string
     date: string
     tags: string[]
+    cover: {
+      publicURL: string
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
   }
 }
 
@@ -38,6 +45,14 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             tags
+            cover {
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 600, maxHeight: 300, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -53,7 +68,6 @@ function IndexPage(props: PageProps<Data>) {
       <SEO title="Home" />
 
       <Wrapper>
-        <h1>Recent Articles</h1>
         <ArticleCards articles={edges.map(edge => edge.node)} />
       </Wrapper>
     </Layout>
