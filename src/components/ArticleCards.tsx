@@ -23,10 +23,14 @@ function ArticleCard(props: ArticleCardProps) {
         to={`/articles/${article.frontmatter.slug}`}
         className={styles.articleCard}
       >
-        <Img fluid={article.frontmatter.cover.childImageSharp.fluid} />
+        <Img
+          className={styles.image}
+          fluid={article.frontmatter.cover.childImageSharp.fluid}
+          alt={`Cover image: ${article.frontmatter.title}`}
+        />
 
         <div className={styles.articleCardBody}>
-          <h2 className={styles.title}>{article.frontmatter.title}</h2>
+          <h3 className={styles.title}>{article.frontmatter.title}</h3>
           <p className={styles.date}>{article.frontmatter.date}</p>
           <p>{article.excerpt}</p>
 

@@ -30,17 +30,19 @@ export const articleCard = style(theme => ({
   borderWidth: '1px',
   borderStyle: 'solid',
   borderColor: theme.grey50,
+  borderRadius: '3px',
   cursor: 'pointer',
-  transition: 'transform 300ms',
+  transition: 'transform 200ms',
+  transitionTimingFunction: theme.snap,
 
   ':hover': {
-    transform: 'translateY(-3px)',
+    transform: 'translateY(-4px)',
   },
 }))
 
 export const articleCardBody = style(theme => ({
   // Box model
-  padding: '1.5rem',
+  padding: '2rem',
 
   // Visuals
   borderTopStyle: 'solid',
@@ -48,14 +50,17 @@ export const articleCardBody = style(theme => ({
   borderTopColor: theme.grey70,
 }))
 
-export const title = style(theme => ({
+export const image = style(theme => ({
+  backgroundColor: theme.grey90,
+}))
+
+export const title = style({
   // Box model
   margin: 0,
 
   // Typography
-  color: theme.typeColourStrong,
   fontSize: '22px',
-}))
+})
 
 export const date = style(theme => ({
   marginTop: '0.5rem',

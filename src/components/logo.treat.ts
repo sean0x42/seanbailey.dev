@@ -76,7 +76,7 @@ export const nameHeading = style(theme => ({
 
 export const nameSubheading = style(theme => ({
   // Box model
-  margin: '0.5rem 0',
+  margin: '0.25rem 0',
 
   // Typography
   color: theme.grey20,

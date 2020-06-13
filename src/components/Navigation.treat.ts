@@ -49,9 +49,10 @@ export const navigationItem = style(theme => ({
   // Visuals
   cursor: 'pointer',
   transition: 'transform 300ms',
+  transitionTimingFunction: theme.snap,
 
   ':hover': {
-    transform: 'translateY(-1px)',
+    transform: 'translateY(-2px)',
     color: theme.white,
   },
 }))

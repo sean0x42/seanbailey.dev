@@ -25,6 +25,15 @@ globalStyle(`${article} code`, theme => ({
   borderRadius: '3px',
 }))
 
+export const image = style(theme => ({
+  // Box model
+  marginBottom: '5rem',
+
+  // Visuals
+  backgroundColor: theme.grey80,
+  borderRadius: '3px',
+}))
+
 export const title = style(theme => ({
   // Positioning
   position: 'relative',

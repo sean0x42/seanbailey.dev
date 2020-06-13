@@ -3,6 +3,7 @@
 import { style, globalStyle } from 'treat'
 
 globalStyle('body', {
+  fontSize: '18px',
   fontFamily: "'Inter', sans-serif",
 })
 
@@ -32,7 +33,7 @@ globalStyle(
 
 globalStyle('h1', {
   marginTop: 0,
-  fontSize: '3.052rem'
+  fontSize: '3.052rem',
 })
 
 globalStyle('h2', { fontSize: '2.441rem' })
