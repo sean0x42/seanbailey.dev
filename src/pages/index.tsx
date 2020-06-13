@@ -4,7 +4,7 @@ import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import ArticleCards from '../components/ArticleCards'
 import Wrapper from '../components/Wrapper'
 import Intro from '../components/Intro'

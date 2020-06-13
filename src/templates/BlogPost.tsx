@@ -4,7 +4,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import Article from '../components/Article'
 import { FluidObject } from 'gatsby-image'
 
