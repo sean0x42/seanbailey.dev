@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
 
-import * as styleRefs from './logo.treat'
+import * as styleRefs from './Logo.treat'
 
 function Logo() {
   const styles = useStyles(styleRefs)
