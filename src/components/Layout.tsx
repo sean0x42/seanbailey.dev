@@ -12,7 +12,7 @@ import darkTheme from '../dark.treat'
 import * as styleRefs from './Layout.treat'
 import Footer from './Footer'
 
-const Layout: FunctionComponent = props => {
+const Layout: FunctionComponent = (props) => {
   const styles = useStyles(styleRefs)
 
   return (
@@ -31,7 +31,7 @@ const Layout: FunctionComponent = props => {
 function withTreatTheme(
   WrappedComponent: FunctionComponent,
 ): FunctionComponent {
-  return props => (
+  return (props) => (
     <TreatProvider theme={darkTheme}>
       <WrappedComponent {...props} />
     </TreatProvider>

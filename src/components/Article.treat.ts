@@ -2,7 +2,7 @@
 
 import { style, globalStyle } from 'treat'
 
-export const article = style(theme => ({
+export const article = style((theme) => ({
   // Box model
   marginTop: '3rem',
   maxWidth: '75ch !important',
@@ -12,7 +12,7 @@ export const article = style(theme => ({
   fontSize: '20px',
 }))
 
-globalStyle(`${article} code`, theme => ({
+globalStyle(`${article} code`, (theme) => ({
   // Box model
   padding: '2px 6px',
 
@@ -25,7 +25,7 @@ globalStyle(`${article} code`, theme => ({
   borderRadius: '3px',
 }))
 
-export const image = style(theme => ({
+export const image = style((theme) => ({
   // Box model
   marginBottom: '5rem',
 
@@ -34,7 +34,7 @@ export const image = style(theme => ({
   borderRadius: '3px',
 }))
 
-export const title = style(theme => ({
+export const title = style((theme) => ({
   // Positioning
   position: 'relative',
 
@@ -63,7 +63,7 @@ export const title = style(theme => ({
   },
 }))
 
-export const date = style(theme => ({
+export const date = style((theme) => ({
   // Box model
   marginTop: 0,
 

@@ -4,8 +4,8 @@ import { style } from 'treat'
 
 export const footer = style({
   // Box model
-  marginTop: '2rem',
-  
+  margin: '4rem 0 2rem',
+
   // Typography
   textAlign: 'center',
 })

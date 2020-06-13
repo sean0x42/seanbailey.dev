@@ -11,21 +11,22 @@ globalStyle('p, ol, ul, figcaption', {
   lineHeight: 1.6,
 })
 
-export const layout = style(theme => ({
+export const layout = style((theme) => ({
   // Box model
   minHeight: '100vh',
+  paddingBottom: '1px',
 
   // Visual
   backgroundColor: theme.black,
 }))
 
 function generateSelector(root: string, ...selectors: string[]) {
-  return selectors.map(selector => `${root} ${selector}`).join(', ')
+  return selectors.map((selector) => `${root} ${selector}`).join(', ')
 }
 
 globalStyle(
   generateSelector(layout, 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
-  theme => ({
+  (theme) => ({
     color: theme.typeColourStrong,
     lineHeight: 1.15,
   }),

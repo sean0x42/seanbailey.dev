@@ -7,8 +7,7 @@ export const headingWrapper = style({
   display: 'flex',
   alignItems: 'flex-end',
   justifyContent: 'space-between',
-  margin: 0,
-  marginBottom: '2rem',
+  margin: '4rem 0 3rem',
 })
 
 export const heading = style({

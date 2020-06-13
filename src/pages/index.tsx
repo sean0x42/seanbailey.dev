@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
-import { FluidObject } from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -10,21 +9,8 @@ import ArticleCards from '../components/ArticleCards'
 import Wrapper from '../components/Wrapper'
 import Intro from '../components/Intro'
 import ButtonLink from '../components/ButtonLink'
-import * as styles from './index.treat'
-
-export interface ArticleSummary {
-  excerpt: string
-  frontmatter: {
-    slug: string
-    title: string
-    date: string
-    cover: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
-  }
-}
+import * as styles from '../index.treat'
+import { ArticleSummary } from '../app/types'
 
 type Data = {
   allMarkdownRemark: {
@@ -49,7 +35,14 @@ function IndexPage(props: PageProps<Data>) {
           <ButtonLink to="/articles">View all articles</ButtonLink>
         </div>
 
-        <ArticleCards articles={edges.map(edge => edge.node)} />
+        <ArticleCards articles={edges.map((edge) => edge.node)} />
+      </Wrapper>
+
+      <Wrapper>
+        <div className={styles.headingWrapper}>
+          <h2 className={styles.heading}>Recent Projects</h2>
+          <ButtonLink to="/projects">View all projects</ButtonLink>
+        </div>
       </Wrapper>
     </Layout>
   )
@@ -61,7 +54,10 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 3
+      limit: 2
+      filter: {
+        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.md$/" }
+      }
     ) {
       edges {
         node {

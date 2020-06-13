@@ -1,3 +1,5 @@
+/** @format */
+
 import { style } from 'treat'
 
 export const nameWrapper = style({
@@ -23,7 +25,7 @@ export const nameWrapper = style({
   },
 })
 
-export const name = style(theme => ({
+export const name = style((theme) => ({
   // Positioning
   position: 'relative',
   zIndex: 1,
@@ -52,10 +54,10 @@ export const name = style(theme => ({
     // Misc
     content: '""',
     pointerEvents: 'none',
-  }
+  },
 }))
 
-export const nameHeading = style(theme => ({
+export const nameHeading = style((theme) => ({
   // Box model
   margin: 0,
 
@@ -74,7 +76,7 @@ export const nameHeading = style(theme => ({
   },
 }))
 
-export const nameSubheading = style(theme => ({
+export const nameSubheading = style((theme) => ({
   // Box model
   margin: '0.25rem 0',
 
@@ -98,7 +100,7 @@ export const nameSubheading = style(theme => ({
   },
 }))
 
-export const triangle = style(theme => ({
+export const triangle = style((theme) => ({
   // Box model
   display: 'none',
 

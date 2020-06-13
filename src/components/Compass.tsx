@@ -17,7 +17,7 @@ function Compass() {
   return (
     <ul className={styles.compass} aria-hidden="true">
       <li className={styles.minor}></li>
-      {[...range(24, 35)].map(point => (
+      {[...range(24, 35)].map((point) => (
         <React.Fragment key={point}>
           <li className={styles.major}>{point}0</li>
           <li className={styles.minor} />

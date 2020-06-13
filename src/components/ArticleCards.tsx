@@ -53,7 +53,7 @@ function ArticleCards(props: ArticleCardsProps) {
 
   return (
     <ul className={styles.articleCards}>
-      {props.articles.map(post => (
+      {props.articles.map((post) => (
         <ArticleCard article={post} key={post.frontmatter.slug} />
       ))}
     </ul>

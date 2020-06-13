@@ -13,7 +13,7 @@ interface ButtonLinkProps {
   icon?: Icon
 }
 
-const ButtonLink: FunctionComponent<ButtonLinkProps> = props => {
+const ButtonLink: FunctionComponent<ButtonLinkProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   const ButtonIcon = props.icon || ArrowRight

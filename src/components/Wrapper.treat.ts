@@ -1,6 +1,8 @@
-import { style} from 'treat'
+/** @format */
 
-export const wrapper = style(theme => ({
+import { style } from 'treat'
+
+export const wrapper = style((theme) => ({
   // Box model
   margin: '0 auto',
   width: '100%',

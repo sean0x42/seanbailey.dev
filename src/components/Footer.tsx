@@ -11,9 +11,7 @@ function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <Wrapper> 
-        Sean Bailey &copy; {new Date().getFullYear()}
-      </Wrapper>
+      <Wrapper>Sean Bailey &copy; {new Date().getFullYear()}</Wrapper>
     </footer>
   )
 }

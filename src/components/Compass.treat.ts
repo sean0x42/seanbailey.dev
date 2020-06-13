@@ -2,7 +2,7 @@
 
 import { style } from 'treat'
 
-export const compass = style(theme => ({
+export const compass = style((theme) => ({
   // Positioning
   position: 'absolute',
   top: '0',
@@ -31,7 +31,7 @@ export const compass = style(theme => ({
   },
 }))
 
-export const minor = style(theme => ({
+export const minor = style((theme) => ({
   // Box model
   height: '0.4rem',
   width: '2px',
@@ -40,7 +40,7 @@ export const minor = style(theme => ({
   background: theme.grey70,
 }))
 
-export const major = style(theme => ({
+export const major = style((theme) => ({
   // Positioning
   position: 'relative',
 

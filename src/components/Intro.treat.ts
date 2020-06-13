@@ -11,7 +11,7 @@ export const blurb = style({
   fontWeight: 450,
 })
 
-export const strong = style(theme => ({
+export const strong = style((theme) => ({
   // Typography
   color: theme.typeColourStrong,
   fontWeight: 700,

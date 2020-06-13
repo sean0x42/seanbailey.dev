@@ -2,7 +2,7 @@
 
 import { style } from 'treat'
 
-export const social = style(theme => ({
+export const social = style((theme) => ({
   // Positioning
   position: 'fixed',
   bottom: 0,
@@ -80,7 +80,7 @@ export const social = style(theme => ({
   },
 }))
 
-export const socialItem = style(theme => ({
+export const socialItem = style((theme) => ({
   // Box model
   display: 'flex',
   alignItems: 'center',

@@ -2,7 +2,7 @@
 
 import { style } from 'treat'
 
-export const button = style(theme => ({
+export const button = style((theme) => ({
   // Positioning
   transform: 'translateY(0)',
 
@@ -29,7 +29,7 @@ export const button = style(theme => ({
     transform: 'translateY(-2px)',
 
     // Typography
-    color: theme.typeColourStrong,
+    color: theme.primary,
   },
 }))
 

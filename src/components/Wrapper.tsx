@@ -8,7 +8,7 @@ interface WrapperProps {
   className?: string
 }
 
-const Wrapper: FunctionComponent<WrapperProps> = props => {
+const Wrapper: FunctionComponent<WrapperProps> = (props) => {
   const styles = useStyles(styleRefs)
   const classes = []
   props.className && classes.push(props.className)

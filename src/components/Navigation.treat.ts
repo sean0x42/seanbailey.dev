@@ -2,7 +2,7 @@
 
 import { style } from 'treat'
 
-export const navigation = style(theme => ({
+export const navigation = style((theme) => ({
   // Positioning
   position: 'relative',
 
@@ -31,7 +31,7 @@ export const navigation = style(theme => ({
   },
 }))
 
-export const navigationItem = style(theme => ({
+export const navigationItem = style((theme) => ({
   // Positioning
   transform: 'translateY(0)',
 

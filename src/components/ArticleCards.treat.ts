@@ -5,7 +5,7 @@ import { style } from 'treat'
 export const articleCards = style({
   // Box model
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
   gridGap: '2rem',
   padding: 0,
   margin: '2rem 0',
@@ -14,7 +14,7 @@ export const articleCards = style({
   listStyleType: 'none',
 })
 
-export const articleCard = style(theme => ({
+export const articleCard = style((theme) => ({
   // Positioning
   transform: 'translateY(0)',
 
@@ -23,14 +23,10 @@ export const articleCard = style(theme => ({
 
   // Typography
   color: theme.typeColour,
-  fontSize: '18px',
   textDecoration: 'none',
 
   // Visuals
-  borderWidth: '1px',
-  borderStyle: 'solid',
-  borderColor: theme.grey50,
-  borderRadius: '3px',
+  background: theme.grey90,
   cursor: 'pointer',
   transition: 'transform 200ms',
   transitionTimingFunction: theme.snap,
@@ -40,18 +36,19 @@ export const articleCard = style(theme => ({
   },
 }))
 
-export const articleCardBody = style(theme => ({
+export const articleCardBody = style({
   // Box model
   padding: '2rem',
 
   // Visuals
-  borderTopStyle: 'solid',
-  borderTopWidth: '1px',
-  borderTopColor: theme.grey70,
-}))
+  borderTop: 'none',
+  borderRadius: '0 0 3px 3px',
+})
 
-export const image = style(theme => ({
-  backgroundColor: theme.grey90,
+export const image = style((theme) => ({
+  // Visuals
+  backgroundColor: theme.grey80,
+  borderRadius: '3px 3px 0 0',
 }))
 
 export const title = style({
@@ -62,12 +59,12 @@ export const title = style({
   fontSize: '22px',
 })
 
-export const date = style(theme => ({
+export const date = style((theme) => ({
   marginTop: '0.5rem',
   color: theme.typeColourLight,
 }))
 
-export const readMore = style(theme => ({
+export const readMore = style((theme) => ({
   // Box model
   display: 'flex',
   alignItems: 'center',

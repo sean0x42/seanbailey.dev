@@ -12,7 +12,7 @@ interface SocialItemProps {
   title: string
 }
 
-const SocialItem: FunctionComponent<SocialItemProps> = props => {
+const SocialItem: FunctionComponent<SocialItemProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   return (
