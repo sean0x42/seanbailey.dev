@@ -15,3 +15,32 @@ export interface ArticleSummary {
     }
   }
 }
+
+export interface Article {
+  html: string
+  frontmatter: {
+    slug: string
+    title: string
+    date: string
+    cover: {
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+  }
+}
+
+export interface ProjectSummary {
+  excerpt: string
+  frontmatter: {
+    title: string
+    startDate: string
+    endDate: string
+    slug: string
+    cover: {
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+  }
+}

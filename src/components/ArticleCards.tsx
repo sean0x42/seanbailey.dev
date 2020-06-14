@@ -2,12 +2,10 @@
 
 import React from 'react'
 import { useStyles } from 'react-treat'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
-import { ArticleSummary } from '../pages'
-import { ChevronRight } from 'react-feather'
 import * as styleRefs from './ArticleCards.treat'
+import { ArticleSummary } from '../app/types'
+import LinkCard from './LinkCard'
 
 interface ArticleCardProps {
   article: ArticleSummary
@@ -19,27 +17,15 @@ function ArticleCard(props: ArticleCardProps) {
 
   return (
     <li>
-      <Link
+      <LinkCard
         to={`/articles/${article.frontmatter.slug}`}
-        className={styles.articleCard}
+        fluidImage={article.frontmatter.cover.childImageSharp.fluid}
+        moreCopy="Read more"
       >
-        <Img
-          className={styles.image}
-          fluid={article.frontmatter.cover.childImageSharp.fluid}
-          alt={`Cover image: ${article.frontmatter.title}`}
-        />
-
-        <div className={styles.articleCardBody}>
-          <h3 className={styles.title}>{article.frontmatter.title}</h3>
-          <p className={styles.date}>{article.frontmatter.date}</p>
-          <p>{article.excerpt}</p>
-
-          <p className={styles.readMore}>
-            Read more
-            <ChevronRight />
-          </p>
-        </div>
-      </Link>
+        <h3 className={styles.title}>{article.frontmatter.title}</h3>
+        <p className={styles.date}>{article.frontmatter.date}</p>
+        <p>{article.excerpt}</p>
+      </LinkCard>
     </li>
   )
 }
@@ -53,7 +39,7 @@ function ArticleCards(props: ArticleCardsProps) {
 
   return (
     <ul className={styles.articleCards}>
-      {props.articles.map((post) => (
+      {props.articles.map(post => (
         <ArticleCard article={post} key={post.frontmatter.slug} />
       ))}
     </ul>

@@ -10,16 +10,21 @@ import Wrapper from '../components/Wrapper'
 import Intro from '../components/Intro'
 import ButtonLink from '../components/ButtonLink'
 import * as styles from '../index.treat'
-import { ArticleSummary } from '../app/types'
+import { ArticleSummary, ProjectSummary } from '../app/types'
+import ProjectCards from '../components/ProjectCards'
 
 type Data = {
-  allMarkdownRemark: {
+  articles: {
     edges: { node: ArticleSummary }[]
+  }
+  projects: {
+    edges: { node: ProjectSummary }[]
   }
 }
 
 function IndexPage(props: PageProps<Data>) {
-  const { edges } = props.data.allMarkdownRemark
+  const articles = props.data.articles.edges.map(edge => edge.node)
+  const projects = props.data.projects.edges.map(edge => edge.node)
 
   return (
     <Layout>
@@ -31,18 +36,20 @@ function IndexPage(props: PageProps<Data>) {
 
       <Wrapper>
         <div className={styles.headingWrapper}>
-          <h2 className={styles.heading}>Recent Articles</h2>
-          <ButtonLink to="/articles">View all articles</ButtonLink>
+          <h2 className={styles.heading}>Recent Projects</h2>
+          <ButtonLink to="/projects">View all projects</ButtonLink>
         </div>
 
-        <ArticleCards articles={edges.map((edge) => edge.node)} />
+        <ProjectCards projects={projects} />
       </Wrapper>
 
       <Wrapper>
         <div className={styles.headingWrapper}>
-          <h2 className={styles.heading}>Recent Projects</h2>
-          <ButtonLink to="/projects">View all projects</ButtonLink>
+          <h2 className={styles.heading}>Recent Articles</h2>
+          <ButtonLink to="/articles">View all articles</ButtonLink>
         </div>
+
+        <ArticleCards articles={articles} />
       </Wrapper>
     </Layout>
   )
@@ -52,12 +59,12 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 2
+    articles: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.md$/" }
       }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 2
     ) {
       edges {
         node {
@@ -66,6 +73,32 @@ export const pageQuery = graphql`
             slug
             title
             date(formatString: "MMMM DD, YYYY")
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 600, maxHeight: 300, cropFocus: CENTER) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.md$/" }
+      }
+      sort: { fields: [frontmatter___startDate], order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            title
+            slug
+            startDate(formatString: "MMMM YYYY")
+            endDate(formatString: "MMMM YYYY")
             cover {
               childImageSharp {
                 fluid(maxWidth: 600, maxHeight: 300, cropFocus: CENTER) {

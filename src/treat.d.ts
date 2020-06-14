@@ -2,19 +2,10 @@
 
 declare module string {
   export interface Theme {
-    transparent: string
     white: string
     black: string
 
-    primaryDark: string
     primary: string
-    primaryInverted: string
-    primaryLight: string
-    primaryLightInverted: string
-
-    secondaryDark: string
-    secondary: string
-    secondaryInverted: string
 
     grey90: string
     grey80: string

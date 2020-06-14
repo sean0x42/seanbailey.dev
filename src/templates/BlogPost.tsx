@@ -6,29 +6,28 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Article from '../components/Article'
-import { FluidObject } from 'gatsby-image'
+import { Article as ArticleModel } from '../app/types'
 
 type Data = {
-  markdownRemark: Article
+  markdownRemark: ArticleModel
 }
 
-export interface Article {
-  html: string
-  frontmatter: {
-    slug: string
-    title: string
-    date: string
-    cover: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
-  }
-}
-
-interface TemplateProps {
+interface ArticleTemplateProps {
   data: Data
 }
+
+function ArticleTemplate(props: ArticleTemplateProps) {
+  const article = props.data.markdownRemark
+
+  return (
+    <Layout>
+      <SEO title={article.frontmatter.title} />
+      <Article article={article} />
+    </Layout>
+  )
+}
+
+export default ArticleTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -49,16 +48,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-function BlogPost(props: TemplateProps) {
-  const post = props.data.markdownRemark
-
-  return (
-    <Layout>
-      <SEO title={post.frontmatter.title} />
-      <Article article={post} />
-    </Layout>
-  )
-}
-
-export default BlogPost

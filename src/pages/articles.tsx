@@ -35,11 +35,11 @@ export default ArticlesPage
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
       filter: {
         fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.md$/" }
       }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
     ) {
       edges {
         node {

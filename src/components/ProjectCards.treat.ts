@@ -2,13 +2,13 @@
 
 import { style } from 'treat'
 
-export const articleCards = style({
+export const cardWrapper = style({
   // Box model
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
   gridGap: '2rem',
+  margin: 0,
   padding: 0,
-  margin: '2rem 0',
 
   // Visuals
   listStyleType: 'none',
