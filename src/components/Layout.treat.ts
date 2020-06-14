@@ -5,6 +5,8 @@ import { style, globalStyle } from 'treat'
 globalStyle('body', {
   fontSize: '18px',
   fontFamily: "'Inter', sans-serif",
+  ['WebkitFontSmoothing' as string]: 'antialiased',
+  ['MozOsxFontSmoothing' as string]: 'grayscale',
 })
 
 globalStyle('p, ol, ul, figcaption', {
