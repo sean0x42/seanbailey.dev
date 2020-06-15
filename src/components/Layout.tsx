@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 import '../../node_modules/modern-normalize/modern-normalize.css'
 
 import Header from './Header'
-import darkTheme from '../dark.treat'
+import darkTheme from '../app/dark.treat'
 import * as styleRefs from './Layout.treat'
 import Footer from './Footer'
 

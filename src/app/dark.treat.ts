@@ -6,7 +6,7 @@ export default createTheme({
   white: '#ffffff',
   black: 'hsl(220, 35%, 9%)',
 
-  primary: 'hsl(32, 95%, 55%)',
+  primary: 'hsl(32, 98%, 55%)',
 
   grey90: 'hsl(220, 28%, 16%)',
   grey80: 'hsl(220, 25%, 20%)',
@@ -26,4 +26,11 @@ export default createTheme({
   inactive: 'hsl(10, 70%, 58%)',
 
   snap: 'cubic-bezier(.08, .82, .17, 1)',
+
+  tokenFunction: 'hsl(50, 100%, 67.3%)',
+  tokenKeyword: 'hsl(32, 95%, 60%)',
+  tokenOperator: 'hsl(219.8, 81.3%, 72.7%)',
+  tokenPunctuation: 'hsl(219.8, 50%, 60%)',
+  tokenString: 'hsl(123.6, 85.4%, 73.1%)',
+  tokenComment: 'hsl(220, 16%, 42%)',
 })
