@@ -4,6 +4,11 @@ slug: comet
 startDate: 2016-01-01T00:00
 endDate: 2016-12-01T00:00
 cover: './desktop.png'
+images:
+  - './desktop.png'
+  - './mobile-1.png'
+  - './mobile-2.png'
+  - './mobile-3.png'
 ---
 
 <!-- @format -->

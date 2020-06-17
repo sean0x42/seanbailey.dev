@@ -3,6 +3,13 @@ title: North Coast Marble & Granite
 slug: ncmg
 startDate: 2018-01-01T00:00
 cover: './desktop-landing.png'
+images:
+  - './desktop-landing.png'
+  - './mobile-landing.png'
+  - './mobile-gallery.png'
+  - './desktop-staff.png'
+  - './mobile-staff.png'
+  - './style-guide.png'
 ---
 
 <!-- @format -->

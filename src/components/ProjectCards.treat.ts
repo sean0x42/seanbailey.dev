@@ -2,18 +2,6 @@
 
 import { style } from 'treat'
 
-export const cardWrapper = style({
-  // Box model
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-  gridGap: '2rem',
-  margin: 0,
-  padding: 0,
-
-  // Visuals
-  listStyleType: 'none',
-})
-
 export const title = style({
   // Box model
   margin: 0,

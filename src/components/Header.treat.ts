@@ -2,7 +2,7 @@
 
 import { style } from 'treat'
 
-export const header = style({
+export const wrapper = style({
   // Positioning
   position: 'relative',
 

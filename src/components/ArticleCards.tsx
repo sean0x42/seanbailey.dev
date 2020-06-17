@@ -6,6 +6,7 @@ import { useStyles } from 'react-treat'
 import * as styleRefs from './ArticleCards.treat'
 import { ArticleSummary } from '../app/types'
 import LinkCard from './LinkCard'
+import CardLayout from './CardLayout'
 
 interface ArticleCardProps {
   article: ArticleSummary
@@ -34,16 +35,12 @@ interface ArticleCardsProps {
   articles: ArticleSummary[]
 }
 
-function ArticleCards(props: ArticleCardsProps) {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <ul className={styles.articleCards}>
-      {props.articles.map(post => (
-        <ArticleCard article={post} key={post.frontmatter.slug} />
-      ))}
-    </ul>
-  )
-}
+const ArticleCards = (props: ArticleCardsProps) => (
+  <CardLayout>
+    {props.articles.map(post => (
+      <ArticleCard article={post} key={post.frontmatter.slug} />
+    ))}
+  </CardLayout>
+)
 
 export default ArticleCards

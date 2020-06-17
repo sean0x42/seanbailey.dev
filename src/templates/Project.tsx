@@ -2,17 +2,12 @@
 
 import React from 'react'
 import { graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
-
-interface Project {
-  html: string
-  frontmatter: {
-    title: string
-    slug: string
-  }
-}
+import { Project } from '../app/types'
+import Gallery from '../components/Gallery'
 
 type Data = {
   markdownRemark: Project
@@ -30,6 +25,7 @@ function ProjectTemplate(props: ProjectTemplateProps) {
       <SEO title={project.frontmatter.title} />
 
       <Wrapper>
+        <Gallery images={project.frontmatter.images} />
         <h1>{project.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: project.html }} />
       </Wrapper>
@@ -46,6 +42,13 @@ export const pageQuery = graphql`
       frontmatter {
         slug
         title
+        images {
+          childImageSharp {
+            fixed(height: 500) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     }
   }

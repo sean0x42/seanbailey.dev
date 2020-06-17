@@ -1,6 +1,18 @@
 /** @format */
 
-import { FluidObject } from 'gatsby-image'
+import { FluidObject, FixedObject } from 'gatsby-image'
+
+export interface FluidImage {
+  childImageSharp: {
+    fluid: FluidObject
+  }
+}
+
+export interface FixedImage {
+  childImageSharp: {
+    fixed: FixedObject
+  }
+}
 
 export interface ArticleSummary {
   excerpt: string
@@ -8,11 +20,7 @@ export interface ArticleSummary {
     slug: string
     title: string
     date: string
-    cover: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
+    cover: FluidImage
   }
 }
 
@@ -22,11 +30,7 @@ export interface Article {
     slug: string
     title: string
     date: string
-    cover: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
+    cover: FluidImage
   }
 }
 
@@ -37,10 +41,15 @@ export interface ProjectSummary {
     startDate: string
     endDate: string
     slug: string
-    cover: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
+    cover: FluidImage
+  }
+}
+
+export interface Project {
+  html: string
+  frontmatter: {
+    title: string
+    slug: string
+    images: FixedObject[]
   }
 }

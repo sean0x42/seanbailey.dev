@@ -6,6 +6,7 @@ import { useStyles } from 'react-treat'
 import { ProjectSummary } from '../app/types'
 import * as styleRefs from './ProjectCards.treat'
 import LinkCard from './LinkCard'
+import CardLayout from './CardLayout'
 
 interface ProjectCardProps {
   project: ProjectSummary
@@ -37,16 +38,12 @@ interface ProjectCardsProps {
   projects: ProjectSummary[]
 }
 
-function ProjectCards(props: ProjectCardsProps) {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <ul className={styles.cardWrapper}>
-      {props.projects.map(project => (
-        <ProjectCard key={project.frontmatter.slug} project={project} />
-      ))}
-    </ul>
-  )
-}
+const ProjectCards = (props: ProjectCardsProps) => (
+  <CardLayout>
+    {props.projects.map(project => (
+      <ProjectCard key={project.frontmatter.slug} project={project} />
+    ))}
+  </CardLayout>
+)
 
 export default ProjectCards

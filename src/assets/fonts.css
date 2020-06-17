@@ -4,3 +4,9 @@
   font-family: 'JetBrains Mono', monospace;
   src: url('./JetBrainsMono-Regular.woff2');
 }
+
+@font-face {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  src: url('./JetBrainsMono-Bold.woff2');
+}

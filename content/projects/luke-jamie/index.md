@@ -4,6 +4,12 @@ slug: luke-jamie
 startDate: 2017-01-01T00:00
 endDate: 2017-12-01T00:00
 cover: './products.png'
+images:
+ - './register.png'
+ - './products.png'
+ - './jumper.png'
+ - './admin.png'
+ - './admin-mobile.png'
 ---
 
 <!-- @format -->

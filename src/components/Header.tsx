@@ -13,7 +13,7 @@ function Header() {
 
   return (
     <header>
-      <Wrapper className={styles.header}>
+      <Wrapper className={styles.wrapper}>
         <Logo />
         <Navigation />
       </Wrapper>

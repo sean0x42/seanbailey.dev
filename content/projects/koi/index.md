@@ -4,11 +4,9 @@ slug: koi
 startDate: 2019-01-01T00:00:00
 endDate: 2020-05-01T00:00:00
 cover: './design-mode.png'
-media:
-  - './design-mode.png'
-  - './content-mode.png'
-  - './feedback-form.mp4'
-  - './content-design-modes.mp4'
+images:
+ - './design-mode.png'
+ - './content-mode.png'
 ---
 
 <!-- @format -->

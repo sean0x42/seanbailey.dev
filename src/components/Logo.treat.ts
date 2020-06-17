@@ -2,81 +2,32 @@
 
 import { style } from 'treat'
 
-export const nameWrapper = style({
-  // Box model
-  display: 'flex',
-  alignItems: 'center',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  margin: '1.5rem 0',
-
-  // Typography
-  textDecoration: 'none',
-
-  '@media': {
-    '(min-width: 560px)': {
-      alignItems: 'flex-start',
-      flexDirection: 'row',
-    },
-    '(min-width: 850px)': {
-      justifyContent: 'unset',
-      margin: 0,
-    },
-  },
-})
-
-export const name = style((theme) => ({
-  // Positioning
-  position: 'relative',
-  zIndex: 1,
-
+export const logo = style({
   // Display
   display: 'flex',
   alignItems: 'flex-start',
   flexDirection: 'column',
-  paddingTop: '2px',
 
-  '::before': {
-    // Positioning
-    position: 'absolute',
-    left: '1.5rem',
-    bottom: '1em',
-    right: '-1.5em',
-    zIndex: -1,
+  // Typography
+  textDecoration: 'none',
+})
 
-    // Box model
-    height: '3em',
-
-    // Visuals
-    backgroundColor: theme.grey50,
-    opacity: 0.25,
-
-    // Misc
-    content: '""',
-    pointerEvents: 'none',
-  },
-}))
-
-export const nameHeading = style((theme) => ({
+export const name = style((theme) => ({
   // Box model
   margin: 0,
 
   // Typography
-  fontSize: '40px',
-  fontWeight: 700,
-  letterSpacing: '2px',
+  fontSize: '28px',
+  fontWeight: 650,
   lineHeight: 1,
-  textTransform: 'uppercase',
   color: theme.white,
-
-  '@media': {
-    '(min-width: 560px)': {
-      fontSize: '46px',
-    },
-  },
 }))
 
-export const nameSubheading = style((theme) => ({
+export const dotdev = style(theme => ({
+  color: theme.grey20,
+}))
+
+export const subheading = style((theme) => ({
   // Box model
   margin: '0.25rem 0',
 
