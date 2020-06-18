@@ -3,11 +3,7 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
-import {
-  ArticleSummary,
-  ProjectSummary,
-  GraphQLNodes,
-} from '../app/types'
+import { ArticleSummary, ProjectSummary, GraphQLNodes } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
 import Layout from '../components/Layout'
@@ -30,7 +26,7 @@ function IndexPage(props: PageProps<Data>) {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Sean Bailey" />
 
       <Wrapper>
         <Intro />

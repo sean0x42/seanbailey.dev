@@ -37,7 +37,7 @@ function Navigation() {
   return (
     <ul className={styles.navigation}>
       <NavigationItem url="/articles" title="Blog" icon={Feather} />
-      <NavigationItem url="/projects" title="My Projects" icon={Map} />
+      <NavigationItem url="/projects" title="Portfolio" icon={Map} />
     </ul>
   )
 }

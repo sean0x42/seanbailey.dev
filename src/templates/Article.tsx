@@ -1,51 +1,16 @@
 /** @format */
 
 import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { useStyles } from 'react-treat'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
-import { Article } from '../app/types'
+import { Article as ArticleModel } from '../app/types'
 
-import SEO from '../components/SEO'
-import Wrapper from '../components/Wrapper'
-import * as styleRefs from './Article.treat'
 import ThanksForReading from '../components/ThanksForReading'
 import Layout from '../components/Layout'
-
-interface BodyProps {
-  article: Article
-}
-
-function Body({ article }: BodyProps) {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <article>
-      <SEO title={article.frontmatter.title} />
-
-      <Wrapper className={styles.article}>
-        <Img
-          className={styles.image}
-          fluid={article.frontmatter.cover.childImageSharp.fluid}
-        />
-        <h1 className={styles.title}>{article.frontmatter.title}</h1>
-        <p className={styles.date}>{article.frontmatter.date}</p>
-
-        <MDXProvider components={{}}>
-          <MDXRenderer>{article.body}</MDXRenderer>
-        </MDXProvider>
-
-        <ThanksForReading />
-      </Wrapper>
-    </article>
-  )
-}
+import Article from '../components/Article'
 
 type Data = {
-  mdx: Article
+  mdx: ArticleModel
 }
 
 interface ContainerProps {
@@ -57,7 +22,14 @@ function Container(props: ContainerProps) {
 
   return (
     <Layout>
-      <Body article={article} />
+      <Article
+        coverImage={article.frontmatter.cover}
+        title={article.frontmatter.title}
+        date={article.frontmatter.date}
+        excerpt={article.excerpt}
+        body={article.body}
+        footerComponent={<ThanksForReading />}
+      />
     </Layout>
   )
 }
@@ -69,6 +41,7 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      excerpt
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

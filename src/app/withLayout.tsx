@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
  * within a component.
  */
 function withLayout(WrappedComponent: FunctionComponent): FunctionComponent {
-  return props => (
+  return (props) => (
     <Layout>
       <WrappedComponent {...props} />
     </Layout>

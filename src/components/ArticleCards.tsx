@@ -38,7 +38,7 @@ interface ArticleCardsProps {
 
 const ArticleCards = (props: ArticleCardsProps) => (
   <CardLayout>
-    {props.articles.map(article => (
+    {props.articles.map((article) => (
       <ArticleCard key={article.fields.slug} article={article} />
     ))}
   </CardLayout>

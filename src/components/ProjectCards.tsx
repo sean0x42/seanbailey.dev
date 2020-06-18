@@ -41,7 +41,7 @@ interface ProjectCardsProps {
 
 const ProjectCards = (props: ProjectCardsProps) => (
   <CardLayout>
-    {props.projects.map(project => (
+    {props.projects.map((project) => (
       <ProjectCard key={project.fields.slug} project={project} />
     ))}
   </CardLayout>

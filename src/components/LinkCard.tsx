@@ -15,7 +15,7 @@ interface LinkCardProps {
   moreCopy: string
 }
 
-const LinkCard: FunctionComponent<LinkCardProps> = props => {
+const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   const classes = [styles.card]

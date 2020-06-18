@@ -20,7 +20,7 @@ function ArticlesPage(props: PageProps<Data>) {
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Articles" />
 
       <Wrapper>
         <h2>Articles</h2>

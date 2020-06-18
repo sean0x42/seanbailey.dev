@@ -33,6 +33,7 @@ export interface ArticleSummary {
 export interface Article {
   id: string
   body: string
+  excerpt: string
   frontmatter: {
     title: string
     date: string
@@ -56,9 +57,11 @@ export interface ProjectSummary {
 export interface Project {
   id: string
   body: string
+  excerpt: string
   frontmatter: {
     title: string
     startDate: string
     endDate: string
+    cover: FluidImage
   }
 }

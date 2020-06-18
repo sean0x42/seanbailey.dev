@@ -1,6 +1,8 @@
+/** @format */
+
 import { style } from 'treat'
 
-export const card = style(theme => ({
+export const card = style((theme) => ({
   // Positioning
   position: 'relative',
   transform: 'translateY(0)',
@@ -23,7 +25,7 @@ export const card = style(theme => ({
   },
 }))
 
-export const image = style(theme => ({
+export const image = style((theme) => ({
   // Visuals
   backgroundColor: theme.grey80,
   borderRadius: '3px 3px 0 0',
@@ -38,7 +40,7 @@ export const body = style({
   borderRadius: '0 0 3px 3px',
 })
 
-export const more = style(theme => ({
+export const more = style((theme) => ({
   // Box model
   display: 'flex',
   alignItems: 'center',

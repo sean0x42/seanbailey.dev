@@ -1,39 +1,11 @@
 /** @format */
 
 import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { useStyles } from 'react-treat'
-
+import { graphql } from 'gatsby'
 import { Project } from '../app/types'
 
 import Layout from '../components/Layout'
-import Wrapper from '../components/Wrapper'
-import SEO from '../components/SEO'
-import * as styleRefs from './Project.treat'
-import {graphql} from 'gatsby'
-
-interface BodyProps {
-  project: Project
-}
-
-function Body({ project }: BodyProps) {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <article>
-      <SEO title={project.frontmatter.title} />
-
-      <Wrapper>
-        <h1>{project.frontmatter.title}</h1>
-
-        <MDXProvider components={{}}>
-          <MDXRenderer>{project.body}</MDXRenderer>
-        </MDXProvider>
-      </Wrapper>
-    </article>
-  )
-}
+import Article from '../components/Article'
 
 type Data = {
   mdx: Project
@@ -45,10 +17,17 @@ interface ContainerProps {
 
 function Container(props: ContainerProps) {
   const project = props.data.mdx
+  const { startDate, endDate } = project.frontmatter
 
   return (
     <Layout>
-      <Body project={project} />
+      <Article
+        coverImage={project.frontmatter.cover}
+        title={project.frontmatter.title}
+        date={`${startDate}—${endDate}`}
+        excerpt={project.excerpt}
+        body={project.body}
+      />
     </Layout>
   )
 }
@@ -60,10 +39,18 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
+      excerpt
       frontmatter {
         title
         startDate(formatString: "MMMM DD, YYYY")
         endDate(formatString: "MMMM DD, YYYY")
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 900, maxHeight: 400, cropFocus: CENTER) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

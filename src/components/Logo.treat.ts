@@ -23,7 +23,7 @@ export const name = style((theme) => ({
   color: theme.white,
 }))
 
-export const dotdev = style(theme => ({
+export const dotdev = style((theme) => ({
   color: theme.grey20,
 }))
 
