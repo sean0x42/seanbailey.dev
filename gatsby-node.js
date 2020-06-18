@@ -7,39 +7,56 @@
  */
 
 const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'Mdx') {
+    const value = createFilePath({ node, getNode })
+
+    createNodeField({
+      name: 'slug',
+      node,
+      value: value.slice(0, -1),
+    })
+  }
+}
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve('src/templates/BlogPost.tsx')
+  const articleTemplate = path.resolve('src/templates/Article.tsx')
   const projectTemplate = path.resolve('src/templates/Project.tsx')
 
   const result = await graphql(`
     {
-      articles: allMarkdownRemark(
+      articles: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.md$/" }
+          fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" }
         }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
         edges {
           node {
-            frontmatter {
+            id
+            fields {
               slug
             }
           }
         }
       }
-      projects: allMarkdownRemark(
+      projects: allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.md$/" }
+          fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
         }
         sort: { order: DESC, fields: [frontmatter___startDate] }
         limit: 1000
       ) {
         edges {
           node {
-            frontmatter {
+            id
+            fields {
               slug
             }
           }
@@ -55,20 +72,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.articles.edges.forEach(({ node }) => {
     createPage({
-      path: `articles/${node.frontmatter.slug}`,
-      component: blogPostTemplate,
+      path: `/articles${node.fields.slug}`,
+      component: articleTemplate,
       context: {
-        slug: node.frontmatter.slug,
+        id: node.id,
       },
     })
   })
 
   result.data.projects.edges.forEach(({ node }) => {
     createPage({
-      path: `projects/${node.frontmatter.slug}`,
+      path: `/projects${node.fields.slug}`,
       component: projectTemplate,
       context: {
-        slug: node.frontmatter.slug,
+        id: node.id,
       },
     })
   })

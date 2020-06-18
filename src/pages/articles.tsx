@@ -3,20 +3,20 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
+import { ArticleSummary, GraphQLNodes } from '../app/types'
+import { flattenNodes } from '../helpers/graphql'
+
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { ArticleSummary } from '../app/types'
 import Wrapper from '../components/Wrapper'
 import ArticleCards from '../components/ArticleCards'
 
 type Data = {
-  allMarkdownRemark: {
-    edges: { node: ArticleSummary }[]
-  }
+  articles: GraphQLNodes<ArticleSummary>
 }
 
 function ArticlesPage(props: PageProps<Data>) {
-  const articles = props.data.allMarkdownRemark.edges.map((edge) => edge.node)
+  const articles = flattenNodes(props.data.articles)
 
   return (
     <Layout>
@@ -34,18 +34,21 @@ export default ArticlesPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    articles: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.md$/" }
+        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" }
       }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
+      limit: 100
     ) {
       edges {
         node {
+          id
           excerpt
-          frontmatter {
+          fields {
             slug
+          }
+          frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             cover {

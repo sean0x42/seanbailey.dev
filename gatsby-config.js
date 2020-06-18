@@ -8,6 +8,18 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-treat`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          articles: require.resolve('./src/templates/Article.tsx'),
+          projects: require.resolve('./src/templates/Project.tsx'),
+          default: require.resolve('./src/components/Layout.tsx'),
+        },
+        gatsbyRemarkPlugins: [`gatsby-remark-images`, `gatsby-remark-prismjs`],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,27 +43,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-treat`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
           include: /assets/,
         },
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          `gatsby-remark-prismjs`,
-        ],
       },
     },
   ],

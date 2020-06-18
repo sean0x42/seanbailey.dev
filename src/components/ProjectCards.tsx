@@ -4,6 +4,7 @@ import React from 'react'
 import { useStyles } from 'react-treat'
 
 import { ProjectSummary } from '../app/types'
+
 import * as styleRefs from './ProjectCards.treat'
 import LinkCard from './LinkCard'
 import CardLayout from './CardLayout'
@@ -19,7 +20,7 @@ function ProjectCard(props: ProjectCardProps) {
   return (
     <li>
       <LinkCard
-        to={`/projects/${props.project.frontmatter.slug}`}
+        to={`/projects${project.fields.slug}`}
         fluidImage={project.frontmatter.cover.childImageSharp.fluid}
         moreCopy="See more"
       >
@@ -41,7 +42,7 @@ interface ProjectCardsProps {
 const ProjectCards = (props: ProjectCardsProps) => (
   <CardLayout>
     {props.projects.map(project => (
-      <ProjectCard key={project.frontmatter.slug} project={project} />
+      <ProjectCard key={project.fields.slug} project={project} />
     ))}
   </CardLayout>
 )

@@ -3,20 +3,20 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 
+import { GraphQLNodes, ProjectSummary } from '../app/types'
+import { flattenNodes } from '../helpers/graphql'
+
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
-import { ProjectSummary } from '../app/types'
 import ProjectCards from '../components/ProjectCards'
 
 type Data = {
-  allMarkdownRemark: {
-    edges: { node: ProjectSummary }[]
-  }
+  projects: GraphQLNodes<ProjectSummary>
 }
 
-function PortfolioPage(props: PageProps<Data>) {
-  const projects = props.data.allMarkdownRemark.edges.map(edge => edge.node)
+function ProjectsPage(props: PageProps<Data>) {
+  const projects = flattenNodes(props.data.projects)
 
   return (
     <Layout>
@@ -30,23 +30,25 @@ function PortfolioPage(props: PageProps<Data>) {
   )
 }
 
-export default PortfolioPage
+export default ProjectsPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
+    projects: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.md$/" }
+        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
       }
       sort: { fields: [frontmatter___startDate], order: DESC }
-      limit: 1000
+      limit: 100
     ) {
       edges {
         node {
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             title
-            slug
             startDate(formatString: "MMMM YYYY")
             endDate(formatString: "MMMM YYYY")
             cover {

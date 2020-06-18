@@ -2,6 +2,10 @@
 
 import { FluidObject, FixedObject } from 'gatsby-image'
 
+export interface GraphQLNodes<T> {
+  edges: { node: T }[]
+}
+
 export interface FluidImage {
   childImageSharp: {
     fluid: FluidObject
@@ -16,8 +20,10 @@ export interface FixedImage {
 
 export interface ArticleSummary {
   excerpt: string
-  frontmatter: {
+  fields: {
     slug: string
+  }
+  frontmatter: {
     title: string
     date: string
     cover: FluidImage
@@ -25,9 +31,9 @@ export interface ArticleSummary {
 }
 
 export interface Article {
-  html: string
+  id: string
+  body: string
   frontmatter: {
-    slug: string
     title: string
     date: string
     cover: FluidImage
@@ -36,20 +42,23 @@ export interface Article {
 
 export interface ProjectSummary {
   excerpt: string
+  fields: {
+    slug: string
+  }
   frontmatter: {
     title: string
     startDate: string
     endDate: string
-    slug: string
     cover: FluidImage
   }
 }
 
 export interface Project {
-  html: string
+  id: string
+  body: string
   frontmatter: {
     title: string
-    slug: string
-    images: FixedObject[]
+    startDate: string
+    endDate: string
   }
 }

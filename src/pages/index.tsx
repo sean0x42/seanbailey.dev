@@ -3,6 +3,13 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 
+import {
+  ArticleSummary,
+  ProjectSummary,
+  GraphQLNodes,
+} from '../app/types'
+import { flattenNodes } from '../helpers/graphql'
+
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import ArticleCards from '../components/ArticleCards'
@@ -10,21 +17,16 @@ import Wrapper from '../components/Wrapper'
 import Intro from '../components/Intro'
 import ButtonLink from '../components/ButtonLink'
 import * as styles from '../index.treat'
-import { ArticleSummary, ProjectSummary } from '../app/types'
 import ProjectCards from '../components/ProjectCards'
 
 type Data = {
-  articles: {
-    edges: { node: ArticleSummary }[]
-  }
-  projects: {
-    edges: { node: ProjectSummary }[]
-  }
+  articles: GraphQLNodes<ArticleSummary>
+  projects: GraphQLNodes<ProjectSummary>
 }
 
 function IndexPage(props: PageProps<Data>) {
-  const articles = props.data.articles.edges.map(edge => edge.node)
-  const projects = props.data.projects.edges.map(edge => edge.node)
+  const articles = flattenNodes(props.data.articles)
+  const projects = flattenNodes(props.data.projects)
 
   return (
     <Layout>
@@ -59,18 +61,21 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    articles: allMarkdownRemark(
+    articles: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.md$/" }
+        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" }
       }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 2
+      limit: 3
     ) {
       edges {
         node {
+          id
           excerpt
-          frontmatter {
+          fields {
             slug
+          }
+          frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             cover {
@@ -84,19 +89,22 @@ export const pageQuery = graphql`
         }
       }
     }
-    projects: allMarkdownRemark(
+    projects: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.md$/" }
+        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
       }
       sort: { fields: [frontmatter___startDate], order: DESC }
       limit: 3
     ) {
       edges {
         node {
+          id
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             title
-            slug
             startDate(formatString: "MMMM YYYY")
             endDate(formatString: "MMMM YYYY")
             cover {

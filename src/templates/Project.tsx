@@ -1,54 +1,69 @@
 /** @format */
 
 import React from 'react'
-import { graphql } from 'gatsby'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { useStyles } from 'react-treat'
+
+import { Project } from '../app/types'
 
 import Layout from '../components/Layout'
-import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
-import { Project } from '../app/types'
-import Gallery from '../components/Gallery'
+import SEO from '../components/SEO'
+import * as styleRefs from './Project.treat'
+import {graphql} from 'gatsby'
 
-type Data = {
-  markdownRemark: Project
+interface BodyProps {
+  project: Project
 }
 
-interface ProjectTemplateProps {
-  data: Data
-}
-
-function ProjectTemplate(props: ProjectTemplateProps) {
-  const project = props.data.markdownRemark
+function Body({ project }: BodyProps) {
+  const styles = useStyles(styleRefs)
 
   return (
-    <Layout>
+    <article>
       <SEO title={project.frontmatter.title} />
 
       <Wrapper>
-        <Gallery images={project.frontmatter.images} />
         <h1>{project.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: project.html }} />
+
+        <MDXProvider components={{}}>
+          <MDXRenderer>{project.body}</MDXRenderer>
+        </MDXProvider>
       </Wrapper>
+    </article>
+  )
+}
+
+type Data = {
+  mdx: Project
+}
+
+interface ContainerProps {
+  data: Data
+}
+
+function Container(props: ContainerProps) {
+  const project = props.data.mdx
+
+  return (
+    <Layout>
+      <Body project={project} />
     </Layout>
   )
 }
 
-export default ProjectTemplate
+export default Container
 
 export const pageQuery = graphql`
-  query ProjectsBySlug($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
+  query ProjectById($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      body
       frontmatter {
-        slug
         title
-        images {
-          childImageSharp {
-            fixed(height: 500) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
+        startDate(formatString: "MMMM DD, YYYY")
+        endDate(formatString: "MMMM DD, YYYY")
       }
     }
   }

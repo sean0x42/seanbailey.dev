@@ -3,8 +3,9 @@
 import React from 'react'
 import { useStyles } from 'react-treat'
 
-import * as styleRefs from './ArticleCards.treat'
 import { ArticleSummary } from '../app/types'
+
+import * as styleRefs from './ArticleCards.treat'
 import LinkCard from './LinkCard'
 import CardLayout from './CardLayout'
 
@@ -19,7 +20,7 @@ function ArticleCard(props: ArticleCardProps) {
   return (
     <li>
       <LinkCard
-        to={`/articles/${article.frontmatter.slug}`}
+        to={`/articles${article.fields.slug}`}
         fluidImage={article.frontmatter.cover.childImageSharp.fluid}
         moreCopy="Read more"
       >
@@ -37,8 +38,8 @@ interface ArticleCardsProps {
 
 const ArticleCards = (props: ArticleCardsProps) => (
   <CardLayout>
-    {props.articles.map(post => (
-      <ArticleCard article={post} key={post.frontmatter.slug} />
+    {props.articles.map(article => (
+      <ArticleCard key={article.fields.slug} article={article} />
     ))}
   </CardLayout>
 )
