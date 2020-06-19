@@ -20,6 +20,7 @@ export const layout = style((theme) => ({
 
   // Visual
   backgroundColor: theme.black,
+  transition: 'background-color 300ms',
 }))
 
 function generateSelector(root: string, ...selectors: string[]) {
@@ -31,6 +32,7 @@ globalStyle(
   (theme) => ({
     color: theme.typeColourStrong,
     lineHeight: 1.15,
+    transition: 'color 300ms',
   }),
 )
 

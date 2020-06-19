@@ -12,7 +12,7 @@ export const logo = style({
   textDecoration: 'none',
 })
 
-export const name = style((theme) => ({
+export const name = style({
   // Box model
   margin: 0,
 
@@ -20,11 +20,11 @@ export const name = style((theme) => ({
   fontSize: '28px',
   fontWeight: 650,
   lineHeight: 1,
-  color: theme.white,
-}))
+})
 
 export const dotdev = style((theme) => ({
   color: theme.grey20,
+  transition: 'color 300ms',
 }))
 
 export const subheading = style((theme) => ({
@@ -35,6 +35,9 @@ export const subheading = style((theme) => ({
   color: theme.grey20,
   fontSize: '19px',
   fontWeight: 500,
+
+  // Visuals
+  transition: 'color 300ms',
 
   '::after': {
     content: '"_"',
@@ -47,26 +50,6 @@ export const subheading = style((theme) => ({
     '@keyframes': {
       from: { opacity: 1 },
       to: { opacity: 0 },
-    },
-  },
-}))
-
-export const triangle = style((theme) => ({
-  // Box model
-  display: 'none',
-
-  '@media': {
-    '(min-width: 560px)': {
-      // Box model
-      display: 'block',
-      marginBottom: 0,
-      marginRight: '1.25rem',
-      height: '82px',
-      width: '82px',
-
-      // Visuals
-      opacity: 1,
-      stroke: theme.grey10,
     },
   },
 }))

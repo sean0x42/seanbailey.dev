@@ -20,7 +20,5 @@ declare module string {
     typeColourStrong: string
     typeColour: string
     typeColourLight: string
-
-    snap: string
   }
 }

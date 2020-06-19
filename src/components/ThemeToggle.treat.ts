@@ -8,33 +8,21 @@ export const button = style((theme) => ({
   transform: 'translateY(0)',
 
   // Box model
-  display: 'inline-flex',
-  alignItems: 'center',
-  padding: '1rem 1.5rem',
+  marginLeft: '0.5rem',
+  padding: '0.5rem',
 
   // Typography
   color: theme.typeColour,
-  fontWeight: 500,
-  textDecoration: 'none',
-  lineHeight: 1,
 
   // Visuals
-  background: theme.grey80,
-  borderRadius: '3px',
+  background: 'none',
+  border: 0,
   cursor: 'pointer',
-  transition: 'all 200ms',
+  transition: 'all 300ms',
   transitionTimingFunction: snap,
 
   ':hover': {
-    // Positioning
+    color: theme.typeColourStrong,
     transform: 'translateY(-2px)',
-
-    // Typography
-    color: theme.primary,
   },
 }))
-
-export const icon = style({
-  // Box model
-  marginLeft: '0.5rem',
-})

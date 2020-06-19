@@ -28,7 +28,17 @@ function Container(props: ContainerProps) {
         date={article.frontmatter.date}
         excerpt={article.excerpt}
         body={article.body}
-        footerComponent={<ThanksForReading />}
+        footerComponent={
+          <ThanksForReading
+            link="/articles"
+            body={
+              <>
+                If you liked that article, why not check out some of my other
+                work? I write mostly about design and programming.
+              </>
+            }
+          />
+        }
       />
     </Layout>
   )

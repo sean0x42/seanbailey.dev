@@ -6,6 +6,7 @@ import { Project } from '../app/types'
 
 import Layout from '../components/Layout'
 import Article from '../components/Article'
+import ThanksForReading from '../components/ThanksForReading'
 
 type Data = {
   mdx: Project
@@ -17,7 +18,8 @@ interface ContainerProps {
 
 function Container(props: ContainerProps) {
   const project = props.data.mdx
-  const { startDate, endDate } = project.frontmatter
+  const { startDate } = project.frontmatter
+  const endDate = project.frontmatter.endDate || 'Present'
 
   return (
     <Layout>
@@ -27,6 +29,17 @@ function Container(props: ContainerProps) {
         date={`${startDate}—${endDate}`}
         excerpt={project.excerpt}
         body={project.body}
+        footerComponent={
+          <ThanksForReading
+            link="/projects"
+            body={
+              <>
+                If you liked that project, why not check out some of my other
+                work? I create mostly for the web and desktop.
+              </>
+            }
+          />
+        }
       />
     </Layout>
   )

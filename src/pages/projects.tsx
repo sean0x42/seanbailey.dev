@@ -20,10 +20,10 @@ function ProjectsPage(props: PageProps<Data>) {
 
   return (
     <Layout>
-      <SEO title="Portfolio" />
+      <SEO title="Projects" />
 
       <Wrapper>
-        <h2>Portfolio</h2>
+        <h2>All Projects</h2>
         <ProjectCards projects={projects} />
       </Wrapper>
     </Layout>

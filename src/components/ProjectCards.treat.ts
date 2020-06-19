@@ -8,6 +8,7 @@ export const title = style({
 
   // Typography
   fontSize: '22px',
+  lineHeight: '1.4 !important',
 })
 
 export const date = style((theme) => ({

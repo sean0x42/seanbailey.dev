@@ -1,6 +1,7 @@
 /** @format */
 
 import { style } from 'treat'
+import { snap } from '../app/constants'
 
 export const card = style((theme) => ({
   // Positioning
@@ -17,8 +18,8 @@ export const card = style((theme) => ({
   // Visuals
   background: theme.grey90,
   cursor: 'pointer',
-  transition: 'transform 200ms',
-  transitionTimingFunction: theme.snap,
+  transition: 'transform 200ms, color 300ms, background-color 300ms',
+  transitionTimingFunction: snap,
 
   ':hover': {
     transform: 'translateY(-4px)',
@@ -29,6 +30,7 @@ export const image = style((theme) => ({
   // Visuals
   backgroundColor: theme.grey80,
   borderRadius: '3px 3px 0 0',
+  transition: 'background-color 300ms',
 }))
 
 export const body = style({
@@ -48,4 +50,7 @@ export const more = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
+
+  // Visuals
+  transition: 'color 300ms',
 }))

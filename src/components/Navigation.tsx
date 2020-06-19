@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Link } from 'gatsby'
-import { Feather, Icon, Map } from 'react-feather'
+import { Icon, Book, Layers } from 'react-feather'
 import { useStyles } from 'react-treat'
 
 import * as styleRefs from './Navigation.treat'
@@ -36,8 +36,8 @@ function Navigation() {
 
   return (
     <ul className={styles.navigation}>
-      <NavigationItem url="/articles" title="Blog" icon={Feather} />
-      <NavigationItem url="/projects" title="Portfolio" icon={Map} />
+      <NavigationItem url="/articles" title="Articles" icon={Book} />
+      <NavigationItem url="/projects" title="Projects" icon={Layers} />
     </ul>
   )
 }

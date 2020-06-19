@@ -1,6 +1,7 @@
 /** @format */
 
 import { style } from 'treat'
+import { snap } from '../app/constants'
 
 export const navigation = style({
   // Box model
@@ -28,12 +29,12 @@ export const navigationItem = style((theme) => ({
 
   // Visuals
   cursor: 'pointer',
-  transition: 'transform 300ms',
-  transitionTimingFunction: theme.snap,
+  transition: 'transform 300ms, color 300ms',
+  transitionTimingFunction: snap,
 
   ':hover': {
     transform: 'translateY(-2px)',
-    color: theme.white,
+    color: theme.typeColourStrong,
   },
 }))
 

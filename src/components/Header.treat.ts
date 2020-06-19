@@ -11,3 +11,8 @@ export const wrapper = style({
   alignItems: 'center',
   justifyContent: 'space-between',
 })
+
+export const navWrapper = style({
+  display: 'flex',
+  alignItems: 'center',
+})

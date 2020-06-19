@@ -1,6 +1,7 @@
 /** @format */
 
 import { style } from 'treat'
+import { snap } from '../app/constants'
 
 export const wrapper = style((theme) => ({
   // Positioning
@@ -12,7 +13,7 @@ export const wrapper = style((theme) => ({
   gridGap: '1.5rem',
   alignItems: 'center',
   padding: '1.25rem 2rem',
-  marginTop: '4rem',
+  marginTop: '2rem',
 
   // Typography
   color: theme.typeColour,
@@ -22,7 +23,7 @@ export const wrapper = style((theme) => ({
   background: theme.grey90,
   borderRadius: '3px',
   transition: 'all 200ms',
-  transitionTimingFunction: theme.snap,
+  transitionTimingFunction: snap,
 
   ':hover': {
     transform: 'translateY(-3px)',
@@ -38,8 +39,9 @@ export const icon = style((theme) => ({
   lineHeight: 1,
 
   // Visuals
-  background: theme.grey70,
+  background: theme.grey80,
   borderRadius: '50%',
+  transition: 'all 300ms',
 }))
 
 export const iconInner = style({
@@ -69,4 +71,7 @@ export const seeMore = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
+
+  // Visuals
+  transition: 'color 300ms',
 }))

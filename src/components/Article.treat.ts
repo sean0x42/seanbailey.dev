@@ -10,6 +10,7 @@ export const article = style((theme) => ({
   // Typography
   color: theme.typeColour,
   fontSize: '20px',
+  transition: 'color 300ms',
 }))
 
 globalStyle(`${article} code`, (theme) => ({
@@ -23,6 +24,7 @@ globalStyle(`${article} code`, (theme) => ({
   // Visuals
   background: theme.grey90,
   borderRadius: '3px',
+  transition: 'background 300ms',
 }))
 
 globalStyle(`${article} pre`, (theme) => ({
@@ -36,6 +38,7 @@ globalStyle(`${article} pre`, (theme) => ({
   // Visuals
   background: theme.grey90,
   borderRadius: '3px',
+  transition: 'background 300ms',
 }))
 
 globalStyle(`${article} pre code`, {
@@ -54,26 +57,32 @@ globalStyle(`${article} pre code`, {
 
 globalStyle(`${article} pre .token.function`, (theme) => ({
   color: theme.tokenFunction,
+  transition: 'color 300ms',
 }))
 
 globalStyle(`${article} pre .token.keyword`, (theme) => ({
   color: theme.tokenKeyword,
+  transition: 'color 300ms',
 }))
 
 globalStyle(`${article} pre .token.operator`, (theme) => ({
   color: theme.tokenOperator,
+  transition: 'color 300ms',
 }))
 
 globalStyle(`${article} pre .token.punctuation`, (theme) => ({
   color: theme.tokenPunctuation,
+  transition: 'color 300ms',
 }))
 
 globalStyle(`${article} pre .token.string`, (theme) => ({
   color: theme.tokenString,
+  transition: 'color 300ms',
 }))
 
 globalStyle(`${article} pre .token.comment`, (theme) => ({
   color: theme.tokenComment,
+  transition: 'color 300ms',
 }))
 
 export const image = style((theme) => ({
@@ -83,36 +92,19 @@ export const image = style((theme) => ({
   // Visuals
   backgroundColor: theme.grey80,
   borderRadius: '3px',
+  transition: 'background-color 300ms',
 }))
 
-export const title = style((theme) => ({
+export const title = style({
   // Positioning
   position: 'relative',
 
   // Box model
-  marginBottom: '1rem',
+  margin: '1rem 0',
 
   // Typography
-  color: theme.typeColourStrong,
   fontSize: '3.052rem',
-
-  '::before': {
-    // Positioning
-    position: 'absolute',
-    top: '-1.5rem',
-    left: 0,
-
-    // Box model
-    width: '5rem',
-    height: '3px',
-
-    // Visuals
-    background: theme.grey40,
-
-    // Misc
-    content: '""',
-  },
-}))
+})
 
 export const date = style((theme) => ({
   // Box model
@@ -120,4 +112,7 @@ export const date = style((theme) => ({
 
   // Typogrephy
   color: theme.typeColourLight,
+
+  // Visuals
+  transition: 'color 300ms',
 }))
