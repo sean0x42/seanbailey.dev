@@ -24,14 +24,17 @@ globalStyle(`${article} .gatsby-resp-image-wrapper`, {
 })
 
 globalStyle(`${article} blockquote`, (theme) => ({
+  // Box model
+  margin: '2rem 0',
+  paddingLeft: '1.5rem',
+  
   // Typography
-  color: theme.typeColourStrong,
-  fontSize: '24px',
-  fontWeight: 500,
+  color: theme.typeColourLight,
   fontStyle: 'italic',
 
   // Visuals
-  transition: 'color 300ms',
+  borderLeft: `4px solid ${theme.primary}`,
+  transition: 'all 300ms',
 }))
 
 globalStyle(`${article} code`, (theme) => ({

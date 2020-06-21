@@ -31,6 +31,7 @@ function generateSelector(root: string, ...selectors: string[]) {
 globalStyle(
   generateSelector(layout, 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
   (theme) => ({
+    margin: '3rem 0 1.05rem',
     color: theme.typeColourStrong,
     lineHeight: 1.15,
     transition: 'color 300ms',

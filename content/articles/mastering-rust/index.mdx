@@ -1,53 +1,67 @@
 ---
 title: Overcoming the Rust Learning Curve
 slug: overcoming-rust-learning-curve
-date: 2020-06-12T10:25:00+10:00
+date: 2020-06-21
 cover: './cover.png'
 ---
 
 <!-- @format -->
 
-Rust is a great language! But learning it can be difficult. This article will
-provide some advice for future Rustaceans facing down a steep learning curve. If
-you're guided through the process it's 10 times easier.
+Rust is a brilliant language, offering a rather unique combination of
+performance, safety, and a great community. But for many new comers, Rust is
+also a daunting challenge. The language has a far steeper learning curve than
+say JavaScript or Ruby. But as someone who recently overcame that learning
+curve, I can confidently say that it's not as challenging as it may look from
+the outside.
 
-Things to explore
+> **Note**: This article assumes some knowledge of programming outside of Rust.
+> Skills you've learnt in other languages will transfer well, and make your
+> experience quite a bit smoother. If you're completely new to programming, I
+> suggest you learn some generic programming concepts first.
 
-- Like any language, Rust will challenge your existing notions, approaches, and
-  patterns. But in my career so far, I've yet to encounter a language that has
-  challenged my quite as much as Rust has.
+## Start with the Book
 
-- Rust solves a whole class of problems for you thanks to its strict compiler.
-  This compiler will be your greatest friend when you understand the concepts
-  underlying the language, but is a huge barrier to entry for beginners. At
-  times, it feels like the compiler complains about everything you do. Then, as
-  your code gets closer and closer to the happy path, the less the compiler
-  complains and the better your code is.
+The Rust book is a brilliant resource, written by the members of the Rust core
+team. It covers just about every topic you can imagine, and outlines the
+motivation behind Rust's many design decisions. Don't stress about reading every
+word of every chapter. Just make sure you understand Rust's core
+concepts—especially **ownership and borrowing**.
 
-- Rust has a powerful module/crate system. Leverage it to organise your code,
-  and prevent any one thing from growing to large, too quickly.
+<Figure caption="The front cover of the Rust Book. Source:
+https://nostarch.com/Rust2018">
 
-- Rust is a great language that introduces a bunch of great paradigms. The enums
-  in Rust are a real joy to work with, and I love that I can write my own macros
-  that 
+![Rust Book Front Cover](./Rust2018_front.webp)
 
-```rust
-/// This is a doc string
-fn hello_world(request: Request, _state: &State) -> Response {
-    // This is a comment
-    json_response!(request, "Hello, world!")
-}
-```
+</Figure>
 
-```typescript
-import { style } from 'treat'
+If you haven't found the book yet, start there! You can read it [online for
+free][online], purchase it as an [ebook or paperback][paperback], or check out
+the [source code on GitHub][github].
 
-export const image = style(theme => ({
-  // Box model
-  marginBottom: '5rem',
+[online]: https://doc.rust-lang.org/stable/book/title-page.html
+[paperback]: https://nostarch.com/Rust2018
+[github]: https://github.com/rust-lang/book
 
-  // Visuals
-  backgroundColor: theme.grey80,
-  borderRadius: '3px',
-}))
-```
+## Learn to Love the Compiler
+
+Rust solves a whole class of problems for you thanks to its strict compiler.
+This compiler will be your greatest friend when you understand the concepts
+underlying the language, but is a huge barrier to entry for beginners. At
+times, it feels like the compiler complains about everything you do. Then, as
+your code gets closer and closer to the happy path, the less the compiler
+complains and the better your code is.
+
+## Expect to be Challenged
+
+Like any language, Rust will challenge your existing notions, approaches, and
+patterns. But in my career so far, I've yet to encounter a language that has
+challenged my quite as much as Rust has.
+
+## Love the Little Things
+
+-   Rust has a powerful module/crate system. Leverage it to organise your code,
+    and prevent any one thing from growing to large, too quickly.
+
+-   Rust is a great language that introduces a bunch of great paradigms. The enums
+    in Rust are a real joy to work with, and I love that I can write my own macros
+    that

@@ -15,8 +15,8 @@ export const wrapper = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  paddingTop: '0.5rem',
-  paddingBottom: '0.5rem',
+  paddingTop: '1rem',
+  paddingBottom: '1rem',
 })
 
 export const navWrapper = style({

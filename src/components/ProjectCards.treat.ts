@@ -4,7 +4,7 @@ import { style } from 'treat'
 
 export const title = style({
   // Box model
-  margin: 0,
+  margin: '0 !important',
 
   // Typography
   fontSize: '22px',
