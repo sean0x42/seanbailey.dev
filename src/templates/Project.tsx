@@ -55,8 +55,8 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        startDate(formatString: "MMMM DD, YYYY")
-        endDate(formatString: "MMMM DD, YYYY")
+        startDate(formatString: "MMMM YYYY")
+        endDate(formatString: "MMMM YYYY")
         cover {
           childImageSharp {
             fluid(maxWidth: 900, maxHeight: 400, cropFocus: CENTER) {

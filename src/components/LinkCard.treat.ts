@@ -53,4 +53,11 @@ export const more = style((theme) => ({
 
   // Visuals
   transition: 'color 300ms',
+
+  selectors: {
+    [`${card}:hover &`]: {
+      color: theme.primary,
+      fontWeight: 600,
+    },
+  },
 }))

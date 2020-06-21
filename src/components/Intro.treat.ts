@@ -8,11 +8,10 @@ export const blurb = style({
 
   // Typography
   fontSize: '34px',
-  fontWeight: 450,
+  fontWeight: 500,
 })
 
 export const strong = style((theme) => ({
   // Typography
-  color: theme.typeColourStrong,
-  fontWeight: 700,
+  color: theme.primary,
 }))

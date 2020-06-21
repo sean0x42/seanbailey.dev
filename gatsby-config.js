@@ -17,7 +17,15 @@ module.exports = {
           projects: require.resolve('./src/templates/Project.tsx'),
           default: require.resolve('./src/components/Layout.tsx'),
         },
-        gatsbyRemarkPlugins: [`gatsby-remark-images`, `gatsby-remark-prismjs`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: '1000px',
+            },
+          },
+          `gatsby-remark-prismjs`,
+        ],
       },
     },
     {

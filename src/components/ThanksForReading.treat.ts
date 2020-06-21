@@ -58,10 +58,16 @@ export const heading = style({
   lineHeight: '1.6 !important',
 })
 
-export const copy = style({
+export const copy = style((theme) => ({
   // Box model
   margin: '0.25rem 0',
-})
+
+  // Typography
+  color: theme.typeColour,
+
+  // Visuals
+  transition: 'color 300ms',
+}))
 
 export const seeMore = style((theme) => ({
   // Box model

@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { useStyles } from 'react-treat'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -10,6 +10,11 @@ import * as styleRefs from './Article.treat'
 import Img from 'gatsby-image'
 import SEO from './SEO'
 import Wrapper from './Wrapper'
+import Figure from './Article/Figure'
+import DoubleLayout from './Article/DoubleLayout'
+import TripleLayout from './Article/TripleLayout'
+
+const components = { Figure, DoubleLayout, TripleLayout }
 
 interface ArticleProps {
   coverImage: FluidImage
@@ -36,7 +41,7 @@ function Article(props: ArticleProps) {
         <h1 className={styles.title}>{props.title}</h1>
         <p className={styles.date}>{props.date}</p>
 
-        <MDXProvider components={{}}>
+        <MDXProvider components={components}>
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>
 

@@ -1,18 +1,87 @@
 ---
 title: Comet
 slug: comet
-startDate: 2016-01-01T00:00
+startDate: 2015-12-01T00:00
 endDate: 2016-12-01T00:00
 cover: './cover.png'
 ---
 
 <!-- @format -->
 
-Comet was my final year Major Design Project (MDP). I successfully designed and
-developed an instant messaging service, with the goal of being a privacy focused
-alternative to Facebook messenger.
+Comet was a private instant messaging service that I designed and developed over
+the course of a year for my Year 12 Major Design Project (MDP). Facebook
+Messenger was widely used accross my high school campus, but few students were
+really aware of the highly invasive practices employed by Facebook. My aim was
+to start a discussion amongst students about our privacy online, and develop an
+alternative platform that emphasized privacy and security.
 
-The project contained a lot of firsts for me. It was my first time designing a
-logo, designing an interface, and building a website with backend. The end
-product was ultimately not high enough quality to release to the world, but
-Comet proved to be a fantastic experience none-the-less.
+<DoubleLayout wide left>
+
+<Figure caption="The basic home page, as seen on a desktop.">
+
+![The basic home page, as seen on a desktop.](./landing-desktop.png)
+
+</Figure>
+
+The messenger home page was my first deep dive into building a product page.
+It may not look like much, but I spent many, many hours painstakingly
+peicing this together by hand.
+
+</DoubleLayout>
+
+## Responsive Design
+
+Comet was also my first time developing a fully responsive website. I knew that
+many people would want to use an instant messaging service on their phone, so
+supporting all screen sizes was a must.
+
+<TripleLayout>
+
+![Landing page on mobile](./landing-mobile.png)
+
+![Sign up page](./sign-up-mobile.png)
+
+![Messenger](./messenger-mobile.png)
+
+</TripleLayout>
+
+<Figure caption="Comet had room for documentation, but nothing was ever written.">
+
+![Generic docs page on desktop](./docs-desktop.png)
+
+</Figure>
+
+<TripleLayout>
+
+![Mobile with navigation](./nav-mobile.png)
+
+![News page on mobile](./news-mobile.png)
+
+![Generic docs page on mobile](./docs-mobile.png)
+
+</TripleLayout>
+
+<DoubleLayout wide right>
+<div>
+
+## Powered by Sockets
+
+Comet was built in [Python][python] and JavaScript using [Django][django] and
+[socket.io][socketio].
+
+[python]: https://www.python.org/
+[django]: https://www.djangoproject.com/
+[socketio]: https://socket.io/
+
+</div>
+<Figure caption="Messaging interface on desktop.">
+
+![Messenger](./mesenger-desktop.png)
+
+</Figure>
+
+</DoubleLayout>
+
+## Handcrafted Logo
+
+Naming things is hard. 
