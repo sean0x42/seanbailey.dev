@@ -1,6 +1,7 @@
 /** @format */
 
 import { style } from 'treat'
+import { snap } from '../app/constants'
 
 export const logo = style({
   // Display
@@ -12,19 +13,25 @@ export const logo = style({
   textDecoration: 'none',
 })
 
-export const name = style({
+export const svg = style((theme) => ({
   // Box model
-  margin: 0,
+  width: '260px',
+  margin: '0.5rem 0',
 
   // Typography
-  fontSize: '28px',
-  fontWeight: 650,
   lineHeight: 1,
-})
+  verticalAlign: 'middle',
 
-export const dotdev = style((theme) => ({
-  color: theme.grey20,
-  transition: 'color 300ms',
+  // Visuals
+  fill: theme.typeColourStrong,
+  transition: 'fill 300ms',
+  transitionTimingFunction: snap,
+
+  selectors: {
+    [`${logo}:hover &`]: {
+      fill: theme.primary,
+    },
+  },
 }))
 
 export const subheading = style((theme) => ({

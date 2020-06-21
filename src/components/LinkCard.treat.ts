@@ -50,6 +50,7 @@ export const more = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
+  fontWeight: 600,
 
   // Visuals
   transition: 'color 300ms',
@@ -57,7 +58,6 @@ export const more = style((theme) => ({
   selectors: {
     [`${card}:hover &`]: {
       color: theme.primary,
-      fontWeight: 600,
     },
   },
 }))

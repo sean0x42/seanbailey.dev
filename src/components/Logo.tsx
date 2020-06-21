@@ -4,6 +4,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
 
+import LogoSvg from '../assets/logo.svg'
 import * as styleRefs from './Logo.treat'
 
 function Logo() {
@@ -11,10 +12,7 @@ function Logo() {
 
   return (
     <Link to="/" className={styles.logo}>
-      <h1 className={styles.name}>
-        seanbailey<span className={styles.dotdev}>.dev</span>
-      </h1>
-      <p className={styles.subheading}>Designer &amp; Software Developer</p>
+      <LogoSvg className={styles.svg} />
     </Link>
   )
 }

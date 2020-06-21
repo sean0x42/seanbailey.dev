@@ -108,7 +108,7 @@ globalStyle(`${article} pre .token.comment`, (theme) => ({
 
 export const image = style((theme) => ({
   // Box model
-  marginBottom: '5rem',
+  marginBottom: '4rem',
 
   // Visuals
   backgroundColor: theme.grey80,

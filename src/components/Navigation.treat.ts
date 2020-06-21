@@ -34,7 +34,7 @@ export const navigationItem = style((theme) => ({
 
   ':hover': {
     transform: 'translateY(-2px)',
-    color: theme.typeColourStrong,
+    color: theme.primary,
   },
 }))
 

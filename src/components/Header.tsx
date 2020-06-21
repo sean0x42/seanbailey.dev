@@ -18,7 +18,7 @@ function Header(props: HeaderProps) {
   const styles = useStyles(styleRefs)
 
   return (
-    <header>
+    <header className={styles.header}>
       <Wrapper className={styles.wrapper}>
         <Logo />
 

@@ -22,7 +22,7 @@ export const button = style((theme) => ({
   transitionTimingFunction: snap,
 
   ':hover': {
-    color: theme.typeColourStrong,
+    color: theme.primary,
     transform: 'translateY(-2px)',
   },
 }))

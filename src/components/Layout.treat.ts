@@ -16,11 +16,12 @@ globalStyle('p, ol, ul, figcaption', {
 export const layout = style((theme) => ({
   // Box model
   minHeight: '100vh',
-  paddingBottom: '1px',
 
   // Visual
   backgroundColor: theme.black,
-  transition: 'background-color 300ms',
+  borderTop: `6px solid ${theme.primary}`,
+  borderBottom: `6px solid ${theme.primary}`,
+  transition: 'all 300ms',
 }))
 
 function generateSelector(root: string, ...selectors: string[]) {

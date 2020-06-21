@@ -13,7 +13,7 @@ export const wrapper = style((theme) => ({
   gridGap: '1.5rem',
   alignItems: 'center',
   padding: '1.25rem 2rem',
-  marginTop: '2rem',
+  marginTop: '4rem',
 
   // Typography
   color: theme.typeColour,
@@ -54,7 +54,7 @@ export const heading = style({
   margin: 0,
 
   // Typography
-  fontSize: '20px',
+  fontSize: '21px',
   lineHeight: '1.6 !important',
 })
 
@@ -77,7 +77,14 @@ export const seeMore = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
+  fontWeight: 500,
 
   // Visuals
   transition: 'color 300ms',
+
+  selectors: {
+    [`${wrapper}:hover &`]: {
+      color: theme.primary,
+    },
+  },
 }))
