@@ -19,7 +19,6 @@ export const layout = style((theme) => ({
 
   // Visual
   backgroundColor: theme.black,
-  borderTop: `6px solid ${theme.primary}`,
   borderBottom: `6px solid ${theme.primary}`,
   transition: 'all 300ms',
 }))

@@ -3,18 +3,14 @@
 import { style } from 'treat'
 import { snap } from '../app/constants'
 
-export const footer = style((theme) => ({
+export const footer = style({
   // Box model
   display: 'flex',
   flexDirection: 'column',
   margin: '0',
   marginTop: '4rem',
   padding: '1rem 0',
-
-  // Visuals
-  background: theme.grey90,
-  transition: 'background 300ms',
-}))
+})
 
 export const copyright = style({
   // Box model

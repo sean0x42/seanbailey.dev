@@ -24,7 +24,7 @@ export const navigationItem = style((theme) => ({
   padding: '0.5rem 1rem',
 
   // Typography
-  color: theme.typeColour,
+  color: theme.typeColourStrong,
   fontSize: '18px',
   fontWeight: 500,
   textDecoration: 'none',
