@@ -44,12 +44,23 @@ the [source code on GitHub][github].
 
 ## Learn to Love the Compiler
 
-Rust solves a whole class of problems for you thanks to its strict compiler.
-This compiler will be your greatest friend when you understand the concepts
-underlying the language, but is a huge barrier to entry for beginners. At
-times, it feels like the compiler complains about everything you do. Then, as
-your code gets closer and closer to the happy path, the less the compiler
-complains and the better your code is.
+The first time I strayed from a tutorial, and began trying to write my own Rust
+code, I found myself in a constant struggle with the compiler. At times, it felt
+like you couldn't do anything to get that pesky compiler off your back. This
+experience is common amongst new Rustaceans.
+
+The Rust compiler is incredibly strict, particularly when it comes to managing
+ownership and borrowing. This strictness is what causes the language to be so
+difficult to adopt, but is also the languages greatest strength.
+
+- The core team knows this is an issue, so they've tried extra hard to make the
+  error messages as useful as possible. If you see an error message from the
+  compiler and you don't immediately understand what the issue is, then you need
+  to return to the book or do some research and work on your Rust theory.
+
+- The better you understand Rust's ownership and borrowing model, the less
+  you'll find yourself *fighting with the borrow checker*, and the greater your
+  code quality.
 
 ## Expect to be Challenged
 
@@ -57,7 +68,28 @@ Like any language, Rust will challenge your existing notions, approaches, and
 patterns. But in my career so far, I've yet to encounter a language that has
 challenged my quite as much as Rust has.
 
+- Many approaches and design patterns that are totally acceptable on other
+  languages, aren't allowed in Rust. This can be a frustrating experience,
+  because at times you may find yourself questioning: well why the hell not?
+  
+- ECS
+- AnyMap
+
 ## Love the Little Things
+
+You've almost certainly been lambasted with all the great things that Rust will
+do for you at this point. From memory safety, to performance, to preventing race
+conditions. But the things that really keep me interested in Rust are the little
+things. 
+
+### Enums & Pattern Matching
+
+```rust
+enum Colour {
+    HSL { hue: f32, saturation: f32, lightness: f32 },
+    RGB { red: u8, green: u8, blue: u8 },
+}
+```
 
 -   Rust has a powerful module/crate system. Leverage it to organise your code,
     and prevent any one thing from growing to large, too quickly.

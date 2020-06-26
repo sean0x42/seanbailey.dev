@@ -6,7 +6,7 @@ export default createTheme({
   white: '#ffffff',
   black: 'hsl(220, 35%, 9%)',
 
-  primary: 'hsl(359, 90%, 66%)',
+  primary: 'hsl(275, 95%, 64%)',
 
   grey90: 'hsl(220, 28%, 15%)',
   grey80: 'hsl(220, 25%, 20%)',
