@@ -3,35 +3,25 @@
 import { style } from 'treat'
 import { snap } from '../app/constants'
 
-export const logo = style({
+export const logo = style(theme => ({
   // Display
   display: 'flex',
   alignItems: 'flex-start',
   flexDirection: 'column',
 
   // Typography
+  color: theme.typeColourStrong,
+  fontSize: '30px',
+  fontWeight: 650,
   textDecoration: 'none',
-})
-
-export const svg = style((theme) => ({
-  // Box model
-  width: '260px',
-  margin: '0.5rem 0',
-
-  // Typography
-  lineHeight: 1,
-  verticalAlign: 'middle',
 
   // Visuals
-  fill: theme.typeColourStrong,
-  transition: 'fill 300ms',
+  transition: 'color 300ms',
   transitionTimingFunction: snap,
 
-  selectors: {
-    [`${logo}:hover &`]: {
-      fill: theme.primary,
-    },
-  },
+  ':hover': {
+    color: theme.primary,
+  }
 }))
 
 export const subheading = style((theme) => ({

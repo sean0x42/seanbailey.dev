@@ -16,6 +16,7 @@ globalStyle('p, ol, ul, figcaption', {
 export const layout = style((theme) => ({
   // Box model
   minHeight: '100vh',
+  paddingTop: 1,
 
   // Visual
   backgroundColor: theme.black,
