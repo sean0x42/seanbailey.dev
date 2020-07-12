@@ -1,7 +1,7 @@
 /** @format */
 
 import { style } from 'treat'
-import { snap } from '../app/constants'
+import { snap } from '../../app/constants'
 
 export const wrapper = style((theme) => ({
   // Positioning

@@ -18,10 +18,6 @@ export const logo = style(theme => ({
   // Visuals
   transition: 'color 300ms',
   transitionTimingFunction: snap,
-
-  ':hover': {
-    color: theme.primary,
-  }
 }))
 
 export const subheading = style((theme) => ({

@@ -5,12 +5,15 @@ import { useStyles } from 'react-treat'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { FluidImage } from '../app/types'
-import * as styleRefs from './Article.treat'
+import * as styleRefs from './Project.treat'
 
 import Figure from './Article/Figure'
-import Header from './Article/Header'
+import Header from './Project/Header'
+import Logo from './Project/Logo'
+import Overview from './Project/Overview'
 import SEO from './SEO'
-import ThanksForReading from './Article/ThanksForReading'
+import TwoColumns from './Project/TwoColumns'
+import ThreeColumns from './Project/ThreeColumns'
 import Wrapper from './Wrapper'
 
 interface ComponentMap {
@@ -19,9 +22,12 @@ interface ComponentMap {
 
 const components: ComponentMap = {
   Figure,
+  Overview,
+  TwoColumns,
+  ThreeColumns,
 }
 
-interface ArticleProps {
+interface ProjectProps {
   coverImage: FluidImage
   title: string
   date: string
@@ -29,24 +35,23 @@ interface ArticleProps {
   body: string
 }
 
-function Article(props: ArticleProps) {
+function Project(props: ProjectProps) {
   const styles = useStyles(styleRefs)
 
   return (
     <article>
       <SEO title={props.title} description={props.excerpt} />
 
-      <Wrapper className={styles.article}>
+      <Wrapper className={styles.project}>
+        <Logo image={props.coverImage} />
         <Header {...props} />
 
         <MDXProvider components={components}>
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>
-
-        <ThanksForReading />
       </Wrapper>
     </article>
   )
 }
 
-export default Article
+export default Project

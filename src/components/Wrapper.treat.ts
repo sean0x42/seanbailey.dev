@@ -6,7 +6,7 @@ export const wrapper = style((theme) => ({
   // Box model
   margin: '0 auto',
   width: '100%',
-  maxWidth: '120ch',
+  maxWidth: '1350px',
   padding: '1.5rem',
 
   // Typography

@@ -2,14 +2,13 @@
 
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Project } from '../app/types'
+import { Project as ProjectModel } from '../app/types'
 
+import Project from '../components/Project'
 import Layout from '../components/Layout'
-import Article from '../components/Article'
-import ThanksForReading from '../components/ThanksForReading'
 
 type Data = {
-  mdx: Project
+  mdx: ProjectModel
 }
 
 interface ContainerProps {
@@ -23,23 +22,12 @@ function Container(props: ContainerProps) {
 
   return (
     <Layout>
-      <Article
+      <Project
         coverImage={project.frontmatter.cover}
         title={project.frontmatter.title}
         date={`${startDate}—${endDate}`}
         excerpt={project.excerpt}
         body={project.body}
-        footerComponent={
-          <ThanksForReading
-            link="/projects"
-            body={
-              <>
-                If you liked that project, why not check out some of my other
-                work? I create mostly for the web and desktop.
-              </>
-            }
-          />
-        }
       />
     </Layout>
   )

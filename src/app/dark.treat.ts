@@ -4,9 +4,9 @@ import { createTheme } from 'treat'
 
 export default createTheme({
   white: '#ffffff',
-  black: 'hsl(220, 6%, 9%)',
+  black: 'hsl(220, 4%, 8%)',
 
-  primary: 'hsl(0, 95%, 64%)',
+  primary: 'hsl(0, 90%, 64%)',
 
   grey90: 'hsl(220, 16%, 15%)',
   grey80: 'hsl(220, 15%, 20%)',

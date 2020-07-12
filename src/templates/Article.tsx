@@ -5,9 +5,8 @@ import { graphql } from 'gatsby'
 
 import { Article as ArticleModel } from '../app/types'
 
-import ThanksForReading from '../components/ThanksForReading'
-import Layout from '../components/Layout'
 import Article from '../components/Article'
+import Layout from '../components/Layout'
 
 type Data = {
   mdx: ArticleModel
@@ -28,17 +27,6 @@ function Container(props: ContainerProps) {
         date={article.frontmatter.date}
         excerpt={article.excerpt}
         body={article.body}
-        footerComponent={
-          <ThanksForReading
-            link="/articles"
-            body={
-              <>
-                If you liked that article, why not check out some of my other
-                work? I write mostly about design and programming.
-              </>
-            }
-          />
-        }
       />
     </Layout>
   )
