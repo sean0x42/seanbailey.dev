@@ -12,7 +12,6 @@ import Columns from './Project/Columns'
 import Figure from './Article/Figure'
 import Header from './Project/Header'
 import Logo from './Project/Logo'
-import Overview from './Project/Overview'
 import SEO from './SEO'
 import ThanksForReading from './Project/ThanksForReading'
 import ThreeColumns from './Project/ThreeColumns'
@@ -27,7 +26,6 @@ const components: ComponentMap = {
   Column,
   Columns,
   Figure,
-  Overview,
   ThreeColumns,
   TwoColumns,
 }
