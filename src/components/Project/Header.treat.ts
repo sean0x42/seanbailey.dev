@@ -11,6 +11,7 @@ export const title = style({
   position: 'relative',
 
   // Box model
+  marginTop: '0.5rem !important',
   marginBottom: '0.5rem !important',
 })
 

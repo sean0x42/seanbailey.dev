@@ -7,13 +7,16 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { FluidImage } from '../app/types'
 import * as styleRefs from './Project.treat'
 
+import Column from './Project/Column'
+import Columns from './Project/Columns'
 import Figure from './Article/Figure'
 import Header from './Project/Header'
 import Logo from './Project/Logo'
 import Overview from './Project/Overview'
 import SEO from './SEO'
-import TwoColumns from './Project/TwoColumns'
+import ThanksForReading from './Project/ThanksForReading'
 import ThreeColumns from './Project/ThreeColumns'
+import TwoColumns from './Project/TwoColumns'
 import Wrapper from './Wrapper'
 
 interface ComponentMap {
@@ -21,10 +24,12 @@ interface ComponentMap {
 }
 
 const components: ComponentMap = {
+  Column,
+  Columns,
   Figure,
   Overview,
-  TwoColumns,
   ThreeColumns,
+  TwoColumns,
 }
 
 interface ProjectProps {
@@ -43,12 +48,21 @@ function Project(props: ProjectProps) {
       <SEO title={props.title} description={props.excerpt} />
 
       <Wrapper className={styles.project}>
-        <Logo image={props.coverImage} />
-        <Header {...props} />
+        <Columns>
+          <Logo image={props.coverImage} />
+          <Header {...props} />
+        </Columns>
 
         <MDXProvider components={components}>
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>
+
+        <hr />
+        <Columns>
+          <TwoColumns>
+            <ThanksForReading />
+          </TwoColumns>
+        </Columns>
       </Wrapper>
     </article>
   )

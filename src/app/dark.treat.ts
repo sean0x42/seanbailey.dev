@@ -4,19 +4,19 @@ import { createTheme } from 'treat'
 
 export default createTheme({
   white: '#ffffff',
-  black: 'hsl(220, 4%, 8%)',
 
   primary: 'hsl(0, 90%, 64%)',
 
-  grey90: 'hsl(220, 16%, 15%)',
-  grey80: 'hsl(220, 15%, 20%)',
-  grey70: 'hsl(220, 13%, 24%)',
-  grey60: 'hsl(220, 12%, 30%)',
-  grey50: 'hsl(220, 11%, 36%)',
-  grey40: 'hsl(220, 10%, 42%)',
-  grey30: 'hsl(220, 9%, 53%)',
-  grey20: 'hsl(220, 8%, 65%)',
-  grey10: 'hsl(220, 7%, 77%)',
+  black: 'hsl(220, 14%, 10%)',
+  grey90: 'hsl(220, 13%, 15%)',
+  grey80: 'hsl(220, 13%, 20%)',
+  grey70: 'hsl(220, 12%, 24%)',
+  grey60: 'hsl(220, 11%, 30%)',
+  grey50: 'hsl(220, 10%, 36%)',
+  grey40: 'hsl(220, 9%, 42%)',
+  grey30: 'hsl(220, 8%, 53%)',
+  grey20: 'hsl(220, 7%, 65%)',
+  grey10: 'hsl(220, 6%, 77%)',
 
   typeColourStrong: '#ffffff',
   typeColour: 'hsl(220, 12%, 77%)',

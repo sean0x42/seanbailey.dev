@@ -3,7 +3,7 @@
 import { style, globalStyle } from 'treat'
 
 export const wrapper = style({
-  gridColumn: 'span 3',
+  gridColumn: 'span 1',
 })
 
 globalStyle(`${wrapper} *:first-child`, {

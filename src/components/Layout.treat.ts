@@ -30,7 +30,7 @@ function generateSelector(root: string, ...selectors: string[]) {
 globalStyle(
   generateSelector(layout, 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
   (theme) => ({
-    margin: '3rem 0 1.05rem',
+    margin: '3rem 0 1rem',
     color: theme.typeColourStrong,
     lineHeight: 1.15,
   }),
@@ -41,14 +41,23 @@ globalStyle('h1', {
   fontSize: '1.802rem',
 })
 
-globalStyle('h2', { fontSize: '1.602rem' })
-globalStyle('h3', { fontSize: '1.424rem' })
-globalStyle('h4', { fontSize: '1.266rem' })
-globalStyle('h5', { fontSize: '1.125rem' })
+globalStyle('h2', { fontSize: '1.424rem' })
+globalStyle('h3', { fontSize: '1.266rem' })
+globalStyle('h4', { fontSize: '1.125rem' })
+globalStyle('h5', { fontSize: '1.1rem' })
 
-globalStyle(`${layout} .gatsby-resp-image-wrapper`, {
+globalStyle('p', {
+  marginTop: '1.25rem',
+  marginBottom: '1.25rem',
+})
+
+globalStyle('.gatsby-resp-image-wrapper', {
   borderRadius: '3px',
   overflow: 'hidden',
+})
+
+globalStyle('.gatsby-resp-image-wrapper img', {
+  display: 'block',
 })
 
 globalStyle(`${layout} blockquote`, (theme) => ({
