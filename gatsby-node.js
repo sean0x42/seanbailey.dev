@@ -33,6 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       articles: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" }
+          frontmatter: { hidden: { ne: true } }
         }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
@@ -49,6 +50,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       projects: allMdx(
         filter: {
           fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
+          frontmatter: { hidden: { ne: true } }
         }
         sort: { order: DESC, fields: [frontmatter___startDate] }
         limit: 1000

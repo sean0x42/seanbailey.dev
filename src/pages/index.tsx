@@ -59,7 +59,8 @@ export const pageQuery = graphql`
   query {
     articles: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" }
+        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" },
+        frontmatter: { hidden: { ne: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 3
@@ -87,7 +88,8 @@ export const pageQuery = graphql`
     }
     projects: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
+        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" },
+        frontmatter: { hidden: { ne: true } }
       }
       sort: { fields: [frontmatter___startDate], order: DESC }
       limit: 3

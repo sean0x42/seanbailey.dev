@@ -9,7 +9,7 @@ function Intro() {
   const styles = useStyles(styleRefs)
 
   return (
-    <>
+    <React.Fragment>
       <p className={styles.blurb}>
         <strong className={styles.strong}>Hey!</strong> I am a{' '}
         <strong className={styles.strong}>designer and developer</strong>{' '}
@@ -23,7 +23,7 @@ function Intro() {
         </a>
         . Welcome to my home on the web!
       </p>
-    </>
+    </React.Fragment>
   )
 }
 

@@ -11,5 +11,5 @@ export const headingWrapper = style({
 })
 
 export const heading = style({
-  margin: 0,
+  margin: '0 !important',
 })

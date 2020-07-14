@@ -6,10 +6,10 @@ export const wrapper = style({
   gridColumn: 'span 2',
 })
 
-globalStyle(`${wrapper} *:first-child`, {
+globalStyle(`${wrapper} > *:first-child`, {
   marginTop: 0,
 })
 
-globalStyle(`${wrapper} *:last-child`, {
+globalStyle(`${wrapper} > *:last-child`, {
   marginBottom: 0,
 })

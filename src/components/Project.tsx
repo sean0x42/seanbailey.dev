@@ -9,8 +9,8 @@ import * as styleRefs from './Project.treat'
 
 import Column from './Project/Column'
 import Columns from './Project/Columns'
-import Figure from './Article/Figure'
 import Header from './Project/Header'
+import IncompleteWarning from './Project/IncompleteWarning'
 import Logo from './Project/Logo'
 import SEO from './SEO'
 import ThanksForReading from './Project/ThanksForReading'
@@ -25,7 +25,7 @@ interface ComponentMap {
 const components: ComponentMap = {
   Column,
   Columns,
-  Figure,
+  IncompleteWarning,
   ThreeColumns,
   TwoColumns,
 }

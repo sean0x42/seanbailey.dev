@@ -11,8 +11,8 @@ export const logo = style(theme => ({
 
   // Typography
   color: theme.typeColourStrong,
-  fontSize: '30px',
-  fontWeight: 650,
+  fontSize: '26px',
+  fontWeight: 600,
   textDecoration: 'none',
 
   // Visuals

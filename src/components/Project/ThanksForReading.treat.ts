@@ -41,7 +41,6 @@ export const icon = style((theme) => ({
   // Visuals
   background: theme.grey80,
   borderRadius: '50%',
-  transition: 'all 300ms',
 }))
 
 export const iconInner = style({
