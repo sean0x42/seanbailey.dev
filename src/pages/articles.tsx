@@ -23,7 +23,7 @@ function ArticlesPage(props: PageProps<Data>) {
       <SEO title="Articles" />
 
       <Wrapper>
-        <h2>Articles</h2>
+        <h2>All Articles</h2>
         <ArticleCards articles={articles} />
       </Wrapper>
     </Layout>

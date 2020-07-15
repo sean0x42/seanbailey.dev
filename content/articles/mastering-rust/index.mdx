@@ -1,7 +1,6 @@
 ---
 title: Overcoming the Rust Learning Curve
-slug: overcoming-rust-learning-curve
-date: 2020-06-21
+date: 2020-07-15
 cover: './cover.png'
 ---
 
@@ -10,90 +9,51 @@ cover: './cover.png'
 Rust is a brilliant language, offering a rather unique combination of
 performance, safety, and a great community. But for many new comers, Rust is
 also a daunting challenge. The language has a far steeper learning curve than
-say JavaScript or Ruby. But as someone who recently overcame that learning
-curve, I can confidently say that it's not as challenging as it may look from
-the outside.
+say JavaScript or Ruby. In this article, I'd like to take a moment to talk about
+that learning curve, and my experience learning Rust. If you're also new to
+Rust, you may find this article to be a helpful guide for navigating some common
+pitfalls.
 
 > **Note**: This article assumes some knowledge of programming outside of Rust.
 > Skills you've learnt in other languages will transfer well, and make your
 > experience quite a bit smoother. If you're completely new to programming, I
 > suggest you learn some generic programming concepts first.
 
-## Start with the Book
+## It All Starts with the Book
 
-The Rust book is a brilliant resource, written by the members of the Rust core
-team. It covers just about every topic you can imagine, and outlines the
-motivation behind Rust's many design decisions. Don't stress about reading every
-word of every chapter. Just make sure you understand Rust's core
-concepts—especially **ownership and borrowing**.
+I heard a lot of great things about [the Rust book][online] before I started
+programming. It's touted as the be-all-and-end-all resource for learning the
+language, and it's written by members of the Rust core team. It's also 100% free
+and [open source][github], and who could complain about that?
 
-<Figure caption="The front cover of the Rust Book. Source:
-https://nostarch.com/Rust2018">
+[online]: https://doc.rust-lang.org/stable/book/title-page.html
+[github]: https://github.com/rust-lang/book
+
+<Figure caption="Source: https://nostarch.com/Rust2018">
 
 ![Rust Book Front Cover](./Rust2018_front.webp)
 
 </Figure>
 
-If you haven't found the book yet, start there! You can read it [online for
-free][online], purchase it as an [ebook or paperback][paperback], or check out
-the [source code on GitHub][github].
+The book is a brilliant resource, covering just about every topic you could
+imagine—and then some. A word of warning though: don't make the same mistake as
+me, and try to read through the book like a novel. It's just not that kind of
+book. The first few chapters are super valuable (especially the chapter on
+ownership and borrowing), but after that you should really treat it as a kind of
+reference—a reference that tells a story, provides context and warns about
+potential pitfalls.
 
-[online]: https://doc.rust-lang.org/stable/book/title-page.html
-[paperback]: https://nostarch.com/Rust2018
-[github]: https://github.com/rust-lang/book
+## Deciphering the Docs
 
-## Learn to Love the Compiler
+Rust ships with a great documentation tool called rustdoc. It converts the
+docstrings in your code into a powerful web interface
 
-The first time I strayed from a tutorial, and began trying to write my own Rust
-code, I found myself in a constant struggle with the compiler. At times, it felt
-like you couldn't do anything to get that pesky compiler off your back. This
-experience is common amongst new Rustaceans.
+<Figure caption="Source: https://docs.serde.rs/serde_json/">
 
-The Rust compiler is incredibly strict, particularly when it comes to managing
-ownership and borrowing. This strictness is what causes the language to be so
-difficult to adopt, but is also the languages greatest strength.
+![The Rust docs interface](./docs.png)
 
-- The core team knows this is an issue, so they've tried extra hard to make the
-  error messages as useful as possible. If you see an error message from the
-  compiler and you don't immediately understand what the issue is, then you need
-  to return to the book or do some research and work on your Rust theory.
+</Figure>
 
-- The better you understand Rust's ownership and borrowing model, the less
-  you'll find yourself *fighting with the borrow checker*, and the greater your
-  code quality.
+## Resources
 
-## Expect to be Challenged
-
-Like any language, Rust will challenge your existing notions, approaches, and
-patterns. But in my career so far, I've yet to encounter a language that has
-challenged my quite as much as Rust has.
-
-- Many approaches and design patterns that are totally acceptable on other
-  languages, aren't allowed in Rust. This can be a frustrating experience,
-  because at times you may find yourself questioning: well why the hell not?
-  
-- ECS
-- AnyMap
-
-## Love the Little Things
-
-You've almost certainly been lambasted with all the great things that Rust will
-do for you at this point. From memory safety, to performance, to preventing race
-conditions. But the things that really keep me interested in Rust are the little
-things. 
-
-### Enums & Pattern Matching
-
-```rust
-enum Colour {
-    HSL { hue: f32, saturation: f32, lightness: f32 },
-    RGB { red: u8, green: u8, blue: u8 },
-}
-```
-
--   Rust has a powerful module/crate system. Leverage it to organise your code,
-    and prevent any one thing from growing to large, too quickly.
-
--   Rust is a great language that introduces a bunch of great paradigms. The enums
-    in Rust are a real joy to work with, and I love that I can write my own macros
-    that
+https://www.rust-lang.org/learn

@@ -6,14 +6,15 @@ import { PageProps, graphql } from 'gatsby'
 import { ArticleSummary, ProjectSummary, GraphQLNodes } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
 import ArticleCards from '../components/ArticleCards'
-import Wrapper from '../components/Wrapper'
-import Intro from '../components/Intro'
 import ButtonLink from '../components/ButtonLink'
-import * as styles from '../index.treat'
+import DotGrid from '../components/Landing/DotGrid'
+import Intro from '../components/Intro'
+import Layout from '../components/Layout'
 import ProjectCards from '../components/ProjectCards'
+import SEO from '../components/SEO'
+import Wrapper from '../components/Wrapper'
+import * as styles from '../index.treat'
 
 type Data = {
   articles: GraphQLNodes<ArticleSummary>
@@ -30,6 +31,7 @@ function IndexPage(props: PageProps<Data>) {
 
       <Wrapper>
         <Intro />
+        <DotGrid />
       </Wrapper>
 
       <Wrapper>
@@ -59,7 +61,7 @@ export const pageQuery = graphql`
   query {
     articles: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" },
+        fileAbsolutePath: { regex: "/articles/[a-zA-Z0-9_-]+/index.mdx$/" }
         frontmatter: { hidden: { ne: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -88,7 +90,7 @@ export const pageQuery = graphql`
     }
     projects: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" },
+        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
         frontmatter: { hidden: { ne: true } }
       }
       sort: { fields: [frontmatter___startDate], order: DESC }

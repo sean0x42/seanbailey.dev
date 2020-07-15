@@ -4,45 +4,43 @@ import { style } from 'treat'
 import { snap } from '../app/constants'
 
 export const logo = style(theme => ({
-  // Display
-  display: 'flex',
-  alignItems: 'flex-start',
-  flexDirection: 'column',
+  // Positoning
+  position: 'relative',
+
+  // Box model
+  padding: '0.5rem 1rem',
+  marginLeft: '-1rem',
 
   // Typography
   color: theme.typeColourStrong,
-  fontSize: '26px',
+  fontSize: '24px',
   fontWeight: 600,
   textDecoration: 'none',
 
   // Visuals
+  cursor: 'pointer',
   transition: 'color 300ms',
   transitionTimingFunction: snap,
-}))
 
-export const subheading = style((theme) => ({
-  // Box model
-  margin: '0.25rem 0',
+  '::before': {
+    // Positoning
+    position: 'absolute',
+    left: '1rem',
+    right: '1rem',
+    top: '-2rem',
 
-  // Typography
-  color: theme.grey20,
-  fontSize: '19px',
-  fontWeight: 500,
+    // Box model
+    height: '1rem',
 
-  // Visuals
-  transition: 'color 300ms',
+    // Visuals
+    background: theme.grey90,
 
-  '::after': {
-    content: '"_"',
-    animationDirection: 'alternate',
-    animationDuration: '600ms',
-    animationIterationCount: 'infinite',
-    animationName: '@keyframes',
-    animationTimingFunction: 'cubic-bezier(1, 0, 0, 1)',
+    // Misc
+    content: '""',
+    pointerEvents: 'none',
+  },
 
-    '@keyframes': {
-      from: { opacity: 1 },
-      to: { opacity: 0 },
-    },
+  ':hover': {
+    color: theme.primary,
   },
 }))

@@ -5,6 +5,7 @@ import { style } from 'treat'
 export const wrapper = style({
   // Positioning
   position: 'relative',
+  zIndex: 1,
 
   // Box model
   display: 'flex',

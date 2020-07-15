@@ -5,7 +5,7 @@ import { style, globalStyle } from 'treat'
 export const article = style((theme) => ({
   // Box model
   marginTop: '3rem',
-  maxWidth: '70ch !important',
+  maxWidth: '68ch !important',
 
   // Typography
   color: theme.typeColour,

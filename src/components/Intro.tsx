@@ -9,7 +9,7 @@ function Intro() {
   const styles = useStyles(styleRefs)
 
   return (
-    <React.Fragment>
+    <div className={styles.container}>
       <p className={styles.blurb}>
         <strong className={styles.strong}>Hey!</strong> I am a{' '}
         <strong className={styles.strong}>designer and developer</strong>{' '}
@@ -18,12 +18,13 @@ function Intro() {
           className={styles.strong}
           href="https://www.nib.com.au"
           target="_blank"
+          role="noopener noreferer"
         >
           nib
         </a>
-        . Welcome to my home on the web!
+        . Welcome to my home on the web.
       </p>
-    </React.Fragment>
+    </div>
   )
 }
 

@@ -19,6 +19,7 @@
     "@mdx-js/react": "^1.6.5",
     "@types/mdx-js__react": "^1.5.2",
     "@types/react-helmet": "^6.0.0",
+    "@types/rellax": "^1.7.3",
     "gatsby": "^2.22.15",
     "gatsby-image": "^2.4.5",
     "gatsby-plugin-manifest": "^2.4.9",
@@ -38,7 +39,9 @@
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.8",
     "react-helmet": "^6.0.0",
+    "react-rellax-wrapper": "^1.0.4",
     "react-treat": "^1.4.1",
+    "rellax": "^1.12.1",
     "treat": "^1.4.1"
   },
   "devDependencies": {
