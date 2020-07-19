@@ -44,7 +44,7 @@ export const navigationItem = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
-  fontSize: '18px',
+  fontSize: '15px',
   fontWeight: 500,
   textDecoration: 'none',
   lineHeight: 1,
@@ -61,8 +61,12 @@ export const navigationItem = style((theme) => ({
 
   '@media': {
     '(min-width: 550px)': {
+      // Box model
       flexDirection: 'row',
       padding: '0.5rem 1rem',
+
+      // Typography
+      fontSize: '18px',
       lineHeight: 1.6,
     },
   },
