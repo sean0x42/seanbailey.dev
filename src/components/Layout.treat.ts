@@ -17,10 +17,18 @@ export const layout = style((theme) => ({
   // Box model
   minHeight: '100vh',
   paddingTop: 1,
+  paddingBottom: 60,
 
   // Visual
   backgroundColor: theme.black,
   borderBottom: `6px solid ${theme.primary}`,
+  overflowX: 'hidden',
+
+  '@media': {
+    '(min-width: 550px)': {
+      paddingBottom: 0,
+    },
+  },
 }))
 
 function generateSelector(root: string, ...selectors: string[]) {

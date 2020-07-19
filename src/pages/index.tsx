@@ -41,6 +41,9 @@ function IndexPage(props: PageProps<Data>) {
         </div>
 
         <ProjectCards projects={projects} />
+        <ButtonLink to="/projects" className={styles.mobileButton}>
+          View all projects
+        </ButtonLink>
       </Wrapper>
 
       <Wrapper>
@@ -50,6 +53,9 @@ function IndexPage(props: PageProps<Data>) {
         </div>
 
         <ArticleCards articles={articles} />
+        <ButtonLink to="/articles" className={styles.mobileButton}>
+          View all articles
+        </ButtonLink>
       </Wrapper>
     </Layout>
   )

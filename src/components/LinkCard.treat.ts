@@ -10,6 +10,7 @@ export const card = style((theme) => ({
 
   // Box model
   display: 'block',
+  height: '100%',
 
   // Typography
   color: theme.typeColour,
@@ -35,17 +36,24 @@ export const image = style((theme) => ({
 
 export const body = style({
   // Box model
-  padding: '2rem',
+  padding: '1.75rem',
 
   // Visuals
   borderTop: 'none',
   borderRadius: '0 0 3px 3px',
+
+  '@media': {
+    '(min-width: 600px)': {
+      padding: '2rem',
+    }
+  }
 })
 
 export const more = style((theme) => ({
   // Box model
   display: 'flex',
   alignItems: 'center',
+  marginTop: 'auto',
   marginBottom: 0,
 
   // Typography
