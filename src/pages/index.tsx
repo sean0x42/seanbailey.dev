@@ -30,8 +30,17 @@ function IndexPage(props: PageProps<Data>) {
       <SEO title="Sean Bailey" />
 
       <Wrapper>
+        <DotGrid
+          width={3}
+          height={5}
+          position={{ top: '6rem', right: '-6rem' }}
+        />
         <Intro />
-        <DotGrid />
+        <DotGrid
+          width={8}
+          height={4}
+          position={{ bottom: '-18rem', left: '-7rem' }}
+        />
       </Wrapper>
 
       <Wrapper>
