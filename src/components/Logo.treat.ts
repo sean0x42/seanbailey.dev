@@ -33,7 +33,7 @@ export const logo = style((theme) => ({
     height: '1rem',
 
     // Visuals
-    background: theme.grey90,
+    background: theme.grey80,
 
     // Misc
     content: '""',
