@@ -1,3 +1,5 @@
+/** @format */
+
 import { style } from 'treat'
 
 export const image = style((theme) => ({

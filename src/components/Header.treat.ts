@@ -15,7 +15,7 @@ export const wrapper = style({
   paddingBottom: '1rem',
 })
 
-export const banner = style(theme => ({
+export const banner = style((theme) => ({
   // Box model
   display: 'flex',
   alignItems: 'center',
@@ -32,7 +32,7 @@ export const bannerCopy = style({
   margin: 0,
 })
 
-export const bannerIcon = style(theme => ({
+export const bannerIcon = style((theme) => ({
   // Box model
   marginRight: '0.75rem',
 

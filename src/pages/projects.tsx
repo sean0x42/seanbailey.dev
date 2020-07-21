@@ -36,7 +36,7 @@ export const pageQuery = graphql`
   query {
     projects: allMdx(
       filter: {
-        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" },
+        fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
         frontmatter: { hidden: { ne: true } }
       }
       sort: { fields: [frontmatter___startDate], order: DESC }

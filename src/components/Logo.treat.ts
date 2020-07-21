@@ -3,7 +3,7 @@
 import { style } from 'treat'
 import { snap } from '../app/constants'
 
-export const logo = style(theme => ({
+export const logo = style((theme) => ({
   // Positoning
   position: 'relative',
 

@@ -45,8 +45,8 @@ export const body = style({
   '@media': {
     '(min-width: 600px)': {
       padding: '2rem',
-    }
-  }
+    },
+  },
 })
 
 export const more = style((theme) => ({

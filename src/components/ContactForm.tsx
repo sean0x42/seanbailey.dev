@@ -105,7 +105,9 @@ function ContactForm() {
         />
       </div>
 
-      <button type="submit" className={styles.send}>Send Message</button>
+      <button type="submit" className={styles.send}>
+        Send Message
+      </button>
     </form>
   )
 }

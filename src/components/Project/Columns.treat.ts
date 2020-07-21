@@ -1,3 +1,5 @@
+/** @format */
+
 import { style, globalStyle } from 'treat'
 
 export const columns = style({

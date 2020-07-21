@@ -1,3 +1,5 @@
+/** @format */
+
 import { style } from 'treat'
 
 export const desktop = style({
@@ -6,6 +8,6 @@ export const desktop = style({
   '@media': {
     '(min-width: 800px)': {
       display: 'unset',
-    }
-  }
+    },
+  },
 })

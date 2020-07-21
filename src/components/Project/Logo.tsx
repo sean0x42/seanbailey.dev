@@ -15,10 +15,7 @@ function Logo(props: LogoProps) {
   const styles = useStyles(styleRefs)
 
   return (
-    <Img
-      className={styles.image}
-      fluid={props.image.childImageSharp.fluid}
-    />
+    <Img className={styles.image} fluid={props.image.childImageSharp.fluid} />
   )
 }
 
