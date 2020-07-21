@@ -9,7 +9,7 @@ export const navigation = style((theme) => ({
   bottom: 0,
   left: 0,
   right: 0,
-  zIndex: 3,
+  zIndex: 15,
 
   // Box model
   display: 'flex',
@@ -23,7 +23,7 @@ export const navigation = style((theme) => ({
   listStyleType: 'none',
 
   '@media': {
-    '(min-width: 550px)': {
+    '(min-width: 600px)': {
       position: 'relative',
       background: 'none',
     },
@@ -60,7 +60,7 @@ export const navigationItem = style((theme) => ({
   },
 
   '@media': {
-    '(min-width: 550px)': {
+    '(min-width: 600px)': {
       // Box model
       flexDirection: 'row',
       padding: '0.5rem 1rem',
@@ -76,7 +76,7 @@ export const icon = style({
   marginBottom: '0.5rem',
 
   '@media': {
-    '(min-width: 550px)': {
+    '(min-width: 600px)': {
       marginBottom: 0,
       marginRight: '0.5rem',
     },

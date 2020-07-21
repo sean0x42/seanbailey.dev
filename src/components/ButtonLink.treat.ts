@@ -30,7 +30,7 @@ export const button = style((theme) => ({
     transform: 'translateY(-2px)',
 
     // Typography
-    color: theme.typeColourStrong,
+    color: theme.grey90,
 
     // Visuals
     background: theme.primary,

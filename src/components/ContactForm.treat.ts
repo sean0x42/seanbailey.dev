@@ -6,11 +6,11 @@ import { snap } from '../app/constants'
 export const form = style((theme) => ({
   // Box model
   padding: '2rem',
+  maxWidth: 410,
 
   // Visuals
   background: theme.grey90,
   borderRadius: 4,
-  zIndex: 1,
 }))
 
 export const field = style((theme) => ({
@@ -19,7 +19,7 @@ export const field = style((theme) => ({
 
 export const fieldPot = style({
   position: 'absolute',
-  left: '-100%',
+  left: -1000,
   zIndex: -1,
   pointerEvents: 'none',
 })
@@ -77,7 +77,7 @@ export const send = style((theme) => ({
   transitionTimingFunction: snap,
 
   ':hover': {
-    color: theme.typeColourStrong,
+    color: theme.grey90,
     background: theme.primary,
     transform: 'translateY(-2px)',
   },

@@ -20,7 +20,7 @@ export const layout = style((theme) => ({
   paddingBottom: 60,
 
   // Visual
-  backgroundColor: theme.black,
+  backgroundColor: theme.grey100,
   borderBottom: `6px solid ${theme.primary}`,
   overflowX: 'hidden',
 

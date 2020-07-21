@@ -29,8 +29,9 @@ globalStyle(`${headingWrapper} a`, {
 })
 
 export const heading = style({
+  position: 'relative',
   margin: '0 !important',
-  zIndex: 1,
+  zIndex: 0,
 })
 
 export const mobileButton = style({
