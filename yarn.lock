@@ -12504,10 +12504,10 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react-treat@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/react-treat/-/react-treat-1.4.1.tgz#682be7bf63ca9f9b9f45251b7bea253227044b4f"
-  integrity sha512-TumvBGUIc4LqgvE30CfBKBdj6ylPEUpwrZ9XxINF9K7nYqnJXZ1BkzZEENpfV2jAmbXtQ+mM1ej/k05m3bPYGA==
+react-treat@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/react-treat/-/react-treat-1.4.3.tgz#f7c2255f4e92df2c567a1b63310e42acdb6680cd"
+  integrity sha512-abpRTSkKTOwssDwsiIApt4fnAIekrMMEAr/1B+JmwLs1EuXxSTqrKj2jTZqnspq7oEHHE2oHhGXECyq6Oyj4qA==
 
 react@^16.12.0, react@^16.13.0, react@^16.8.0:
   version "16.13.1"
