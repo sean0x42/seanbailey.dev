@@ -23,7 +23,7 @@ export const card = style((theme) => ({
   transitionTimingFunction: snap,
 
   ':hover': {
-    transform: 'translateY(-4px)',
+    transform: 'translateY(-4px) scale(1.005)',
   },
 }))
 

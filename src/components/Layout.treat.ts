@@ -71,7 +71,7 @@ globalStyle('.gatsby-resp-image-wrapper img', {
 globalStyle(`${layout} blockquote`, (theme) => ({
   // Box model
   margin: '2rem 0',
-  paddingLeft: '1.5rem',
+  padding: '0 1.5rem',
 
   // Typography
   color: theme.typeColourLight,

@@ -17,3 +17,8 @@ globalStyle(`${article} a`, (theme) => ({
   color: theme.primary,
   transition: 'color 300ms',
 }))
+
+globalStyle(`${article} strong`, (theme) => ({
+  color: theme.primary,
+  fontWeight: 550,
+}))

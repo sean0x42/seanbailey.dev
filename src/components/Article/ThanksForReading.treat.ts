@@ -5,7 +5,7 @@ import { snap } from '../../app/constants'
 
 export const wrapper = style((theme) => ({
   // Positioning
-  transform: 'translateY(0)',
+  transform: 'translateY(0) scale(1)',
 
   // Box model
   display: 'grid',
@@ -22,11 +22,11 @@ export const wrapper = style((theme) => ({
   // Visuals
   background: theme.grey90,
   borderRadius: '3px',
-  transition: 'all 200ms',
+  transition: 'all 200ms !important',
   transitionTimingFunction: snap,
 
   ':hover': {
-    transform: 'translateY(-3px)',
+    transform: 'translateY(-3px) scale(1.005)',
   },
 }))
 
