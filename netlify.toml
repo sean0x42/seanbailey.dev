@@ -2,6 +2,6 @@
 command = "gatsby build"
 publish = "public/"
 
-[[plugins]]
+# [[plugins]]
 # Disabling because new articles aren't being rendered...
 # package = "netlify-plugin-gatsby-cache"
