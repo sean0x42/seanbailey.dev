@@ -23,6 +23,7 @@ function Container(props: ContainerProps) {
     <Layout>
       <Article
         coverImage={article.frontmatter.cover}
+        attribution={article.frontmatter.attribution}
         title={article.frontmatter.title}
         date={article.frontmatter.date}
         excerpt={article.excerpt}
@@ -49,6 +50,10 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+        attribution {
+          author
+          url
         }
       }
     }

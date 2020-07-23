@@ -4,7 +4,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { useStyles } from 'react-treat'
 
-import { FluidImage } from '../../app/types'
+import { FluidImage, Attribution } from '../../app/types'
 import * as styleRefs from './Header.treat'
 
 interface HeaderProps {

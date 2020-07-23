@@ -3,9 +3,6 @@
 import { style } from 'treat'
 
 export const image = style((theme) => ({
-  // Box model
-  marginBottom: '4rem',
-
   // Visuals
   backgroundColor: theme.grey80,
   borderRadius: '3px',
@@ -27,8 +24,8 @@ export const title = style({
     '(min-width: 600px)': {
       fontSize: '3.052rem',
       lineHeight: '1.15 !important',
-    }
-  }
+    },
+  },
 })
 
 export const date = style((theme) => ({

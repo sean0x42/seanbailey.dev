@@ -22,3 +22,8 @@ globalStyle(`${article} strong`, (theme) => ({
   color: theme.primary,
   fontWeight: 550,
 }))
+
+export const attribution = style((theme) => ({
+  // Typography
+  color: theme.typeColourLight,
+}))

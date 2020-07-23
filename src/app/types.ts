@@ -30,6 +30,11 @@ export interface ArticleSummary {
   }
 }
 
+export interface Attribution {
+  author: string
+  url: string
+}
+
 export interface Article {
   id: string
   body: string
@@ -38,6 +43,7 @@ export interface Article {
     title: string
     date: string
     cover: FluidImage
+    attribution: Attribution | null
   }
 }
 
