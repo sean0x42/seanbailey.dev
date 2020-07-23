@@ -15,8 +15,8 @@ export const columns = style({
 
     '(min-width: 1000px)': {
       gridTemplateColumns: 'repeat(3, 1fr)',
-    }
-  }
+    },
+  },
 })
 
 globalStyle(`${columns} > p`, {

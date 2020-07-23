@@ -15,7 +15,7 @@ export const project = style((theme) => ({
 globalStyle(`${project} hr`, (theme) => ({
   // Box model
   margin: '4rem 0',
-  
+
   // Typography
   color: theme.grey70,
 

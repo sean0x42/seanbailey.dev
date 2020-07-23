@@ -10,8 +10,8 @@ export const wrapper = style({
 
     '(min-width: 1000px)': {
       gridColumn: 'span 3',
-    }
-  }
+    },
+  },
 })
 
 globalStyle(`${wrapper} > *:first-child`, {

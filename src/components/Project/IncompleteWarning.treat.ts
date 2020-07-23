@@ -41,8 +41,8 @@ export const icon = style((theme) => ({
   '@media': {
     '(min-width: 650px)': {
       marginBottom: 0,
-    }
-  }
+    },
+  },
 }))
 
 export const iconInner = style({
