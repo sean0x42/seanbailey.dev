@@ -8,6 +8,7 @@ import { FluidImage } from '../app/types'
 import * as styleRefs from './Project.treat'
 
 import Column from './Project/Column'
+import ColumnSpacer from './Project/ColumnSpacer'
 import Columns from './Project/Columns'
 import Header from './Project/Header'
 import IncompleteWarning from './Project/IncompleteWarning'
@@ -23,6 +24,7 @@ interface ComponentMap {
 }
 
 const components: ComponentMap = {
+  ColumnSpacer,
   Column,
   Columns,
   IncompleteWarning,

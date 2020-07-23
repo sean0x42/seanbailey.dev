@@ -13,11 +13,22 @@ export const project = style((theme) => ({
 }))
 
 globalStyle(`${project} hr`, (theme) => ({
-  margin: '8rem 0',
+  // Box model
+  margin: '4rem 0',
+  
+  // Typography
+  color: theme.grey70,
+
+  // Visuals
   border: 0,
   borderBottom: '4px solid',
   borderBottomColor: 'currentcolor',
-  color: theme.grey70,
+
+  '@media': {
+    '(min-width: 650px)': {
+      margin: '8rem 0',
+    },
+  },
 }))
 
 globalStyle(`${project} a`, (theme) => ({

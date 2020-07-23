@@ -3,7 +3,11 @@
 import { style, globalStyle } from 'treat'
 
 export const wrapper = style({
-  gridColumn: 'span 2',
+  '@media': {
+    '(min-width: 650px)': {
+      gridColumn: 'span 2',
+    },
+  },
 })
 
 globalStyle(`${wrapper} > *:first-child`, {

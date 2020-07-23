@@ -1,16 +1,22 @@
 /** @format */
 
-import { style, globalStyle } from 'treat'
+import { style } from 'treat'
 import { snap } from '../app/constants'
 
 export const form = style((theme) => ({
   // Box model
-  padding: '2rem',
+  padding: '1.5rem',
   maxWidth: 410,
 
   // Visuals
   background: theme.grey90,
   borderRadius: 4,
+
+  '@media': {
+    '(min-width: 650px)': {
+      padding: '2rem',
+    },
+  },
 }))
 
 export const field = style((theme) => ({

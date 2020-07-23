@@ -8,9 +8,7 @@ export const wrapper = style((theme) => ({
   transform: 'translateY(0)',
 
   // Box model
-  display: 'grid',
-  gridTemplateColumns: '48px 1fr',
-  gridGap: '1.5rem',
+  display: 'block',
   alignItems: 'center',
   padding: '1.25rem 2rem',
   marginTop: '4rem',
@@ -28,11 +26,23 @@ export const wrapper = style((theme) => ({
   ':hover': {
     transform: 'translateY(-3px) scale(1.005)',
   },
+
+  '@media': {
+    '(min-width: 650px)': {
+      // Box model
+      display: 'grid',
+      gridTemplateColumns: '48px 1fr',
+      gridGap: '1.5rem',
+    },
+  },
 }))
 
 export const icon = style((theme) => ({
   // Box model
   padding: '0.75rem',
+  width: 48,
+  height: 48,
+  marginBottom: '1rem',
 
   // Typography
   color: theme.primary,
@@ -41,6 +51,12 @@ export const icon = style((theme) => ({
   // Visuals
   background: theme.grey80,
   borderRadius: '50%',
+
+  '@media': {
+    '(min-width: 650px)': {
+      marginBottom: 0,
+    }
+  }
 }))
 
 export const iconInner = style({

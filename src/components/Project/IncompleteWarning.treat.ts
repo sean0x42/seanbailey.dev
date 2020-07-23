@@ -4,9 +4,7 @@ import { style } from 'treat'
 
 export const wrapper = style((theme) => ({
   // Box model
-  display: 'grid',
-  gridTemplateColumns: '48px 1fr',
-  gridGap: '1.5rem',
+  display: 'block',
   alignItems: 'center',
   padding: '1.5rem 2rem',
   marginTop: '2rem',
@@ -14,11 +12,23 @@ export const wrapper = style((theme) => ({
   // Visuals
   background: theme.grey90,
   borderRadius: 3,
+
+  '@media': {
+    '(min-width: 650px)': {
+      // Box model
+      display: 'grid',
+      gridTemplateColumns: '48px 1fr',
+      gridGap: '1.5rem',
+    },
+  },
 }))
 
 export const icon = style((theme) => ({
   // Box model
   padding: '0.75rem',
+  width: 48,
+  height: 48,
+  marginBottom: '1rem',
 
   // Typography
   color: theme.primary,
@@ -27,6 +37,12 @@ export const icon = style((theme) => ({
   // Visuals
   background: theme.grey80,
   borderRadius: '50%',
+
+  '@media': {
+    '(min-width: 650px)': {
+      marginBottom: 0,
+    }
+  }
 }))
 
 export const iconInner = style({
