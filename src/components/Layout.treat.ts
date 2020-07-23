@@ -44,6 +44,21 @@ globalStyle(
   }),
 )
 
+globalStyle(
+  generateSelector(
+    layout,
+    '::selection',
+    '::-moz-selection',
+    '::-o-selection',
+    '::-ms-selection',
+    '::-webkit-selection',
+  ),
+  (theme) => ({
+    backgroundColor: theme.primary,
+    color: theme.grey80,
+  }),
+)
+
 globalStyle('h1', {
   marginTop: 0,
   fontSize: '1.802rem',
@@ -60,7 +75,7 @@ globalStyle('p', {
 })
 
 globalStyle('.gatsby-resp-image-wrapper', {
-  borderRadius: '3px',
+  borderRadius: '4px',
   overflow: 'hidden',
 })
 

@@ -45,7 +45,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         cover {
           childImageSharp {
-            fluid(maxWidth: 900, maxHeight: 400, cropFocus: CENTER) {
+            fluid(maxWidth: 900, maxHeight: 450, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid
             }
           }

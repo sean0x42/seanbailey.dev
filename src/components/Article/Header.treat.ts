@@ -20,7 +20,15 @@ export const title = style({
   margin: '1rem 0',
 
   // Typography
-  fontSize: '3.052rem',
+  fontSize: '2rem',
+  lineHeight: '1.4 !important',
+
+  '@media': {
+    '(min-width: 600px)': {
+      fontSize: '3.052rem',
+      lineHeight: '1.15 !important',
+    }
+  }
 })
 
 export const date = style((theme) => ({
