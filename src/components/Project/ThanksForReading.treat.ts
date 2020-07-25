@@ -24,7 +24,7 @@ export const wrapper = style((theme) => ({
   transitionTimingFunction: snap,
 
   ':hover': {
-    transform: 'translateY(-3px) scale(1.005)',
+    transform: 'translateY(-3px)',
   },
 
   '@media': {
