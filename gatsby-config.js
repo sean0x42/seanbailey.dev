@@ -50,13 +50,30 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        stripMetadata: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
           include: /assets/,
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Sean Bailey',
+        short_name: 'seanbailey',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#663399',
+        theme_color: '#663399',
+        icon: 'src/images/favicon.png',
       },
     },
   ],
