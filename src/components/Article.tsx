@@ -33,9 +33,17 @@ interface ArticleProps {
 function Article(props: ArticleProps) {
   const styles = useStyles(styleRefs)
 
+  const meta = []
+  if (props.coverImage.publicURL) {
+    meta.push({
+      name: 'og:image',
+      content: props.coverImage.publicURL,
+    })
+  }
+
   return (
     <article>
-      <SEO title={props.title} description={props.excerpt} />
+      <SEO title={props.title} description={props.excerpt} meta={meta} />
 
       <Wrapper className={styles.article}>
         <Header {...props} />

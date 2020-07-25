@@ -7,6 +7,7 @@ export interface GraphQLNodes<T> {
 }
 
 export interface FluidImage {
+  publicURL?: string
   childImageSharp: {
     fluid: FluidObject
   }
