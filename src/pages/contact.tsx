@@ -13,7 +13,6 @@ const ContactPage = () => (
 
     <Wrapper>
       <h1>Contact</h1>
-
       <ContactForm />
     </Wrapper>
   </Layout>

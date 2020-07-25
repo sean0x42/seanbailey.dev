@@ -18,6 +18,7 @@ export const card = style((theme) => ({
 
   // Visuals
   background: theme.grey90,
+  borderRadius: 4,
   cursor: 'pointer',
   transition: 'transform 200ms, color 300ms, background-color 300ms',
   transitionTimingFunction: snap,

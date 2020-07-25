@@ -8,8 +8,6 @@ import { flattenNodes } from '../helpers/graphql'
 
 import ArticleCards from '../components/ArticleCards'
 import ButtonLink from '../components/ButtonLink'
-import Desktop from '../components/Desktop'
-import DotGrid from '../components/Landing/DotGrid'
 import Intro from '../components/Intro'
 import Layout from '../components/Layout'
 import ProjectCards from '../components/ProjectCards'
@@ -31,19 +29,7 @@ function IndexPage(props: PageProps<Data>) {
       <SEO title="Sean Bailey" />
 
       <Wrapper>
-        <Desktop>
-          <DotGrid
-            width={3}
-            height={5}
-            position={{ top: '6rem', right: '-6rem' }}
-          />
-        </Desktop>
         <Intro />
-        <DotGrid
-          width={8}
-          height={4}
-          position={{ bottom: '-18rem', left: '-7rem' }}
-        />
       </Wrapper>
 
       <Wrapper>

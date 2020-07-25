@@ -22,9 +22,14 @@ const Container: FunctionComponent = (props) => {
 
   return (
     <div className={styles.layout}>
-      <Helmet>
-        <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
-      </Helmet>
+      <Helmet
+        link={[
+          {
+            rel: 'stylesheet',
+            href: 'https://rsms.me/inter/inter.css',
+          },
+        ]}
+      />
 
       <Header />
       <main>{props.children}</main>
