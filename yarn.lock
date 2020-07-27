@@ -11450,10 +11450,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
   integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
-react-treat@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/react-treat/-/react-treat-1.4.3.tgz#f7c2255f4e92df2c567a1b63310e42acdb6680cd"
-  integrity sha512-abpRTSkKTOwssDwsiIApt4fnAIekrMMEAr/1B+JmwLs1EuXxSTqrKj2jTZqnspq7oEHHE2oHhGXECyq6Oyj4qA==
+react-treat@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-treat/-/react-treat-1.5.1.tgz#15ea8a4d5ae532e9367d4dee419caf900faaac55"
+  integrity sha512-j21ZOvfpxhSXrdc2QukIW4T43lXtOn4Bt++lGe8bhzV6BrcXKG6FEDCuUkAx4T3xehtUoPYTtrj3F3J3s59xsw==
 
 react@^16.12.0, react@^16.13.0, react@^16.8.0:
   version "16.13.1"
