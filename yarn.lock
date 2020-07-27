@@ -11437,10 +11437,10 @@ react-refresh@^0.7.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.7.2.tgz#f30978d21eb8cac6e2f2fde056a7d04f6844dd50"
   integrity sha512-u5l7fhAJXecWUJzVxzMRU2Zvw8m4QmDNHlTrT5uo3KBlYBhmChd7syAakBoay1yIiVhx/8Fi7a6v6kQZfsw81Q==
 
-react-rellax-wrapper@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-rellax-wrapper/-/react-rellax-wrapper-1.0.4.tgz#d2dc12c8e0699e02dd5b3be907d06538f30bcdb8"
-  integrity sha512-TqaXEwY9hJsw4abhXLO/wbl4XsHJwuYHkIIH2xMEYIwFSPqhZSazBwMeWIlDFZ3Bj60/KC5II1y5yenYPz+7ZQ==
+react-rellax-wrapper@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-rellax-wrapper/-/react-rellax-wrapper-1.0.5.tgz#e6a3ab7b4346ac4234f3b83e751c28e7ddf7b267"
+  integrity sha512-GV29ZbgVSuus+Djr2b+F/dvNHMTC0to9ce/UqEoPCPz1lBHpjh8mre6xRZGoH9nX7ot8gwtJ+M4r4sGk1E01Eg==
   dependencies:
     react "^16.13.0"
     rellax "^1.12.1"
