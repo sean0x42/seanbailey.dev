@@ -1,4 +1,9 @@
-/* bootstrap database in your FaunaDB account */
+/**
+ * /* bootstrap database in your FaunaDB account
+ *
+ * @format
+ */
+
 const faunadb = require('faunadb')
 const chalk = require('chalk')
 const insideNetlify = insideNetlifyBuildContext()
@@ -8,8 +13,14 @@ console.log(chalk.cyan('Creating your FaunaDB Database...\n'))
 
 // 1. Check for required enviroment variables
 if (!process.env.FAUNADB_SERVER_SECRET) {
-  console.log(chalk.yellow('Required FAUNADB_SERVER_SECRET enviroment variable not found.'))
-  console.log(`Make sure you have created your Fauna databse with "netlify addons:create fauna"`)
+  console.log(
+    chalk.yellow(
+      'Required FAUNADB_SERVER_SECRET enviroment variable not found.',
+    ),
+  )
+  console.log(
+    `Make sure you have created your Fauna databse with "netlify addons:create fauna"`,
+  )
   console.log(`Then run "npm run bootstrap" to setup your database schema`)
   if (insideNetlify) {
     process.exit(1)
@@ -28,22 +39,30 @@ if (process.env.FAUNADB_SERVER_SECRET) {
 function createFaunaDB(key) {
   console.log('Create the fauna database schema!')
   const client = new faunadb.Client({
-    secret: key
+    secret: key,
   })
 
   /* Based on your requirements, change the schema here */
-  return client.query(q.Create(q.Ref('classes'), { name: 'visits' }))
+  return client
+    .query(q.Create(q.Ref('classes'), { name: 'visits' }))
     .then(() => {
       return client.query(
         q.Create(q.Ref('indexes'), {
           name: 'allVisits',
-          source: q.Ref('classes/visits')
-        }))
-    }).catch((e) => {
+          source: q.Ref('classes/visits'),
+        }),
+      )
+    })
+    .catch((e) => {
       // Database already exists
-      if (e.requestResult.statusCode === 400 && e.message === 'instance not unique') {
+      if (
+        e.requestResult.statusCode === 400 &&
+        e.message === 'instance not unique'
+      ) {
         console.log('Fauna already setup! Good to go')
-        console.log('Claim your fauna database with "netlify addons:auth fauna"')
+        console.log(
+          'Claim your fauna database with "netlify addons:auth fauna"',
+        )
         throw e
       }
     })
