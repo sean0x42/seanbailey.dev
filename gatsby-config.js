@@ -72,9 +72,10 @@ module.exports = {
         start_url: '/',
         display: 'standalone',
         background_color: '#663399',
-        theme_color: '#663399',
+        theme_color: '#101114',
         icon: 'src/images/favicon.png',
       },
     },
+    'gatsby-plugin-catch-links',
   ],
 }

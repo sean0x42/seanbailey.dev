@@ -2,16 +2,34 @@
  * @format
  */
 
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import { TreatProvider, useStyles } from 'react-treat'
 import { Helmet } from 'react-helmet'
-import '../../node_modules/modern-normalize/modern-normalize.css'
+import { useLocation } from '@reach/router'
 
 import darkTheme from '../app/dark.treat'
+import { useSessionId } from '../helpers/session'
 
 import Header from './Header'
 import * as styleRefs from './Layout.treat'
 import Footer from './Footer'
+
+interface Visit {
+  url: string
+  params: string | null
+  session: string
+  visitedAt: number
+}
+
+function recordVisit(visit: Visit) {
+  fetch('/.netlify/functions/visitsCreate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(visit),
+  }).catch(console.error)
+}
 
 /**
  * Layout container
@@ -19,6 +37,19 @@ import Footer from './Footer'
  */
 const Container: FunctionComponent = (props) => {
   const styles = useStyles(styleRefs)
+  const location = useLocation()
+  const sessionId = useSessionId()
+
+  useEffect(() => {
+    const visit: Visit = {
+      url: location.pathname,
+      params: location.search === '' ? null : location.search,
+      session: sessionId,
+      visitedAt: Date.now(),
+    }
+
+    recordVisit(visit)
+  }, [sessionId])
 
   return (
     <div className={styles.layout}>
