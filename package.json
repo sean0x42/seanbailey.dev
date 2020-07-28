@@ -45,7 +45,8 @@
     "react-rellax-wrapper": "^1.0.4",
     "react-treat": "^1.4.3",
     "rellax": "^1.12.1",
-    "treat": "^1.4.3"
+    "treat": "^1.4.3",
+    "whatwg-fetch": "^3.2.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",

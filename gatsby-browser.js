@@ -7,3 +7,4 @@
  */
 
 import './src/assets/fonts.css'
+import 'whatwg-fetch'
