@@ -15,11 +15,11 @@ exports.handler = async (event) => {
 
   return client
     .query(q.Create(q.Collection('visits'), visit))
-    .then((response) => {
+    .then(() => {
       console.log('Success')
       return {
         statusCode: 200,
-        body: JSON.stringify(response),
+        body: 'Ok',
       }
     })
     .catch((error) => {

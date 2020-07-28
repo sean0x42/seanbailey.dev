@@ -7,4 +7,5 @@
  */
 
 import './src/assets/fonts.css'
+import './node_modules/modern-normalize/modern-normalize.css'
 import 'whatwg-fetch'
