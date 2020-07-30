@@ -48,6 +48,12 @@ const Container: FunctionComponent = (props) => {
       visitedAt: Date.now(),
     }
 
+    // Do not actually record page visits in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Page visit', visit)
+      return
+    }
+
     recordVisit(visit)
   }, [sessionId])
 
