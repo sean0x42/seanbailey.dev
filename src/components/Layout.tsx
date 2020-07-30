@@ -45,7 +45,6 @@ const Container: FunctionComponent = (props) => {
       url: location.pathname,
       params: location.search === '' ? null : location.search,
       session: sessionId,
-      visitedAt: Date.now(),
     }
 
     // Do not actually record page visits in development
