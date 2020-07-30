@@ -46,6 +46,7 @@ export const body = style({
   '@media': {
     '(min-width: 600px)': {
       padding: '2rem',
+      paddingBottom: '3.75rem',
     },
   },
 })
@@ -67,6 +68,14 @@ export const more = style((theme) => ({
   selectors: {
     [`${card}:hover &`]: {
       color: theme.primary,
+    },
+  },
+
+  '@media': {
+    '(min-width: 600px)': {
+      // Positioning
+      position: 'absolute',
+      bottom: '2rem',
     },
   },
 }))
