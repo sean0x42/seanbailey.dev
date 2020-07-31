@@ -14,7 +14,7 @@ function ThanksPage() {
 
       <Wrapper>
         <h1>Thanks!</h1>
-        <p>Your message has been passed on. I'll be in touch shortly.</p>
+        <p>You've now been subscribed to my mailing list.</p>
         <ButtonLink to="/">Return home</ButtonLink>
       </Wrapper>
     </Layout>

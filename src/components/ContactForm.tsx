@@ -5,12 +5,7 @@ import { navigate } from 'gatsby'
 import { useStyles } from 'react-treat'
 
 import * as styleRefs from './ContactForm.treat'
-
-function formEncode(data: {}) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+import { formEncode } from '../helpers/form'
 
 function ContactForm() {
   const [state, setState] = useState({})
