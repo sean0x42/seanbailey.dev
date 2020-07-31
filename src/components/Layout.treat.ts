@@ -96,6 +96,25 @@ globalStyle(`${layout} blockquote`, (theme) => ({
   borderLeft: `4px solid ${theme.primary}`,
 }))
 
+globalStyle(`${layout} hr`, (theme) => ({
+  // Box model
+  margin: '4rem 0',
+
+  // Typography
+  color: theme.grey70,
+
+  // Visuals
+  border: 0,
+  borderBottom: '4px solid',
+  borderBottomColor: 'currentcolor',
+
+  '@media': {
+    '(min-width: 650px)': {
+      margin: '8rem 0',
+    },
+  },
+}))
+
 globalStyle(`${layout} code`, (theme) => ({
   // Box model
   padding: '2px 6px',

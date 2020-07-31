@@ -7,6 +7,8 @@ import { Article as ArticleModel } from '../app/types'
 
 import Article from '../components/Article'
 import Layout from '../components/Layout'
+import SubscribeForm from '../components/SubscribeForm'
+import Wrapper from '../components/Wrapper'
 
 type Data = {
   mdx: ArticleModel
@@ -29,6 +31,11 @@ function Container(props: ContainerProps) {
         excerpt={article.excerpt}
         body={article.body}
       />
+
+      <Wrapper>
+        <hr />
+        <SubscribeForm />
+      </Wrapper>
     </Layout>
   )
 }

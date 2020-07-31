@@ -6,7 +6,7 @@ import { snap } from '../app/constants'
 export const form = style((theme) => ({
   // Box model
   padding: '2rem',
-  marginTop: '3rem',
+  marginTop: '4rem',
 
   // Visuals
   background: theme.grey90,

@@ -6,10 +6,11 @@ import { PageProps, graphql } from 'gatsby'
 import { ArticleSummary, GraphQLNodes } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
+import ArticleCards from '../components/ArticleCards'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
+import SubscribeForm from '../components/SubscribeForm'
 import Wrapper from '../components/Wrapper'
-import ArticleCards from '../components/ArticleCards'
 
 type Data = {
   articles: GraphQLNodes<ArticleSummary>
@@ -25,6 +26,10 @@ function ArticlesPage(props: PageProps<Data>) {
       <Wrapper>
         <h1>Articles</h1>
         <ArticleCards articles={articles} />
+
+        <hr />
+
+        <SubscribeForm />
       </Wrapper>
     </Layout>
   )

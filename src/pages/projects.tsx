@@ -7,9 +7,10 @@ import { GraphQLNodes, ProjectSummary } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
 import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import Wrapper from '../components/Wrapper'
 import ProjectCards from '../components/ProjectCards'
+import SEO from '../components/SEO'
+import SubscribeForm from '../components/SubscribeForm'
+import Wrapper from '../components/Wrapper'
 
 type Data = {
   projects: GraphQLNodes<ProjectSummary>
@@ -25,6 +26,10 @@ function ProjectsPage(props: PageProps<Data>) {
       <Wrapper>
         <h1>Projects</h1>
         <ProjectCards projects={projects} />
+
+        <hr />
+
+        <SubscribeForm />
       </Wrapper>
     </Layout>
   )

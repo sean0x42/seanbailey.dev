@@ -55,9 +55,8 @@ function IndexPage(props: PageProps<Data>) {
         <ButtonLink to="/articles" className={styles.mobileButton}>
           View all articles
         </ButtonLink>
-      </Wrapper>
 
-      <Wrapper>
+        <hr />
         <SubscribeForm />
       </Wrapper>
     </Layout>
