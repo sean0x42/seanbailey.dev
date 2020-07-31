@@ -12,6 +12,7 @@ import Header from './Article/Header'
 import SEO from './SEO'
 import ThanksForReading from './Article/ThanksForReading'
 import Wrapper from './Wrapper'
+import Youtube from './Article/Youtube'
 
 interface ComponentMap {
   [name: string]: FunctionComponent<any>
@@ -19,6 +20,7 @@ interface ComponentMap {
 
 const components: ComponentMap = {
   Figure,
+  Youtube
 }
 
 interface ArticleProps {
