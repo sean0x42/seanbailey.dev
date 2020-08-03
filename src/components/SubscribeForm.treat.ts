@@ -89,7 +89,7 @@ export const input = style((theme) => ({
 
   '@media': {
     '(min-width: 650px)': {
-  background: 'none',
+      background: 'none',
     },
   },
 }))
