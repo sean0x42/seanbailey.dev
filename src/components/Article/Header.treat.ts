@@ -5,7 +5,7 @@ import { style } from 'treat'
 export const image = style((theme) => ({
   // Visuals
   backgroundColor: theme.grey80,
-  borderRadius: '3px',
+  borderRadius: 3,
   transition: 'background-color 300ms',
 }))
 
@@ -18,7 +18,7 @@ export const title = style({
 
   // Typography
   fontSize: '2rem',
-  lineHeight: '1.4 !important',
+  lineHeight: '1.2 !important',
 
   '@media': {
     '(min-width: 600px)': {

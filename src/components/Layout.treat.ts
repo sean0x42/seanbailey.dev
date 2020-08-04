@@ -75,7 +75,7 @@ globalStyle('p', {
 })
 
 globalStyle('.gatsby-resp-image-wrapper', {
-  borderRadius: '4px',
+  borderRadius: 3,
   overflow: 'hidden',
 })
 
