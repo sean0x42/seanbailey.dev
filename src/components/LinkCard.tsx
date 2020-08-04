@@ -3,8 +3,9 @@
 import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
-import Img, { FluidObject } from 'gatsby-image'
+import { FluidObject } from 'gatsby-image'
 
+import Card from './Card'
 import { ChevronRight } from 'react-feather'
 import * as styleRefs from './LinkCard.treat'
 
@@ -18,21 +19,19 @@ interface LinkCardProps {
 const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
   const styles = useStyles(styleRefs)
 
-  const classes = [styles.card]
+  const classes = [styles.link]
   props.className && classes.push(props.className)
 
   return (
     <Link to={props.to} className={classes.join(' ')}>
-      <Img fluid={props.fluidImage} className={styles.image} />
-
-      <div className={styles.body}>
+      <Card image={props.fluidImage}>
         {props.children}
 
         <p className={styles.more}>
           {props.moreCopy}
           <ChevronRight />
         </p>
-      </div>
+      </Card>
     </Link>
   )
 }

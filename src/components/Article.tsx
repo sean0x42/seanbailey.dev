@@ -47,7 +47,7 @@ function Article(props: ArticleProps) {
     <article>
       <SEO title={props.title} description={props.excerpt} meta={meta} />
 
-      <Wrapper className={styles.article}>
+      <Wrapper thin className={styles.article}>
         <Header {...props} />
 
         <MDXProvider components={components}>

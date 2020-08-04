@@ -10,6 +10,7 @@ export const video = style({
   '@media': {
     '(min-width: 600px)': {
       margin: '2rem 0',
+      height: 450,
       maxWidth: '100%',
 
       // Visuals

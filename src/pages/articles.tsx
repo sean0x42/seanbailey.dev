@@ -9,7 +9,6 @@ import { flattenNodes } from '../helpers/graphql'
 import ArticleCards from '../components/ArticleCards'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import SubscribeForm from '../components/SubscribeForm'
 import Wrapper from '../components/Wrapper'
 
 type Data = {
@@ -26,10 +25,6 @@ function ArticlesPage(props: PageProps<Data>) {
       <Wrapper>
         <h1>Articles</h1>
         <ArticleCards articles={articles} />
-
-        <hr />
-
-        <SubscribeForm />
       </Wrapper>
     </Layout>
   )

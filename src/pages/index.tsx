@@ -12,7 +12,6 @@ import Intro from '../components/Intro'
 import Layout from '../components/Layout'
 import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO'
-import SubscribeForm from '../components/SubscribeForm'
 import Wrapper from '../components/Wrapper'
 import * as styles from '../index.treat'
 
@@ -55,9 +54,6 @@ function IndexPage(props: PageProps<Data>) {
         <ButtonLink to="/articles" className={styles.mobileButton}>
           View all articles
         </ButtonLink>
-
-        <hr />
-        <SubscribeForm />
       </Wrapper>
     </Layout>
   )
