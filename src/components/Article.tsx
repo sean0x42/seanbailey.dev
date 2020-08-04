@@ -56,7 +56,7 @@ function Article(props: ArticleProps) {
 
         <ThanksForReading />
 
-        {props.attribution !== null && (
+        {props.attribution && (
           <p className={styles.attribution}>
             Cover image by{' '}
             <a

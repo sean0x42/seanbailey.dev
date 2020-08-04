@@ -2,32 +2,31 @@
 
 import React from 'react'
 import { useStyles } from 'react-treat'
-import { Link } from 'gatsby'
 import { Award, ChevronRight } from 'react-feather'
 
 import * as styleRefs from './ThanksForReading.treat'
+import SubscribeForm from '../SubscribeForm'
 
 function ThanksForReading() {
   const styles = useStyles(styleRefs)
 
   return (
-    <Link to="/articles" className={styles.wrapper}>
+    <div className={styles.wrapper}>
       <div className={styles.icon}>
         <Award className={styles.iconInner} />
       </div>
 
       <div>
-        <h2 className={styles.heading}>Thanks for reading!</h2>
+        <h2 className={styles.heading}>Thanks for reading</h2>
         <p className={styles.copy}>
-          If you liked that article, why not check out some of my other work? I
+          If you liked that article, why not subscribe to my mailing list? I
           write mostly about design and programming.
         </p>
-        <p className={styles.seeMore}>
-          See more
-          <ChevronRight />
-        </p>
+        <p className={styles.highlight}>100% spam and tracker free!</p>
       </div>
-    </Link>
+
+      <SubscribeForm />
+    </div>
   )
 }
 

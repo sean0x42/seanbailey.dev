@@ -8,7 +8,7 @@ import { FluidImage, Attribution } from '../../app/types'
 import * as styleRefs from './Header.treat'
 
 interface HeaderProps {
-  coverImage: FluidImage
+  coverImage?: FluidImage
   title: string
   date: string
 }
@@ -18,12 +18,15 @@ function Header(props: HeaderProps) {
 
   return (
     <div>
-      <Img
-        className={styles.image}
-        fluid={props.coverImage.childImageSharp.fluid}
-      />
+      {props.coverImage && (
+        <Img
+          className={styles.image}
+          fluid={props.coverImage.childImageSharp.fluid}
+        />
+      )}
+
       <h1 className={styles.title}>{props.title}</h1>
-      <p className={styles.date}>{props.date}</p>
+      {props.date && <p className={styles.date}>{props.date}</p>}
     </div>
   )
 }

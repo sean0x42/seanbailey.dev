@@ -8,8 +8,14 @@ export const article = style((theme) => ({
 
   // Typography
   color: theme.typeColour,
-  fontSize: '21px',
+  fontSize: 19,
   transition: 'color 300ms',
+
+  '@media': {
+    '(min-width: 430px)': {
+      fontSize: 21,
+    },
+  },
 }))
 
 globalStyle(`${article} a`, (theme) => ({

@@ -1,31 +1,38 @@
 /** @format */
 
 import { style } from 'treat'
-import { snap } from '../../app/constants'
 
 export const wrapper = style((theme) => ({
-  // Positioning
-  transform: 'translateY(0) scale(1)',
-
   // Box model
-  display: 'block',
-  alignItems: 'center',
-  padding: '1.25rem 2rem',
+  padding: '1.5rem',
   marginTop: '2rem',
-
-  // Typography
-  color: theme.typeColour,
-  textDecoration: 'none',
 
   // Visuals
   background: theme.grey90,
   borderRadius: '3px',
-  transition: 'all 200ms !important',
-  transitionTimingFunction: snap,
 
-  ':hover': {
-    transform: 'translateY(-3px)',
+  '@media': {
+    '(min-width: 600px)': {
+      padding: '2rem',
+    },
+
+    '(min-width: 650px)': {
+      display: 'grid',
+      alignItems: 'center',
+      gridTemplateColumns: '48px 1fr',
+      gridGap: '2rem 1.5rem',
+    },
   },
+}))
+
+export const wrapperOld = style((theme) => ({
+  // Box model
+  display: 'block',
+  alignItems: 'center',
+
+  // Typography
+  color: theme.typeColour,
+  textDecoration: 'none',
 
   '@media': {
     '(min-width: 650px)': {
@@ -102,4 +109,13 @@ export const seeMore = style((theme) => ({
       color: theme.primary,
     },
   },
+}))
+
+export const highlight = style((theme) => ({
+  // Box model
+  margin: 0,
+
+  // Typography
+  color: theme.primary,
+  fontWeight: 500,
 }))

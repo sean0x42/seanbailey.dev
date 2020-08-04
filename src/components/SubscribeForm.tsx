@@ -45,33 +45,19 @@ function SubscribeForm() {
       action="/thanks"
       onSubmit={handleSubmit}
     >
-      <div className={styles.icon}>
-        <Mail />
-      </div>
+      <input
+        className={styles.input}
+        type="email"
+        name="email"
+        id="email"
+        placeholder="someone@example.com"
+        required
+        onChange={handleChange}
+      />
 
-      <div>
-        <h2 className={styles.title}>Get Notified!</h2>
-        <p className={styles.copy}>
-          Any time I publish an article or create a project, I'll send you an
-          email to let you know.{' '}
-          <span className={styles.highlight}>100% spam and tracker free!</span>
-        </p>
-      </div>
-
-      <div className={styles.inputWrapper}>
-        <input
-          className={styles.input}
-          type="email"
-          name="email"
-          id="email"
-          placeholder="someone@example.com"
-          required
-          onChange={handleChange}
-        />
-        <button className={styles.send} type="submit">
-          Subscribe
-        </button>
-      </div>
+      <button className={styles.send} type="submit">
+        Subscribe
+      </button>
     </form>
   )
 }
