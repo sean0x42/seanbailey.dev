@@ -23,6 +23,7 @@ export const input = style((theme) => ({
   // Box model
   padding: '0.75rem 1rem',
   marginBottom: '1rem',
+  width: '100%',
 
   // Typography
   fontSize: 19,
@@ -39,6 +40,7 @@ export const input = style((theme) => ({
 
   '@media': {
     '(min-width: 650px)': {
+      width: '30ch',
       marginRight: '0.75rem',
       marginBottom: 0,
     },

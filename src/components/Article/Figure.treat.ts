@@ -18,7 +18,7 @@ export const caption = style((theme) => ({
 
   // Typography
   color: theme.typeColourLight,
-  fontSize: 16,
+  fontSize: 19,
 
   '@media': {
     '(min-width: 600px)': {
