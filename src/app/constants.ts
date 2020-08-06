@@ -2,4 +2,4 @@
 
 export const snap = 'cubic-bezier(.08, .82, .17, 1)'
 
-export const locationApiBaseUrl = 'http://ip-api.com/'
+export const locationApiBaseUrl = 'https://ip-api.com/'

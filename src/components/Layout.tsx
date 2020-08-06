@@ -26,14 +26,15 @@ const Container: FunctionComponent = (props) => {
 
   return (
     <div className={styles.layout}>
-      <Helmet
-        link={[
-          {
-            rel: 'stylesheet',
-            href: 'https://rsms.me/inter/inter.css',
-          },
-        ]}
-      />
+      <Helmet>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <script
+          async
+          defer
+          data-domain="seanbailey.dev"
+          src="https://plausible.io/js/plausible.js"
+        ></script>
+      </Helmet>
 
       <Header />
       <main>{props.children}</main>

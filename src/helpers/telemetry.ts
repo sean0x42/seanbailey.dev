@@ -60,7 +60,15 @@ export async function recordSession() {
   }
 
   isSessionRecorded = true
-  const { country, region } = await fetchApproximateLocation()
+
+  const approxLocation = await fetchApproximateLocation()
+  let country = undefined
+  let region = undefined
+  if (approxLocation !== null) {
+    country = approxLocation.country
+    region = approxLocation.region
+  }
+
   const sessionId = useSessionId()
 
   const session: Session = {
@@ -69,7 +77,6 @@ export async function recordSession() {
     width: window.innerWidth,
     country,
     region,
-    // userAgent: navigator.userAgent
   }
 
   // Do not actually record page visits in development
