@@ -3,10 +3,8 @@
 // @TODO Handle DNT
 
 import axios from 'axios'
-import qs from 'query-string'
 import { useLocation, WindowLocation } from '@reach/router'
 import { useSessionId } from './session'
-import { locationApiBaseUrl } from '../app/constants'
 
 interface Visit {
   sessionId: string
@@ -60,23 +58,12 @@ export async function recordSession() {
   }
 
   isSessionRecorded = true
-
-  const approxLocation = await fetchApproximateLocation()
-  let country = undefined
-  let region = undefined
-  if (approxLocation !== null) {
-    country = approxLocation.country
-    region = approxLocation.region
-  }
-
   const sessionId = useSessionId()
 
   const session: Session = {
     id: sessionId,
     height: window.innerHeight,
     width: window.innerWidth,
-    country,
-    region,
   }
 
   // Do not actually record page visits in development
@@ -86,37 +73,4 @@ export async function recordSession() {
   }
 
   return axios.post('/.netlify/functions/sessionCreate', session)
-}
-
-let approxLocationCache: Location = null
-
-interface Location {
-  country: string
-  region: string
-}
-
-export async function fetchApproximateLocation(): Promise<Location | null> {
-  if (approxLocationCache !== null) {
-    return approxLocationCache
-  }
-
-  try {
-    // @TODO Replace this api endpoint with a netlify function for guaranteed
-    // privacy
-    const res = await axios.get('/json/', {
-      baseURL: locationApiBaseUrl,
-      params: {
-        fields: ['status', 'message', 'country', 'region'],
-      },
-      paramsSerializer: (params) => {
-        return qs.stringify(params, { arrayFormat: 'comma' })
-      },
-    })
-
-    approxLocationCache = res.data
-  } catch (error) {
-    console.error(error)
-  }
-
-  return approxLocationCache
 }

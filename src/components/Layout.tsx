@@ -32,7 +32,7 @@ const Container: FunctionComponent = (props) => {
           async
           defer
           data-domain="seanbailey.dev"
-          src="https://plausible.io/js/plausible.js"
+          src="https://stats.seanbailey.dev/js/index.js"
         ></script>
       </Helmet>
 
