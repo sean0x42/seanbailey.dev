@@ -26,22 +26,10 @@ function IndexPage(props: PageProps<Data>) {
 
   return (
     <Layout>
-      <SEO title="Sean Bailey" />
+      <SEO title="Sean Bailey (Designer and Developer)" />
 
       <Wrapper>
         <Intro />
-      </Wrapper>
-
-      <Wrapper>
-        <div className={styles.headingWrapper}>
-          <h2 className={styles.heading}>Recent Projects</h2>
-          <ButtonLink to="/projects">View all projects</ButtonLink>
-        </div>
-
-        <ProjectCards projects={projects} />
-        <ButtonLink to="/projects" className={styles.mobileButton}>
-          View all projects
-        </ButtonLink>
       </Wrapper>
 
       <Wrapper>
@@ -53,6 +41,18 @@ function IndexPage(props: PageProps<Data>) {
         <ArticleCards articles={articles} />
         <ButtonLink to="/articles" className={styles.mobileButton}>
           View all articles
+        </ButtonLink>
+      </Wrapper>
+
+      <Wrapper>
+        <div className={styles.headingWrapper}>
+          <h2 className={styles.heading}>Recent Projects</h2>
+          <ButtonLink to="/projects">View all projects</ButtonLink>
+        </div>
+
+        <ProjectCards projects={projects} />
+        <ButtonLink to="/projects" className={styles.mobileButton}>
+          View all projects
         </ButtonLink>
       </Wrapper>
     </Layout>
