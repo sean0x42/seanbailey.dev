@@ -34,18 +34,6 @@ function IndexPage(props: PageProps<Data>) {
 
       <Wrapper>
         <div className={styles.headingWrapper}>
-          <h2 className={styles.heading}>Recent Articles</h2>
-          <ButtonLink to="/articles">View all articles</ButtonLink>
-        </div>
-
-        <ArticleCards articles={articles} />
-        <ButtonLink to="/articles" className={styles.mobileButton}>
-          View all articles
-        </ButtonLink>
-      </Wrapper>
-
-      <Wrapper>
-        <div className={styles.headingWrapper}>
           <h2 className={styles.heading}>Recent Projects</h2>
           <ButtonLink to="/projects">View all projects</ButtonLink>
         </div>
@@ -53,6 +41,18 @@ function IndexPage(props: PageProps<Data>) {
         <ProjectCards projects={projects} />
         <ButtonLink to="/projects" className={styles.mobileButton}>
           View all projects
+        </ButtonLink>
+      </Wrapper>
+
+      <Wrapper>
+        <div className={styles.headingWrapper}>
+          <h2 className={styles.heading}>Recent Articles</h2>
+          <ButtonLink to="/articles">View all articles</ButtonLink>
+        </div>
+
+        <ArticleCards articles={articles} />
+        <ButtonLink to="/articles" className={styles.mobileButton}>
+          View all articles
         </ButtonLink>
       </Wrapper>
     </Layout>

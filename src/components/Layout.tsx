@@ -1,12 +1,10 @@
 /** @format */
 
-import React, { FunctionComponent, useEffect } from 'react'
+import React, { FunctionComponent } from 'react'
 import { TreatProvider, useStyles } from 'react-treat'
 import { Helmet } from 'react-helmet'
-import { useLocation } from '@reach/router'
 
 import darkTheme from '../app/dark.treat'
-import { recordVisit, recordSession } from '../helpers/telemetry'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -18,11 +16,6 @@ import * as styleRefs from './Layout.treat'
  */
 const Container: FunctionComponent = (props) => {
   const styles = useStyles(styleRefs)
-  const location = useLocation()
-
-  useEffect(() => {
-    Promise.all([recordSession(), recordVisit({ location })])
-  }, [location.pathname])
 
   return (
     <div className={styles.layout}>
