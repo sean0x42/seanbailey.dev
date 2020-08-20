@@ -36,7 +36,7 @@ function Article(props: ArticleProps) {
   const styles = useStyles(styleRefs)
 
   const meta = []
-  if (props.coverImage.publicURL) {
+  if (props.coverImage?.publicURL) {
     meta.push({
       name: 'og:image',
       content: props.coverImage.publicURL,

@@ -21,7 +21,7 @@ function ArticleCard(props: ArticleCardProps) {
     <li>
       <LinkCard
         to={`/articles${article.fields.slug}`}
-        fluidImage={article.frontmatter.cover.childImageSharp.fluid}
+        fluidImage={article.frontmatter.cover?.childImageSharp.fluid}
         moreCopy="Read more"
       >
         <h3 className={styles.title}>{article.frontmatter.title}</h3>
