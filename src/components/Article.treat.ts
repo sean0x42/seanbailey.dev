@@ -13,7 +13,7 @@ export const article = style((theme) => ({
 
   '@media': {
     '(min-width: 430px)': {
-      fontSize: 21,
+      fontSize: 23,
     },
   },
 }))

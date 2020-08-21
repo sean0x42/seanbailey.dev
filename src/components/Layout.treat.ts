@@ -70,8 +70,8 @@ globalStyle('h4', { fontSize: '1.125rem' })
 globalStyle('h5', { fontSize: '1.1rem' })
 
 globalStyle('p', {
-  marginTop: '1.25rem',
-  marginBottom: '1.25rem',
+  marginTop: '1.25em',
+  marginBottom: '1.25em',
 })
 
 globalStyle('.gatsby-resp-image-wrapper', {
