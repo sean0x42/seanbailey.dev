@@ -2,20 +2,29 @@
 
 import React from 'react'
 import { useStyles } from 'react-treat'
+import { Zap } from 'react-feather'
 
 import { ArticleSummary } from '../app/types'
 
 import * as styleRefs from './ArticleCards.treat'
 import LinkCard from './LinkCard'
 import CardLayout from './CardLayout'
+import Badge from './Badge'
 
 interface ArticleCardProps {
   article: ArticleSummary
 }
 
+function daysAgo(date: Date): number {
+  const today = new Date()
+  return Math.floor((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
+}
+
 function ArticleCard(props: ArticleCardProps) {
   const styles = useStyles(styleRefs)
   const { article } = props
+
+  const isNew = daysAgo(new Date(article.frontmatter.rawDate)) <= 7
 
   return (
     <li>
@@ -23,6 +32,7 @@ function ArticleCard(props: ArticleCardProps) {
         to={`/articles${article.fields.slug}`}
         fluidImage={article.frontmatter.cover?.childImageSharp.fluid}
         moreCopy="Read more"
+        badge={isNew && <Badge icon={Zap}>New</Badge>}
       >
         <h3 className={styles.title}>{article.frontmatter.title}</h3>
         <p className={styles.date}>{article.frontmatter.date}</p>

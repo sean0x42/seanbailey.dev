@@ -26,6 +26,7 @@ export interface ArticleSummary {
   }
   frontmatter: {
     title: string
+    rawDate: string
     date: string
     cover: FluidImage
   }

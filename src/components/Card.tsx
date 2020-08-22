@@ -8,6 +8,7 @@ import * as styleRefs from './Card.treat'
 
 interface CardProps {
   image?: FluidObject
+  badge?: JSX.Element
 }
 
 const Card: FunctionComponent<CardProps> = (props) => {
@@ -15,6 +16,7 @@ const Card: FunctionComponent<CardProps> = (props) => {
 
   return (
     <div className={styles.wrapper}>
+      {props.badge}
       {props.image && <Img fluid={props.image} className={styles.image} />}
       <div className={styles.body}>{props.children}</div>
     </div>

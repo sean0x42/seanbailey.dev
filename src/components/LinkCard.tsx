@@ -14,6 +14,7 @@ interface LinkCardProps {
   to: string
   fluidImage: FluidObject
   moreCopy: string
+  badge?: JSX.Element
 }
 
 const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
@@ -24,7 +25,7 @@ const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
 
   return (
     <Link to={props.to} className={classes.join(' ')}>
-      <Card image={props.fluidImage}>
+      <Card image={props.fluidImage} badge={props.badge}>
         {props.children}
 
         <p className={styles.more}>
