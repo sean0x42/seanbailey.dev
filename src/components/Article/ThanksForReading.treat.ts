@@ -25,25 +25,6 @@ export const wrapper = style((theme) => ({
   },
 }))
 
-export const wrapperOld = style((theme) => ({
-  // Box model
-  display: 'block',
-  alignItems: 'center',
-
-  // Typography
-  color: theme.typeColour,
-  textDecoration: 'none',
-
-  '@media': {
-    '(min-width: 650px)': {
-      // Box model
-      display: 'grid',
-      gridTemplateColumns: '48px 1fr',
-      gridGap: '1.5rem',
-    },
-  },
-}))
-
 export const icon = style((theme) => ({
   // Box model
   padding: '0.75rem',
@@ -76,7 +57,7 @@ export const heading = style({
   margin: '0 !important',
 
   // Typography
-  fontSize: '21px',
+  fontSize: 22,
   lineHeight: '1.6 !important',
 })
 
@@ -89,26 +70,6 @@ export const copy = style((theme) => ({
 
   // Visuals
   transition: 'color 300ms',
-}))
-
-export const seeMore = style((theme) => ({
-  // Box model
-  display: 'flex',
-  alignItems: 'center',
-  margin: 0,
-
-  // Typography
-  color: theme.typeColourStrong,
-  fontWeight: 500,
-
-  // Visuals
-  transition: 'color 300ms',
-
-  selectors: {
-    [`${wrapper}:hover &`]: {
-      color: theme.primary,
-    },
-  },
 }))
 
 export const highlight = style((theme) => ({

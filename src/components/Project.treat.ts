@@ -21,3 +21,22 @@ export const project = style((theme) => ({
 globalStyle(`${project} a`, (theme) => ({
   color: theme.primary,
 }))
+
+globalStyle(`${project} hr`, (theme) => ({
+  // Box model
+  margin: '4rem 0',
+
+  // Typography
+  color: theme.grey70,
+
+  // Visuals
+  border: 0,
+  borderBottom: '4px solid',
+  borderBottomColor: 'currentcolor',
+
+  '@media': {
+    '(min-width: 650px)': {
+      margin: '8rem 0',
+    },
+  },
+}))

@@ -54,6 +54,8 @@ function Article(props: ArticleProps) {
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>
 
+        <hr className={styles.squiggle} />
+
         <ThanksForReading />
 
         {props.attribution && (

@@ -13,7 +13,7 @@ export const article = style((theme) => ({
 
   '@media': {
     '(min-width: 430px)': {
-      fontSize: 23,
+      fontSize: 22,
     },
   },
 }))
@@ -31,4 +31,16 @@ globalStyle(`${article} strong`, (theme) => ({
 export const attribution = style((theme) => ({
   // Typography
   color: theme.typeColourLight,
+}))
+
+export const squiggle = style((theme) => ({
+  // Box model
+  margin: '4rem auto',
+  maxWidth: 50,
+
+  // Visuals
+  border: 0,
+  borderColor: theme.primary,
+  borderWidth: 3,
+  borderBottomStyle: 'solid',
 }))

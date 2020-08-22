@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useStyles } from 'react-treat'
-import { Award, ChevronRight } from 'react-feather'
+import { Award } from 'react-feather'
 
 import * as styleRefs from './ThanksForReading.treat'
 import SubscribeForm from '../SubscribeForm'
