@@ -2,10 +2,12 @@
 
 import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
+
 import * as styleRefs from './Figure.treat'
+import Caption from './Caption'
 
 interface FigureProps {
-  caption: string
+  caption?: string
 }
 
 const Figure: FunctionComponent<FigureProps> = (props) => {
@@ -14,7 +16,7 @@ const Figure: FunctionComponent<FigureProps> = (props) => {
   return (
     <figure className={styles.figure}>
       {props.children}
-      <figcaption className={styles.caption}>{props.caption}</figcaption>
+      {props.caption && <Caption>{props.caption}</Caption>}
     </figure>
   )
 }

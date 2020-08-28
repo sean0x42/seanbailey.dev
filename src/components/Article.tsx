@@ -7,6 +7,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { FluidImage, Attribution } from '../app/types'
 import * as styleRefs from './Article.treat'
 
+import Caption from './Article/Caption'
 import Figure from './Article/Figure'
 import Header from './Article/Header'
 import SEO from './SEO'
@@ -20,6 +21,7 @@ interface ComponentMap {
 
 const components: ComponentMap = {
   Figure,
+  Caption,
   YouTube,
 }
 

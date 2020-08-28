@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useStyles } from 'react-treat'
-import { Zap } from 'react-feather'
+import { Radio } from 'react-feather'
 
 import { ArticleSummary } from '../app/types'
 
@@ -32,7 +32,7 @@ function ArticleCard(props: ArticleCardProps) {
         to={`/articles${article.fields.slug}`}
         fluidImage={article.frontmatter.cover?.childImageSharp.fluid}
         moreCopy="Read more"
-        badge={isNew && <Badge icon={Zap}>New</Badge>}
+        badge={isNew && <Badge icon={Radio}>New</Badge>}
       >
         <h3 className={styles.title}>{article.frontmatter.title}</h3>
         <p className={styles.date}>{article.frontmatter.date}</p>

@@ -17,12 +17,13 @@ export const title = style({
   margin: '1rem 0',
 
   // Typography
-  fontSize: '2rem',
+  fontSize: 32,
+  fontWeight: 700,
   lineHeight: '1.2 !important',
 
   '@media': {
     '(min-width: 600px)': {
-      fontSize: '3.052rem',
+      fontSize: 48,
       lineHeight: '1.15 !important',
     },
   },
