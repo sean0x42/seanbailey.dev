@@ -2,22 +2,33 @@
 
 import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
-import Img, { FluidObject } from 'gatsby-image'
+import Img from 'gatsby-image'
+import { FluidImage } from '../app/types'
 
 import * as styleRefs from './Card.treat'
 
 interface CardProps {
-  image?: FluidObject
+  cover?: FluidImage
   badge?: JSX.Element
 }
 
 const Card: FunctionComponent<CardProps> = (props) => {
   const styles = useStyles(styleRefs)
 
+  // Determine which cover image to show
+  let cover
+  if (props.cover) {
+    cover = props.cover.childImageSharp ? (
+      <Img fluid={props.cover.childImageSharp.fluid} className={styles.image} />
+    ) : (
+      <img src={props.cover.publicURL} className={styles.image} />
+    )
+  }
+
   return (
     <div className={styles.wrapper}>
       {props.badge}
-      {props.image && <Img fluid={props.image} className={styles.image} />}
+      {cover}
       <div className={styles.body}>{props.children}</div>
     </div>
   )

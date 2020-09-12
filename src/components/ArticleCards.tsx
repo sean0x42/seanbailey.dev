@@ -30,7 +30,7 @@ function ArticleCard(props: ArticleCardProps) {
     <li>
       <LinkCard
         to={`/articles${article.fields.slug}`}
-        fluidImage={article.frontmatter.cover?.childImageSharp.fluid}
+        cover={article.frontmatter.cover}
         moreCopy="Read more"
         badge={isNew && <Badge icon={Radio}>New</Badge>}
       >

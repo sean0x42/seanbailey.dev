@@ -14,8 +14,10 @@ interface LogoProps {
 function Logo(props: LogoProps) {
   const styles = useStyles(styleRefs)
 
-  return (
+  return props.image.childImageSharp ? (
     <Img className={styles.image} fluid={props.image.childImageSharp.fluid} />
+  ) : (
+    <img className={styles.image} src={props.image.publicURL} />
   )
 }
 

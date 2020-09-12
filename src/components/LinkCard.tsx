@@ -3,16 +3,16 @@
 import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
-import { FluidObject } from 'gatsby-image'
-
-import Card from './Card'
 import { ChevronRight } from 'react-feather'
+
+import { FluidImage } from '../app/types'
+import Card from './Card'
 import * as styleRefs from './LinkCard.treat'
 
 interface LinkCardProps {
   className?: string
   to: string
-  fluidImage: FluidObject
+  cover?: FluidImage
   moreCopy: string
   badge?: JSX.Element
 }
@@ -25,7 +25,7 @@ const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
 
   return (
     <Link to={props.to} className={classes.join(' ')}>
-      <Card image={props.fluidImage} badge={props.badge}>
+      <Card cover={props.cover} badge={props.badge}>
         {props.children}
 
         <p className={styles.more}>

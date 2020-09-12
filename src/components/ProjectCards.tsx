@@ -21,7 +21,7 @@ function ProjectCard(props: ProjectCardProps) {
     <li>
       <LinkCard
         to={`/projects${project.fields.slug}`}
-        fluidImage={project.frontmatter.cover.childImageSharp.fluid}
+        cover={project.frontmatter.cover}
         moreCopy="See more"
       >
         <h3 className={styles.title}>{project.frontmatter.title}</h3>
