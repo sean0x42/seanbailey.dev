@@ -8,7 +8,7 @@ export interface GraphQLNodes<T> {
 
 export interface FluidImage {
   publicURL?: string
-  childImageSharp: {
+  childImageSharp?: {
     fluid: FluidObject
   }
 }
@@ -58,7 +58,7 @@ export interface ProjectSummary {
     title: string
     startDate: string
     endDate: string
-    cover: FluidImage
+    cover?: FluidImage
   }
 }
 

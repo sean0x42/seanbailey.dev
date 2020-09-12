@@ -21,6 +21,10 @@ export const wrapper = style((theme) => ({
 }))
 
 export const image = style((theme) => ({
+  // Box model
+  display: 'block',
+  width: '100%',
+
   // Visuals
   backgroundColor: theme.grey80,
   borderRadius: '3px 3px 0 0',

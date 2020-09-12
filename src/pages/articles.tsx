@@ -54,6 +54,7 @@ export const pageQuery = graphql`
             rawDate: date
             date(formatString: "MMMM DD, YYYY")
             cover {
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 600, maxHeight: 300, cropFocus: CENTER) {
                   ...GatsbyImageSharpFluid
