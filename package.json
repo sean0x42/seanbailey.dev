@@ -46,7 +46,7 @@
     "react-treat": "^1.5.1",
     "rellax": "^1.12.1",
     "table": "^5.4.6",
-    "treat": "^1.5.1"
+    "treat": "^1.6.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.3",

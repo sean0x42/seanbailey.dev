@@ -15547,10 +15547,10 @@ traverse@0.6.6:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
   integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
-treat@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/treat/-/treat-1.5.1.tgz#ff17af14f466400723a5f9fbe5040e1f97bbbf49"
-  integrity sha512-roVEhNzudKgGjZoNFbvTqIsGZVu2LwDuU9d9LeSHDSWWkvFDwxniq/J67LPipnT/KkXaWH0lKsaQmeHXxHigcg==
+treat@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/treat/-/treat-1.6.0.tgz#13342719ea215e36ded3433d1c940e2efda3b1b6"
+  integrity sha512-H0Iww0XYXywtRNHbsHL60USxyuLDG+KGifGRLqExV3yB4ZdhaZrxj06v9LYhhPQxwpG+s+6hkqQFjoDCkmD1Ew==
   dependencies:
     "@hapi/joi" "^15.0.3"
     "@types/object-hash" "^1.2.0"
