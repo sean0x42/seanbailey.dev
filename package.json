@@ -37,7 +37,7 @@
     "gatsby-source-filesystem": "^2.3.27",
     "gatsby-transformer-sharp": "^2.5.16",
     "modern-normalize": "^1.0.0",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.22.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.8",
