@@ -19,7 +19,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
-    "@types/mdx-js__react": "^1.5.2",
+    "@types/mdx-js__react": "^1.5.3",
     "@types/react-helmet": "^6.0.0",
     "@types/rellax": "^1.7.3",
     "gatsby": "^2.24.53",
