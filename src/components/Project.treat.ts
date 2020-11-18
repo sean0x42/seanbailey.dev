@@ -27,7 +27,7 @@ globalStyle(`${project} hr`, (theme) => ({
   margin: '4rem 0',
 
   // Typography
-  color: theme.grey70,
+  color: theme.grey600,
 
   // Visuals
   border: 0,

@@ -19,8 +19,9 @@ export const badge = style((theme) => ({
   fontWeight: 500,
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderBottomLeftRadius: 3,
+  opacity: 0.95,
 }))
 
 export const icon = style({

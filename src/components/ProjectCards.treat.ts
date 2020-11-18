@@ -7,7 +7,7 @@ export const title = style({
   margin: '0 !important',
 
   // Typography
-  fontSize: '20px',
+  fontSize: 20,
   lineHeight: '1.4 !important',
 })
 

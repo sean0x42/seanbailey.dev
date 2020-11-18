@@ -30,7 +30,7 @@ export const input = style((theme) => ({
   color: theme.typeColour,
 
   // Visuals
-  background: theme.grey80,
+  background: theme.grey700,
   border: 0,
   borderRadius: 4,
 
@@ -58,7 +58,7 @@ export const send = style((theme) => ({
   fontWeight: 500,
 
   // Visuals
-  background: theme.grey60,
+  background: theme.grey500,
   border: 0,
   borderRadius: 4,
   cursor: 'pointer',
@@ -66,7 +66,7 @@ export const send = style((theme) => ({
   transitionTimingFunction: snap,
 
   ':hover': {
-    color: theme.grey90,
+    color: theme.grey800,
     background: theme.primary,
   },
 

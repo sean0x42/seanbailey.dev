@@ -7,6 +7,7 @@ globalStyle('body', {
   fontFamily: "'Inter', sans-serif",
   ['WebkitFontSmoothing' as string]: 'antialiased',
   ['MozOsxFontSmoothing' as string]: 'grayscale',
+  overflowX: 'hidden',
 })
 
 globalStyle('p, ol, ul, figcaption', {
@@ -20,7 +21,7 @@ export const layout = style((theme) => ({
   paddingBottom: 60,
 
   // Visual
-  backgroundColor: theme.grey100,
+  backgroundColor: theme.grey900,
   borderBottom: `6px solid ${theme.primary}`,
   overflowX: 'hidden',
 
@@ -55,7 +56,7 @@ globalStyle(
   ),
   (theme) => ({
     backgroundColor: theme.primary,
-    color: theme.grey80,
+    color: theme.grey900,
   }),
 )
 
@@ -105,7 +106,7 @@ globalStyle(`${layout} code`, (theme) => ({
   fontFamily: '"JetBrains Mono", monospace',
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: '3px',
 }))
 
@@ -118,7 +119,7 @@ globalStyle(`${layout} pre`, (theme) => ({
   lineHeight: 1.45,
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: '3px',
 }))
 

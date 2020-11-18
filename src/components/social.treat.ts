@@ -52,7 +52,7 @@ export const social = style((theme) => ({
         height: '2rem',
 
         // Visuals
-        background: theme.grey50,
+        background: theme.grey400,
         opacity: 0.25,
 
         // Misc
@@ -96,7 +96,7 @@ export const socialItem = style((theme) => ({
   textDecoration: 'none',
 
   // Visuals
-  fill: theme.grey10,
+  fill: theme.grey000,
 
   // Misc
   transition: 'all 100ms',

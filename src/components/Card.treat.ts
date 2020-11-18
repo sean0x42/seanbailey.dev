@@ -15,7 +15,7 @@ export const wrapper = style((theme) => ({
   textDecoration: 'none',
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: 4,
   cursor: 'pointer',
 }))
@@ -26,7 +26,7 @@ export const image = style((theme) => ({
   width: '100%',
 
   // Visuals
-  backgroundColor: theme.grey80,
+  backgroundColor: theme.grey700,
   borderRadius: '3px 3px 0 0',
   transition: 'background-color 300ms',
 }))

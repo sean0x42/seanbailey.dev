@@ -8,7 +8,7 @@ export const wrapper = style((theme) => ({
   marginTop: '2rem',
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: '3px',
 
   '@media': {
@@ -37,7 +37,7 @@ export const icon = style((theme) => ({
   lineHeight: 1,
 
   // Visuals
-  background: theme.grey80,
+  background: theme.grey700,
   borderRadius: '50%',
 
   '@media': {
