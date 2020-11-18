@@ -8,11 +8,6 @@
 
 </div>
 
-My _new_ home on the web. Built with Gatsby and deployed with Netlify!
+My home on the web. Built with Gatsby and deployed with Netlify!
 
 ![Preview](./seanbailey.dev.png)
-
-## seanbailey.io
-
-This website supersedes <https://seanbailey.io>, the source code of which can be
-found here: <https://github.com/sean0x42/sean0x42.github.io>
