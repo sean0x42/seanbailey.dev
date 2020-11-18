@@ -7,8 +7,8 @@ export default createTheme({
 
   primary: '#09F1C6',
 
-  grey900: '#16191D',
-  grey800: '#23282F',
+  grey900: '#14161A',
+  grey800: '#21252C',
   grey700: '#32373E',
   grey600: '#40464F',
   grey500: '#4C525D',
