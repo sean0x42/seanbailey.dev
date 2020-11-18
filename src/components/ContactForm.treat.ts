@@ -36,7 +36,7 @@ export const label = style((theme) => ({
   marginBottom: '0.5rem',
 
   // Typography
-  color: theme.typeColourLight,
+  color: theme.typeColour,
   fontWeight: 500,
   lineHeight: 1,
 }))
