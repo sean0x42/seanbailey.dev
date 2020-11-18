@@ -9,7 +9,7 @@ export const form = style((theme) => ({
   maxWidth: 410,
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: 4,
 
   '@media': {
@@ -19,9 +19,9 @@ export const form = style((theme) => ({
   },
 }))
 
-export const field = style((theme) => ({
+export const field = style({
   margin: '0 0 1.5rem',
-}))
+})
 
 export const fieldPot = style({
   position: 'absolute',
@@ -50,7 +50,7 @@ export const input = style((theme) => ({
   color: theme.typeColour,
 
   // Visuals
-  background: theme.grey80,
+  background: theme.grey700,
   border: 0,
   borderRadius: 4,
 
@@ -75,7 +75,7 @@ export const send = style((theme) => ({
   fontWeight: 500,
 
   // Visuals
-  background: theme.grey70,
+  background: theme.grey600,
   border: 0,
   borderRadius: 4,
   cursor: 'pointer',
@@ -83,7 +83,7 @@ export const send = style((theme) => ({
   transitionTimingFunction: snap,
 
   ':hover': {
-    color: theme.grey90,
+    color: theme.grey800,
     background: theme.primary,
     transform: 'translateY(-2px)',
   },

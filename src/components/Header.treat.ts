@@ -23,7 +23,7 @@ export const banner = style((theme) => ({
   marginTop: '1rem',
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: 3,
 }))
 

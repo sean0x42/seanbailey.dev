@@ -4,7 +4,7 @@ import { style } from 'treat'
 
 export const image = style((theme) => ({
   // Visuals
-  backgroundColor: theme.grey80,
+  backgroundColor: theme.grey700,
   borderRadius: 3,
   transition: 'background-color 300ms',
 }))

@@ -7,7 +7,7 @@ export const image = style((theme) => ({
   gridColumn: '1 / 3',
 
   // Visuals
-  backgroundColor: theme.grey90,
+  backgroundColor: theme.grey800,
   borderRadius: '3px',
   transition: 'background-color 300ms',
   overflow: 'hidden',

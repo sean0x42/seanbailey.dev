@@ -18,7 +18,7 @@ export const wrapper = style((theme) => ({
   textDecoration: 'none',
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   borderRadius: '3px',
   transition: 'all 200ms',
   transitionTimingFunction: snap,
@@ -49,7 +49,7 @@ export const icon = style((theme) => ({
   lineHeight: 1,
 
   // Visuals
-  background: theme.grey80,
+  background: theme.grey700,
   borderRadius: '50%',
 
   '@media': {

@@ -19,7 +19,7 @@ export const navigation = style((theme) => ({
   padding: 0,
 
   // Visuals
-  background: theme.grey90,
+  background: theme.grey800,
   listStyleType: 'none',
 
   '@media': {
@@ -72,8 +72,9 @@ export const navigationItem = style((theme) => ({
   },
 }))
 
-export const icon = style({
+export const icon = style((theme) => ({
   marginBottom: '0.5rem',
+  color: theme.primary,
 
   '@media': {
     '(min-width: 600px)': {
@@ -81,4 +82,4 @@ export const icon = style({
       marginRight: '0.5rem',
     },
   },
-})
+}))

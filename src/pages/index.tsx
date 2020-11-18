@@ -7,6 +7,7 @@ import { ArticleSummary, ProjectSummary, GraphQLNodes } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
 import ArticleCards from '../components/ArticleCards'
+import Blobs from '../components/Landing/Blobs'
 import ButtonLink from '../components/ButtonLink'
 import Intro from '../components/Intro'
 import Layout from '../components/Layout'
@@ -29,6 +30,7 @@ function IndexPage(props: PageProps<Data>) {
       <SEO title="Sean Bailey (Designer and Developer)" />
 
       <Wrapper>
+        <Blobs />
         <Intro />
       </Wrapper>
 

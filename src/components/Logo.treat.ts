@@ -30,10 +30,10 @@ export const logo = style((theme) => ({
     top: '-2rem',
 
     // Box model
-    height: '1rem',
+    height: '0.75rem',
 
     // Visuals
-    background: theme.grey80,
+    background: theme.primary,
 
     // Misc
     content: '""',

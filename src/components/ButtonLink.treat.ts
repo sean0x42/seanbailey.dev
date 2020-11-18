@@ -19,7 +19,7 @@ export const button = style((theme) => ({
   lineHeight: 1,
 
   // Visuals
-  background: theme.grey80,
+  background: theme.grey700,
   borderRadius: '3px',
   cursor: 'pointer',
   transition: 'all 200ms',
@@ -30,7 +30,7 @@ export const button = style((theme) => ({
     transform: 'translateY(-2px)',
 
     // Typography
-    color: theme.grey90,
+    color: theme.grey800,
 
     // Visuals
     background: theme.primary,
