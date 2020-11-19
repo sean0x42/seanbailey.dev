@@ -99,7 +99,7 @@ export const socialItem = style((theme) => ({
   fill: theme.grey000,
 
   // Misc
-  transition: 'all 100ms',
+  transition: 'fill 100ms, transform 100ms',
 
   ':hover': {
     fill: theme.white,
