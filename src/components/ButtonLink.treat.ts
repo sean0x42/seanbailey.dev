@@ -22,18 +22,20 @@ export const button = style((theme) => ({
   background: theme.grey700,
   borderRadius: '3px',
   cursor: 'pointer',
-  transition: 'all 200ms',
+  transition: 'transform 200ms, color 200ms, background 200ms',
   transitionTimingFunction: snap,
 
   ':hover': {
-    // Positioning
     transform: 'translateY(-2px)',
-
-    // Typography
     color: theme.grey800,
-
-    // Visuals
     background: theme.primary,
+  },
+
+  ':focus': {
+    transform: 'translateY(-2px)',
+    color: theme.grey800,
+    background: theme.primary,
+    outline: 'none !important',
   },
 }))
 

@@ -62,12 +62,18 @@ export const send = style((theme) => ({
   border: 0,
   borderRadius: 4,
   cursor: 'pointer',
-  transition: 'all 300ms',
+  transition: 'color 300ms, background 300ms',
   transitionTimingFunction: snap,
 
   ':hover': {
     color: theme.grey800,
     background: theme.primary,
+  },
+
+  ':focus': {
+    color: theme.grey800,
+    background: theme.primary,
+    outline: 'none !important',
   },
 
   '@media': {

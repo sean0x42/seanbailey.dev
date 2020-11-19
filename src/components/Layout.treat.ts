@@ -84,6 +84,19 @@ globalStyle('.gatsby-resp-image-wrapper img', {
   display: 'block',
 })
 
+globalStyle(
+  generateSelector(
+    layout,
+    'input:focus',
+    'a:focus',
+    'textarea:focus',
+    'button:focus',
+  ),
+  (theme) => ({
+    outline: `2px solid ${theme.primary}`,
+  }),
+)
+
 globalStyle(`${layout} blockquote`, (theme) => ({
   // Box model
   margin: '2rem 0',

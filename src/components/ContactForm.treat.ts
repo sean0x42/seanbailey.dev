@@ -79,12 +79,19 @@ export const send = style((theme) => ({
   border: 0,
   borderRadius: 4,
   cursor: 'pointer',
-  transition: 'all 300ms',
+  transition: 'color 300ms, background 300ms, transform 300ms',
   transitionTimingFunction: snap,
 
   ':hover': {
     color: theme.grey800,
     background: theme.primary,
     transform: 'translateY(-2px)',
+  },
+
+  ':focus': {
+    color: theme.grey800,
+    background: theme.primary,
+    transform: 'translateY(-2px)',
+    outline: 'none !important',
   },
 }))
