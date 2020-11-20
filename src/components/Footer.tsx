@@ -9,6 +9,7 @@ import { GitHub, Icon, Twitter, Linkedin } from 'react-feather'
 
 interface SocialProps {
   icon: Icon
+  title?: string
   to: string
 }
 
@@ -19,8 +20,14 @@ function Social(props: SocialProps) {
 
   return (
     <li>
-      <a href={props.to} target="_blank" className={styles.socialItem}>
-        <Icon className={styles.socialIcon} />
+      <a
+        href={props.to}
+        title={props.title}
+        target="_blank"
+        className={styles.socialItem}
+      >
+        <Icon className={styles.socialIcon} aria-hidden="true" />
+        <span className={styles.visuallyHidden}>{props.title}</span>
       </a>
     </li>
   )
@@ -33,9 +40,21 @@ function Footer() {
     <footer className={styles.footer}>
       <Wrapper>
         <ul className={styles.social}>
-          <Social icon={GitHub} to="https://github.com/sean0x42" />
-          <Social icon={Twitter} to="https://twitter.com/sean0x42" />
-          <Social icon={Linkedin} to="https://www.linkedin.com/in/sean0x42/" />
+          <Social
+            icon={GitHub}
+            to="https://github.com/sean0x42"
+            title="My GitHub profile"
+          />
+          <Social
+            icon={Twitter}
+            to="https://twitter.com/sean0x42"
+            title="My Twitter profile"
+          />
+          <Social
+            icon={Linkedin}
+            to="https://www.linkedin.com/in/sean0x42/"
+            title="My LinkedIn profile"
+          />
         </ul>
 
         <p className={styles.copyright}>

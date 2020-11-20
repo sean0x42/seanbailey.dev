@@ -47,25 +47,26 @@ function ContactForm() {
     >
       <input type="hidden" name="form-name" value="contact" />
 
-      <div className={[styles.field, styles.fieldPot].join(' ')}>
-        <label htmlFor="sender" className={styles.label}>
-          Do not fill out this field
-        </label>
+      <div
+        className={[styles.field, styles.fieldPot].join(' ')}
+        aria-hidden="true"
+      >
+        <label htmlFor="sender">Do not fill out this field</label>
         <input
           type="text"
           name="sender"
+          id="sender"
           className={styles.input}
           onChange={handleChange}
         />
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="name" className={styles.label}>
-          Name
-        </label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
+          id="name"
           className={styles.input}
           placeholder="Someone"
           required
@@ -74,12 +75,11 @@ function ContactForm() {
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="email" className={styles.label}>
-          Email
-        </label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"
+          id="email"
           className={styles.input}
           placeholder="someone@example.com"
           required
@@ -88,11 +88,10 @@ function ContactForm() {
       </div>
 
       <div className={styles.field}>
-        <label htmlFor="message" className={styles.label}>
-          Message
-        </label>
+        <label htmlFor="message">Message</label>
         <textarea
           name="message"
+          id="message"
           required
           className={styles.input}
           placeholder="..."

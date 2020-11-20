@@ -30,17 +30,6 @@ export const fieldPot = style({
   pointerEvents: 'none',
 })
 
-export const label = style((theme) => ({
-  // Box model
-  display: 'block',
-  marginBottom: '0.5rem',
-
-  // Typography
-  color: theme.typeColour,
-  fontWeight: 500,
-  lineHeight: 1,
-}))
-
 export const input = style((theme) => ({
   // Box model
   padding: '0.75rem',

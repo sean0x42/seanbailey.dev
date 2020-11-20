@@ -46,7 +46,7 @@ export const socialItem = style((theme) => ({
   lineHeight: 1,
 
   // Visuals
-  transition: 'all 300ms',
+  transition: 'transform 300ms, color 300ms',
   transitionTimingFunction: snap,
 
   ':hover': {
@@ -58,4 +58,14 @@ export const socialItem = style((theme) => ({
 export const socialIcon = style({
   lineHeight: 1,
   verticalAlign: 'middle',
+})
+
+export const visuallyHidden = style({
+  position: 'absolute',
+  clip: 'rect(1px, 1px, 1px, 1px)',
+  padding: '0 !important',
+  border: '0 !important',
+  height: '1px !important',
+  width: '1px !important',
+  overflow: 'hidden',
 })

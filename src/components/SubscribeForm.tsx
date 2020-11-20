@@ -2,7 +2,6 @@
 
 import React, { useState, FormEvent, ChangeEvent } from 'react'
 import { useStyles } from 'react-treat'
-import { Mail } from 'react-feather'
 import { navigate } from 'gatsby'
 
 import * as styleRefs from './SubscribeForm.treat'
@@ -45,15 +44,18 @@ function SubscribeForm() {
       action="/thanks"
       onSubmit={handleSubmit}
     >
-      <input
-        className={styles.input}
-        type="email"
-        name="email"
-        id="email"
-        placeholder="someone@example.com"
-        required
-        onChange={handleChange}
-      />
+      <div className={styles.inputGroup}>
+        <label htmlFor="email">Email</label>
+        <input
+          className={styles.input}
+          type="email"
+          name="email"
+          id="email"
+          placeholder="someone@example.com"
+          required
+          onChange={handleChange}
+        />
+      </div>
 
       <button className={styles.send} type="submit">
         Subscribe

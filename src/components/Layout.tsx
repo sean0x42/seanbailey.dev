@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { FunctionComponent } from 'react'
 import { TreatProvider, useStyles } from 'react-treat'
 import { Helmet } from 'react-helmet'
@@ -8,6 +6,7 @@ import darkTheme from '../app/dark.treat'
 
 import Header from './Header'
 import Footer from './Footer'
+import SkipLink from './SkipLink'
 import * as styleRefs from './Layout.treat'
 
 /**
@@ -29,8 +28,12 @@ const Container: FunctionComponent = (props) => {
         ></script>
       </Helmet>
 
+      <SkipLink />
+
       <Header />
-      <main>{props.children}</main>
+
+      <main id="main">{props.children}</main>
+
       <Footer />
     </div>
   )

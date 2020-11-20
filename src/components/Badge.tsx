@@ -16,7 +16,7 @@ const Badge: FunctionComponent<BadgeProps> = (props) => {
 
   return (
     <div className={styles.badge}>
-      <Icon className={styles.icon} />
+      <Icon className={styles.icon} aria-hidden="true" />
       {props.children}
     </div>
   )

@@ -24,7 +24,7 @@ function NavigationItem(props: NavigationItemProps) {
         title={props.title}
         className={styles.navigationItem}
       >
-        <Icon className={styles.icon} />
+        <Icon className={styles.icon} aria-hidden="true" />
         <span>{props.title}</span>
       </Link>
     </li>
