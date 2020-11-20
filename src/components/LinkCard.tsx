@@ -28,7 +28,7 @@ const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
       <Card cover={props.cover} badge={props.badge}>
         {props.children}
 
-        <p className={styles.more}>
+        <p className={styles.more} aria-hidden="true">
           {props.moreCopy}
           <ChevronRight />
         </p>

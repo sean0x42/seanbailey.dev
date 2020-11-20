@@ -19,9 +19,17 @@ const Card: FunctionComponent<CardProps> = (props) => {
   let cover
   if (props.cover) {
     cover = props.cover.childImageSharp ? (
-      <Img fluid={props.cover.childImageSharp.fluid} className={styles.image} />
+      <Img
+        fluid={props.cover.childImageSharp.fluid}
+        className={styles.image}
+        aria-hidden="true"
+      />
     ) : (
-      <img src={props.cover.publicURL} className={styles.image} />
+      <img
+        src={props.cover.publicURL}
+        className={styles.image}
+        aria-hidden="true"
+      />
     )
   }
 

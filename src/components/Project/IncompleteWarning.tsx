@@ -10,7 +10,7 @@ function IncompleteWarning() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.icon}>
+      <div className={styles.icon} aria-hidden="true">
         <AlertTriangle className={styles.iconInner} />
       </div>
 

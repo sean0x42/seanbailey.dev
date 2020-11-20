@@ -24,7 +24,7 @@ const ButtonLink: FunctionComponent<ButtonLinkProps> = (props) => {
   return (
     <Link className={classes.join(' ')} to={props.to}>
       {props.children}
-      <ButtonIcon className={styles.icon} />
+      <ButtonIcon className={styles.icon} aria-hidden="true" />
     </Link>
   )
 }

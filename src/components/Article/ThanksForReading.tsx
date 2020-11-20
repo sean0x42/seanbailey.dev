@@ -12,7 +12,7 @@ function ThanksForReading() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.icon}>
+      <div className={styles.icon} aria-hidden="true">
         <Award className={styles.iconInner} />
       </div>
 

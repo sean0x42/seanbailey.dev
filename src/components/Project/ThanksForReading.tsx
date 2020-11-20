@@ -12,7 +12,7 @@ function ThanksForReading() {
 
   return (
     <Link to="/projects" className={styles.wrapper}>
-      <div className={styles.icon}>
+      <div className={styles.icon} aria-hidden="true">
         <Award className={styles.iconInner} />
       </div>
 
@@ -22,7 +22,7 @@ function ThanksForReading() {
           If you liked that project, why not check out some of my other work? I
           build and design websites, desktop apps, and more.
         </p>
-        <p className={styles.seeMore}>
+        <p className={styles.seeMore} aria-hidden="true">
           See more
           <ChevronRight />
         </p>

@@ -97,6 +97,18 @@ globalStyle(
   }),
 )
 
+globalStyle(`${layout} label`, (theme) => ({
+  // Box model
+  display: 'block',
+  marginBottom: '0.5rem',
+
+  // Typography
+  color: theme.typeColour,
+  fontSize: 18,
+  fontWeight: 500,
+  lineHeight: 1,
+}))
+
 globalStyle(`${layout} blockquote`, (theme) => ({
   // Box model
   margin: '2rem 0',

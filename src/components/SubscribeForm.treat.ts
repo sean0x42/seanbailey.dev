@@ -7,7 +7,7 @@ export const form = style({
   // Box model
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'stretch',
+  alignItems: 'flex-end',
   gridColumn: '2 / 3',
   marginTop: '1.5rem',
 
@@ -40,8 +40,6 @@ export const input = style((theme) => ({
 
   '@media': {
     '(min-width: 650px)': {
-      width: '30ch',
-      marginRight: '0.75rem',
       marginBottom: 0,
     },
   },
@@ -54,7 +52,7 @@ export const send = style((theme) => ({
 
   // Typography
   color: theme.typeColour,
-  fontSize: 18,
+  fontSize: 19,
   fontWeight: 500,
 
   // Visuals
@@ -82,3 +80,16 @@ export const send = style((theme) => ({
     },
   },
 }))
+
+export const inputGroup = style({
+  display: 'flex',
+  flexDirection: 'column',
+  width: '100%',
+
+  '@media': {
+    '(min-width: 650px)': {
+      marginRight: '0.75rem',
+      maxWidth: '30ch',
+    },
+  },
+})
