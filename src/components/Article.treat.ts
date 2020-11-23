@@ -28,6 +28,15 @@ globalStyle(`${article} strong`, (theme) => ({
   fontWeight: 550,
 }))
 
+globalStyle(`${article} .footnotes`, {
+  fontSize: 19,
+  marginTop: '3rem',
+})
+
+globalStyle(`${article} .footnotes hr`, (theme) => ({
+  borderColor: theme.grey500,
+}))
+
 export const attribution = style((theme) => ({
   // Typography
   color: theme.typeColourLight,
