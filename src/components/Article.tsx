@@ -38,10 +38,10 @@ function Article(props: ArticleProps) {
   const styles = useStyles(styleRefs)
 
   const meta = []
-  if (props.coverImage?.publicURL) {
+  if (props.coverImage?.childImageSharp?.fluid.srcWebp) {
     meta.push({
       name: 'og:image',
-      content: props.coverImage.publicURL,
+      content: props.coverImage.childImageSharp.fluid.srcWebp,
     })
   }
 
