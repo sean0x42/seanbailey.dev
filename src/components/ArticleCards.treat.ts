@@ -16,5 +16,4 @@ export const date = style((theme) => ({
   color: theme.typeColourLight,
 }))
 
-export const snippet = style({
-})
+export const snippet = style({})
