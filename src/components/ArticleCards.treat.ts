@@ -15,3 +15,6 @@ export const date = style((theme) => ({
   marginTop: '0.5rem',
   color: theme.typeColourLight,
 }))
+
+export const snippet = style({
+})
