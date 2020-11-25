@@ -141,11 +141,13 @@ globalStyle(`${layout} pre`, (theme) => ({
   margin: '1.5em 0',
 
   // Typography
+  fontSize: '90%',
   lineHeight: 1.45,
 
   // Visuals
   background: theme.grey800,
   borderRadius: '3px',
+  overflowX: 'auto',
 }))
 
 globalStyle(`${layout} pre code`, {

@@ -36,7 +36,7 @@ function ArticleCard(props: ArticleCardProps) {
       >
         <h3 className={styles.title}>{article.frontmatter.title}</h3>
         <p className={styles.date}>{article.frontmatter.date}</p>
-        <p>{article.excerpt}</p>
+        <p className={styles.snippet}>{article.excerpt}</p>
       </LinkCard>
     </li>
   )
