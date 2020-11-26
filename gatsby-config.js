@@ -9,16 +9,10 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-advanced-sitemap`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
         createLinkInHead: true,
-        exclude: [
-          `/dev-404-page`,
-          `/404`,
-          `/404.html`,
-          `/thanks`,
-          `/subscribed`,
-        ],
+        exclude: [`/thanks`, `/subscribed`],
       },
     },
     `gatsby-plugin-react-helmet`,
