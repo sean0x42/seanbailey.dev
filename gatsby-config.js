@@ -5,8 +5,22 @@ module.exports = {
     title: `seanbailey.dev`,
     description: `Designer, software engineer, and lover of side projects. Welcome to my home on the web!`,
     author: `@sean0x42`,
+    siteUrl: `https://www.seanbailey.dev`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        createLinkInHead: true,
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/thanks`,
+          `/subscribed`,
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-treat`,
     {
