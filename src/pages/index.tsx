@@ -1,6 +1,4 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { PageProps, graphql } from 'gatsby'
 
 import { ArticleSummary, ProjectSummary, GraphQLNodes } from '../app/types'
@@ -21,7 +19,7 @@ type Data = {
   projects: GraphQLNodes<ProjectSummary>
 }
 
-function IndexPage(props: PageProps<Data>) {
+const IndexPage: FunctionComponent<PageProps<Data>> = (props) => {
   const articles = flattenNodes(props.data.articles)
   const projects = flattenNodes(props.data.projects)
 

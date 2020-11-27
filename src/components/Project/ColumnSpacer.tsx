@@ -1,9 +1,7 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import * as styles from './ColumnSpacer.treat'
 
-function ColumnSpacer() {
+const ColumnSpacer: FunctionComponent = () => {
   return <div className={styles.spacer} />
 }
 

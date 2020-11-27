@@ -1,6 +1,4 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
 import { Project as ProjectModel } from '../app/types'
 
@@ -15,7 +13,7 @@ interface ContainerProps {
   data: Data
 }
 
-function Container(props: ContainerProps) {
+const Container: FunctionComponent<ContainerProps> = (props) => {
   const project = props.data.mdx
   const { startDate } = project.frontmatter
   const endDate = project.frontmatter.endDate || 'Present'

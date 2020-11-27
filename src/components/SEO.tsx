@@ -1,17 +1,27 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+
+interface NameMeta {
+  name: string
+  content: string
+}
+
+interface PropertyMeta {
+  property: string
+  content: string
+}
+
+type Meta = NameMeta | PropertyMeta
 
 interface SEOProps {
   description?: string
   lang?: string
-  meta?: object[]
+  meta?: Meta[]
   title: string
 }
 
-function SEO(props: SEOProps) {
+const SEO: FunctionComponent<SEOProps> = (props) => {
   const { description = '', lang = 'en', meta = [], title } = props
 
   const { site } = useStaticQuery(
@@ -29,7 +39,7 @@ function SEO(props: SEOProps) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultMeta = [
+  const defaultMeta: Meta[] = [
     {
       name: `description`,
       content: metaDescription,

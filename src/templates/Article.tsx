@@ -1,6 +1,4 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
 
 import { Article as ArticleModel } from '../app/types'
@@ -16,7 +14,7 @@ interface ContainerProps {
   data: Data
 }
 
-function Container(props: ContainerProps) {
+const Container: FunctionComponent<ContainerProps> = (props) => {
   const article = props.data.mdx
 
   return (

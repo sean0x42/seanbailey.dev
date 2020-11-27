@@ -1,11 +1,16 @@
-/** @format */
-
 import { useState } from 'react'
+
+interface Setter<T> {
+  (value: T): void
+}
 
 /**
  * A hook for storing content in localStorage.
  */
-export function useLocalStorage(key: string, initialValue: any) {
+export function useLocalStorage<T>(
+  key: string,
+  initialValue: T,
+): [T, Setter<T>] {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key)
@@ -16,7 +21,7 @@ export function useLocalStorage(key: string, initialValue: any) {
     }
   })
 
-  const setValue = (value: any) => {
+  const setValue: Setter<T> = (value) => {
     try {
       const valueToStore =
         value instanceof Function ? value(storedValue) : value

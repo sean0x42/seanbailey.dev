@@ -1,14 +1,21 @@
-/** @format */
-
-import React, { useState, FormEvent, ChangeEvent } from 'react'
+import React, {
+  useState,
+  FormEvent,
+  ChangeEvent,
+  FunctionComponent,
+} from 'react'
 import { useStyles } from 'react-treat'
 import { navigate } from 'gatsby'
 
 import * as styleRefs from './SubscribeForm.treat'
-import { formEncode } from '../helpers/form'
+import { encodeForm } from '../helpers/form'
 
-function SubscribeForm() {
-  const [state, setState] = useState({})
+interface State {
+  [key: string]: string
+}
+
+const SubscribeForm: FunctionComponent = () => {
+  const [state, setState] = useState({} as State)
   const styles = useStyles(styleRefs)
 
   const handleChange = (
@@ -26,7 +33,7 @@ function SubscribeForm() {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: formEncode({
+      body: encodeForm({
         'form-name': 'subscribe',
         ...state,
       }),

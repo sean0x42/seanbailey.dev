@@ -1,5 +1,3 @@
-/** @format */
-
 module.exports = {
   siteMetadata: {
     title: `seanbailey.dev`,
@@ -13,6 +11,12 @@ module.exports = {
       options: {
         createLinkInHead: true,
         exclude: [`/thanks`, `/subscribed`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-eslint`,
+      options: {
+        test: /\.ts$|\.tsx$/,
       },
     },
     `gatsby-plugin-react-helmet`,

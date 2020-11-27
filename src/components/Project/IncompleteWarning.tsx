@@ -1,11 +1,9 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import { AlertTriangle } from 'react-feather'
 import * as styleRefs from './IncompleteWarning.treat'
 
-function IncompleteWarning() {
+const IncompleteWarning: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (

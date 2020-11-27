@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import * as styleRefs from './SkipLink.treat'
 
-function SkipLink() {
+const SkipLink: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (

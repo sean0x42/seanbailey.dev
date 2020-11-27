@@ -1,13 +1,11 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import { Award } from 'react-feather'
 
 import * as styleRefs from './ThanksForReading.treat'
 import SubscribeForm from '../SubscribeForm'
 
-function ThanksForReading() {
+const ThanksForReading: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (

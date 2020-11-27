@@ -1,13 +1,16 @@
-/** @format */
-
-import React, { useState, ChangeEvent, FormEvent } from 'react'
+import React, {
+  useState,
+  ChangeEvent,
+  FormEvent,
+  FunctionComponent,
+} from 'react'
 import { navigate } from 'gatsby'
 import { useStyles } from 'react-treat'
 
 import * as styleRefs from './ContactForm.treat'
-import { formEncode } from '../helpers/form'
+import { encodeForm } from '../helpers/form'
 
-function ContactForm() {
+const ContactForm: FunctionComponent = () => {
   const [state, setState] = useState({})
   const styles = useStyles(styleRefs)
 
@@ -26,7 +29,7 @@ function ContactForm() {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: formEncode({
+      body: encodeForm({
         'form-name': 'contact',
         ...state,
       }),

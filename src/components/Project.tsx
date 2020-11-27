@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import { MDXProvider } from '@mdx-js/react'
@@ -20,7 +18,7 @@ import TwoColumns from './Project/TwoColumns'
 import Wrapper from './Wrapper'
 
 interface ComponentMap {
-  [name: string]: FunctionComponent<any>
+  [name: string]: FunctionComponent<unknown>
 }
 
 const components: ComponentMap = {
@@ -40,7 +38,7 @@ interface ProjectProps {
   body: string
 }
 
-function Project(props: ProjectProps) {
+const Project: FunctionComponent<ProjectProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   return (

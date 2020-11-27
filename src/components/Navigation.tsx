@@ -1,6 +1,4 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { Icon, Book, Layers, Send } from 'react-feather'
 import { useStyles } from 'react-treat'
@@ -13,7 +11,7 @@ interface NavigationItemProps {
   icon: Icon
 }
 
-function NavigationItem(props: NavigationItemProps) {
+const NavigationItem: FunctionComponent<NavigationItemProps> = (props) => {
   const styles = useStyles(styleRefs)
   const Icon = props.icon
 
@@ -31,7 +29,7 @@ function NavigationItem(props: NavigationItemProps) {
   )
 }
 
-function Navigation() {
+const Navigation: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (
