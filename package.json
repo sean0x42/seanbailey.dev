@@ -15,7 +15,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "spellcheck": "mdspell --en-au --ignore-acronyms content/**/*.md* README.md"
+    "spellcheck": "mdspell --en-au --ignore-acronyms content/**/*.md* README.md",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
@@ -64,7 +65,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-eslint": "^2.0.8",
-    "husky": "^4.2.5",
+    "husky": "^5.0.4",
     "jest": "^26.4.2",
     "markdown-spellcheck": "^1.3.1",
     "prettier": "2.1.2",
@@ -72,10 +73,5 @@
   },
   "resolutions": {
     "react-rellax-wrapper/react": "^17.0.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn format:check && yarn test"
-    }
   }
 }
