@@ -9,6 +9,7 @@ import * as styleRefs from './Card.treat'
 
 interface CardProps {
   cover?: FluidImage
+  coverAlt?: string
   badge?: JSX.Element
 }
 
@@ -23,12 +24,14 @@ const Card: FunctionComponent<CardProps> = (props) => {
         fluid={props.cover.childImageSharp.fluid}
         className={styles.image}
         aria-hidden="true"
+        alt={props.coverAlt}
       />
     ) : (
       <img
         src={props.cover.publicURL}
         className={styles.image}
         aria-hidden="true"
+        alt={props.coverAlt}
       />
     )
   }

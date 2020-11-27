@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import { MDXProvider } from '@mdx-js/react'
@@ -16,7 +14,7 @@ import Wrapper from './Wrapper'
 import YouTube from './Article/YouTube'
 
 interface ComponentMap {
-  [name: string]: FunctionComponent<any>
+  [name: string]: FunctionComponent<unknown>
 }
 
 const components: ComponentMap = {
@@ -34,7 +32,7 @@ interface ArticleProps {
   body: string
 }
 
-function Article(props: ArticleProps) {
+const Article: FunctionComponent<ArticleProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   const meta = []
@@ -66,7 +64,7 @@ function Article(props: ArticleProps) {
             <a
               href={props.attribution.url}
               target="_blank"
-              rel="noopener noreferer"
+              rel="noopener noreferrer"
             >
               {props.attribution.author}
             </a>

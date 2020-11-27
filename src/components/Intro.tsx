@@ -1,11 +1,9 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 
 import * as styleRefs from './Intro.treat'
 
-function Intro() {
+const Intro: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (
@@ -18,7 +16,7 @@ function Intro() {
           className={styles.strong}
           href="https://www.nib.com.au"
           target="_blank"
-          role="noopener noreferer"
+          rel="noopener noreferrer"
         >
           nib
         </a>

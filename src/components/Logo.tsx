@@ -1,12 +1,10 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
 
 import * as styleRefs from './Logo.treat'
 
-function Logo() {
+const Logo: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (

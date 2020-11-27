@@ -1,6 +1,4 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 
 import { FluidImage } from '../../app/types'
@@ -12,7 +10,7 @@ interface HeaderProps {
   date: string
 }
 
-function Header(props: HeaderProps) {
+const Header: FunctionComponent<HeaderProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   return (

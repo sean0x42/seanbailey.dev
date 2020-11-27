@@ -1,6 +1,4 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 
 import Wrapper from './Wrapper'
@@ -13,7 +11,7 @@ interface SocialProps {
   to: string
 }
 
-function Social(props: SocialProps) {
+const Social: FunctionComponent<SocialProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   const Icon = props.icon
@@ -24,6 +22,7 @@ function Social(props: SocialProps) {
         href={props.to}
         title={props.title}
         target="_blank"
+        rel="noopener noreferrer"
         className={styles.socialItem}
       >
         <Icon className={styles.socialIcon} aria-hidden="true" />
@@ -33,7 +32,7 @@ function Social(props: SocialProps) {
   )
 }
 
-function Footer() {
+const Footer: FunctionComponent = () => {
   const styles = useStyles(styleRefs)
 
   return (

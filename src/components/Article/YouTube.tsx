@@ -1,15 +1,14 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 
 import * as styleRefs from './YouTube.treat'
 
 interface YouTubeProps {
   id: string
+  title: string
 }
 
-function YouTube(props: YouTubeProps) {
+const YouTube: FunctionComponent<YouTubeProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   return (
@@ -21,6 +20,7 @@ function YouTube(props: YouTubeProps) {
       frameBorder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      title={props.title}
     ></iframe>
   )
 }

@@ -1,13 +1,11 @@
-/** @format */
-
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import ContactForm from '../components/ContactForm'
 import Wrapper from '../components/Wrapper'
 
-const ContactPage = () => (
+const ContactPage: FunctionComponent = () => (
   <Layout>
     <SEO title="Contact" />
 
