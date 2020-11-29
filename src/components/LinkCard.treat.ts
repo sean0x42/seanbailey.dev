@@ -21,6 +21,10 @@ export const link = style({
   ':hover': {
     transform: 'translateY(-4px)',
   },
+
+  ':focus': {
+    transform: 'translateY(-4px)',    
+  }
 })
 
 export const more = style((theme) => ({
@@ -39,6 +43,9 @@ export const more = style((theme) => ({
 
   selectors: {
     [`${link}:hover &`]: {
+      color: theme.primary,
+    },
+    [`${link}:focus &`]: {
       color: theme.primary,
     },
   },
