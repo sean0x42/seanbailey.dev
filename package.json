@@ -48,7 +48,7 @@
     "react-rellax-wrapper": "^1.0.5",
     "react-treat": "^1.5.1",
     "rellax": "^1.12.1",
-    "table": "^5.4.6",
+    "table": "^6.0.4",
     "treat": "^1.6.0"
   },
   "devDependencies": {
