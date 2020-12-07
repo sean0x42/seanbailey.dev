@@ -1,18 +1,20 @@
 import React, { FunctionComponent } from 'react'
+import { useStyles } from 'react-treat'
 import { PageProps, graphql } from 'gatsby'
 
 import { ArticleSummary, ProjectSummary, GraphQLNodes } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
+import * as stylesRefs from '../index.treat'
 import ArticleCards from '../components/ArticleCards'
-import Blobs from '../components/Landing/Blobs'
 import ButtonLink from '../components/ButtonLink'
 import Intro from '../components/Intro'
-import Layout from '../components/Layout'
 import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
-import * as styles from '../index.treat'
+import { ArticleIcon, ProjectIcon } from '../components/Icons'
+import withLayout from '../app/withLayout'
+import Heading from '../components/Heading'
 
 type Data = {
   articles: GraphQLNodes<ArticleSummary>
@@ -20,21 +22,25 @@ type Data = {
 }
 
 const IndexPage: FunctionComponent<PageProps<Data>> = (props) => {
+  const styles = useStyles(stylesRefs)
+
   const articles = flattenNodes(props.data.articles)
   const projects = flattenNodes(props.data.projects)
 
   return (
-    <Layout>
+    <>
       <SEO title="Sean Bailey (Designer and Developer)" />
 
       <Wrapper>
-        <Blobs />
         <Intro />
       </Wrapper>
 
       <Wrapper>
         <div className={styles.headingWrapper}>
-          <h2 className={styles.heading}>Recent Articles</h2>
+          <Heading level={2} className={styles.heading}>
+            <ArticleIcon className={styles.headingIcon} />
+            Recent Articles
+          </Heading>
           <ButtonLink to="/articles">View all articles</ButtonLink>
         </div>
 
@@ -46,7 +52,10 @@ const IndexPage: FunctionComponent<PageProps<Data>> = (props) => {
 
       <Wrapper>
         <div className={styles.headingWrapper}>
-          <h2 className={styles.heading}>Recent Projects</h2>
+          <Heading level={2} className={styles.heading}>
+            <ProjectIcon className={styles.headingIcon} />
+            Recent Projects
+          </Heading>
           <ButtonLink to="/projects">View all projects</ButtonLink>
         </div>
 
@@ -55,11 +64,11 @@ const IndexPage: FunctionComponent<PageProps<Data>> = (props) => {
           View all projects
         </ButtonLink>
       </Wrapper>
-    </Layout>
+    </>
   )
 }
 
-export default IndexPage
+export default withLayout(IndexPage)
 
 export const pageQuery = graphql`
   query {

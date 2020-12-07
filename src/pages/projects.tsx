@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
+import Heading from '../components/Heading'
 
 type Data = {
   projects: GraphQLNodes<ProjectSummary>
@@ -18,10 +19,10 @@ const ProjectsPage: FunctionComponent<PageProps<Data>> = (props) => {
 
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO title="All Projects" />
 
       <Wrapper>
-        <h1>Projects</h1>
+        <Heading level={1}>All Projects</Heading>
         <ProjectCards projects={projects} />
       </Wrapper>
     </Layout>

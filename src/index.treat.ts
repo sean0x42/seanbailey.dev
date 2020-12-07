@@ -30,9 +30,17 @@ globalStyle(`${headingWrapper} a`, {
 
 export const heading = style({
   position: 'relative',
-  margin: '0 !important',
   zIndex: 0,
+
+  display: 'flex',
+  alignItems: 'center',
+  margin: '0 !important',
 })
+
+export const headingIcon = style((theme) => ({
+  marginRight: '1rem',
+  color: theme.primary,
+}))
 
 export const mobileButton = style({
   '@media': {

@@ -32,7 +32,7 @@ export const more = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
-  fontWeight: 600,
+  fontWeight: 500,
 
   // Visuals
   transition: 'color 300ms',
@@ -51,3 +51,7 @@ export const more = style((theme) => ({
     },
   },
 }))
+
+export const icon = style({
+  marginLeft: '0.5rem',
+})

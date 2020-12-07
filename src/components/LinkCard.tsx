@@ -3,11 +3,11 @@
 import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
-import { ChevronRight } from 'react-feather'
 
 import { FluidImage } from '../app/types'
 import Card from './Card'
 import * as styleRefs from './LinkCard.treat'
+import { ArrowRightIcon } from './Icons'
 
 interface LinkCardProps {
   className?: string
@@ -30,7 +30,7 @@ const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
 
         <p className={styles.more} aria-hidden="true">
           {props.moreCopy}
-          <ChevronRight />
+          <ArrowRightIcon className={styles.icon} />
         </p>
       </Card>
     </Link>
