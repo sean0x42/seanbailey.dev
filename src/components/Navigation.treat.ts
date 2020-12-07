@@ -33,7 +33,6 @@ export const navigation = style((theme) => ({
 export const navigationItem = style((theme) => ({
   // Positioning
   position: 'relative',
-  transform: 'translateY(0)',
   zIndex: 3,
 
   // Box model
@@ -44,18 +43,17 @@ export const navigationItem = style((theme) => ({
 
   // Typography
   color: theme.typeColourStrong,
-  fontSize: '15px',
+  fontSize: 16,
   fontWeight: 500,
   textDecoration: 'none',
   lineHeight: 1,
 
   // Visuals
   cursor: 'pointer',
-  transition: 'transform 300ms, color 300ms',
+  transition: 'color 300ms',
   transitionTimingFunction: snap,
 
   ':hover': {
-    transform: 'translateY(-2px)',
     color: theme.primary,
   },
 
@@ -66,7 +64,7 @@ export const navigationItem = style((theme) => ({
       padding: '0.5rem 1rem',
 
       // Typography
-      fontSize: '18px',
+      fontSize: 18,
       lineHeight: 1.6,
     },
   },

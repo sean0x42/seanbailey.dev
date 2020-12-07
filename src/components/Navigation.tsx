@@ -1,14 +1,14 @@
 import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
-import { Icon, Book, Layers, Send } from 'react-feather'
 import { useStyles } from 'react-treat'
+import { ArticleIcon, ContactIcon, ProjectIcon } from './Icons'
 
 import * as styleRefs from './Navigation.treat'
 
 interface NavigationItemProps {
   url: string
   title: string
-  icon: Icon
+  icon: FunctionComponent<{ className: string }>
 }
 
 const NavigationItem: FunctionComponent<NavigationItemProps> = (props) => {
@@ -34,9 +34,9 @@ const Navigation: FunctionComponent = () => {
 
   return (
     <ul className={styles.navigation}>
-      <NavigationItem url="/articles" title="Articles" icon={Book} />
-      <NavigationItem url="/projects" title="Projects" icon={Layers} />
-      <NavigationItem url="/contact" title="Contact" icon={Send} />
+      <NavigationItem url="/articles" title="Articles" icon={ArticleIcon} />
+      <NavigationItem url="/projects" title="Projects" icon={ProjectIcon} />
+      <NavigationItem url="/contact" title="Contact" icon={ContactIcon} />
     </ul>
   )
 }
