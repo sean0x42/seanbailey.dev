@@ -29,7 +29,7 @@
     "gatsby-plugin-catch-links": "^2.3.11",
     "gatsby-plugin-manifest": "^2.4.21",
     "gatsby-plugin-mdx": "^1.2.30",
-    "gatsby-plugin-page-creator": "^2.3.9",
+    "gatsby-plugin-page-creator": "^2.7.2",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.22",
