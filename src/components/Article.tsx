@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { FluidImage, Attribution } from '../app/types'
+import { FluidImage, Attribution, FixedImage } from '../app/types'
 import * as styleRefs from './Article.treat'
 
 import Caption from './Article/Caption'
@@ -24,7 +24,7 @@ const components: ComponentMap = {
 }
 
 interface ArticleProps {
-  coverImage: FluidImage
+  coverImage: FixedImage
   attribution: Attribution
   title: string
   date: string
@@ -36,10 +36,10 @@ const Article: FunctionComponent<ArticleProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   const meta = []
-  if (props.coverImage?.childImageSharp?.fluid.srcWebp) {
+  if (props.coverImage?.childImageSharp?.fixed.srcWebp) {
     meta.push({
       name: 'og:image',
-      content: props.coverImage.childImageSharp.fluid.srcWebp,
+      content: props.coverImage.childImageSharp.fixed.srcWebp,
     })
   }
 

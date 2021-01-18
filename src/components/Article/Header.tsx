@@ -2,11 +2,11 @@ import React, { FunctionComponent } from 'react'
 import Img from 'gatsby-image'
 import { useStyles } from 'react-treat'
 
-import { FluidImage } from '../../app/types'
+import { FixedImage } from '../../app/types'
 import * as styleRefs from './Header.treat'
 
 interface HeaderProps {
-  coverImage?: FluidImage
+  coverImage?: FixedImage
   title: string
   date: string
 }
@@ -19,7 +19,7 @@ const Header: FunctionComponent<HeaderProps> = (props) => {
       {props.coverImage && (
         <Img
           className={styles.image}
-          fluid={props.coverImage.childImageSharp.fluid}
+          fixed={props.coverImage.childImageSharp.fixed}
         />
       )}
 

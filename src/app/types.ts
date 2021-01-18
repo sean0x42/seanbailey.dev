@@ -44,7 +44,7 @@ export interface Article {
   frontmatter: {
     title: string
     date: string
-    cover: FluidImage
+    cover: FixedImage
     attribution: Attribution | null
   }
 }

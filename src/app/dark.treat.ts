@@ -1,5 +1,3 @@
-/** @format */
-
 import { createTheme } from 'treat'
 
 export default createTheme({
@@ -7,8 +5,8 @@ export default createTheme({
 
   primary: '#09F1C6',
 
-  grey900: '#14161A',
-  grey800: '#21252C',
+  grey900: '#101114',
+  grey800: '#1B1E23',
   grey700: '#32373E',
   grey600: '#40464F',
   grey500: '#4C525D',
