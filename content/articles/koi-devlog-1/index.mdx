@@ -1,0 +1,83 @@
+---
+title: 'Building a Document Editor: Developer Update 01'
+date: 2021-01-20
+
+cover: './cover.png'
+---
+
+1. Document editors play a vital role in everyday computing. Enabling us to
+   build documents and convey information easily to others.
+   1. I think they're in desperate need of a rethink. They've become bloated
+      and sluggish, and I often find that the tool itself gets in my way when
+      I'm trying to compose documents.
+   2. I'd love for there to be a rethink of how we approach building document
+      editors, and by extension how we build documents.
+   3. I won't spend much more time explaining my position on document editors,
+      at risk of sounding preachy and overstating the weight of the problem. So
+      let's dive in and explore something I've been working on for a while now.
+2. Introducing component based document editing
+   1. I'm proposing an alternative way of composing documents: building them
+      peice by peice with components.
+   2. I believe that building documents in this way is more intuitive for the
+      end user, and would enable complex document layouts through component
+      composition. **i.e. simple and intuitive**
+   3. By building an editor in this way, it would be trivial to add new
+      components as time goes on, and allow document authors to further enhance
+      their documents with new components. **i.e. potential for long term growth.**
+   4. With components, you have more control over your document's content. Not
+      only can you delete and add text, but you could also add new components,
+      move components, delete subtrees, etc. **i.e. power**
+   - You build a document from components. You create complex layouts and
+     components by combinding and configuring a number of smaller components.
+
+If this project sounds interesting to you, be sure to subscribe to my mailing
+list below to be notified when my next developer update for this project is
+published! 👇
+
+---
+
+# An Industry Primed for a Shake Up
+
+- In 2020, editing a document is not a great experience
+  - If you've got a bit of money, and not much computer experience (find a nicer
+    way of saying this) you will probably look to Microsoft Word. Here you will
+    find bloat, complexity, and an editing experience that has not really been
+    questioned in decades. Word is not explicitly bad, but it is far from
+    ideal.
+  - If you need collaboration, you'll turn to Google Docs. But Google Docs is
+    not all that different to word, with poorer performance in my opinion.
+
+If you're serious about composing the document, particularly in an academic
+environement, you may turn to LaTeX or another markup language. But installing
+the toolchain for LaTeX can sometimes be nightmarish, and LaTeX is not very
+welcoming to visual people (it's great however if you're a nerd like me).
+
+So maybe it's about time we start questioning the core of the problem: and look
+toward the editing experience itself. Is there another way we can compose
+documents? A different approach that is more intuitive, more expressive, and
+more powerful. I think the problem with Word, Google Docs, and other visual
+document editors, is that no matter how much you polish them they are still
+built on outdated foundations. What if we could approach the problem with
+a new foundation?
+
+# Introducing: Component Based Documents
+
+- I'm building a document editor. This is really my second attempt, after
+  designing and building one at university, I have learnt a lot from the
+  experience and I know now where the major challenges lie.
+  - Aiming for simplicity.
+  - An editing experience that is radically different to that of Word or Google
+    Docs.
+
+# NEXT ARTICLE
+
+- Considering the new component insert button
+  - Goal: extremely lightweight. Editors will open this menu many times over
+    whilst editing a document, so the more streamlined the better.
+  - Goal: extensible. In future it would be great to add animations and
+    additional information beside a particular selection
+  - Goal: a hub for discovery. This menu should show all components, meaning
+    anything you can add to a document can be found here.
+- Considering text selection in a component world
+  - Need to do an A/B test to determine which route is best. Show findings here
+    in this article.
