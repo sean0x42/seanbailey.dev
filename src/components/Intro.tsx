@@ -12,8 +12,9 @@ const Intro: FunctionComponent = () => {
       <p>
         I am a <strong className={styles.strong}>designer and developer</strong>{' '}
         in Newcastle, Australia.
+        <br />
+        Welcome to my home on the web.
       </p>
-      <p>Welcome to my home on the web.</p>
     </div>
   )
 }

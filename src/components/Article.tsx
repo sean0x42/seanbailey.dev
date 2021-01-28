@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { FluidImage, Attribution, FixedImage } from '../app/types'
+import { Attribution, FixedImage } from '../app/types'
 import * as styleRefs from './Article.treat'
 
 import Caption from './Article/Caption'
