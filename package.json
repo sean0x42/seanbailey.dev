@@ -37,7 +37,7 @@
     "gatsby-plugin-treat": "^1.4.2",
     "gatsby-remark-images": "^3.3.23",
     "gatsby-remark-prismjs": "^3.5.10",
-    "gatsby-source-filesystem": "^2.3.37",
+    "gatsby-source-filesystem": "^2.11.0",
     "gatsby-transformer-sharp": "^2.5.16",
     "modern-normalize": "^1.0.0",
     "prismjs": "^1.22.0",
