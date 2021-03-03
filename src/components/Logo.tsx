@@ -1,17 +1,10 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
-import { useStyles } from 'react-treat'
 
-import * as styleRefs from './Logo.treat'
-
-const Logo: FunctionComponent = () => {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <Link to="/" className={styles.logo}>
-      Sean Bailey
-    </Link>
-  )
-}
+const Logo: React.FunctionComponent = () => (
+  <Link to="/" className="px-4 py-2 -ml-4 font-semibold">
+    Sean Bailey
+  </Link>
+)
 
 export default Logo

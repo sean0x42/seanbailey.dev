@@ -1,16 +1,14 @@
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
+import React from 'react'
 
-import { ProjectSummary } from '../app/types'
+import Heading from './Heading'
 import LinkCard from './LinkCard'
-import * as styleRefs from './ProjectCards.treat'
+import { ProjectSummary } from '../app/types'
 
 interface ProjectCardProps {
   project: ProjectSummary
 }
 
-const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
-  const styles = useStyles(styleRefs)
+const ProjectCard: React.FunctionComponent<ProjectCardProps> = (props) => {
   const { project } = props
 
   return (
@@ -20,8 +18,8 @@ const ProjectCard: FunctionComponent<ProjectCardProps> = (props) => {
         cover={project.frontmatter.cover}
         moreCopy="See more"
       >
-        <h3 className={styles.title}>{project.frontmatter.title}</h3>
-        <p className={styles.date}>
+        <Heading level={2}>{project.frontmatter.title}</Heading>
+        <p className="my-2">
           {project.frontmatter.startDate}&mdash;
           {project.frontmatter.endDate || 'Present'}
         </p>

@@ -1,44 +1,29 @@
 import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
-import { useStyles } from 'react-treat'
-import { ArticleIcon, ContactIcon, ProjectIcon } from './Icons'
-
-import * as styleRefs from './Navigation.treat'
 
 interface NavigationItemProps {
   url: string
   title: string
-  icon: FunctionComponent<{ className: string }>
 }
 
-const NavigationItem: FunctionComponent<NavigationItemProps> = (props) => {
-  const styles = useStyles(styleRefs)
-  const Icon = props.icon
+const NavigationItem: FunctionComponent<NavigationItemProps> = (props) => (
+  <li>
+    <Link
+      to={props.url}
+      title={props.title}
+      className="relative z-20 flex flex-col sm:flex-row items-center p-4 font-semibold"
+    >
+      {props.title}
+    </Link>
+  </li>
+)
 
-  return (
-    <li>
-      <Link
-        to={props.url}
-        title={props.title}
-        className={styles.navigationItem}
-      >
-        <Icon className={styles.icon} aria-hidden="true" />
-        <span>{props.title}</span>
-      </Link>
-    </li>
-  )
-}
-
-const Navigation: FunctionComponent = () => {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <ul className={styles.navigation}>
-      <NavigationItem url="/articles" title="Articles" icon={ArticleIcon} />
-      <NavigationItem url="/projects" title="Projects" icon={ProjectIcon} />
-      <NavigationItem url="/contact" title="Contact" icon={ContactIcon} />
-    </ul>
-  )
-}
+const Navigation: FunctionComponent = () => (
+  <ul className="fixed inset-0 sm:relative flex items-center justify-center bg-grey-800 sm:bg-none">
+    <NavigationItem url="/articles" title="Articles" />
+    <NavigationItem url="/projects" title="Projects" />
+    <NavigationItem url="/contact" title="Contact" />
+  </ul>
+)
 
 export default Navigation

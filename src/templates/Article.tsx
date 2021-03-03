@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
 
-import { Article as ArticleModel } from '../app/types'
-
 import Article from '../components/Article'
 import Layout from '../components/Layout'
+import { Article as ArticleModel } from '../app/types'
 
 type Data = {
   mdx: ArticleModel
@@ -45,7 +44,7 @@ export const pageQuery = graphql`
         cover {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 900, layout: FIXED)
+            gatsbyImageData(width: 900, layout: CONSTRAINED)
           }
         }
         attribution {

@@ -1,13 +1,9 @@
-/** @format */
-
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
-import { useStyles } from 'react-treat'
 
-import { Image } from '../app/types'
 import Card from './Card'
-import * as styleRefs from './LinkCard.treat'
 import { ArrowRightIcon } from './Icons'
+import { Image } from '../app/types'
 
 interface LinkCardProps {
   className?: string
@@ -17,24 +13,17 @@ interface LinkCardProps {
   badge?: JSX.Element
 }
 
-const LinkCard: FunctionComponent<LinkCardProps> = (props) => {
-  const styles = useStyles(styleRefs)
+const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => (
+  <Link to={props.to} className={props.className}>
+    <Card cover={props.cover} badge={props.badge}>
+      {props.children}
 
-  const classes = [styles.link]
-  props.className && classes.push(props.className)
-
-  return (
-    <Link to={props.to} className={classes.join(' ')}>
-      <Card cover={props.cover} badge={props.badge}>
-        {props.children}
-
-        <p className={styles.more} aria-hidden="true">
-          {props.moreCopy}
-          <ArrowRightIcon className={styles.icon} />
-        </p>
-      </Card>
-    </Link>
-  )
-}
+      <p className="flex items-center mt-4" aria-hidden="true">
+        {props.moreCopy}
+        <ArrowRightIcon className="ml-2" />
+      </p>
+    </Card>
+  </Link>
+)
 
 export default LinkCard

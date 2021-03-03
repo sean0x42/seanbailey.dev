@@ -1,20 +1,16 @@
-/** @format */
+import React from 'react'
 
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
-import * as styleRefs from './Wrapper.treat'
+type Width = 'prose' | 'none' | 'screen-xl'
 
 interface WrapperProps {
   className?: string
-  thin?: boolean
+  width?: `max-w-${Width}`
 }
 
-const Wrapper: FunctionComponent<WrapperProps> = (props) => {
-  const styles = useStyles(styleRefs)
-  const classes = [styles.wrapper]
+const Wrapper: React.FunctionComponent<WrapperProps> = (props) => {
+  const classes = ['mx-auto px-5', props.width ?? 'max-w-screen-xl']
 
   props.className && classes.push(props.className)
-  props.thin && classes.push(styles.thin)
 
   return <div className={classes.join(' ')}>{props.children}</div>
 }

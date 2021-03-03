@@ -1,24 +1,19 @@
 /* eslint-disable jsx-a11y/heading-has-content */
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
-
-import * as styleRefs from './Heading.treat'
+import React from 'react'
 
 interface HeadingProps {
   level?: number
   className?: string
 }
 
-const Heading: FunctionComponent<HeadingProps> = (props) => {
-  const styles = useStyles(styleRefs)
-
+const Heading: React.FunctionComponent<HeadingProps> = (props) => {
   const levelToClass = {
-    1: styles.heading1,
-    2: styles.heading2,
-    3: styles.heading3,
-    4: styles.heading4,
-    5: styles.heading5,
-    6: styles.heading6,
+    1: 'font-bold',
+    2: 'font-semibold',
+    3: 'font-medium',
+    4: 'styles.heading4',
+    5: 'styles.heading5',
+    6: 'styles.heading6',
   }
 
   const level = props.level ? Math.min(6, Math.max(1, props.level)) : 1
@@ -42,6 +37,8 @@ const Heading: FunctionComponent<HeadingProps> = (props) => {
       return <h1 {...defaultProps}></h1>
     case 2:
       return <h2 {...defaultProps}></h2>
+    case 3:
+      return <h3 {...defaultProps}></h3>
   }
 }
 

@@ -1,13 +1,7 @@
-/** @format */
+import React from 'react'
 
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
-
-import * as styleRefs from './Caption.treat'
-
-const Caption: FunctionComponent = (props) => {
-  const styles = useStyles(styleRefs)
-  return <figcaption className={styles.caption}>{props.children}</figcaption>
-}
+const Caption: React.FunctionComponent = (props) => (
+  <figcaption className="styles.caption">{props.children}</figcaption>
+)
 
 export default Caption

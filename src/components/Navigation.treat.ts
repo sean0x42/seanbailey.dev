@@ -3,33 +3,6 @@
 import { style } from 'treat'
 import { snap } from '../app/constants'
 
-export const navigation = style((theme) => ({
-  // Positioning
-  position: 'fixed',
-  bottom: 0,
-  left: 0,
-  right: 0,
-  zIndex: 15,
-
-  // Box model
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  margin: 0,
-  padding: 0,
-
-  // Visuals
-  background: theme.grey800,
-  listStyleType: 'none',
-
-  '@media': {
-    '(min-width: 600px)': {
-      position: 'relative',
-      background: 'none',
-    },
-  },
-}))
-
 export const navigationItem = style((theme) => ({
   // Positioning
   position: 'relative',
@@ -66,18 +39,6 @@ export const navigationItem = style((theme) => ({
       // Typography
       fontSize: 18,
       lineHeight: 1.6,
-    },
-  },
-}))
-
-export const icon = style((theme) => ({
-  marginBottom: '0.5rem',
-  color: theme.primary,
-
-  '@media': {
-    '(min-width: 600px)': {
-      marginBottom: 0,
-      marginRight: '0.5rem',
     },
   },
 }))

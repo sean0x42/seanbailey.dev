@@ -1,9 +1,8 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { Attribution, Image } from '../app/types'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { getSrc } from 'gatsby-plugin-image'
-import { useStyles } from 'react-treat'
 
 import Caption from './Article/Caption'
 import Figure from './Article/Figure'
@@ -12,10 +11,9 @@ import SEO from './SEO'
 import ThanksForReading from './Article/ThanksForReading'
 import Wrapper from './Wrapper'
 import YouTube from './Article/YouTube'
-import * as styleRefs from './Article.treat'
 
 interface ComponentMap {
-  [name: string]: FunctionComponent<unknown>
+  [name: string]: React.ComponentType
 }
 
 const components: ComponentMap = {
@@ -33,9 +31,7 @@ interface ArticleProps {
   body: string
 }
 
-const Article: FunctionComponent<ArticleProps> = (props) => {
-  const styles = useStyles(styleRefs)
-
+const Article: React.FunctionComponent<ArticleProps> = (props) => {
   const meta = []
   if (props.coverImage?.childImageSharp?.gatsbyImageData) {
     meta.push({
@@ -48,19 +44,19 @@ const Article: FunctionComponent<ArticleProps> = (props) => {
     <article>
       <SEO title={props.title} description={props.excerpt} meta={meta} />
 
-      <Wrapper thin className={styles.article}>
+      <Wrapper width="max-w-prose" className="styles.article">
         <Header {...props} />
 
         <MDXProvider components={components}>
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>
 
-        <hr className={styles.squiggle} />
+        <hr className="styles.squiggle" />
 
         <ThanksForReading />
 
         {props.attribution && (
-          <p className={styles.attribution}>
+          <p className="styles.attribution">
             Cover image by{' '}
             <a
               href={props.attribution.url}

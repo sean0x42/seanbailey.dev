@@ -1,15 +1,12 @@
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
-import * as styleRefs from './SkipLink.treat'
+import React from 'react'
 
-const SkipLink: FunctionComponent = () => {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <a href="#main" className={styles.link}>
-      Skip to content
-    </a>
-  )
-}
+const SkipLink: React.FunctionComponent = () => (
+  <a
+    href="#main"
+    className="absolute top-4 left-8 z-20 transition-transform transform -translate-y-10 focus:translate-y-0"
+  >
+    Skip to content
+  </a>
+)
 
 export default SkipLink

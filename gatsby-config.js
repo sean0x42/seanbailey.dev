@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: 'https://www.seanbailey.dev',
   },
   plugins: [
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
@@ -21,7 +22,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-treat',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {

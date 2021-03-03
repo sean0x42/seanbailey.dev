@@ -1,9 +1,6 @@
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
+import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { FluidImage } from '../app/types'
-import * as styleRefs from './Project.treat'
 
 import Column from './Project/Column'
 import ColumnSpacer from './Project/ColumnSpacer'
@@ -16,9 +13,10 @@ import ThanksForReading from './Project/ThanksForReading'
 import ThreeColumns from './Project/ThreeColumns'
 import TwoColumns from './Project/TwoColumns'
 import Wrapper from './Wrapper'
+import { Image } from '../app/types'
 
 interface ComponentMap {
-  [name: string]: FunctionComponent<unknown>
+  [name: string]: React.FunctionComponent<unknown>
 }
 
 const components: ComponentMap = {
@@ -31,39 +29,35 @@ const components: ComponentMap = {
 }
 
 interface ProjectProps {
-  coverImage: FluidImage
+  coverImage: Image
   title: string
   date: string
   excerpt: string
   body: string
 }
 
-const Project: FunctionComponent<ProjectProps> = (props) => {
-  const styles = useStyles(styleRefs)
+const Project: React.FunctionComponent<ProjectProps> = (props) => (
+  <article>
+    <SEO title={props.title} description={props.excerpt} />
 
-  return (
-    <article>
-      <SEO title={props.title} description={props.excerpt} />
+    <Wrapper className="styles.project">
+      <Columns>
+        <Logo image={props.coverImage} />
+        <Header {...props} />
+      </Columns>
 
-      <Wrapper className={styles.project}>
-        <Columns>
-          <Logo image={props.coverImage} />
-          <Header {...props} />
-        </Columns>
+      <MDXProvider components={components}>
+        <MDXRenderer>{props.body}</MDXRenderer>
+      </MDXProvider>
 
-        <MDXProvider components={components}>
-          <MDXRenderer>{props.body}</MDXRenderer>
-        </MDXProvider>
-
-        <hr />
-        <Columns>
-          <TwoColumns>
-            <ThanksForReading />
-          </TwoColumns>
-        </Columns>
-      </Wrapper>
-    </article>
-  )
-}
+      <hr />
+      <Columns>
+        <TwoColumns>
+          <ThanksForReading />
+        </TwoColumns>
+      </Columns>
+    </Wrapper>
+  </article>
+)
 
 export default Project

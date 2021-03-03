@@ -1,66 +1,64 @@
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
-import { PageProps, graphql } from 'gatsby'
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
-import { ArticleSummary, ProjectSummary, GraphQLNodes } from '../app/types'
-import { flattenNodes } from '../helpers/graphql'
-
-import * as stylesRefs from '../index.treat'
 import ArticleCards from '../components/ArticleCards'
 import ButtonLink from '../components/ButtonLink'
+import Heading from '../components/Heading'
 import Intro from '../components/Intro'
 import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
-import { ArticleIcon, ProjectIcon } from '../components/Icons'
 import withLayout from '../app/withLayout'
-import Heading from '../components/Heading'
+import { ArticleSummary, ProjectSummary } from '../app/types'
+import { flattenNodes } from '../helpers/graphql'
 
-type Data = {
-  articles: GraphQLNodes<ArticleSummary>
-  projects: GraphQLNodes<ProjectSummary>
+interface HeadingContainerProps {
+  heading: string
 }
 
-const IndexPage: FunctionComponent<PageProps<Data>> = (props) => {
-  const styles = useStyles(stylesRefs)
+const HeadingContainer: React.FunctionComponent<HeadingContainerProps> = (
+  props,
+) => (
+  <div className="flex items-start flex-col sm:flex-row sm:flex-end sm:justify-between mt-8 mb-5">
+    <Heading level={2}>{props.heading}</Heading>
+    {props.children}
+  </div>
+)
 
-  const articles = flattenNodes(props.data.articles)
-  const projects = flattenNodes(props.data.projects)
+const LandingPage: React.FunctionComponent = () => {
+  const data = useStaticQuery(query)
+
+  const articles = flattenNodes<ArticleSummary>(data.articles)
+  const projects = flattenNodes<ProjectSummary>(data.projects)
 
   return (
     <>
       <SEO title="Sean Bailey (Designer and Developer)" />
 
-      <Wrapper>
+      <Wrapper className="my-4">
         <Intro />
       </Wrapper>
 
-      <Wrapper>
-        <div className={styles.headingWrapper}>
-          <Heading level={2} className={styles.heading}>
-            <ArticleIcon className={styles.headingIcon} />
-            Recent Articles
-          </Heading>
+      <Wrapper className="my-16">
+        <HeadingContainer heading="Recent Articles">
           <ButtonLink to="/articles">View all articles</ButtonLink>
-        </div>
+        </HeadingContainer>
 
         <ArticleCards articles={articles} />
-        <ButtonLink to="/articles" className={styles.mobileButton}>
+
+        <ButtonLink to="/articles" className="sm:hidden">
           View all articles
         </ButtonLink>
       </Wrapper>
 
-      <Wrapper>
-        <div className={styles.headingWrapper}>
-          <Heading level={2} className={styles.heading}>
-            <ProjectIcon className={styles.headingIcon} />
-            Recent Projects
-          </Heading>
+      <Wrapper className="my-16">
+        <HeadingContainer heading="Recent Projects">
           <ButtonLink to="/projects">View all projects</ButtonLink>
-        </div>
+        </HeadingContainer>
 
         <ProjectCards projects={projects} />
-        <ButtonLink to="/projects" className={styles.mobileButton}>
+
+        <ButtonLink to="/projects" className="sm:hidden">
           View all projects
         </ButtonLink>
       </Wrapper>
@@ -68,9 +66,9 @@ const IndexPage: FunctionComponent<PageProps<Data>> = (props) => {
   )
 }
 
-export default withLayout(IndexPage)
+export default withLayout(LandingPage)
 
-export const pageQuery = graphql`
+const query = graphql`
   {
     articles: allMdx(
       filter: {
