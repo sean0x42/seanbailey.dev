@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
+import { Attribution, Image } from '../app/types'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Attribution, FixedImage } from '../app/types'
-import * as styleRefs from './Article.treat'
+import { getSrc } from 'gatsby-plugin-image'
+import { useStyles } from 'react-treat'
 
 import Caption from './Article/Caption'
 import Figure from './Article/Figure'
@@ -12,6 +12,7 @@ import SEO from './SEO'
 import ThanksForReading from './Article/ThanksForReading'
 import Wrapper from './Wrapper'
 import YouTube from './Article/YouTube'
+import * as styleRefs from './Article.treat'
 
 interface ComponentMap {
   [name: string]: FunctionComponent<unknown>
@@ -24,7 +25,7 @@ const components: ComponentMap = {
 }
 
 interface ArticleProps {
-  coverImage: FixedImage
+  coverImage: Image
   attribution: Attribution
   title: string
   date: string
@@ -36,10 +37,10 @@ const Article: FunctionComponent<ArticleProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   const meta = []
-  if (props.coverImage?.childImageSharp?.fixed.srcWebp) {
+  if (props.coverImage?.childImageSharp?.gatsbyImageData) {
     meta.push({
       name: 'og:image',
-      content: props.coverImage.childImageSharp.fixed.srcWebp,
+      content: getSrc(props.coverImage.childImageSharp.gatsbyImageData),
     })
   }
 

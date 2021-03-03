@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { useStyles } from 'react-treat'
 
 import { FluidImage } from '../../app/types'
@@ -14,9 +14,9 @@ const Logo: FunctionComponent<LogoProps> = (props) => {
   const styles = useStyles(styleRefs)
 
   return props.image.childImageSharp ? (
-    <Img
+    <GatsbyImage
+      image={props.image.childImageSharp.gatsbyImageData}
       className={styles.image}
-      fluid={props.image.childImageSharp.fluid}
       alt={props.alt}
     />
   ) : (

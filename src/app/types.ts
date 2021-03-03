@@ -1,21 +1,13 @@
-/** @format */
-
-import { FluidObject, FixedObject } from 'gatsby-image'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export interface GraphQLNodes<T> {
   edges: { node: T }[]
 }
 
-export interface FluidImage {
+export interface Image {
   publicURL?: string
   childImageSharp?: {
-    fluid: FluidObject
-  }
-}
-
-export interface FixedImage {
-  childImageSharp: {
-    fixed: FixedObject
+    gatsbyImageData: IGatsbyImageData
   }
 }
 
@@ -28,7 +20,7 @@ export interface ArticleSummary {
     title: string
     rawDate: string
     date: string
-    cover: FluidImage
+    cover: Image
   }
 }
 
@@ -58,7 +50,7 @@ export interface ProjectSummary {
     title: string
     startDate: string
     endDate: string
-    cover?: FluidImage
+    cover?: Image
   }
 }
 
@@ -70,6 +62,6 @@ export interface Project {
     title: string
     startDate: string
     endDate: string
-    cover: FluidImage
+    cover: Image
   }
 }
