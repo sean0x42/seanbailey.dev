@@ -45,10 +45,7 @@ export const pageQuery = graphql`
         cover {
           publicURL
           childImageSharp {
-            fixed(width: 900) {
-              ...GatsbyImageSharpFixed
-              srcWebp
-            }
+            gatsbyImageData(width: 900, layout: FIXED)
           }
         }
         attribution {
