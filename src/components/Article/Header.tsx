@@ -1,32 +1,29 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { useStyles } from 'react-treat'
 
-import { FixedImage } from '../../app/types'
-import * as styleRefs from './Header.treat'
+import Heading from '../Heading'
+import { Image } from '../../app/types'
 
 interface HeaderProps {
-  coverImage?: FixedImage
+  coverImage?: Image
   title: string
   date: string
 }
 
-const Header: FunctionComponent<HeaderProps> = (props) => {
-  const styles = useStyles(styleRefs)
+const Header: React.FunctionComponent<HeaderProps> = (props) => (
+  <div>
+    {props.coverImage && (
+      <GatsbyImage
+        image={props.coverImage.childImageSharp.gatsbyImageData}
+        className="bg-gray-900 rounded mb-8"
+        alt={props.title}
+        aria-hidden={true}
+      />
+    )}
 
-  return (
-    <div>
-      {props.coverImage && (
-        <GatsbyImage
-          image={props.coverImage.childImageSharp.gatsbyImageData}
-          className={styles.image}
-        />
-      )}
-
-      <h1 className={styles.title}>{props.title}</h1>
-      {props.date && <p className={styles.date}>{props.date}</p>}
-    </div>
-  )
-}
+    <Heading level={1}>{props.title}</Heading>
+    {props.date && <p className="my-4">{props.date}</p>}
+  </div>
+)
 
 export default Header

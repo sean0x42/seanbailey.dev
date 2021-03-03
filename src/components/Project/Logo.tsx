@@ -1,27 +1,21 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { useStyles } from 'react-treat'
-
-import { FluidImage } from '../../app/types'
-import * as styleRefs from './Logo.treat'
+import { Image } from '../../app/types'
 
 interface LogoProps {
-  image: FluidImage
+  image: Image
   alt?: string
 }
 
-const Logo: FunctionComponent<LogoProps> = (props) => {
-  const styles = useStyles(styleRefs)
-
-  return props.image.childImageSharp ? (
+const Logo: React.FunctionComponent<LogoProps> = (props) =>
+  props.image.childImageSharp ? (
     <GatsbyImage
       image={props.image.childImageSharp.gatsbyImageData}
-      className={styles.image}
+      className="styles.image"
       alt={props.alt}
     />
   ) : (
-    <img className={styles.image} src={props.image.publicURL} alt={props.alt} />
+    <img className="styles.image" src={props.image.publicURL} alt={props.alt} />
   )
-}
 
 export default Logo

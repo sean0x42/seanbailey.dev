@@ -1,10 +1,9 @@
-/** @format */
+import React from 'react'
 
-import React, { FunctionComponent } from 'react'
-import * as styles from './CardLayout.treat'
-
-const CardLayout: FunctionComponent = (props) => {
-  return <ul className={styles.layout}>{props.children}</ul>
-}
+const CardLayout: React.FunctionComponent = (props) => (
+  <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 my-4">
+    {props.children}
+  </ul>
+)
 
 export default CardLayout

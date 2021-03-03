@@ -1,11 +1,6 @@
-/** @format */
-
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
+import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { Image } from '../app/types'
-
-import * as styleRefs from './Card.treat'
 
 interface CardProps {
   cover?: Image
@@ -13,9 +8,11 @@ interface CardProps {
   badge?: JSX.Element
 }
 
-const Card: FunctionComponent<CardProps> = (props) => {
-  const styles = useStyles(styleRefs)
+const styles = {
+  image: 'rounded mb-2 bg-gray-900',
+}
 
+const Card: React.FunctionComponent<CardProps> = (props) => {
   // Determine which cover image to show
   let cover
   if (props.cover) {
@@ -37,10 +34,10 @@ const Card: FunctionComponent<CardProps> = (props) => {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div>
       {props.badge}
       {cover}
-      <div className={styles.body}>{props.children}</div>
+      <div className="styles.body">{props.children}</div>
     </div>
   )
 }

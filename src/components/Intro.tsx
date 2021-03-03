@@ -1,22 +1,14 @@
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
+import React from 'react'
 
-import * as styleRefs from './Intro.treat'
-
-const Intro: FunctionComponent = () => {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <div className={styles.container}>
-      <p>Hello!</p>
-      <p>
-        I am a <strong className={styles.strong}>designer and developer</strong>{' '}
-        in Newcastle, Australia.
-        <br />
-        Welcome to my home on the web.
-      </p>
-    </div>
-  )
-}
+const Intro: React.FunctionComponent = () => (
+  <div className="pt-4">
+    <p>Hello!</p>
+    <p className="mt-4">
+      I am a <strong>designer and developer</strong> in Newcastle, Australia.
+      <br />
+      Welcome to my home on the web.
+    </p>
+  </div>
+)
 
 export default Intro

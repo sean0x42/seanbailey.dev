@@ -1,10 +1,7 @@
-/** @format */
+import React from 'react'
 
-import React, { FunctionComponent } from 'react'
-import * as styles from './Columns.treat'
-
-const Columns: FunctionComponent = (props) => (
-  <div className={styles.columns}>{props.children}</div>
+const Columns: React.FunctionComponent = (props) => (
+  <div className="styles.columns">{props.children}</div>
 )
 
 export default Columns
