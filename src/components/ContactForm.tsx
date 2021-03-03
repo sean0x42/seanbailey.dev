@@ -1,18 +1,10 @@
-import React, {
-  useState,
-  ChangeEvent,
-  FormEvent,
-  FunctionComponent,
-} from 'react'
+import React, { useState, ChangeEvent, FormEvent } from 'react'
 import { navigate } from 'gatsby'
-import { useStyles } from 'react-treat'
 
-import * as styleRefs from './ContactForm.treat'
 import { encodeForm } from '../helpers/form'
 
-const ContactForm: FunctionComponent = () => {
+const ContactForm: React.FunctionComponent = () => {
   const [state, setState] = useState({})
-  const styles = useStyles(styleRefs)
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -40,7 +32,7 @@ const ContactForm: FunctionComponent = () => {
 
   return (
     <form
-      className={styles.form}
+      className="styles.form"
       name="contact"
       method="post"
       data-netlify="true"
@@ -51,7 +43,7 @@ const ContactForm: FunctionComponent = () => {
       <input type="hidden" name="form-name" value="contact" />
 
       <div
-        className={[styles.field, styles.fieldPot].join(' ')}
+        className={['styles.field', 'styles.fieldPot'].join(' ')}
         aria-hidden="true"
       >
         <label htmlFor="sender">Do not fill out this field</label>
@@ -59,50 +51,50 @@ const ContactForm: FunctionComponent = () => {
           type="text"
           name="sender"
           id="sender"
-          className={styles.input}
+          className="styles.input"
           onChange={handleChange}
         />
       </div>
 
-      <div className={styles.field}>
+      <div className="styles.field">
         <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
           id="name"
-          className={styles.input}
+          className="styles.input"
           placeholder="Someone"
           required
           onChange={handleChange}
         />
       </div>
 
-      <div className={styles.field}>
+      <div className="styles.field">
         <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"
           id="email"
-          className={styles.input}
+          className="styles.input"
           placeholder="someone@example.com"
           required
           onChange={handleChange}
         />
       </div>
 
-      <div className={styles.field}>
+      <div className="styles.field">
         <label htmlFor="message">Message</label>
         <textarea
           name="message"
           id="message"
           required
-          className={styles.input}
+          className="styles.input"
           placeholder="..."
           onChange={handleChange}
         />
       </div>
 
-      <button type="submit" className={styles.send}>
+      <button type="submit" className="styles.send">
         Send Message
       </button>
     </form>

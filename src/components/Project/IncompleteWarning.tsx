@@ -1,23 +1,17 @@
-import React, { FunctionComponent } from 'react'
-import { useStyles } from 'react-treat'
+import React from 'react'
 import { AlertTriangle } from 'react-feather'
-import * as styleRefs from './IncompleteWarning.treat'
 
-const IncompleteWarning: FunctionComponent = () => {
-  const styles = useStyles(styleRefs)
-
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.icon} aria-hidden="true">
-        <AlertTriangle className={styles.iconInner} />
-      </div>
-
-      <p className={styles.copy}>
-        This page documents an incomplete or cancelled project. Some designs may
-        be underdeveloped or awkward.
-      </p>
+const IncompleteWarning: React.FunctionComponent = () => (
+  <div className="styles.wrapper">
+    <div className="styles.icon" aria-hidden="true">
+      <AlertTriangle className="styles.iconInner" />
     </div>
-  )
-}
+
+    <p className="styles.copy">
+      This page documents an incomplete or cancelled project. Some designs may
+      be underdeveloped or awkward.
+    </p>
+  </div>
+)
 
 export default IncompleteWarning

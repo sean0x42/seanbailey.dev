@@ -1,22 +1,14 @@
-import React, {
-  useState,
-  FormEvent,
-  ChangeEvent,
-  FunctionComponent,
-} from 'react'
-import { useStyles } from 'react-treat'
+import React, { useState, FormEvent, ChangeEvent } from 'react'
 import { navigate } from 'gatsby'
 
-import * as styleRefs from './SubscribeForm.treat'
 import { encodeForm } from '../helpers/form'
 
 interface State {
   [key: string]: string
 }
 
-const SubscribeForm: FunctionComponent = () => {
+const SubscribeForm: React.FunctionComponent = () => {
   const [state, setState] = useState({} as State)
-  const styles = useStyles(styleRefs)
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -44,17 +36,17 @@ const SubscribeForm: FunctionComponent = () => {
 
   return (
     <form
-      className={styles.form}
+      className="styles.form"
       name="subscribe"
       method="post"
       data-netlify="true"
       action="/thanks"
       onSubmit={handleSubmit}
     >
-      <div className={styles.inputGroup}>
+      <div className="styles.inputGroup">
         <label htmlFor="email">Email</label>
         <input
-          className={styles.input}
+          className="styles.input"
           type="email"
           name="email"
           id="email"
@@ -64,7 +56,7 @@ const SubscribeForm: FunctionComponent = () => {
         />
       </div>
 
-      <button className={styles.send} type="submit">
+      <button className="styles.send" type="submit">
         Subscribe
       </button>
     </form>
