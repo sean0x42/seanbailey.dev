@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { useStyles } from 'react-treat'
 
 import { FixedImage } from '../../app/types'
@@ -17,9 +17,9 @@ const Header: FunctionComponent<HeaderProps> = (props) => {
   return (
     <div>
       {props.coverImage && (
-        <Img
+        <GatsbyImage
+          image={props.coverImage.childImageSharp.gatsbyImageData}
           className={styles.image}
-          fixed={props.coverImage.childImageSharp.fixed}
         />
       )}
 

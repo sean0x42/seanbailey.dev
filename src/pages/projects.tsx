@@ -32,7 +32,7 @@ const ProjectsPage: FunctionComponent<PageProps<Data>> = (props) => {
 export default ProjectsPage
 
 export const pageQuery = graphql`
-  query {
+  {
     projects: allMdx(
       filter: {
         fileAbsolutePath: { regex: "/projects/[a-zA-Z0-9_-]+/index.mdx$/" }
@@ -54,9 +54,12 @@ export const pageQuery = graphql`
             cover {
               publicURL
               childImageSharp {
-                fluid(maxWidth: 600, maxHeight: 300, cropFocus: CENTER) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 600
+                  height: 300
+                  transformOptions: { cropFocus: CENTER }
+                  layout: CONSTRAINED
+                )
               }
             }
           }

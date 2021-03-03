@@ -4,7 +4,7 @@ import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import { useStyles } from 'react-treat'
 
-import { FluidImage } from '../app/types'
+import { Image } from '../app/types'
 import Card from './Card'
 import * as styleRefs from './LinkCard.treat'
 import { ArrowRightIcon } from './Icons'
@@ -12,7 +12,7 @@ import { ArrowRightIcon } from './Icons'
 interface LinkCardProps {
   className?: string
   to: string
-  cover?: FluidImage
+  cover?: Image
   moreCopy: string
   badge?: JSX.Element
 }

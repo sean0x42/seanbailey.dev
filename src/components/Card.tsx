@@ -2,13 +2,13 @@
 
 import React, { FunctionComponent } from 'react'
 import { useStyles } from 'react-treat'
-import Img from 'gatsby-image'
-import { FluidImage } from '../app/types'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { Image } from '../app/types'
 
 import * as styleRefs from './Card.treat'
 
 interface CardProps {
-  cover?: FluidImage
+  cover?: Image
   coverAlt?: string
   badge?: JSX.Element
 }
@@ -20,8 +20,8 @@ const Card: FunctionComponent<CardProps> = (props) => {
   let cover
   if (props.cover) {
     cover = props.cover.childImageSharp ? (
-      <Img
-        fluid={props.cover.childImageSharp.fluid}
+      <GatsbyImage
+        image={props.cover.childImageSharp.gatsbyImageData}
         className={styles.image}
         aria-hidden="true"
         alt={props.coverAlt}
