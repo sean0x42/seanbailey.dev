@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Copy from './Copy'
 import Heading from './Heading'
 import LinkCard from './LinkCard'
 import { ProjectSummary } from '../app/types'
@@ -19,11 +20,11 @@ const ProjectCard: React.FunctionComponent<ProjectCardProps> = (props) => {
         moreCopy="See more"
       >
         <Heading level={2}>{project.frontmatter.title}</Heading>
-        <p className="my-2">
+        <Copy className="my-2">
           {project.frontmatter.startDate}&mdash;
           {project.frontmatter.endDate || 'Present'}
-        </p>
-        <p>{project.excerpt}</p>
+        </Copy>
+        <Copy>{project.excerpt}</Copy>
       </LinkCard>
     </li>
   )
