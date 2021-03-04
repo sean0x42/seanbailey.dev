@@ -9,7 +9,7 @@ interface CardProps {
 }
 
 const styles = {
-  image: 'rounded mb-2 bg-gray-900',
+  image: 'rounded mb-2 bg-grey-900 dark:bg-grey-800',
 }
 
 const Card: React.FunctionComponent<CardProps> = (props) => {

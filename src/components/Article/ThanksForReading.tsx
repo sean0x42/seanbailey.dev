@@ -1,25 +1,22 @@
 import React from 'react'
-import { Award } from 'react-feather'
 
+import Copy from '../Copy'
+import Heading from '../Heading'
 import SubscribeForm from '../SubscribeForm'
 
 const ThanksForReading: React.FunctionComponent = () => (
-  <div className="styles.wrapper">
-    <div className="styles.icon" aria-hidden="true">
-      <Award className="styles.iconInner" />
-    </div>
-
-    <div>
-      <h2 className="styles.heading">Thanks for reading</h2>
-      <p className="styles.copy">
+  <>
+    <div className="mt-10">
+      <Heading level={2}>Thanks for reading</Heading>
+      <Copy className="my-2">
         If you liked that article, why not subscribe to my mailing list? I write
         mostly about design and programming.
-      </p>
-      <p className="styles.highlight">100% spam and tracker free!</p>
+      </Copy>
+      <Copy className="font-medium">100% spam and tracker free!</Copy>
     </div>
 
     <SubscribeForm />
-  </div>
+  </>
 )
 
 export default ThanksForReading

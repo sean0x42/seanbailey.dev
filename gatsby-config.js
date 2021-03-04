@@ -7,6 +7,12 @@ module.exports = {
     siteUrl: 'https://www.seanbailey.dev',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/Layout.tsx'),
+      },
+    },
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sitemap',

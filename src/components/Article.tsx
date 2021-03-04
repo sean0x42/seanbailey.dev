@@ -11,6 +11,8 @@ import SEO from './SEO'
 import ThanksForReading from './Article/ThanksForReading'
 import Wrapper from './Wrapper'
 import YouTube from './Article/YouTube'
+import Copy, { Bold } from './Copy'
+import Heading from './Heading'
 
 interface ComponentMap {
   [name: string]: React.ComponentType
@@ -20,6 +22,18 @@ const components: ComponentMap = {
   Figure,
   Caption,
   YouTube,
+  h1: (props) => (
+    <Heading level={1} className="mt-8">
+      {props.children}
+    </Heading>
+  ),
+  h2: (props) => (
+    <Heading level={2} className="mt-8">
+      {props.children}
+    </Heading>
+  ),
+  p: (props) => <Copy className="my-4">{props.children}</Copy>,
+  strong: Bold,
 }
 
 interface ArticleProps {
@@ -44,7 +58,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
     <article>
       <SEO title={props.title} description={props.excerpt} meta={meta} />
 
-      <Wrapper width="max-w-prose" className="styles.article">
+      <Wrapper width="max-w-prose">
         <Header {...props} />
 
         <MDXProvider components={components}>

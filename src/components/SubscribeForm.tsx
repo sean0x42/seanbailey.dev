@@ -36,17 +36,17 @@ const SubscribeForm: React.FunctionComponent = () => {
 
   return (
     <form
-      className="styles.form"
+      className="flex flex-col sm:flex-row items-end mt-4"
       name="subscribe"
       method="post"
       data-netlify="true"
       action="/thanks"
       onSubmit={handleSubmit}
     >
-      <div className="styles.inputGroup">
+      <div className="flex flex-col">
         <label htmlFor="email">Email</label>
         <input
-          className="styles.input"
+          className=""
           type="email"
           name="email"
           id="email"
@@ -56,7 +56,7 @@ const SubscribeForm: React.FunctionComponent = () => {
         />
       </div>
 
-      <button className="styles.send" type="submit">
+      <button className="dark:text-white rounded" type="submit">
         Subscribe
       </button>
     </form>

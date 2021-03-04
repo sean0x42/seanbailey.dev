@@ -2,6 +2,7 @@ import React from 'react'
 import { Radio } from 'react-feather'
 
 import Badge from './Badge'
+import Copy from './Copy'
 import Heading from './Heading'
 import LinkCard from './LinkCard'
 import { ArticleSummary } from '../app/types'
@@ -29,8 +30,8 @@ const ArticleCard: React.FunctionComponent<ArticleCardProps> = (props) => {
         badge={isNew && <Badge icon={Radio}>New</Badge>}
       >
         <Heading level={2}>{article.frontmatter.title}</Heading>
-        <p className="my-2">{article.frontmatter.date}</p>
-        <p>{article.excerpt}</p>
+        <Copy className="my-2">{article.frontmatter.date}</Copy>
+        <Copy>{article.excerpt}</Copy>
       </LinkCard>
     </li>
   )

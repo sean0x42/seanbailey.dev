@@ -1,6 +1,7 @@
 import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
+import Copy from '../Copy'
 import Heading from '../Heading'
 import { Image } from '../../app/types'
 
@@ -22,7 +23,7 @@ const Header: React.FunctionComponent<HeaderProps> = (props) => (
     )}
 
     <Heading level={1}>{props.title}</Heading>
-    {props.date && <p className="my-4">{props.date}</p>}
+    {props.date && <Copy className="my-4">{props.date}</Copy>}
   </div>
 )
 

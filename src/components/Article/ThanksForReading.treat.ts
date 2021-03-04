@@ -51,32 +51,3 @@ export const iconInner = style({
   lineHeight: 1,
   verticalAlign: 'middle',
 })
-
-export const heading = style({
-  // Box model
-  margin: '0 !important',
-
-  // Typography
-  fontSize: 22,
-  lineHeight: '1.6 !important',
-})
-
-export const copy = style((theme) => ({
-  // Box model
-  margin: '0.25rem 0',
-
-  // Typography
-  color: theme.typeColour,
-
-  // Visuals
-  transition: 'color 300ms',
-}))
-
-export const highlight = style((theme) => ({
-  // Box model
-  margin: 0,
-
-  // Typography
-  color: theme.primary,
-  fontWeight: 500,
-}))

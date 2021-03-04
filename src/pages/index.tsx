@@ -3,12 +3,11 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import ArticleCards from '../components/ArticleCards'
 import ButtonLink from '../components/ButtonLink'
+import Copy, { Bold } from '../components/Copy'
 import Heading from '../components/Heading'
-import Intro from '../components/Intro'
 import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
-import withLayout from '../app/withLayout'
 import { ArticleSummary, ProjectSummary } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
@@ -35,11 +34,16 @@ const LandingPage: React.FunctionComponent = () => {
     <>
       <SEO title="Sean Bailey (Designer and Developer)" />
 
-      <Wrapper className="my-4">
-        <Intro />
+      <Wrapper>
+        <Copy>Hello!</Copy>
+        <Copy className="mt-4">
+          I am a <Bold>designer and developer</Bold> in Newcastle, Australia.
+          <br />
+          Welcome to my home on the web.
+        </Copy>
       </Wrapper>
 
-      <Wrapper className="my-16">
+      <Wrapper className="my-20">
         <HeadingContainer heading="Recent Articles">
           <ButtonLink to="/articles">View all articles</ButtonLink>
         </HeadingContainer>
@@ -51,7 +55,7 @@ const LandingPage: React.FunctionComponent = () => {
         </ButtonLink>
       </Wrapper>
 
-      <Wrapper className="my-16">
+      <Wrapper className="my-20">
         <HeadingContainer heading="Recent Projects">
           <ButtonLink to="/projects">View all projects</ButtonLink>
         </HeadingContainer>
@@ -66,7 +70,7 @@ const LandingPage: React.FunctionComponent = () => {
   )
 }
 
-export default withLayout(LandingPage)
+export default LandingPage
 
 const query = graphql`
   {

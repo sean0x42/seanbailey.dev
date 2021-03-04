@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { Project as ProjectModel } from '../app/types'
 
 import Project from '../components/Project'
-import Layout from '../components/Layout'
 
 type Data = {
   mdx: ProjectModel
@@ -19,15 +18,13 @@ const Container: FunctionComponent<ContainerProps> = (props) => {
   const endDate = project.frontmatter.endDate || 'Present'
 
   return (
-    <Layout>
-      <Project
-        coverImage={project.frontmatter.cover}
-        title={project.frontmatter.title}
-        date={`${startDate}—${endDate}`}
-        excerpt={project.excerpt}
-        body={project.body}
-      />
-    </Layout>
+    <Project
+      coverImage={project.frontmatter.cover}
+      title={project.frontmatter.title}
+      date={`${startDate}—${endDate}`}
+      excerpt={project.excerpt}
+      body={project.body}
+    />
   )
 }
 

@@ -11,7 +11,7 @@ const NavigationItem: FunctionComponent<NavigationItemProps> = (props) => (
     <Link
       to={props.url}
       title={props.title}
-      className="relative z-20 flex flex-col sm:flex-row items-center p-4 font-semibold"
+      className="relative z-20 flex flex-col sm:flex-row items-center p-4 font-medium text-black dark:text-white"
     >
       {props.title}
     </Link>
@@ -19,7 +19,7 @@ const NavigationItem: FunctionComponent<NavigationItemProps> = (props) => (
 )
 
 const Navigation: FunctionComponent = () => (
-  <ul className="fixed inset-0 sm:relative flex items-center justify-center bg-grey-800 sm:bg-none">
+  <ul className="fixed inset-0 sm:relative flex items-center justify-center">
     <NavigationItem url="/articles" title="Articles" />
     <NavigationItem url="/projects" title="Projects" />
     <NavigationItem url="/contact" title="Contact" />

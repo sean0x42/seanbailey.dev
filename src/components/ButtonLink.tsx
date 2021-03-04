@@ -9,7 +9,7 @@ interface ButtonLinkProps {
 }
 
 const ButtonLink: React.FunctionComponent<ButtonLinkProps> = (props) => {
-  const classes = ['inline-flex items-center font-medium']
+  const classes = ['inline-flex items-center font-medium dark:text-white']
   props.className && classes.push(props.className)
 
   return (

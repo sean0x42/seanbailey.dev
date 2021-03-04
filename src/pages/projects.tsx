@@ -4,7 +4,6 @@ import { graphql, PageProps } from 'gatsby'
 import { GraphQLNodes, ProjectSummary } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
-import Layout from '../components/Layout'
 import ProjectCards from '../components/ProjectCards'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
@@ -18,14 +17,12 @@ const ProjectsPage: FunctionComponent<PageProps<Data>> = (props) => {
   const projects = flattenNodes(props.data.projects)
 
   return (
-    <Layout>
+    <Wrapper>
       <SEO title="All Projects" />
 
-      <Wrapper>
-        <Heading level={1}>All Projects</Heading>
-        <ProjectCards projects={projects} />
-      </Wrapper>
-    </Layout>
+      <Heading level={1}>All Projects</Heading>
+      <ProjectCards projects={projects} />
+    </Wrapper>
   )
 }
 
