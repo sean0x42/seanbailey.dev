@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Copy from './Copy'
 import Wrapper from './Wrapper'
 import { GitHub, Icon, Twitter, Linkedin } from 'react-feather'
 
@@ -21,7 +22,7 @@ const Social: React.FunctionComponent<SocialProps> = (props) => {
         rel="noopener noreferrer"
         className="py-3 px-6"
       >
-        <Icon className="styles.socialIcon" aria-hidden="true" />
+        <Icon className="dark:text-white" aria-hidden="true" />
         <span className="sr-only">{props.title}</span>
       </a>
     </li>
@@ -29,7 +30,7 @@ const Social: React.FunctionComponent<SocialProps> = (props) => {
 }
 
 const Footer: React.FunctionComponent = () => (
-  <footer className="flex flex-col mt-8 py-4">
+  <footer className="flex flex-col mt-20 py-4">
     <Wrapper>
       <ul className="flex items-center justify-center">
         <Social
@@ -49,9 +50,9 @@ const Footer: React.FunctionComponent = () => (
         />
       </ul>
 
-      <p className="text-center">
+      <Copy className="text-center">
         Sean Bailey &copy; {new Date().getFullYear()}
-      </p>
+      </Copy>
     </Wrapper>
   </footer>
 )

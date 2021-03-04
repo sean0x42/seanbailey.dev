@@ -1,20 +1,19 @@
 import React, { FunctionComponent } from 'react'
 
 import ButtonLink from '../components/ButtonLink'
-import Layout from '../components/Layout'
-import Wrapper from '../components/Wrapper'
+import Copy from '../components/Copy'
+import Heading from '../components/Heading'
 import SEO from '../components/SEO'
+import Wrapper from '../components/Wrapper'
 
 const Subscribed: FunctionComponent = () => (
-  <Layout>
+  <Wrapper>
     <SEO title="Thanks!" />
 
-    <Wrapper>
-      <h1>Thanks!</h1>
-      <p>You&apos;ve now been subscribed to my mailing list.</p>
-      <ButtonLink to="/">Return home</ButtonLink>
-    </Wrapper>
-  </Layout>
+    <Heading level={1}>Thanks!</Heading>
+    <Copy>You&apos;ve now been subscribed to my mailing list.</Copy>
+    <ButtonLink to="/">Return home</ButtonLink>
+  </Wrapper>
 )
 
 export default Subscribed

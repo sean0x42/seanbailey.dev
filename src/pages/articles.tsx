@@ -5,7 +5,6 @@ import { ArticleSummary, GraphQLNodes } from '../app/types'
 import { flattenNodes } from '../helpers/graphql'
 
 import ArticleCards from '../components/ArticleCards'
-import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Wrapper from '../components/Wrapper'
 import Heading from '../components/Heading'
@@ -18,14 +17,12 @@ const ArticlesPage: FunctionComponent<PageProps<Data>> = (props) => {
   const articles = flattenNodes(props.data.articles)
 
   return (
-    <Layout>
+    <Wrapper>
       <SEO title="All Articles" />
 
-      <Wrapper>
-        <Heading level={1}>All Articles</Heading>
-        <ArticleCards articles={articles} />
-      </Wrapper>
-    </Layout>
+      <Heading level={1}>All Articles</Heading>
+      <ArticleCards articles={articles} />
+    </Wrapper>
   )
 }
 
