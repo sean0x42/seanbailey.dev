@@ -1,28 +1,38 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import ArrowNarrowRightIcon from './icons/ArrowNarrowRight'
 import Card from './Card'
 import Copy from './Copy'
-import { ArrowRightIcon } from './Icons'
+import Heading from './Heading'
+import Stack from './layout/Stack'
 import { Image } from '../app/types'
 
 interface LinkCardProps {
   className?: string
   to: string
   cover?: Image
-  moreCopy: string
+  coverBg?: string
+  title: string
+  date: string
+  copy: string
+  more: string
   badge?: JSX.Element
 }
 
 const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => (
   <Link to={props.to} className={props.className}>
-    <Card cover={props.cover} badge={props.badge}>
-      {props.children}
+    <Card cover={props.cover} coverBg={props.coverBg} badge={props.badge}>
+      <Stack space="mt-2">
+        <Heading level={2}>{props.title}</Heading>
+        <Copy light>{props.date}</Copy>
+        <Copy>{props.copy}</Copy>
 
-      <Copy className="flex items-center mt-4" aria-hidden="true">
-        {props.moreCopy}
-        <ArrowRightIcon className="ml-2" />
-      </Copy>
+        <Copy className="flex items-center" aria-hidden="true" light>
+          {props.more ?? 'More'}
+          <ArrowNarrowRightIcon className="ml-2" />
+        </Copy>
+      </Stack>
     </Card>
   </Link>
 )

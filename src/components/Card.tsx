@@ -4,29 +4,29 @@ import { Image } from '../app/types'
 
 interface CardProps {
   cover?: Image
+  coverBg?: string
   coverAlt?: string
   badge?: JSX.Element
 }
 
-const styles = {
-  image: 'rounded mb-2 bg-grey-900 dark:bg-grey-800',
-}
-
 const Card: React.FunctionComponent<CardProps> = (props) => {
+  const classes = ['rounded mb-4 leading-none align-middle']
+  props.coverBg && classes.push(props.coverBg)
+
   // Determine which cover image to show
   let cover
   if (props.cover) {
     cover = props.cover.childImageSharp ? (
       <GatsbyImage
         image={props.cover.childImageSharp.gatsbyImageData}
-        className={styles.image}
+        className={classes.join(' ')}
         aria-hidden="true"
         alt={props.coverAlt}
       />
     ) : (
       <img
         src={props.cover.publicURL}
-        className={styles.image}
+        className={classes.join(' ')}
         aria-hidden="true"
         alt={props.coverAlt}
       />
@@ -37,7 +37,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
     <div>
       {props.badge}
       {cover}
-      <div className="styles.body">{props.children}</div>
+      <div>{props.children}</div>
     </div>
   )
 }

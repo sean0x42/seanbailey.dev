@@ -1,15 +1,20 @@
 import React from 'react'
 
 import Logo from './Logo'
-import Navigation from './Navigation'
+import ThemeToggle from './ThemeToggle'
 import Wrapper from './Wrapper'
+import { Theme } from '../app/themeContext'
 
-const Header: React.FunctionComponent = () => (
-  <header>
+interface HeaderProps {
+  setTheme: (theme: Theme) => void
+}
+
+const Header: React.FunctionComponent<HeaderProps> = (props) => (
+  <header className="pt-10">
     <Wrapper>
-      <div className="relative z-10 flex items-center justify-between py-4 pb-16">
+      <div className="relative z-10 flex items-center justify-between pb-20">
         <Logo />
-        <Navigation />
+        <ThemeToggle setTheme={props.setTheme} />
       </div>
     </Wrapper>
   </header>
