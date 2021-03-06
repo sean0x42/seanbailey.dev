@@ -1,5 +1,7 @@
 import React from 'react'
-import Copy from './Copy'
+
+import MoonIcon from './icons/Moon'
+import SunIcon from './icons/Sun'
 import { Theme, useTheme } from '../app/themeContext'
 
 interface ThemeToggleProps {
@@ -14,8 +16,8 @@ const ThemeToggle: React.FunctionComponent<ThemeToggleProps> = (props) => {
   }
 
   return (
-    <button onClick={handleClick}>
-      <Copy>Toggle theme</Copy>
+    <button onClick={handleClick} className="text-black dark:text-primary-500">
+      {theme === 'light' ? <SunIcon /> : <MoonIcon />}
     </button>
   )
 }

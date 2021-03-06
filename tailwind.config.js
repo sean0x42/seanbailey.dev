@@ -7,21 +7,20 @@ module.exports = {
       black: '#000000',
       transparent: 'transparent',
       primary: {
-        500: '#09F1C6',
+        500: '#06DBB3',
       },
       grey: {
         900: '#070808',
-        800: '#1B1E23',
-        700: '#32373E',
-        600: '#40464F',
-        500: '#4C525D',
-        400: '#5D636F',
-        300: '#6F7785',
-        200: '#868C98',
+        800: '#212327',
+        700: '#383C42',
+        600: '#494E55',
+        500: '#595F69',
+        400: '#777E8D',
+        300: '#A8ABB3',
+        200: '#D3D5D9',
         100: '#E6E7EA',
       },
     },
-    extend: {},
     fontFamily: {
       sans: [
         'Inter',
@@ -41,9 +40,13 @@ module.exports = {
         'Noto Color Emoji',
       ],
     },
-  },
-  variants: {
     extend: {},
   },
-  plugins: [],
+  variants: {
+    extend: {
+      fontWeight: ['dark'],
+      margin: ['first'],
+    },
+  },
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }

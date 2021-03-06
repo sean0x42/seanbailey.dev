@@ -36,7 +36,7 @@ export interface Article {
   frontmatter: {
     title: string
     date: string
-    cover: FixedImage
+    cover: Image
     attribution: Attribution | null
   }
 }
@@ -49,7 +49,7 @@ export interface ProjectSummary {
   frontmatter: {
     title: string
     startDate: string
-    endDate: string
+    endDate?: string
     cover?: Image
   }
 }

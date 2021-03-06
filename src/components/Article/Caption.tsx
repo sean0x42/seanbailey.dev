@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Caption: React.FunctionComponent = (props) => (
-  <figcaption className="styles.caption">{props.children}</figcaption>
+  <figcaption className="mx-5 text-center text-grey-300">
+    {props.children}
+  </figcaption>
 )
 
 export default Caption

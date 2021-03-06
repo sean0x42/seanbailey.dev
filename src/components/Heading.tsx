@@ -7,8 +7,8 @@ interface HeadingProps {
 
 const styles = {
   common: 'text-black dark:text-white',
-  '1': 'font-bold',
-  '2': 'font-semibold',
+  '1': 'font-semibold',
+  '2': 'font-medium',
   '3': 'font-medium',
   '4': '',
   '5': '',

@@ -6,6 +6,20 @@
   font-size: 17px;
 }
 
+@media (min-width: 1024px) {
+  article {
+    font-size: 19px;
+  }
+}
+
 .dark body {
   @apply bg-grey-900;
+}
+
+.footnotes hr {
+  @apply mt-8 text-grey-500;
+}
+
+.footnotes ol {
+  @apply mt-4 font-light text-grey-900 dark:text-grey-100;
 }

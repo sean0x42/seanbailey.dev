@@ -1,13 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Award, ChevronRight } from 'react-feather'
 
 const ThanksForReading: React.FunctionComponent = () => (
   <Link to="/projects" className="styles.wrapper">
-    <div className="styles.icon" aria-hidden="true">
-      <Award className="styles.iconInner" />
-    </div>
-
     <div>
       <h2 className="styles.heading">Thanks for reading!</h2>
       <p className="styles.copy">
@@ -16,7 +11,6 @@ const ThanksForReading: React.FunctionComponent = () => (
       </p>
       <p className="styles.seeMore" aria-hidden="true">
         See more
-        <ChevronRight />
       </p>
     </div>
   </Link>

@@ -4,11 +4,10 @@ import { Helmet } from 'react-helmet'
 import Footer from './Footer'
 import Header from './Header'
 import SkipLink from './SkipLink'
-import ThemeToggle from './ThemeToggle'
 import { Theme, ThemeContext } from '../app/themeContext'
 
 const Layout: React.FunctionComponent = (props) => {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark')
 
   function onColorSchemeChange(event: MediaQueryListEvent) {
     setTheme(event.matches ? 'dark' : 'light')
@@ -41,8 +40,7 @@ const Layout: React.FunctionComponent = (props) => {
       </Helmet>
 
       <SkipLink />
-      <ThemeToggle setTheme={setTheme} />
-      <Header />
+      <Header setTheme={setTheme} />
 
       <main id="main">{props.children}</main>
 
