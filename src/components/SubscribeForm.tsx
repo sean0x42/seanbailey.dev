@@ -1,25 +1,17 @@
-import React, { useState, FormEvent, ChangeEvent } from 'react'
+import React, { useState, FormEvent } from 'react'
 import { navigate } from 'gatsby'
 
+import Copy from './Copy'
 import { encodeForm } from '../helpers/form'
 
-interface State {
-  [key: string]: string
-}
-
 const SubscribeForm: React.FunctionComponent = () => {
-  const [state, setState] = useState({} as State)
+  const [email, setEmail] = useState('')
 
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value,
-    })
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setEmail(event.target.value)
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     fetch('/', {
@@ -27,7 +19,7 @@ const SubscribeForm: React.FunctionComponent = () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encodeForm({
         'form-name': 'subscribe',
-        ...state,
+        email,
       }),
     })
       .then(() => navigate('/subscribed'))
@@ -36,27 +28,34 @@ const SubscribeForm: React.FunctionComponent = () => {
 
   return (
     <form
-      className="flex flex-col sm:flex-row items-end mt-4"
+      className="flex flex-col sm:flex-row items-start sm:items-center mt-3"
       name="subscribe"
       method="post"
       data-netlify="true"
       action="/thanks"
       onSubmit={handleSubmit}
     >
-      <div className="flex flex-col">
-        <label htmlFor="email">Email</label>
+      <div>
+        <label htmlFor="email" className="sr-only">
+          <Copy>Your email address</Copy>
+        </label>
+
         <input
-          className=""
+          className="px-3 py-2 focus:outline-none focus:ring bg-grey-100 dark:bg-grey-800 text-grey-900 dark:text-grey-100 rounded-l rounded-r sm:rounded-r-none"
           type="email"
           name="email"
           id="email"
           placeholder="someone@example.com"
           required
+          value={email}
           onChange={handleChange}
         />
       </div>
 
-      <button className="dark:text-white rounded" type="submit">
+      <button
+        className="px-3 py-2 bg-grey-200 dark:bg-grey-700 dark:text-white mt-2 sm:mt-0 rounded-l rounded-r sm:rounded-l-none focus:outline-none focus:ring"
+        type="submit"
+      >
         Subscribe
       </button>
     </form>

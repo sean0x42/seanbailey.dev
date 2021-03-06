@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from 'react-feather'
+import { Icon } from './Icons'
 
 interface BadgeProps {
   icon: Icon
@@ -10,7 +10,7 @@ const Badge: React.FunctionComponent<BadgeProps> = (props) => {
 
   return (
     <div className="styles.badge">
-      <Icon className="styles.icon" aria-hidden="true" />
+      <Icon />
       {props.children}
     </div>
   )

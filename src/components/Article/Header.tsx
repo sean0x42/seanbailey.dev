@@ -3,6 +3,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 
 import Copy from '../Copy'
 import Heading from '../Heading'
+import Stack from '../layout/Stack'
 import { Image } from '../../app/types'
 
 interface HeaderProps {
@@ -12,19 +13,21 @@ interface HeaderProps {
 }
 
 const Header: React.FunctionComponent<HeaderProps> = (props) => (
-  <div>
+  <>
     {props.coverImage && (
       <GatsbyImage
         image={props.coverImage.childImageSharp.gatsbyImageData}
-        className="bg-gray-900 rounded mb-8"
+        className="bg-gray-900 rounded leading-none align-middle mb-8"
         alt={props.title}
         aria-hidden={true}
       />
     )}
 
-    <Heading level={1}>{props.title}</Heading>
-    {props.date && <Copy className="my-4">{props.date}</Copy>}
-  </div>
+    <Stack space="mt-2">
+      <Heading level={1}>{props.title}</Heading>
+      {props.date && <Copy light>{props.date}</Copy>}
+    </Stack>
+  </>
 )
 
 export default Header

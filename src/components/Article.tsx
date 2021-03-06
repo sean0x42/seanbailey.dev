@@ -13,6 +13,7 @@ import Wrapper from './Wrapper'
 import YouTube from './Article/YouTube'
 import Copy, { Bold } from './Copy'
 import Heading from './Heading'
+import Link from './Link'
 
 interface ComponentMap {
   [name: string]: React.ComponentType
@@ -65,21 +66,15 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>
 
-        <hr className="styles.squiggle" />
-
         <ThanksForReading />
 
         {props.attribution && (
-          <p className="styles.attribution">
+          <Copy className="mt-16">
             Cover image by{' '}
-            <a
-              href={props.attribution.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link to={props.attribution.url} external>
               {props.attribution.author}
-            </a>
-          </p>
+            </Link>
+          </Copy>
         )}
       </Wrapper>
     </article>
