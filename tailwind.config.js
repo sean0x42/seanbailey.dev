@@ -1,3 +1,38 @@
+const plugin = require('tailwindcss/plugin')
+
+function processColors(colors) {
+  const colourMap = {}
+
+  Object.entries(colors).forEach(([key, value]) => {
+    if (typeof value === 'string') {
+      colourMap[key] = value
+      return
+    }
+
+    const map = processColors(value)
+    Object.entries(map).forEach(([name, shade]) => {
+      colourMap[`${key}-${name}`] = shade
+    })
+  })
+
+  return colourMap
+}
+
+const textDecorationColorPlugin = plugin(({ addUtilities, theme }) => {
+  const colors = theme('colors', {})
+  const colourMap = processColors(colors)
+  const textDecorationUtilities = {}
+
+  Object.entries(colourMap).forEach(([name, shade]) => {
+    textDecorationUtilities[`.underline-${name}`] = {
+      'text-decoration-color': shade,
+    }
+  })
+
+  console.debug('Generating underline colors', textDecorationUtilities)
+  addUtilities(textDecorationUtilities)
+})
+
 module.exports = {
   purge: ['./src/**/*.{ts,tsx}'],
   darkMode: 'class',
@@ -7,11 +42,15 @@ module.exports = {
       black: '#000000',
       transparent: 'transparent',
       primary: {
+        800: '#06A285',
+        700: '#07B897',
+        600: '#08CDA8',
         500: '#06DBB3',
+        400: '#07F6C9',
       },
       grey: {
-        900: '#070808',
-        800: '#212327',
+        900: '#111213',
+        800: '#26282C',
         700: '#383C42',
         600: '#494E55',
         500: '#595F69',
@@ -48,5 +87,9 @@ module.exports = {
       margin: ['first'],
     },
   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+    textDecorationColorPlugin,
+  ],
 }

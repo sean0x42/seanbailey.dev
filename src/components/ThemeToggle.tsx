@@ -16,7 +16,10 @@ const ThemeToggle: React.FunctionComponent<ThemeToggleProps> = (props) => {
   }
 
   return (
-    <button onClick={handleClick} className="text-black dark:text-primary-500">
+    <button
+      onClick={handleClick}
+      className="text-primary-800 dark:text-primary-500"
+    >
       {theme === 'light' ? <SunIcon /> : <MoonIcon />}
     </button>
   )

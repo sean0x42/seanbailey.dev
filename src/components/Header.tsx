@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 const Header: React.FunctionComponent<HeaderProps> = (props) => (
-  <header className="pt-10">
+  <header className="pt-5 md:pt-10">
     <Wrapper>
       <div className="relative z-10 flex items-center justify-between pb-20">
         <Logo />

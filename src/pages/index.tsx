@@ -18,11 +18,11 @@ const LandingPage: React.FunctionComponent = () => {
     <>
       <SEO title="Sean Bailey (Designer and Developer)" />
 
-      <Stack space="mt-20">
+      <Stack space="mt-24">
         <Wrapper>
           <Stack space="mt-4">
-            <Copy>Hello!</Copy>
-            <Copy>
+            <Copy variant="heavy">Hello!</Copy>
+            <Copy variant="heavy">
               I am a <Bold>designer and developer</Bold> in Newcastle,
               Australia.
               <br />

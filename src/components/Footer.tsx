@@ -6,7 +6,7 @@ import Link from './Link'
 import Wrapper from './Wrapper'
 
 const Footer: React.FunctionComponent = () => (
-  <footer className="my-20 py-4">
+  <footer className="mb-4 mt-10 md:my-20 py-4">
     <Wrapper className="text-center" width="max-w-prose">
       <Stack space="mt-2">
         <Copy>
