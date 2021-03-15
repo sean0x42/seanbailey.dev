@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import ArticleCards from '../components/ArticleCards'
-import Copy, { Bold } from '../components/Copy'
+import Copy from '../components/Copy'
 import SEO from '../components/SEO'
 import Stack from '../components/layout/Stack'
 import Wrapper from '../components/Wrapper'
@@ -23,7 +23,7 @@ const LandingPage: React.FunctionComponent = () => {
           <Stack space="mt-4">
             <Copy variant="heavy">Hello!</Copy>
             <Copy variant="heavy">
-              I am a <Bold>designer and developer</Bold> in Newcastle,
+              I am a <span className="text-grey-900 dark:text-white font-medium underline underline-primary-800 dark:underline-primary-500">designer and developer</span> in Newcastle,
               Australia.
               <br />
               Welcome to my home on the web.

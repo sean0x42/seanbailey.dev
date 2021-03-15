@@ -8,7 +8,7 @@ interface LinkProps {
 
 const Link: React.FunctionComponent<LinkProps> = (props) => {
   const styles =
-    'underline underline-primary-700 dark:underline-primary-400 text-black dark:text-white font-normal transition-colors'
+    'underline underline-primary-700 dark:underline-primary-400 text-black dark:text-white font-normal'
 
   if (props.external) {
     return (
