@@ -20,21 +20,30 @@ interface LinkCardProps {
   badge?: JSX.Element
 }
 
-const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => (
-  <Link to={props.to} className={props.className}>
-    <Card cover={props.cover} coverBg={props.coverBg} badge={props.badge}>
-      <Stack space="mt-2">
-        <Heading level={2}>{props.title}</Heading>
-        <Copy light>{props.date}</Copy>
-        <Copy>{props.copy}</Copy>
+const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => {
+  const linkStyles = ['group']
+  props.className && linkStyles.push(props.className)
 
-        <Copy className="flex items-center" aria-hidden="true" light>
-          {props.more ?? 'More'}
-          <ArrowNarrowRightIcon className="ml-2" />
-        </Copy>
-      </Stack>
-    </Card>
-  </Link>
-)
+  return (
+    <Link to={props.to} className={linkStyles.join(' ')}>
+      <Card cover={props.cover} coverBg={props.coverBg} badge={props.badge}>
+        <Stack space="mt-2">
+          <Heading level={2}>{props.title}</Heading>
+          <Copy variant="suppressed">{props.date}</Copy>
+          <Copy>{props.copy}</Copy>
+
+          <Copy
+            className="flex items-center text-primary-800 dark:text-primary-400"
+            aria-hidden="true"
+            variant="highlighted"
+          >
+            {props.more ?? 'More'}
+            <ArrowNarrowRightIcon className="ml-1" />
+          </Copy>
+        </Stack>
+      </Card>
+    </Link>
+  )
+}
 
 export default LinkCard

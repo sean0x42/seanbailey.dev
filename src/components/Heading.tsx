@@ -6,13 +6,10 @@ interface HeadingProps {
 }
 
 const styles = {
-  common: 'text-black dark:text-white',
-  '1': 'font-semibold',
+  common: 'text-grey-900 dark:text-white',
+  '1': 'font-semibold dark:font-medium',
   '2': 'font-medium',
-  '3': 'font-medium',
-  '4': '',
-  '5': '',
-  '6': '',
+  '3': 'font-normal',
 }
 
 const Heading: React.FunctionComponent<HeadingProps> = (props) => {
