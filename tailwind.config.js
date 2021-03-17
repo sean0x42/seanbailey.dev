@@ -42,6 +42,7 @@ module.exports = {
       black: '#000000',
       transparent: 'transparent',
       primary: {
+        900: '#06957A',
         800: '#06A285',
         700: '#07B897',
         600: '#08CDA8',
@@ -61,35 +62,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: [
-        'Inter',
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica Neue',
-        'Arial',
-        'Noto Sans',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-        'Noto Color Emoji',
-      ],
+      sans: ['Inter', 'system-ui', 'sans-serif'],
     },
     extend: {},
   },
-  variants: {
-    extend: {
-      fontWeight: ['dark'],
-      margin: ['first'],
-    },
-  },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-    textDecorationColorPlugin,
-  ],
+  plugins: [require('@tailwindcss/aspect-ratio'), textDecorationColorPlugin],
 }

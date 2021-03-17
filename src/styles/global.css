@@ -6,6 +6,10 @@
   font-size: 17px;
 }
 
+::selection {
+  @apply bg-primary-500 text-black;
+}
+
 @media (min-width: 1024px) {
   article {
     font-size: 18px;
