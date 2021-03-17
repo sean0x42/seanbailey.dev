@@ -17,7 +17,8 @@ const impactVariants: Record<Variant, string> = {
   suppressed: 'text-grey-500 dark:text-grey-300',
   normal: 'text-grey-700 dark:text-grey-200',
   highlighted: 'text-primary-800 dark:text-primary-400',
-  heavy: 'text-grey-800 dark:text-grey-100 font-medium dark:font-normal',
+  heavy:
+    'text-grey-800 dark:text-grey-100 font-medium dark:font-medium text-xl',
 }
 
 const widthVariants = {

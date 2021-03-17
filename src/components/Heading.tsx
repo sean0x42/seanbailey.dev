@@ -8,10 +8,10 @@ interface HeadingProps {
 
 const styles = {
   common: 'text-grey-900 dark:text-white',
-  title: 'font-semibold md:font-bold text-2xl md:text-4xl',
-  '1': 'font-semibold text-2xl',
-  '2': 'font-medium',
-  '3': 'font-normal',
+  title: 'font-semibold md:font-bold text-3xl md:text-5xl font-title',
+  '1': 'font-semibold text-2xl font-title',
+  '2': 'font-medium font-title',
+  '3': 'font-semibold dark:font-medium',
 }
 
 const Heading: React.FunctionComponent<HeadingProps> = ({

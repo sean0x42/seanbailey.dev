@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import ArticleCards from '../components/ArticleCards'
 import Copy from '../components/Copy'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import Stack from '../components/layout/Stack'
 import Wrapper from '../components/Wrapper'
 import { ArticleSummary } from '../app/types'
@@ -15,30 +15,28 @@ const LandingPage: React.FunctionComponent = () => {
   const articles = flattenNodes<ArticleSummary>(data.articles)
 
   return (
-    <>
-      <SEO title="Sean Bailey (Designer and Developer)" />
+    <Stack space="mt-24">
+      <Wrapper>
+        <Seo title="Sean Bailey (Designer and Developer)" />
 
-      <Stack space="mt-24">
-        <Wrapper>
-          <Stack space="mt-4">
-            <Copy variant="heavy">Hello!</Copy>
-            <Copy variant="heavy">
-              I am a{' '}
-              <span className="text-grey-900 dark:text-white font-medium underline underline-primary-800 dark:underline-primary-500">
-                designer and developer
-              </span>{' '}
-              in Newcastle, Australia.
-              <br />
-              Welcome to my home on the web.
-            </Copy>
-          </Stack>
-        </Wrapper>
+        <Stack space="mt-4">
+          <Copy variant="heavy">Hello!</Copy>
+          <Copy variant="heavy">
+            I am a{' '}
+            <span className="text-grey-900 dark:text-white font-medium underline underline-primary-800 dark:underline-primary-500">
+              designer and developer
+            </span>{' '}
+            in Newcastle, Australia.
+            <br />
+            Welcome to my home on the web.
+          </Copy>
+        </Stack>
+      </Wrapper>
 
-        <Wrapper>
-          <ArticleCards articles={articles} />
-        </Wrapper>
-      </Stack>
-    </>
+      <Wrapper>
+        <ArticleCards articles={articles} />
+      </Wrapper>
+    </Stack>
   )
 }
 

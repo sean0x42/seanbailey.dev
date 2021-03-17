@@ -31,6 +31,11 @@ const Layout: React.FunctionComponent = (props) => {
       <Helmet>
         <html lang="en-AU" className={theme} />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           async
           defer

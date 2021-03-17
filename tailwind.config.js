@@ -63,6 +63,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Inter', 'system-ui', 'sans-serif'],
+      title: ['Red Hat Display', 'Inter', 'system-ui', 'sans-serif'],
     },
     extend: {},
   },
