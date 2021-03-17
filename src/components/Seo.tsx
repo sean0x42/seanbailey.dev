@@ -14,16 +14,21 @@ interface PropertyMeta {
 
 type Meta = NameMeta | PropertyMeta
 
-interface SEOProps {
+interface SeoProps {
   description?: string
   lang?: string
   meta?: Meta[]
   title: string
+  noIndex?: boolean
 }
 
-const SEO: FunctionComponent<SEOProps> = (props) => {
-  const { description = '', lang = 'en', meta = [], title } = props
-
+const Seo: FunctionComponent<SeoProps> = ({
+  description,
+  lang = 'en',
+  meta = [],
+  title,
+  ...props
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -38,7 +43,13 @@ const SEO: FunctionComponent<SEOProps> = (props) => {
     `,
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  props.noIndex &&
+    meta.push({
+      name: 'robots',
+      content: 'noindex',
+    })
+
+  const metaDescription = description ?? site.siteMetadata.description
   const defaultMeta: Meta[] = [
     {
       name: `description`,
@@ -84,4 +95,4 @@ const SEO: FunctionComponent<SEOProps> = (props) => {
   )
 }
 
-export default SEO
+export default Seo

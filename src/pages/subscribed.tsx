@@ -3,13 +3,13 @@ import React, { FunctionComponent } from 'react'
 import ButtonLink from '../components/ButtonLink'
 import Copy from '../components/Copy'
 import Heading from '../components/Heading'
-import Seo from '../components/SEO'
+import Seo from '../components/Seo'
 import Wrapper from '../components/Wrapper'
 import Stack from '../components/layout/Stack'
 
 const Subscribed: FunctionComponent = () => (
   <Wrapper width="max-w-prose">
-    <Seo title="Thanks!" />
+    <Seo title="Thanks!" noIndex />
 
     <Stack space="mt-2">
       <Heading level={1}>Thanks!</Heading>

@@ -28,7 +28,7 @@ const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => {
     <Link to={props.to} className={linkStyles.join(' ')}>
       <Card cover={props.cover} coverBg={props.coverBg} badge={props.badge}>
         <Stack space="mt-2">
-          <Heading level={2}>{props.title}</Heading>
+          <Heading level={3}>{props.title}</Heading>
           <Copy variant="suppressed">{props.date}</Copy>
           <Copy>{props.copy}</Copy>
 

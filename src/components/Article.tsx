@@ -8,7 +8,7 @@ import Copy, { Bold } from './Copy'
 import Figure from './Article/Figure'
 import Heading from './Heading'
 import Link from './Link'
-import Seo from './SEO'
+import Seo from './Seo'
 import Stack from './layout/Stack'
 import ThanksForReading from './Article/ThanksForReading'
 import Wrapper from './Wrapper'
@@ -24,12 +24,12 @@ const components: ComponentMap = {
   Caption,
   YouTube,
   h1: (props) => (
-    <Heading level={1} className="mt-16">
+    <Heading level={1} className="mt-12">
       {props.children}
     </Heading>
   ),
   h2: (props) => (
-    <Heading level={2} className="mt-10">
+    <Heading level={2} className="mt-8">
       {props.children}
     </Heading>
   ),

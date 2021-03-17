@@ -8,7 +8,7 @@ import Columns from './Project/Columns'
 import Header from './Project/Header'
 import IncompleteWarning from './Project/IncompleteWarning'
 import Logo from './Project/Logo'
-import SEO from './SEO'
+import Seo from './Seo'
 import ThanksForReading from './Project/ThanksForReading'
 import ThreeColumns from './Project/ThreeColumns'
 import TwoColumns from './Project/TwoColumns'
@@ -38,7 +38,7 @@ interface ProjectProps {
 
 const Project: React.FunctionComponent<ProjectProps> = (props) => (
   <article>
-    <SEO title={props.title} description={props.excerpt} />
+    <Seo title={props.title} description={props.excerpt} />
 
     <Wrapper className="styles.project">
       <Columns>
