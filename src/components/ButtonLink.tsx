@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
-import { ArrowRightIcon } from './Icons'
+import ArrowNarrowRightIcon from './icons/ArrowNarrowRight'
 
 interface ButtonLinkProps {
   className?: string
@@ -15,7 +14,7 @@ const ButtonLink: React.FunctionComponent<ButtonLinkProps> = (props) => {
   return (
     <Link className={classes.join(' ')} to={props.to}>
       {props.children}
-      <ArrowRightIcon className="ml-2" />
+      <ArrowNarrowRightIcon className="ml-2" />
     </Link>
   )
 }

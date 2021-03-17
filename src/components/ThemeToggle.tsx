@@ -19,6 +19,9 @@ const ThemeToggle: React.FunctionComponent<ThemeToggleProps> = (props) => {
     <button
       onClick={handleClick}
       className="text-primary-800 dark:text-primary-500"
+      aria-label={
+        theme === 'light' ? 'Enable dark theme' : 'Enable light theme'
+      }
     >
       {theme === 'light' ? <SunIcon /> : <MoonIcon />}
     </button>

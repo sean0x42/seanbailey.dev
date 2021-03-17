@@ -24,12 +24,12 @@ const components: ComponentMap = {
   Caption,
   YouTube,
   h1: (props) => (
-    <Heading level={1} className="mt-8">
+    <Heading level={1} className="mt-16">
       {props.children}
     </Heading>
   ),
   h2: (props) => (
-    <Heading level={2} className="mt-8">
+    <Heading level={2} className="mt-10">
       {props.children}
     </Heading>
   ),
@@ -39,9 +39,13 @@ const components: ComponentMap = {
       {props.children}
     </Link>
   ),
-  ul: (props) => <ul className="pl-3 my-4 list-inside list-disc" {...props} />,
-  ol: (props) => (
-    <ol className="pl-3 my-4 list-inside list-numeric" {...props} />
+  ul: (props) => <ul className="pl-[1.66667em] my-4 list-disc" {...props} />,
+  ol: (props) => <ol className="pl-[1.66667em] my-4 list-decimal" {...props} />,
+  code: (props) => (
+    <code
+      {...props}
+      className="bg-grey-100 dark:bg-grey-800 rounded px-1 text-sm"
+    />
   ),
   strong: Bold,
 }
@@ -68,10 +72,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
     <article>
       <Seo title={props.title} description={props.excerpt} meta={meta} />
 
-      <Wrapper
-        width="max-w-prose"
-        className="text-grey-900 dark:text-grey-200 font-light"
-      >
+      <Wrapper width="max-w-prose">
         {props.coverImage && (
           <GatsbyImage
             image={props.coverImage.childImageSharp.gatsbyImageData}
@@ -80,17 +81,29 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
             aria-hidden={true}
           />
         )}
+      </Wrapper>
 
-        <Stack space="mt-1">
-          <Heading level={1}>{props.title}</Heading>
-          {props.date && <Copy variant="suppressed">{props.date}</Copy>}
+      <Wrapper width="max-w-prose md:max-w-screen-md" className="md:my-10">
+        <Stack space="mt-2">
+          {props.date && (
+            <Copy className="md:text-center" variant="suppressed" width="none">
+              {props.date}
+            </Copy>
+          )}
+
+          <Heading level={1} className="md:text-center" variant="title">
+            {props.title}
+          </Heading>
         </Stack>
+      </Wrapper>
 
-        <div className="disprose">
-          <MDXProvider components={components}>
-            <MDXRenderer>{props.body}</MDXRenderer>
-          </MDXProvider>
-        </div>
+      <Wrapper
+        width="max-w-prose"
+        className="text-grey-900 dark:text-grey-200 font-light"
+      >
+        <MDXProvider components={components}>
+          <MDXRenderer>{props.body}</MDXRenderer>
+        </MDXProvider>
 
         <ThanksForReading />
 

@@ -1,10 +1,8 @@
 import React from 'react'
 
-type Width = 'prose' | 'none' | 'screen-xl'
-
 interface WrapperProps {
   className?: string
-  width?: `max-w-${Width}`
+  width?: string
 }
 
 const Wrapper: React.FunctionComponent<WrapperProps> = (props) => {
