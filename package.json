@@ -22,7 +22,6 @@
     "@mdx-js/react": "^1.6.22",
     "@types/mdx-js__react": "^1.5.3",
     "@types/react-helmet": "^6.0.0",
-    "@types/rellax": "^1.7.3",
     "gatsby": "^3.0.0",
     "gatsby-plugin-catch-links": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
@@ -38,13 +37,10 @@
     "gatsby-remark-prismjs": "^4.0.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
-    "modern-normalize": "^1.0.0",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-rellax-wrapper": "^1.0.5",
-    "rellax": "^1.12.1"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.0",
@@ -71,8 +67,5 @@
     "prettier": "^2.2.1",
     "tailwindcss": "^2.0.3",
     "typescript": "^4.1.2"
-  },
-  "resolutions": {
-    "react-rellax-wrapper/react": "^17.0.1"
   }
 }
