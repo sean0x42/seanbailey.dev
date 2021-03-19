@@ -83,7 +83,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
         )}
       </Wrapper>
 
-      <Wrapper width="max-w-prose md:max-w-screen-md" className="md:my-10">
+      <Wrapper width="max-w-prose" className="md:my-10">
         <Stack space="mt-2">
           {props.date && (
             <Copy className="md:text-center" variant="suppressed" width="none">

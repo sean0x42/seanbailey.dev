@@ -7,7 +7,7 @@ import SubscribeForm from '../SubscribeForm'
 
 const ThanksForReading: React.FunctionComponent = () => (
   <Stack space="mt-2" className="mt-16">
-    <Heading level={2}>Thanks for reading</Heading>
+    <Heading level={3}>Thanks for reading</Heading>
     <Copy>
       If you liked that article, why not subscribe to my mailing list? I write
       about software engineering, product design and interface design.

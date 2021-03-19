@@ -41,7 +41,12 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
       transparent: 'transparent',
-      primary: {
+      blue: {
+        600: '#223591',
+        500: '#485DC8',
+        400: '#7B91FF',
+      },
+      teal: {
         900: '#06957A',
         800: '#06A285',
         700: '#07B897',

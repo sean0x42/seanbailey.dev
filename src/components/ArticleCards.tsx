@@ -3,8 +3,8 @@ import React, { FunctionComponent } from 'react'
 import Badge from './Badge'
 import CardLayout from './CardLayout'
 import LinkCard from './LinkCard'
-import SunIcon from './icons/Sun'
 import { ArticleSummary } from '../app/types'
+import LightningBoltIcon from './icons/LightningBolt'
 
 interface ArticleCardsProps {
   articles: ArticleSummary[]
@@ -29,7 +29,7 @@ const ArticleCards: FunctionComponent<ArticleCardsProps> = (props) => (
             date={article.frontmatter.date}
             copy={article.excerpt}
             more="Read more"
-            badge={isNew && <Badge icon={SunIcon}>New</Badge>}
+            badge={isNew && <Badge icon={LightningBoltIcon}>New!</Badge>}
           />
         </li>
       )

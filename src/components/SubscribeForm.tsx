@@ -41,7 +41,7 @@ const SubscribeForm: React.FunctionComponent = () => {
         </label>
 
         <input
-          className="px-5 py-3 focus:outline-none focus:ring ring-primary-800 dark:ring-primary-500 bg-grey-100 dark:bg-grey-800 text-grey-900 dark:text-grey-100 rounded-l rounded-r sm:rounded-r-none"
+          className="px-5 py-2 focus:outline-none focus:ring ring-teal-800 dark:ring-teal-500 bg-grey-100 dark:bg-grey-800 text-grey-900 dark:text-grey-100 rounded-l rounded-r sm:rounded-r-none"
           type="email"
           name="email"
           id="email"
@@ -53,7 +53,7 @@ const SubscribeForm: React.FunctionComponent = () => {
       </div>
 
       <button
-        className="px-5 py-3 bg-grey-200 dark:bg-grey-700 dark:text-white mt-2 sm:mt-0 rounded-l rounded-r sm:rounded-l-none focus:outline-none focus:ring ring-primary-800 dark:ring-primary-500"
+        className="px-5 py-2 bg-grey-200 dark:bg-grey-700 dark:text-white mt-2 sm:mt-0 rounded-l rounded-r sm:rounded-l-none focus:outline-none focus:ring ring-teal-800 dark:ring-teal-500"
         type="submit"
       >
         Subscribe

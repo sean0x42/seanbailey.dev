@@ -21,7 +21,10 @@ interface LinkCardProps {
 }
 
 const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => {
-  const linkStyles = ['group']
+  const linkStyles = [
+    'group',
+    'block focus:outline-none focus:ring-2 ring-offset-2 ring-teal-500 ring-offset-transparent',
+  ]
   props.className && linkStyles.push(props.className)
 
   return (
@@ -33,7 +36,7 @@ const LinkCard: React.FunctionComponent<LinkCardProps> = (props) => {
           <Copy>{props.copy}</Copy>
 
           <Copy
-            className="flex items-center text-primary-800 dark:text-primary-400"
+            className="flex items-center text-teal-800 dark:text-teal-400"
             aria-hidden="true"
             variant="highlighted"
           >

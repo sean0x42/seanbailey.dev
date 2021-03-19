@@ -34,10 +34,10 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
   }
 
   return (
-    <div>
+    <div className="relative">
       {props.badge}
       {cover}
-      <div>{props.children}</div>
+      {props.children}
     </div>
   )
 }

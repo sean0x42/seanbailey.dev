@@ -23,7 +23,7 @@ const LandingPage: React.FunctionComponent = () => {
           <Copy variant="heavy">Hello!</Copy>
           <Copy variant="heavy">
             I am a{' '}
-            <span className="text-grey-900 dark:text-white font-medium underline underline-primary-800 dark:underline-primary-500">
+            <span className="text-grey-900 dark:text-white font-medium underline underline-teal-800 dark:underline-teal-500">
               designer and developer
             </span>{' '}
             in Newcastle, Australia.
