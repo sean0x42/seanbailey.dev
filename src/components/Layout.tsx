@@ -26,8 +26,9 @@ const Layout: React.FunctionComponent = (props) => {
     return () => mediaQuery.removeEventListener('change', onColorSchemeChange)
   }, [])
 
+  // Temporarily disable light theme.
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeContext.Provider value={'dark'}>
       <Helmet>
         <html lang="en-AU" className={theme} />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

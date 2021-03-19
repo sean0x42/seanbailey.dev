@@ -20,8 +20,8 @@ const LandingPage: React.FunctionComponent = () => {
         <Seo title="Sean Bailey (Designer and Developer)" />
 
         <Stack space="mt-4">
-          <Copy variant="heavy">Hello!</Copy>
-          <Copy variant="heavy">
+          <Copy variant="large">Hello!</Copy>
+          <Copy variant="large">
             I am a{' '}
             <span className="text-grey-900 dark:text-white font-medium underline underline-teal-800 dark:underline-teal-500">
               designer and developer

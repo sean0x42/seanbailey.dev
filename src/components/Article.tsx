@@ -76,7 +76,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
         {props.coverImage && (
           <GatsbyImage
             image={props.coverImage.childImageSharp.gatsbyImageData}
-            className="bg-gray-900 rounded leading-none align-middle mb-9"
+            className="bg-gray-900 -mx-5 sm:mx-0 sm:rounded leading-none align-middle mb-9"
             alt={props.title}
             aria-hidden={true}
           />
@@ -97,10 +97,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
         </Stack>
       </Wrapper>
 
-      <Wrapper
-        width="max-w-prose"
-        className="text-grey-900 dark:text-grey-200 font-light"
-      >
+      <Wrapper width="max-w-prose" className="text-grey-900 dark:text-grey-200">
         <MDXProvider components={components}>
           <MDXRenderer>{props.body}</MDXRenderer>
         </MDXProvider>

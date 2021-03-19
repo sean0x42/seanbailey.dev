@@ -6,7 +6,7 @@ export const Bold: React.FunctionComponent = (props) => (
   </strong>
 )
 
-type Variant = 'suppressed' | 'normal' | 'highlighted' | 'heavy'
+type Variant = 'suppressed' | 'normal' | 'highlighted' | 'heavy' | 'large'
 interface CopyProps {
   className?: string
   variant?: Variant
@@ -17,7 +17,8 @@ const impactVariants: Record<Variant, string> = {
   suppressed: 'text-grey-500 dark:text-grey-300',
   normal: 'text-grey-700 dark:text-grey-200',
   highlighted: 'text-teal-800 dark:text-teal-400',
-  heavy:
+  heavy: 'text-grey-900 dark:text-white',
+  large:
     'text-grey-800 dark:text-grey-100 font-medium dark:font-medium text-xl',
 }
 

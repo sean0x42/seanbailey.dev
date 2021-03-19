@@ -18,7 +18,7 @@ const ThemeToggle: React.FunctionComponent<ThemeToggleProps> = (props) => {
   return (
     <button
       onClick={handleClick}
-      className="text-teal-800 dark:text-teal-500 focus:outline-none focus:ring-2 ring-teal-500"
+      className="text-teal-800 dark:text-teal-400 focus:outline-none focus:ring-2 ring-teal-500 p-2"
       aria-label={
         theme === 'light' ? 'Enable dark theme' : 'Enable light theme'
       }

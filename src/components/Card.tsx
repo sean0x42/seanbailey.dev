@@ -10,7 +10,9 @@ interface CardProps {
 }
 
 const Card: React.FunctionComponent<CardProps> = (props) => {
-  const classes = ['rounded mb-5 leading-none align-middle']
+  const classes = [
+    'rounded mb-5 leading-none align-middle group-focus:ring-4 ring-teal-600',
+  ]
   props.coverBg && classes.push(props.coverBg)
 
   // Determine which cover image to show
