@@ -55,9 +55,10 @@ interface ArticleProps {
 const Article: React.FunctionComponent<ArticleProps> = (props) => {
   const meta = []
   if (props.coverImage?.childImageSharp?.gatsbyImageData) {
+    const imgUrl = getSrc(props.coverImage.childImageSharp.gatsbyImageData)
     meta.push({
       name: 'og:image',
-      content: getSrc(props.coverImage.childImageSharp.gatsbyImageData),
+      content: `https://www.seanbailey.dev${imgUrl}`,
     })
   }
 
