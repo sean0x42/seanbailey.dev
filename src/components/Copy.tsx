@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Bold: React.FunctionComponent = (props) => (
-  <strong className="text-grey-700 dark:text-teal-400 font-medium dark:font-normal">
+  <strong className="text-grey-700 dark:text-teal-400 font-medium">
     {props.children}
   </strong>
 )

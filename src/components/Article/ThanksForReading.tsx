@@ -10,7 +10,7 @@ const ThanksForReading: React.FunctionComponent = () => (
     <Heading level={3}>Thanks for reading</Heading>
     <Copy>
       If you liked that article, why not subscribe to my mailing list? I write
-      about software engineering, product design and interface design.
+      about software engineering, product design and more!
     </Copy>
     <Copy>
       <Bold>100% spam and tracker free!</Bold>

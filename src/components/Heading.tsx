@@ -9,8 +9,8 @@ interface HeadingProps {
 const styles = {
   common: 'text-grey-900 dark:text-white',
   title: 'font-semibold md:font-bold text-3xl md:text-5xl font-title',
-  '1': 'font-semibold text-3xl font-title',
-  '2': 'font-medium font-title',
+  '1': 'font-semibold text-xl md:text-3xl font-title',
+  '2': 'font-semibold text-md md: text-xl font-title',
   '3': 'font-semibold dark:font-medium',
 }
 
