@@ -24,16 +24,15 @@ const components: ComponentMap = {
   Caption,
   YouTube,
   h1: (props) => (
-    <Heading level={1} className="mt-12">
+    <Heading level={1} className="mt-16">
       {props.children}
     </Heading>
   ),
   h2: (props) => (
-    <Heading level={2} className="mt-8">
+    <Heading level={2} className="mt-12">
       {props.children}
     </Heading>
   ),
-  p: (props) => <Copy className="my-6" {...props} />,
   a: (props) => (
     <Link to={props.href} external>
       {props.children}
@@ -41,12 +40,6 @@ const components: ComponentMap = {
   ),
   ul: (props) => <ul className="pl-[1.66667em] my-4 list-disc" {...props} />,
   ol: (props) => <ol className="pl-[1.66667em] my-4 list-decimal" {...props} />,
-  code: (props) => (
-    <code
-      {...props}
-      className="bg-grey-100 dark:bg-grey-800 rounded px-1 text-sm"
-    />
-  ),
   strong: Bold,
 }
 
@@ -98,9 +91,11 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
       </Wrapper>
 
       <Wrapper width="max-w-prose" className="text-grey-900 dark:text-grey-200">
-        <MDXProvider components={components}>
-          <MDXRenderer>{props.body}</MDXRenderer>
-        </MDXProvider>
+        <div className="prose">
+          <MDXProvider components={components}>
+            <MDXRenderer>{props.body}</MDXRenderer>
+          </MDXProvider>
+        </div>
 
         <ThanksForReading />
 

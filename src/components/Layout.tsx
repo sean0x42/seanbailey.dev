@@ -7,7 +7,7 @@ import SkipLink from './SkipLink'
 import { Theme, ThemeContext } from '../app/themeContext'
 
 const Layout: React.FunctionComponent = (props) => {
-  const [theme, setTheme] = useState<Theme>('dark')
+  const [_theme, setTheme] = useState<Theme>('dark')
 
   function onColorSchemeChange(event: MediaQueryListEvent) {
     setTheme(event.matches ? 'dark' : 'light')
@@ -28,9 +28,9 @@ const Layout: React.FunctionComponent = (props) => {
 
   // Temporarily disable light theme.
   return (
-    <ThemeContext.Provider value={'dark'}>
+    <ThemeContext.Provider value="dark">
       <Helmet>
-        <html lang="en-AU" className={theme} />
+        <html lang="en-AU" className="dark" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
