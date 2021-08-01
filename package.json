@@ -23,7 +23,7 @@
     "@types/mdx-js__react": "^1.5.3",
     "@types/react-helmet": "^6.0.0",
     "gatsby": "^3.0.0",
-    "gatsby-plugin-catch-links": "^3.2.0",
+    "gatsby-plugin-catch-links": "^3.10.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-layout": "^2.6.0",
     "gatsby-plugin-manifest": "^3.0.0",
