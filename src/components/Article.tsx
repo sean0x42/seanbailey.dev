@@ -19,6 +19,7 @@ interface ComponentMap {
   [name: string]: React.ComponentType
 }
 
+/* eslint-disable react/display-name */
 const components: ComponentMap = {
   Figure,
   Caption,
@@ -42,6 +43,7 @@ const components: ComponentMap = {
   ol: (props) => <ol className="pl-[1.66667em] my-4 list-decimal" {...props} />,
   strong: Bold,
 }
+/* eslint-enable react/display-name */
 
 interface ArticleProps {
   coverImage: Image

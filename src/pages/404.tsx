@@ -14,8 +14,8 @@ const NotFoundPage: React.FunctionComponent = () => (
     <Stack space="mt-2">
       <Heading level={1}>Page Not Found</Heading>
       <Copy>
-        There doesn't seem to be anything at this address. Double check the URL,
-        or just return home.
+        There doesn&apos;t seem to be anything at this address. Double check the
+        URL, or just return home.
       </Copy>
       <ButtonLink to="/">Return home</ButtonLink>
     </Stack>
