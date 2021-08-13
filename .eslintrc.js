@@ -3,27 +3,27 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
   },
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
   },
-  plugins: ['@typescript-eslint', 'jsx-a11y'],
+  plugins: ["@typescript-eslint", "jsx-a11y"],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'prettier',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
   ],
   rules: {
-    'react/prop-types': 'off',
+    "react/prop-types": "off",
   },
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
   },
-}
+};

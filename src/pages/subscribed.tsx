@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from "react";
 
-import ButtonLink from '../components/ButtonLink'
-import Copy from '../components/Copy'
-import Heading from '../components/Heading'
-import Seo from '../components/Seo'
-import Wrapper from '../components/Wrapper'
-import Stack from '../components/layout/Stack'
+import ButtonLink from "../components/ButtonLink";
+import Copy from "../components/Copy";
+import Heading from "../components/Heading";
+import Seo from "../components/Seo";
+import Wrapper from "../components/Wrapper";
+import Stack from "../components/layout/Stack";
 
 const Subscribed: FunctionComponent = () => (
   <Wrapper width="max-w-prose">
@@ -20,6 +20,6 @@ const Subscribed: FunctionComponent = () => (
       <ButtonLink to="/">Return home</ButtonLink>
     </Stack>
   </Wrapper>
-)
+);
 
-export default Subscribed
+export default Subscribed;

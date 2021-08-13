@@ -1,29 +1,29 @@
-import React, { useState, FormEvent } from 'react'
-import { navigate } from 'gatsby'
+import React, { useState, FormEvent } from "react";
+import { navigate } from "gatsby";
 
-import Copy from './Copy'
-import { encodeForm } from '../helpers/form'
+import Copy from "./Copy";
+import { encodeForm } from "../helpers/form";
 
 const SubscribeForm: React.FunctionComponent = () => {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("");
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value)
+    setEmail(event.target.value);
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+    event.preventDefault();
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodeForm({
-        'form-name': 'subscribe',
+        "form-name": "subscribe",
         email,
       }),
     })
-      .then(() => navigate('/subscribed'))
-      .catch((error) => alert(error))
+      .then(() => navigate("/subscribed"))
+      .catch((error) => alert(error));
   }
 
   return (
@@ -59,7 +59,7 @@ const SubscribeForm: React.FunctionComponent = () => {
         Subscribe
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default SubscribeForm
+export default SubscribeForm;

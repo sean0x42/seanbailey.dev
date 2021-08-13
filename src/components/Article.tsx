@@ -1,22 +1,22 @@
-import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { GatsbyImage, getSrc } from 'gatsby-plugin-image'
+import React from "react";
+import { MDXProvider } from "@mdx-js/react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { GatsbyImage, getSrc } from "gatsby-plugin-image";
 
-import Caption from './Article/Caption'
-import Copy, { Bold } from './Copy'
-import Figure from './Article/Figure'
-import Heading from './Heading'
-import Link from './Link'
-import Seo from './Seo'
-import Stack from './layout/Stack'
-import ThanksForReading from './Article/ThanksForReading'
-import Wrapper from './Wrapper'
-import YouTube from './Article/YouTube'
-import { Attribution, Image } from '../app/types'
+import Caption from "./Article/Caption";
+import Copy, { Bold } from "./Copy";
+import Figure from "./Article/Figure";
+import Heading from "./Heading";
+import Link from "./Link";
+import Seo from "./Seo";
+import Stack from "./layout/Stack";
+import ThanksForReading from "./Article/ThanksForReading";
+import Wrapper from "./Wrapper";
+import YouTube from "./Article/YouTube";
+import { Attribution, Image } from "../app/types";
 
 interface ComponentMap {
-  [name: string]: React.ComponentType
+  [name: string]: React.ComponentType;
 }
 
 /* eslint-disable react/display-name */
@@ -42,26 +42,26 @@ const components: ComponentMap = {
   ul: (props) => <ul className="pl-[1.66667em] my-4 list-disc" {...props} />,
   ol: (props) => <ol className="pl-[1.66667em] my-4 list-decimal" {...props} />,
   strong: Bold,
-}
+};
 /* eslint-enable react/display-name */
 
 interface ArticleProps {
-  coverImage: Image
-  attribution: Attribution
-  title: string
-  date: string
-  excerpt: string
-  body: string
+  coverImage: Image;
+  attribution: Attribution;
+  title: string;
+  date: string;
+  excerpt: string;
+  body: string;
 }
 
 const Article: React.FunctionComponent<ArticleProps> = (props) => {
-  const meta = []
+  const meta = [];
   if (props.coverImage?.childImageSharp?.gatsbyImageData) {
-    const imgUrl = getSrc(props.coverImage.childImageSharp.gatsbyImageData)
+    const imgUrl = getSrc(props.coverImage.childImageSharp.gatsbyImageData);
     meta.push({
-      name: 'og:image',
+      name: "og:image",
       content: `https://www.seanbailey.dev${imgUrl}`,
-    })
+    });
   }
 
   return (
@@ -104,7 +104,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
 
         {props.attribution && (
           <Copy className="mt-16">
-            Cover image by{' '}
+            Cover image by{" "}
             <Link to={props.attribution.url} external>
               {props.attribution.author}
             </Link>
@@ -112,7 +112,7 @@ const Article: React.FunctionComponent<ArticleProps> = (props) => {
         )}
       </Wrapper>
     </article>
-  )
-}
+  );
+};
 
-export default Article
+export default Article;

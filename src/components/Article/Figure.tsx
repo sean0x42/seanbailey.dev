@@ -1,8 +1,8 @@
-import React from 'react'
-import Caption from './Caption'
+import React from "react";
+import Caption from "./Caption";
 
 interface FigureProps {
-  caption?: string
+  caption?: string;
 }
 
 const Figure: React.FunctionComponent<FigureProps> = (props) => (
@@ -10,6 +10,6 @@ const Figure: React.FunctionComponent<FigureProps> = (props) => (
     {props.children}
     {props.caption && <Caption>{props.caption}</Caption>}
   </figure>
-)
+);
 
-export default Figure
+export default Figure;

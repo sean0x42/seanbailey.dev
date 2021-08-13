@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
 const ThanksForReading: React.FunctionComponent = () => (
   <Link to="/projects" className="styles.wrapper">
@@ -14,6 +14,6 @@ const ThanksForReading: React.FunctionComponent = () => (
       </p>
     </div>
   </Link>
-)
+);
 
-export default ThanksForReading
+export default ThanksForReading;

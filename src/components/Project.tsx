@@ -1,22 +1,22 @@
-import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from "react";
+import { MDXProvider } from "@mdx-js/react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Column from './Project/Column'
-import ColumnSpacer from './Project/ColumnSpacer'
-import Columns from './Project/Columns'
-import Header from './Project/Header'
-import IncompleteWarning from './Project/IncompleteWarning'
-import Logo from './Project/Logo'
-import Seo from './Seo'
-import ThanksForReading from './Project/ThanksForReading'
-import ThreeColumns from './Project/ThreeColumns'
-import TwoColumns from './Project/TwoColumns'
-import Wrapper from './Wrapper'
-import { Image } from '../app/types'
+import Column from "./Project/Column";
+import ColumnSpacer from "./Project/ColumnSpacer";
+import Columns from "./Project/Columns";
+import Header from "./Project/Header";
+import IncompleteWarning from "./Project/IncompleteWarning";
+import Logo from "./Project/Logo";
+import Seo from "./Seo";
+import ThanksForReading from "./Project/ThanksForReading";
+import ThreeColumns from "./Project/ThreeColumns";
+import TwoColumns from "./Project/TwoColumns";
+import Wrapper from "./Wrapper";
+import { Image } from "../app/types";
 
 interface ComponentMap {
-  [name: string]: React.FunctionComponent<unknown>
+  [name: string]: React.FunctionComponent<unknown>;
 }
 
 const components: ComponentMap = {
@@ -26,14 +26,14 @@ const components: ComponentMap = {
   IncompleteWarning,
   ThreeColumns,
   TwoColumns,
-}
+};
 
 interface ProjectProps {
-  coverImage: Image
-  title: string
-  date: string
-  excerpt: string
-  body: string
+  coverImage: Image;
+  title: string;
+  date: string;
+  excerpt: string;
+  body: string;
 }
 
 const Project: React.FunctionComponent<ProjectProps> = (props) => (
@@ -58,6 +58,6 @@ const Project: React.FunctionComponent<ProjectProps> = (props) => (
       </Columns>
     </Wrapper>
   </article>
-)
+);
 
-export default Project
+export default Project;

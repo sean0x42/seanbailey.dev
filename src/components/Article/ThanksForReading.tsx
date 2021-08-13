@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import Copy, { Bold } from '../Copy'
-import Heading from '../Heading'
-import Stack from '../layout/Stack'
-import SubscribeForm from '../SubscribeForm'
+import Copy, { Bold } from "../Copy";
+import Heading from "../Heading";
+import Stack from "../layout/Stack";
+import SubscribeForm from "../SubscribeForm";
 
 const ThanksForReading: React.FunctionComponent = () => (
   <Stack space="mt-2" className="mt-16">
@@ -18,6 +18,6 @@ const ThanksForReading: React.FunctionComponent = () => (
 
     <SubscribeForm />
   </Stack>
-)
+);
 
-export default ThanksForReading
+export default ThanksForReading;
