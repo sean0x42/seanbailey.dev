@@ -1,10 +1,10 @@
-import React from 'react'
-import { Image } from '../../app/types'
+import React from "react";
+import { Image } from "../../app/types";
 
 interface HeaderProps {
-  coverImage: Image
-  title: string
-  date: string
+  coverImage: Image;
+  title: string;
+  date: string;
 }
 
 const Header: React.FunctionComponent<HeaderProps> = (props) => (
@@ -12,6 +12,6 @@ const Header: React.FunctionComponent<HeaderProps> = (props) => (
     <h1 className="styles.title">{props.title}</h1>
     <p className="styles.date">{props.date}</p>
   </div>
-)
+);
 
-export default Header
+export default Header;

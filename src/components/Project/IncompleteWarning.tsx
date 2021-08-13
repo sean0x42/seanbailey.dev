@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const IncompleteWarning: React.FunctionComponent = () => (
   <div className="styles.wrapper">
@@ -7,6 +7,6 @@ const IncompleteWarning: React.FunctionComponent = () => (
       be underdeveloped or awkward.
     </p>
   </div>
-)
+);
 
-export default IncompleteWarning
+export default IncompleteWarning;

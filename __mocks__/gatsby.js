@@ -1,7 +1,7 @@
 /** @format */
 
-const React = require('react')
-const gatsby = jest.requireActual('gatsby')
+const React = require("react");
+const gatsby = jest.requireActual("gatsby");
 
 module.exports = {
   ...gatsby,
@@ -19,8 +19,8 @@ module.exports = {
         replace,
         to,
         ...rest
-      }) => React.createElement('a', { ...rest, href: to }),
+      }) => React.createElement("a", { ...rest, href: to }),
     ),
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn(),
-}
+};

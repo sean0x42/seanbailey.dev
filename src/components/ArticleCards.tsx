@@ -1,24 +1,24 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from "react";
 
-import Badge from './Badge'
-import CardLayout from './CardLayout'
-import LinkCard from './LinkCard'
-import { ArticleSummary } from '../app/types'
-import LightningBoltIcon from './icons/LightningBolt'
+import Badge from "./Badge";
+import CardLayout from "./CardLayout";
+import LinkCard from "./LinkCard";
+import { ArticleSummary } from "../app/types";
+import LightningBoltIcon from "./icons/LightningBolt";
 
 interface ArticleCardsProps {
-  articles: ArticleSummary[]
+  articles: ArticleSummary[];
 }
 
 function daysAgo(date: Date): number {
-  const today = new Date()
-  return Math.floor((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
+  const today = new Date();
+  return Math.floor((today.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
 }
 
 const ArticleCards: FunctionComponent<ArticleCardsProps> = (props) => (
   <CardLayout>
     {props.articles.map((article) => {
-      const isNew = daysAgo(new Date(article.frontmatter.rawDate)) <= 7
+      const isNew = daysAgo(new Date(article.frontmatter.rawDate)) <= 7;
 
       return (
         <li key={article.fields.slug}>
@@ -32,9 +32,9 @@ const ArticleCards: FunctionComponent<ArticleCardsProps> = (props) => (
             badge={isNew && <Badge icon={LightningBoltIcon}>New!</Badge>}
           />
         </li>
-      )
+      );
     })}
   </CardLayout>
-)
+);
 
-export default ArticleCards
+export default ArticleCards;

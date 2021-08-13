@@ -1,10 +1,10 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react'
-import { navigate } from 'gatsby'
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import { navigate } from "gatsby";
 
-import { encodeForm } from '../helpers/form'
+import { encodeForm } from "../helpers/form";
 
 const ContactForm: React.FunctionComponent = () => {
-  const [state, setState] = useState({})
+  const [state, setState] = useState({});
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -12,23 +12,23 @@ const ContactForm: React.FunctionComponent = () => {
     setState({
       ...state,
       [event.target.name]: event.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encodeForm({
-        'form-name': 'contact',
+        "form-name": "contact",
         ...state,
       }),
     })
-      .then(() => navigate('/thanks'))
-      .catch((error) => alert(error))
-  }
+      .then(() => navigate("/thanks"))
+      .catch((error) => alert(error));
+  };
 
   return (
     <form
@@ -43,7 +43,7 @@ const ContactForm: React.FunctionComponent = () => {
       <input type="hidden" name="form-name" value="contact" />
 
       <div
-        className={['styles.field', 'styles.fieldPot'].join(' ')}
+        className={["styles.field", "styles.fieldPot"].join(" ")}
         aria-hidden="true"
       >
         <label htmlFor="sender">Do not fill out this field</label>
@@ -98,7 +98,7 @@ const ContactForm: React.FunctionComponent = () => {
         Send Message
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

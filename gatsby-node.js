@@ -6,27 +6,27 @@
  * @format
  */
 
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
-  if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === "Mdx") {
+    const value = createFilePath({ node, getNode });
 
     createNodeField({
-      name: 'slug',
+      name: "slug",
       node,
       value: value.slice(0, -1),
-    })
+    });
   }
-}
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const { createPage } = actions
-  const articleTemplate = path.resolve('src/templates/Article.tsx')
-  const projectTemplate = path.resolve('src/templates/Project.tsx')
+  const { createPage } = actions;
+  const articleTemplate = path.resolve("src/templates/Article.tsx");
+  const projectTemplate = path.resolve("src/templates/Project.tsx");
 
   const result = await graphql(`
     {
@@ -65,11 +65,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
     }
-  `)
+  `);
 
   if (result.errors) {
-    reporter.panicOnBuild('Error while running GraphQL query.')
-    return
+    reporter.panicOnBuild("Error while running GraphQL query.");
+    return;
   }
 
   result.data.articles.edges.forEach(({ node }) => {
@@ -79,8 +79,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         id: node.id,
       },
-    })
-  })
+    });
+  });
 
   result.data.projects.edges.forEach(({ node }) => {
     createPage({
@@ -89,6 +89,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         id: node.id,
       },
-    })
-  })
-}
+    });
+  });
+};

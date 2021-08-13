@@ -1,30 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
-import Footer from './Footer'
-import Header from './Header'
-import SkipLink from './SkipLink'
-import { Theme, ThemeContext } from '../app/themeContext'
+import Footer from "./Footer";
+import Header from "./Header";
+import SkipLink from "./SkipLink";
+import { Theme, ThemeContext } from "../app/themeContext";
 
 const Layout: React.FunctionComponent = (props) => {
-  const [_theme, setTheme] = useState<Theme>('dark')
+  const [_theme, setTheme] = useState<Theme>("dark");
 
   function onColorSchemeChange(event: MediaQueryListEvent) {
-    setTheme(event.matches ? 'dark' : 'light')
+    setTheme(event.matches ? "dark" : "light");
   }
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     // Set initial preference
     if (mediaQuery.matches) {
-      setTheme('dark')
+      setTheme("dark");
     }
 
     // Respond to further changes to preference
-    mediaQuery.addEventListener('change', onColorSchemeChange)
-    return () => mediaQuery.removeEventListener('change', onColorSchemeChange)
-  }, [])
+    mediaQuery.addEventListener("change", onColorSchemeChange);
+    return () => mediaQuery.removeEventListener("change", onColorSchemeChange);
+  }, []);
 
   // Temporarily disable light theme.
   return (
@@ -52,7 +52,7 @@ const Layout: React.FunctionComponent = (props) => {
 
       <Footer />
     </ThemeContext.Provider>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

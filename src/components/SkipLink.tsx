@@ -1,5 +1,5 @@
-import React from 'react'
-import Copy from './Copy'
+import React from "react";
+import Copy from "./Copy";
 
 const SkipLink: React.FunctionComponent = () => (
   <a
@@ -8,6 +8,6 @@ const SkipLink: React.FunctionComponent = () => (
   >
     <Copy>Skip to content</Copy>
   </a>
-)
+);
 
-export default SkipLink
+export default SkipLink;

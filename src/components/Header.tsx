@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import Logo from './Logo'
-import Wrapper from './Wrapper'
-import { Theme } from '../app/themeContext'
+import Logo from "./Logo";
+import Wrapper from "./Wrapper";
+import { Theme } from "../app/themeContext";
 
 interface HeaderProps {
-  setTheme: (theme: Theme) => void
+  setTheme: (theme: Theme) => void;
 }
 
 const Header: React.FunctionComponent<HeaderProps> = (_props) => (
@@ -17,6 +17,6 @@ const Header: React.FunctionComponent<HeaderProps> = (_props) => (
       </div>
     </Wrapper>
   </header>
-)
+);
 
-export default Header
+export default Header;

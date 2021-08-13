@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon } from '.'
+import React from "react";
+import { Icon } from ".";
 
 const ArrowNarrowRightIcon: Icon = (props) => (
   <svg
@@ -17,6 +17,6 @@ const ArrowNarrowRightIcon: Icon = (props) => (
       clipRule="evenodd"
     />
   </svg>
-)
+);
 
-export default ArrowNarrowRightIcon
+export default ArrowNarrowRightIcon;

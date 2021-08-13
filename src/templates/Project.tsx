@@ -1,21 +1,21 @@
-import React, { FunctionComponent } from 'react'
-import { graphql } from 'gatsby'
-import { Project as ProjectModel } from '../app/types'
+import React, { FunctionComponent } from "react";
+import { graphql } from "gatsby";
+import { Project as ProjectModel } from "../app/types";
 
-import Project from '../components/Project'
+import Project from "../components/Project";
 
 type Data = {
-  mdx: ProjectModel
-}
+  mdx: ProjectModel;
+};
 
 interface ContainerProps {
-  data: Data
+  data: Data;
 }
 
 const Container: FunctionComponent<ContainerProps> = (props) => {
-  const project = props.data.mdx
-  const { startDate } = project.frontmatter
-  const endDate = project.frontmatter.endDate || 'Present'
+  const project = props.data.mdx;
+  const { startDate } = project.frontmatter;
+  const endDate = project.frontmatter.endDate || "Present";
 
   return (
     <Project
@@ -25,10 +25,10 @@ const Container: FunctionComponent<ContainerProps> = (props) => {
       excerpt={project.excerpt}
       body={project.body}
     />
-  )
-}
+  );
+};
 
-export default Container
+export default Container;
 
 export const pageQuery = graphql`
   query ProjectById($id: String) {
@@ -54,4 +54,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import ButtonLink from '../components/ButtonLink'
-import Copy from '../components/Copy'
-import Heading from '../components/Heading'
-import Seo from '../components/Seo'
-import Stack from '../components/layout/Stack'
-import Wrapper from '../components/Wrapper'
+import ButtonLink from "../components/ButtonLink";
+import Copy from "../components/Copy";
+import Heading from "../components/Heading";
+import Seo from "../components/Seo";
+import Stack from "../components/layout/Stack";
+import Wrapper from "../components/Wrapper";
 
 const NotFoundPage: React.FunctionComponent = () => (
   <Wrapper width="max-w-prose">
@@ -20,6 +20,6 @@ const NotFoundPage: React.FunctionComponent = () => (
       <ButtonLink to="/">Return home</ButtonLink>
     </Stack>
   </Wrapper>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

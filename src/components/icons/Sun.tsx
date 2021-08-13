@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon } from '.'
+import React from "react";
+import { Icon } from ".";
 
 const SunIcon: Icon = (props) => (
   <svg
@@ -17,6 +17,6 @@ const SunIcon: Icon = (props) => (
       clipRule="evenodd"
     />
   </svg>
-)
+);
 
-export default SunIcon
+export default SunIcon;

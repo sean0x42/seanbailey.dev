@@ -1,18 +1,18 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 
-import ArticleCards from '../components/ArticleCards'
-import Copy from '../components/Copy'
-import Seo from '../components/Seo'
-import Stack from '../components/layout/Stack'
-import Wrapper from '../components/Wrapper'
-import { ArticleSummary } from '../app/types'
-import { flattenNodes } from '../helpers/graphql'
+import ArticleCards from "../components/ArticleCards";
+import Copy from "../components/Copy";
+import Seo from "../components/Seo";
+import Stack from "../components/layout/Stack";
+import Wrapper from "../components/Wrapper";
+import { ArticleSummary } from "../app/types";
+import { flattenNodes } from "../helpers/graphql";
 
 const LandingPage: React.FunctionComponent = () => {
-  const data = useStaticQuery(query)
+  const data = useStaticQuery(query);
 
-  const articles = flattenNodes<ArticleSummary>(data.articles)
+  const articles = flattenNodes<ArticleSummary>(data.articles);
 
   return (
     <Stack space="mt-24">
@@ -22,10 +22,10 @@ const LandingPage: React.FunctionComponent = () => {
         <Stack space="mt-4">
           <Copy variant="large">Hello!</Copy>
           <Copy variant="large">
-            I am a{' '}
+            I am a{" "}
             <span className="text-grey-900 dark:text-white font-medium underline underline-teal-800 dark:underline-teal-500">
               designer and developer
-            </span>{' '}
+            </span>{" "}
             in Newcastle, Australia.
             <br />
             Welcome to my home on the web.
@@ -37,10 +37,10 @@ const LandingPage: React.FunctionComponent = () => {
         <ArticleCards articles={articles} />
       </Wrapper>
     </Stack>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
 
 const query = graphql`
   {
@@ -78,4 +78,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

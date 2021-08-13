@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 interface YouTubeProps {
-  id: string
-  title: string
+  id: string;
+  title: string;
 }
 
 const YouTube: React.FunctionComponent<YouTubeProps> = (props) => (
@@ -15,6 +15,6 @@ const YouTube: React.FunctionComponent<YouTubeProps> = (props) => (
       title={props.title}
     ></iframe>
   </div>
-)
+);
 
-export default YouTube
+export default YouTube;

@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react'
-import Layout from '../components/Layout'
+import React, { FunctionComponent } from "react";
+import Layout from "../components/Layout";
 
 /**
  * Wraps a component up inside a layout. This enables the use of treat themes
@@ -12,9 +12,9 @@ function withLayout<T>(
     <Layout>
       <WrappedComponent {...props} />
     </Layout>
-  )
+  );
 
-  return WithLayout
+  return WithLayout;
 }
 
-export default withLayout
+export default withLayout;

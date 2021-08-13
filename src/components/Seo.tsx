@@ -1,30 +1,30 @@
-import React, { FunctionComponent } from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React, { FunctionComponent } from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 interface NameMeta {
-  name: string
-  content: string
+  name: string;
+  content: string;
 }
 
 interface PropertyMeta {
-  property: string
-  content: string
+  property: string;
+  content: string;
 }
 
-type Meta = NameMeta | PropertyMeta
+type Meta = NameMeta | PropertyMeta;
 
 interface SeoProps {
-  description?: string
-  lang?: string
-  meta?: Meta[]
-  title: string
-  noIndex?: boolean
+  description?: string;
+  lang?: string;
+  meta?: Meta[];
+  title: string;
+  noIndex?: boolean;
 }
 
 const Seo: FunctionComponent<SeoProps> = ({
   description,
-  lang = 'en',
+  lang = "en",
   meta = [],
   title,
   ...props
@@ -41,15 +41,15 @@ const Seo: FunctionComponent<SeoProps> = ({
         }
       }
     `,
-  )
+  );
 
   props.noIndex &&
     meta.push({
-      name: 'robots',
-      content: 'noindex',
-    })
+      name: "robots",
+      content: "noindex",
+    });
 
-  const metaDescription = description ?? site.siteMetadata.description
+  const metaDescription = description ?? site.siteMetadata.description;
   const defaultMeta: Meta[] = [
     {
       name: `description`,
@@ -83,7 +83,7 @@ const Seo: FunctionComponent<SeoProps> = ({
       name: `twitter:description`,
       content: metaDescription,
     },
-  ]
+  ];
 
   return (
     <Helmet
@@ -92,7 +92,7 @@ const Seo: FunctionComponent<SeoProps> = ({
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={defaultMeta.concat(meta)}
     />
-  )
-}
+  );
+};
 
-export default Seo
+export default Seo;

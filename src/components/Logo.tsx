@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react";
+import { Link } from "gatsby";
 
 const Logo: React.FunctionComponent = () => (
   <Link
@@ -8,6 +8,6 @@ const Logo: React.FunctionComponent = () => (
   >
     Sean Bailey
   </Link>
-)
+);
 
-export default Logo
+export default Logo;

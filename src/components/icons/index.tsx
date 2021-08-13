@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export interface IconProps {
-  className?: string
+  className?: string;
 }
 
-export type Icon = React.FunctionComponent<IconProps>
+export type Icon = React.FunctionComponent<IconProps>;

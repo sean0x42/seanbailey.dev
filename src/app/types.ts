@@ -1,67 +1,67 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image'
+import { IGatsbyImageData } from "gatsby-plugin-image";
 
 export interface GraphQLNodes<T> {
-  edges: { node: T }[]
+  edges: { node: T }[];
 }
 
 export interface Image {
-  publicURL?: string
+  publicURL?: string;
   childImageSharp?: {
-    gatsbyImageData: IGatsbyImageData
-  }
+    gatsbyImageData: IGatsbyImageData;
+  };
 }
 
 export interface ArticleSummary {
-  excerpt: string
+  excerpt: string;
   fields: {
-    slug: string
-  }
+    slug: string;
+  };
   frontmatter: {
-    title: string
-    rawDate: string
-    date: string
-    cover: Image
-  }
+    title: string;
+    rawDate: string;
+    date: string;
+    cover: Image;
+  };
 }
 
 export interface Attribution {
-  author: string
-  url: string
+  author: string;
+  url: string;
 }
 
 export interface Article {
-  id: string
-  body: string
-  excerpt: string
+  id: string;
+  body: string;
+  excerpt: string;
   frontmatter: {
-    title: string
-    date: string
-    cover: Image
-    attribution: Attribution | null
-  }
+    title: string;
+    date: string;
+    cover: Image;
+    attribution: Attribution | null;
+  };
 }
 
 export interface ProjectSummary {
-  excerpt: string
+  excerpt: string;
   fields: {
-    slug: string
-  }
+    slug: string;
+  };
   frontmatter: {
-    title: string
-    startDate: string
-    endDate?: string
-    cover?: Image
-  }
+    title: string;
+    startDate: string;
+    endDate?: string;
+    cover?: Image;
+  };
 }
 
 export interface Project {
-  id: string
-  body: string
-  excerpt: string
+  id: string;
+  body: string;
+  excerpt: string;
   frontmatter: {
-    title: string
-    startDate: string
-    endDate: string
-    cover: Image
-  }
+    title: string;
+    startDate: string;
+    endDate: string;
+    cover: Image;
+  };
 }

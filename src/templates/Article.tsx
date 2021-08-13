@@ -1,19 +1,19 @@
-import React, { FunctionComponent } from 'react'
-import { graphql } from 'gatsby'
+import React, { FunctionComponent } from "react";
+import { graphql } from "gatsby";
 
-import Article from '../components/Article'
-import { Article as ArticleModel } from '../app/types'
+import Article from "../components/Article";
+import { Article as ArticleModel } from "../app/types";
 
 type Data = {
-  mdx: ArticleModel
-}
+  mdx: ArticleModel;
+};
 
 interface ContainerProps {
-  data: Data
+  data: Data;
 }
 
 const Container: FunctionComponent<ContainerProps> = (props) => {
-  const article = props.data.mdx
+  const article = props.data.mdx;
 
   return (
     <Article
@@ -24,10 +24,10 @@ const Container: FunctionComponent<ContainerProps> = (props) => {
       excerpt={article.excerpt}
       body={article.body}
     />
-  )
-}
+  );
+};
 
-export default Container
+export default Container;
 
 export const pageQuery = graphql`
   query ArticlesById($id: String) {
@@ -51,4 +51,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
