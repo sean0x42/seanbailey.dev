@@ -29,11 +29,11 @@ const textDecorationColorPlugin = plugin(({ addUtilities, theme }) => {
     }
   })
 
-  console.debug('Generating underline colors', textDecorationUtilities)
   addUtilities(textDecorationUtilities)
 })
 
 module.exports = {
+  mode: 'jit',
   purge: ['./src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
