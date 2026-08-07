@@ -11,10 +11,6 @@ const Footer = () => (
           As seen on{" "}
           <Link to="https://github.com/sean0x42" external>
             GitHub
-          </Link>
-          ,{" "}
-          <Link to="https://twitter.com/sean0x42" external>
-            Twitter
           </Link>{" "}
           and{" "}
           <Link to="https://www.linkedin.com/in/sean0x42/" external>
@@ -24,6 +20,7 @@ const Footer = () => (
         </Copy>
 
         <Copy>Sean Bailey &copy; {new Date().getFullYear()}</Copy>
+        <Copy>ABN 89 833 741 962</Copy>
       </Stack>
     </Wrapper>
   </footer>

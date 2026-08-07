@@ -9,12 +9,12 @@ interface CardProps {
 
 const Card = ({ cover, coverBg, coverAlt, badge, children }: CardProps) => {
   const classes = [
-    "rounded mb-5 leading-none align-middle group-focus:ring-4 ring-teal-600",
+    "w-full aspect-[2/1] object-cover rounded mb-5 leading-none align-middle group-focus:ring-4 ring-teal-600",
   ];
   if (coverBg) classes.push(coverBg);
 
   return (
-    <div className="relative">
+    <div className="relative flex h-full flex-col">
       {badge}
       {cover && (
         <img

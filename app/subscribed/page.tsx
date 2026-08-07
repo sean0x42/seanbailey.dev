@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-import ButtonLink from "../../components/ButtonLink";
-import Copy from "../../components/Copy";
-import Heading from "../../components/Heading";
-import Layout from "../../components/Layout";
-import Stack from "../../components/layout/Stack";
-import Wrapper from "../../components/Wrapper";
+import ButtonLink from "@/components/ButtonLink";
+import Copy from "@/components/Copy";
+import Heading from "@/components/Heading";
+import Layout from "@/components/Layout";
+import Stack from "@/components/layout/Stack";
+import Wrapper from "@/components/Wrapper";
 
 export const metadata: Metadata = {
   title: "Thanks!",

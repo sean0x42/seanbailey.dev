@@ -7,7 +7,7 @@ import Link from "./Link";
 import Stack from "./layout/Stack";
 import ThanksForReading from "./Article/ThanksForReading";
 import Wrapper from "./Wrapper";
-import type { Attribution } from "../lib/content";
+import type { Attribution } from "@/lib/content";
 
 interface ArticleProps {
   coverImage?: string;

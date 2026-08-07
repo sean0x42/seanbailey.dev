@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from ".";
+import type { Icon } from "./index";
 
 const LightningBoltIcon: Icon = (props) => (
   <svg

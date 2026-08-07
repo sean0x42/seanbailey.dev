@@ -2,11 +2,12 @@
   "name": "seanbailey.dev",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Designer, software engineer, and lover of side projects.",
   "author": "Sean Bailey <hello@seanbailey.dev>",
   "license": "MIT",
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "build": "next build",

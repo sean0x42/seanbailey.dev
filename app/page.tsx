@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-import ArticleCards from "../components/ArticleCards";
-import Copy from "../components/Copy";
-import Layout from "../components/Layout";
-import Stack from "../components/layout/Stack";
-import Wrapper from "../components/Wrapper";
-import { getArticles, formatArticleDate } from "../lib/content";
+import ArticleCards from "@/components/ArticleCards";
+import Copy from "@/components/Copy";
+import Layout from "@/components/Layout";
+import Stack from "@/components/layout/Stack";
+import Wrapper from "@/components/Wrapper";
+import { formatArticleDate, getArticles } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Sean Bailey (Designer and Developer)",

@@ -30,13 +30,13 @@ const LinkCard = ({
   more,
   badge,
 }: LinkCardProps) => {
-  const linkStyles = ["group", "block focus:outline-none"];
+  const linkStyles = ["group", "flex h-full flex-col focus:outline-none"];
   if (className) linkStyles.push(className);
 
   return (
     <NextLink href={to} className={linkStyles.join(" ")}>
       <Card cover={cover} coverBg={coverBg} badge={badge}>
-        <Stack space="mt-2">
+        <Stack space="mt-2" className="flex flex-1 flex-col" pushLast>
           <Heading level={3}>{title}</Heading>
           <Copy variant="suppressed">{date}</Copy>
           <Copy>{copy}</Copy>

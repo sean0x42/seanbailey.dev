@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import Article from "../../../components/Article";
-import Layout from "../../../components/Layout";
-import { articleComponents, withContentImages } from "../../../mdx-components";
-import {
-  formatArticleDate,
-  getArticles,
-  readContent,
-} from "../../../lib/content";
+import Article from "@/components/Article";
+import Layout from "@/components/Layout";
+import { articleComponents, withContentImages } from "@/mdx-components";
+import { formatArticleDate, getArticles, readContent } from "@/lib/content";
 
 export const dynamicParams = false;
 
@@ -48,7 +44,7 @@ export default async function ArticlePage({
 
   // The slug is selected at build time by generateStaticParams.
   const { default: Post } = await import(
-    `../../../content/articles/${slug}/index.mdx`
+    `@/content/articles/${slug}/index.mdx`
   );
 
   return (

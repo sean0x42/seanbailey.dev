@@ -7,7 +7,7 @@ interface WrapperProps {
 }
 
 const Wrapper = ({ className, width, children }: WrapperProps) => {
-  const classes = ["mx-auto px-5", width ?? "max-w-screen-xl"];
+  const classes = ["mx-auto px-5", width ?? "max-w-6xl"];
   if (className) classes.push(className);
 
   return <div className={classes.join(" ")}>{children}</div>;

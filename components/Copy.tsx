@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
 export const Bold = ({ children }: { children?: ReactNode }) => (
-  <strong className="text-grey-700 dark:text-teal-400 font-medium">
+  <strong className="text-grey-700 dark:text-teal-400 font-bold">
     {children}
   </strong>
 );
@@ -35,11 +35,7 @@ const Copy = ({
   children,
   ...props
 }: CopyProps) => {
-  const classes = [
-    "dark:font-light",
-    widthVariants[width],
-    impactVariants[impact],
-  ];
+  const classes = ["font-normal", widthVariants[width], impactVariants[impact]];
   if (className) classes.push(className);
 
   return (

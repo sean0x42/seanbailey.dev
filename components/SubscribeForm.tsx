@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 
-import { encodeForm } from "../helpers/form";
+import { encodeForm } from "@/helpers/form";
 
 const SubscribeForm = () => {
   const router = useRouter();

@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import Layout from "../../../components/Layout";
-import Project from "../../../components/Project";
-import { projectComponents, withContentImages } from "../../../mdx-components";
-import {
-  formatProjectDate,
-  getProjects,
-  readContent,
-} from "../../../lib/content";
+import Layout from "@/components/Layout";
+import Project from "@/components/Project";
+import { projectComponents, withContentImages } from "@/mdx-components";
+import { formatProjectDate, getProjects, readContent } from "@/lib/content";
 
 export const dynamicParams = false;
 
@@ -48,7 +44,7 @@ export default async function ProjectPage({
 
   // The slug is selected at build time by generateStaticParams.
   const { default: Post } = await import(
-    `../../../content/projects/${slug}/index.mdx`
+    `@/content/projects/${slug}/index.mdx`
   );
 
   return (
