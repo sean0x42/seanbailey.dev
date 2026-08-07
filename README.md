@@ -1,13 +1,23 @@
-<!-- @format -->
-
-<div align="center">
-
 # Sean Bailey | [seanbailey.dev](https://www.seanbailey.dev)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5113722c-b7b7-49d6-b599-f775b243bf87/deploy-status)](https://app.netlify.com/sites/seanbailey/deploys)
+My home on the web. Built with Next.js 16.3, MDX, and Tailwind CSS 4, then
+exported as a static site for Netlify.
 
-</div>
+## Development
 
-My home on the web. Built with Gatsby and deployed with Netlify!
+```bash
+npm install
+npm run dev
+```
 
-![Preview](./seanbailey.dev.png)
+Open [http://localhost:3000](http://localhost:3000).
+
+## Static build
+
+```bash
+npm run build
+npm start
+```
+
+`npm run build` writes the static site to `out/`; `npm start` serves that output
+locally.

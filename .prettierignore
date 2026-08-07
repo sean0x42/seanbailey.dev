@@ -1,4 +1,6 @@
-.cache
-package-lock.json
-public
+.next
+out
 node_modules
+content
+public/content
+public/fonts

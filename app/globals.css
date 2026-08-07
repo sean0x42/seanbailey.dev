@@ -1,0 +1,178 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-blue-600: #223591;
+  --color-blue-500: #485dc8;
+  --color-blue-400: #7b91ff;
+  --color-teal-900: #06957a;
+  --color-teal-800: #06a285;
+  --color-teal-700: #07b897;
+  --color-teal-600: #08cda8;
+  --color-teal-500: #06dbb3;
+  --color-teal-400: #07f6c9;
+  --color-grey-900: #111213;
+  --color-grey-800: #26282c;
+  --color-grey-700: #383c42;
+  --color-grey-600: #494e55;
+  --color-grey-500: #595f69;
+  --color-grey-400: #777e8d;
+  --color-grey-300: #a8abb3;
+  --color-grey-200: #d3d5d9;
+  --color-grey-100: #e6e7ea;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-title:
+    var(--font-red-hat-display), var(--font-inter), system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+}
+
+:root {
+  font-size: 17px;
+}
+
+::selection {
+  @apply bg-teal-500 text-black;
+}
+
+@media (min-width: 1024px) {
+  article {
+    font-size: 18px;
+  }
+}
+
+.dark body {
+  @apply bg-grey-900;
+}
+
+.footnotes hr {
+  @apply mt-8 text-grey-500;
+}
+
+.footnotes ol {
+  @apply mt-4 font-light text-grey-900 dark:text-grey-100;
+}
+
+.prose pre {
+  @apply p-5 sm:p-4 -mx-5 sm:mx-0;
+  @apply bg-grey-800;
+  @apply sm:rounded;
+  @apply font-mono text-sm;
+  @apply overflow-x-auto;
+}
+
+.prose figure a {
+  @apply block;
+}
+
+.prose li {
+  @apply font-light text-grey-200;
+}
+
+.prose blockquote {
+  @apply pl-5 py-3;
+  @apply border-teal-700 border-l-4;
+  @apply text-grey-300;
+}
+
+.prose blockquote p {
+  @apply text-grey-300;
+}
+
+.prose blockquote > :first-child {
+  @apply mt-0;
+}
+
+.prose blockquote > :last-child {
+  @apply mb-0;
+}
+
+.prose p {
+  @apply my-5;
+  @apply font-light text-grey-200;
+}
+
+/* Ayu Mirage syntax colours. */
+:root {
+  --ayu-comment: #5c6773;
+  --ayu-markup: #f07178;
+  --ayu-constant: #d4bfff;
+  --ayu-operator: #80d4ff;
+  --ayu-tag: #5ccfe6;
+  --ayu-regexp: #95e6cb;
+  --ayu-string: #bbe67e;
+  --ayu-function: #ffd57f;
+  --ayu-special: #ffc44c;
+  --ayu-keyword: #ffae57;
+}
+
+.prose .property {
+  color: var(--ayu-operator);
+}
+
+.prose .language-css {
+  color: var(--ayu-constant);
+}
+
+.prose .language-css .punctuation {
+  color: var(--ayu-function);
+}
+
+.prose .attr-name {
+  color: var(--ayu-tag);
+}
+
+.prose .attr-value {
+  color: var(--ayu-string);
+}
+
+.prose .selector {
+  color: var(--ayu-function);
+}
+
+.prose .tag {
+  color: var(--ayu-keyword);
+}
+
+/* Tailwind v4 uses decoration-*; retain the legacy class names in content. */
+.underline-teal-900 {
+  text-decoration-color: var(--color-teal-900);
+}
+
+.underline-teal-800 {
+  text-decoration-color: var(--color-teal-800);
+}
+
+.underline-teal-700 {
+  text-decoration-color: var(--color-teal-700);
+}
+
+.underline-teal-600 {
+  text-decoration-color: var(--color-teal-600);
+}
+
+.underline-teal-500 {
+  text-decoration-color: var(--color-teal-500);
+}
+
+.underline-teal-400 {
+  text-decoration-color: var(--color-teal-400);
+}
+
+@source "../components";
+@source "../content";
