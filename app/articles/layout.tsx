@@ -1,3 +1,4 @@
+import type { FC, PropsWithChildren } from "react";
 import { JetBrains_Mono } from "next/font/google";
 
 const jetBrainsMono = JetBrains_Mono({
@@ -6,10 +7,8 @@ const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
-export default function ArticlesLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return <div className={jetBrainsMono.variable}>{children}</div>;
-}
+const ArticlesLayout: FC<PropsWithChildren> = ({ children }) => (
+  <div className={jetBrainsMono.variable}>{children}</div>
+);
+
+export default ArticlesLayout;

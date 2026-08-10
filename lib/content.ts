@@ -82,27 +82,10 @@ export function getEntries(type: ContentType) {
     .filter((entry) => !entry.hidden);
 }
 
-export function getArticles() {
-  return getEntries("articles").sort((a, b) =>
-    (b.date ?? "").localeCompare(a.date ?? ""),
-  );
-}
-
 export function getProjects() {
   return getEntries("projects").sort((a, b) =>
     (b.startDate ?? "").localeCompare(a.startDate ?? ""),
   );
-}
-
-export function formatArticleDate(date?: string) {
-  if (!date) return "";
-
-  return new Intl.DateTimeFormat("en-US", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(`${date}T00:00:00Z`));
 }
 
 export function formatProjectDate(date?: string) {

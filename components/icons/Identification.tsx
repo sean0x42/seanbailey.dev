@@ -1,7 +1,6 @@
-import React from "react";
 import type { Icon } from "./index";
 
-const IdentificationIcon: Icon = (props) => (
+export const IdentificationIcon: Icon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -20,5 +19,3 @@ const IdentificationIcon: Icon = (props) => (
     />
   </svg>
 );
-
-export default IdentificationIcon;

@@ -1,4 +1,4 @@
-import { Children, type ReactNode } from "react";
+import { Children, type FC, type ReactNode } from "react";
 
 interface StackProps {
   className?: string;
@@ -7,7 +7,12 @@ interface StackProps {
   children?: ReactNode;
 }
 
-const Stack = ({ className, space, pushLast, children }: StackProps) => {
+export const Stack: FC<StackProps> = ({
+  className,
+  space,
+  pushLast,
+  children,
+}) => {
   const wrappedChildren = Children.map(children, (child) => (
     <div
       className={`first:mt-0 ${space}${pushLast ? " last:mt-auto last:pt-4" : ""}`}
@@ -18,5 +23,3 @@ const Stack = ({ className, space, pushLast, children }: StackProps) => {
 
   return <div className={className}>{wrappedChildren}</div>;
 };
-
-export default Stack;

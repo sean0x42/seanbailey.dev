@@ -1,9 +1,8 @@
-import React from "react";
-
-import Badge from "./Badge";
-import CardLayout from "./CardLayout";
-import LinkCard from "./LinkCard";
-import LightningBoltIcon from "./icons/LightningBolt";
+import type { FC } from "react";
+import { Badge } from "./Badge";
+import { CardLayout } from "./CardLayout";
+import { LinkCard } from "./LinkCard";
+import { LightningBoltIcon } from "./icons/LightningBolt";
 
 export interface ArticleCardData {
   slug: string;
@@ -23,9 +22,7 @@ interface ArticleCardsProps {
   articles: ArticleCardData[];
 }
 
-const ArticleCards: React.FunctionComponent<ArticleCardsProps> = ({
-  articles,
-}) => (
+export const ArticleCards: FC<ArticleCardsProps> = ({ articles }) => (
   <CardLayout>
     {articles.map((article) => {
       const isNew = daysAgo(new Date(`${article.rawDate}T00:00:00Z`)) <= 7;
@@ -46,5 +43,3 @@ const ArticleCards: React.FunctionComponent<ArticleCardsProps> = ({
     })}
   </CardLayout>
 );
-
-export default ArticleCards;

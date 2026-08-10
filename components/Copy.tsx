@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { FC, HTMLAttributes, ReactNode } from "react";
 
 export const Bold = ({ children }: { children?: ReactNode }) => (
   <strong className="text-grey-700 dark:text-teal-400 font-bold">
@@ -8,7 +8,7 @@ export const Bold = ({ children }: { children?: ReactNode }) => (
 
 type Variant = "suppressed" | "normal" | "highlighted" | "heavy" | "large";
 
-interface CopyProps extends HTMLAttributes<HTMLParagraphElement> {
+export interface CopyProps extends HTMLAttributes<HTMLParagraphElement> {
   children?: ReactNode;
   variant?: Variant;
   width?: "prose" | "none";
@@ -28,13 +28,13 @@ const widthVariants = {
   none: "max-w-none",
 };
 
-const Copy = ({
+export const Copy: FC<CopyProps> = ({
   variant: impact = "normal",
   width = "prose",
   className,
   children,
   ...props
-}: CopyProps) => {
+}) => {
   const classes = ["font-normal", widthVariants[width], impactVariants[impact]];
   if (className) classes.push(className);
 
@@ -44,5 +44,3 @@ const Copy = ({
     </p>
   );
 };
-
-export default Copy;

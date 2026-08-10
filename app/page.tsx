@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import type { FC } from "react";
 
-import ArticleCards from "@/components/ArticleCards";
-import Copy from "@/components/Copy";
-import Layout from "@/components/Layout";
-import Stack from "@/components/layout/Stack";
-import Wrapper from "@/components/Wrapper";
-import { formatArticleDate, getArticles } from "@/lib/content";
+import { ArticleCards } from "@/components/ArticleCards";
+import { Copy } from "@/components/Copy";
+import { Layout } from "@/components/Layout";
+import { Stack } from "@/components/layout/Stack";
+import { Wrapper } from "@/components/Wrapper";
+import { formatArticleDate, getArticles } from "@/lib/articles";
 
 export const metadata: Metadata = {
   title: "Sean Bailey (Designer and Developer)",
 };
 
-export default function HomePage() {
+const HomePage: FC = () => {
   const articles = getArticles();
 
   return (
@@ -44,4 +45,6 @@ export default function HomePage() {
       </Stack>
     </Layout>
   );
-}
+};
+
+export default HomePage;

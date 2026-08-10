@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { FC, PropsWithChildren } from "react";
 import { Inter, Red_Hat_Display } from "next/font/google";
 
 import "./globals.css";
@@ -29,17 +30,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en-AU"
-      className={`dark ${inter.variable} ${redHatDisplay.variable}`}
-    >
-      <body>{children}</body>
-    </html>
-  );
-}
+const RootLayout: FC<PropsWithChildren> = ({ children }) => (
+  <html
+    lang="en-AU"
+    className={`dark ${inter.variable} ${redHatDisplay.variable}`}
+  >
+    <body>{children}</body>
+  </html>
+);
+
+export default RootLayout;

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
 interface WrapperProps {
   className?: string;
@@ -6,11 +6,9 @@ interface WrapperProps {
   children?: ReactNode;
 }
 
-const Wrapper = ({ className, width, children }: WrapperProps) => {
+export const Wrapper: FC<WrapperProps> = ({ className, width, children }) => {
   const classes = ["mx-auto px-5", width ?? "max-w-6xl"];
   if (className) classes.push(className);
 
   return <div className={classes.join(" ")}>{children}</div>;
 };
-
-export default Wrapper;

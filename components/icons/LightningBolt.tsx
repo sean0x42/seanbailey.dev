@@ -1,7 +1,6 @@
-import React from "react";
 import type { Icon } from "./index";
 
-const LightningBoltIcon: Icon = (props) => (
+export const LightningBoltIcon: Icon = (props) => (
   <svg
     className={props.className}
     xmlns="http://www.w3.org/2000/svg"
@@ -18,5 +17,3 @@ const LightningBoltIcon: Icon = (props) => (
     />
   </svg>
 );
-
-export default LightningBoltIcon;

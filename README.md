@@ -11,13 +11,3 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
-
-## Static build
-
-```bash
-npm run build
-npm start
-```
-
-`npm run build` writes the static site to `out/`; `npm start` serves that output
-locally.

@@ -1,9 +1,10 @@
-import Copy from "./Copy";
-import Link from "./Link";
-import Stack from "./layout/Stack";
-import Wrapper from "./Wrapper";
+import type { FC } from "react";
+import { Copy } from "./Copy";
+import { Link } from "./Link";
+import { Stack } from "./layout/Stack";
+import { Wrapper } from "./Wrapper";
 
-const Footer = () => (
+export const Footer: FC = () => (
   <footer className="mb-4 mt-10 md:my-20 py-4">
     <Wrapper className="text-center" width="max-w-prose">
       <Stack space="mt-2">
@@ -25,5 +26,3 @@ const Footer = () => (
     </Wrapper>
   </footer>
 );
-
-export default Footer;

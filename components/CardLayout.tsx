@@ -1,9 +1,7 @@
-import type { ReactNode } from "react";
+import type { FC, PropsWithChildren } from "react";
 
-const CardLayout = ({ children }: { children?: ReactNode }) => (
-  <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 sm:gap-10 md:gap-12">
+export const CardLayout: FC<PropsWithChildren> = ({ children }) => (
+  <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-10 lg:gap-12">
     {children}
   </ul>
 );
-
-export default CardLayout;

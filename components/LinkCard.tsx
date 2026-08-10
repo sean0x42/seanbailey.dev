@@ -1,13 +1,13 @@
 import NextLink from "next/link";
-import type { ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
-import ArrowNarrowRightIcon from "./icons/ArrowNarrowRight";
-import Card from "./Card";
-import Copy from "./Copy";
-import Heading from "./Heading";
-import Stack from "./layout/Stack";
+import { ArrowNarrowRightIcon } from "./icons/ArrowNarrowRight";
+import { Card } from "./Card";
+import { Copy } from "./Copy";
+import { Heading } from "./Heading";
+import { Stack } from "./layout/Stack";
 
-interface LinkCardProps {
+export interface LinkCardProps {
   className?: string;
   to: string;
   cover?: string;
@@ -19,7 +19,7 @@ interface LinkCardProps {
   badge?: ReactNode;
 }
 
-const LinkCard = ({
+export const LinkCard: FC<LinkCardProps> = ({
   className,
   to,
   cover,
@@ -29,7 +29,7 @@ const LinkCard = ({
   copy,
   more,
   badge,
-}: LinkCardProps) => {
+}) => {
   const linkStyles = ["group", "flex h-full flex-col focus:outline-none"];
   if (className) linkStyles.push(className);
 
@@ -54,5 +54,3 @@ const LinkCard = ({
     </NextLink>
   );
 };
-
-export default LinkCard;

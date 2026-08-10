@@ -1,4 +1,4 @@
-import type { ElementType, HTMLAttributes, ReactNode } from "react";
+import type { ElementType, FC, HTMLAttributes, ReactNode } from "react";
 
 interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   level?: number;
@@ -15,13 +15,13 @@ const levelHeadingStyles: Record<number, string> = {
   3: "font-semibold dark:font-medium",
 };
 
-const Heading = ({
+export const Heading: FC<HeadingProps> = ({
   level: requestedLevel,
   variant = "normal",
   className,
   children,
   ...props
-}: HeadingProps) => {
+}) => {
   const level = requestedLevel ? Math.min(6, Math.max(1, requestedLevel)) : 1;
   const classes = [
     commonHeadingStyles,
@@ -39,5 +39,3 @@ const Heading = ({
     </HeadingElement>
   );
 };
-
-export default Heading;

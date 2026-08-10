@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import type { FC } from "react";
 import { notFound } from "next/navigation";
 
-import Article from "@/components/Article";
-import Layout from "@/components/Layout";
+import { Article } from "@/components/Article";
+import { Layout } from "@/components/Layout";
 import { articleComponents, withContentImages } from "@/mdx-components";
-import { formatArticleDate, getArticles, readContent } from "@/lib/content";
+import { formatArticleDate, getArticles, loadArticle } from "@/lib/articles";
+import { readContent } from "@/lib/content";
 
 export const dynamicParams = false;
 
@@ -32,20 +34,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function ArticlePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+const ArticlePage: FC<PageProps<"/articles/[slug]">> = async ({ params }) => {
   const { slug } = await params;
   const article = readContent("articles", slug);
 
   if (article.hidden) notFound();
 
-  // The slug is selected at build time by generateStaticParams.
-  const { default: Post } = await import(
-    `@/content/articles/${slug}/index.mdx`
-  );
+  const Post = await loadArticle(slug);
+  if (!Post) notFound();
 
   return (
     <Layout>
@@ -62,4 +58,6 @@ export default async function ArticlePage({
       </Article>
     </Layout>
   );
-}
+};
+
+export default ArticlePage;

@@ -1,12 +1,10 @@
-import React from "react";
+import type { FC, PropsWithChildren } from "react";
 
-import Footer from "./Footer";
-import Header from "./Header";
-import SkipLink from "./SkipLink";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
+import { SkipLink } from "./SkipLink";
 
-const Layout: React.FunctionComponent<{ children: React.ReactNode }> = ({
-  children,
-}) => (
+export const Layout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <SkipLink />
     <Header />
@@ -14,5 +12,3 @@ const Layout: React.FunctionComponent<{ children: React.ReactNode }> = ({
     <Footer />
   </>
 );
-
-export default Layout;

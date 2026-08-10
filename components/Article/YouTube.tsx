@@ -11,7 +11,7 @@ const YouTube = ({ id, title = "YouTube video" }: YouTubeProps) => (
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       title={title}
-    ></iframe>
+    />
   </div>
 );
 

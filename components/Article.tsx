@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
-import Copy, { Bold } from "./Copy";
-import Heading from "./Heading";
-import Link from "./Link";
-import Stack from "./layout/Stack";
-import ThanksForReading from "./Article/ThanksForReading";
-import Wrapper from "./Wrapper";
+import { Bold, Copy } from "./Copy";
+import { Heading } from "./Heading";
+import { Link } from "./Link";
+import { Stack } from "./layout/Stack";
+import { Wrapper } from "./Wrapper";
+import { ThanksForReading } from "./Article/ThanksForReading";
 import type { Attribution } from "@/lib/content";
 
 interface ArticleProps {
@@ -18,13 +18,13 @@ interface ArticleProps {
   children?: ReactNode;
 }
 
-const Article = ({
+export const Article: FC<ArticleProps> = ({
   coverImage,
   attribution,
   title,
   date,
   children,
-}: ArticleProps) => (
+}) => (
   <article>
     <Wrapper width="max-w-prose">
       {coverImage && (
@@ -67,7 +67,5 @@ const Article = ({
     </Wrapper>
   </article>
 );
-
-export default Article;
 
 export { Bold };

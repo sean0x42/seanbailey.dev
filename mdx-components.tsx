@@ -6,14 +6,8 @@ import ArticleCaption from "./components/Article/Caption";
 import ArticleFigure from "./components/Article/Figure";
 import YouTube from "./components/Article/YouTube";
 import { Bold } from "./components/Copy";
-import Heading from "./components/Heading";
-import Link from "./components/Link";
-import Column from "./components/Project/Column";
-import ColumnSpacer from "./components/Project/ColumnSpacer";
-import Columns from "./components/Project/Columns";
-import IncompleteWarning from "./components/Project/IncompleteWarning";
-import ThreeColumns from "./components/Project/ThreeColumns";
-import TwoColumns from "./components/Project/TwoColumns";
+import { Heading } from "./components/Heading";
+import { Link } from "./components/Link";
 
 type ContentType = "articles" | "projects";
 
@@ -53,26 +47,11 @@ const articleComponents = {
   strong: Bold,
 } satisfies MDXComponents;
 
-const projectComponents = {
-  ColumnSpacer,
-  Column,
-  Columns,
-  IncompleteWarning,
-  ThreeColumns,
-  TwoColumns,
-} satisfies MDXComponents;
-
 export function useMDXComponents(): MDXComponents {
   return {
     Figure: ArticleFigure,
     Caption: ArticleCaption,
     YouTube,
-    ColumnSpacer,
-    Column,
-    Columns,
-    IncompleteWarning,
-    ThreeColumns,
-    TwoColumns,
   };
 }
 
@@ -92,4 +71,4 @@ export function withContentImages(
   return { ...components, img: image };
 }
 
-export { articleComponents, projectComponents };
+export { articleComponents };

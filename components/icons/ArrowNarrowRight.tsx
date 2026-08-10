@@ -1,7 +1,6 @@
-import React from "react";
 import type { Icon } from "./index";
 
-const ArrowNarrowRightIcon: Icon = (props) => (
+export const ArrowNarrowRightIcon: Icon = (props) => (
   <svg
     className={props.className}
     xmlns="http://www.w3.org/2000/svg"
@@ -18,5 +17,3 @@ const ArrowNarrowRightIcon: Icon = (props) => (
     />
   </svg>
 );
-
-export default ArrowNarrowRightIcon;

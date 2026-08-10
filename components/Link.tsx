@@ -1,16 +1,15 @@
 import NextLink from "next/link";
-import type { ReactNode } from "react";
+import type { FC, PropsWithChildren } from "react";
 
-interface LinkProps {
+export interface LinkProps extends PropsWithChildren {
   to: string;
   external?: boolean;
-  children?: ReactNode;
 }
 
 const styles =
   "underline underline-teal-700 dark:underline-teal-400 text-grey-900 dark:text-white font-normal focus:outline-none focus:ring-2 ring-teal-500";
 
-const Link = ({ to, external, children }: LinkProps) => {
+export const Link: FC<LinkProps> = ({ to, external, children }) => {
   if (external) {
     return (
       <a href={to} className={styles} tabIndex={0}>
@@ -25,5 +24,3 @@ const Link = ({ to, external, children }: LinkProps) => {
     </NextLink>
   );
 };
-
-export default Link;
