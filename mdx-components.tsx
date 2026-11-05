@@ -2,10 +2,10 @@
 import type { MDXComponents } from "mdx/types";
 import type { ComponentProps, ReactNode } from "react";
 
-import ArticleCaption from "./components/Article/Caption";
-import ArticleFigure from "./components/Article/Figure";
-import YouTube from "./components/Article/YouTube";
-import { Bold } from "./components/Copy";
+import ArticleCaption from "./components/article/Caption";
+import ArticleFigure from "./components/article/Figure";
+import YouTube from "./components/article/YouTube";
+import { Bold, Copy } from "./components/Copy";
 import { Heading } from "./components/Heading";
 import { Link } from "./components/Link";
 
@@ -20,15 +20,16 @@ const articleComponents = {
   Caption: ArticleCaption,
   YouTube,
   h1: ({ children }: MdxTextProps) => (
-    <Heading level={1} className="mt-12">
+    <Heading level={1} className="mt-15">
       {children}
     </Heading>
   ),
   h2: ({ children }: MdxTextProps) => (
-    <Heading level={1} className="mt-8">
+    <Heading level={1} className="mt-9">
       {children}
     </Heading>
   ),
+  p: ({ children }: MdxTextProps) => <Copy className="my-5">{children}</Copy>,
   a: ({ children, href, ...props }: ComponentProps<"a">) => {
     if ("data-footnote-ref" in props || "data-footnote-backref" in props) {
       return (

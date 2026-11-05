@@ -1,25 +1,21 @@
 import type { FC, HTMLAttributes, ReactNode } from "react";
 
 export const Bold = ({ children }: { children?: ReactNode }) => (
-  <strong className="text-teal-400 font-bold">
-    {children}
-  </strong>
+  <strong className="text-teal-400 font-bold">{children}</strong>
 );
 
-type Variant = "suppressed" | "normal" | "highlighted" | "heavy" | "large";
+type Prominence = "gentle" | "default" | "prominent";
 
 export interface CopyProps extends HTMLAttributes<HTMLParagraphElement> {
   children?: ReactNode;
-  variant?: Variant;
+  prominence?: Prominence;
   width?: "prose" | "none";
 }
 
-const impactVariants: Record<Variant, string> = {
-  suppressed: "text-grey-300",
-  normal: "text-grey-200",
-  highlighted: "text-teal-400",
-  heavy: "text-white",
-  large: "text-grey-100 font-medium text-xl",
+const prominences: Record<Prominence, string> = {
+  gentle: "text-grey-700",
+  default: "text-grey-800",
+  prominent: "text-grey-100 font-medium text-xl",
 };
 
 const widthVariants = {
@@ -28,13 +24,18 @@ const widthVariants = {
 };
 
 export const Copy: FC<CopyProps> = ({
-  variant: impact = "normal",
+  prominence = "default",
   width = "prose",
   className,
   children,
   ...props
 }) => {
-  const classes = ["font-normal", widthVariants[width], impactVariants[impact]];
+  const classes = [
+    "font-normal",
+    widthVariants[width],
+    prominences[prominence],
+  ];
+
   if (className) classes.push(className);
 
   return (

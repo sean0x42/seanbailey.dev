@@ -6,7 +6,7 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   variant?: "normal" | "title";
 }
 
-const commonHeadingStyles = "text-white";
+const commonHeadingStyles = "text-grey-900";
 const titleHeadingStyles =
   "font-semibold md:font-bold text-3xl md:text-5xl font-title tracking-tight";
 const levelHeadingStyles: Record<number, string> = {

@@ -1,16 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import type { FC, ReactNode } from "react";
 
-import { Bold, Copy } from "./Copy";
-import { Heading } from "./Heading";
-import { Link } from "./Link";
-import { Stack } from "./layout/Stack";
-import { Wrapper } from "./Wrapper";
-import { ThanksForReading } from "./Article/ThanksForReading";
+import { Bold, Copy } from "../Copy";
+import { Heading } from "../Heading";
+import { Link } from "../Link";
+import { Stack } from "../layout/Stack";
+import { Wrapper } from "../Wrapper";
+import { ThanksForReading } from "./ThanksForReading";
 import type { Attribution } from "@/lib/content";
 
 interface ArticleProps {
-  coverImage?: string;
   attribution?: Attribution;
   title: string;
   date: string;
@@ -19,28 +18,16 @@ interface ArticleProps {
 }
 
 export const Article: FC<ArticleProps> = ({
-  coverImage,
   attribution,
   title,
   date,
   children,
 }) => (
   <article>
-    <Wrapper width="max-w-prose">
-      {coverImage && (
-        <img
-          src={coverImage}
-          className="bg-gray-900 -mx-5 sm:mx-0 sm:rounded leading-none align-middle mb-9"
-          alt={title}
-          aria-hidden="true"
-        />
-      )}
-    </Wrapper>
-
-    <Wrapper width="max-w-prose" className="md:my-10">
+    <Wrapper width="max-w-3xl" className="md:my-12">
       <Stack space="mt-2">
         {date && (
-          <Copy className="md:text-center" variant="suppressed" width="none">
+          <Copy className="md:text-center" prominence="gentle" width="none">
             {date}
           </Copy>
         )}

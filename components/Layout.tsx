@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "react";
 
-import { Footer } from "./Footer";
+import { Footer } from "./footer";
 import { Header } from "./Header";
 import { SkipLink } from "./SkipLink";
 

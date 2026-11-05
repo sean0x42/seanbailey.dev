@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { FC } from "react";
 import { notFound } from "next/navigation";
 
-import { Article } from "@/components/Article";
+import { Article } from "@/components/article";
 import { Layout } from "@/components/Layout";
 import { articleComponents, withContentImages } from "@/mdx-components";
 import { formatArticleDate, getArticles, loadArticle } from "@/lib/articles";

@@ -5,7 +5,7 @@ import { Stack } from "./layout/Stack";
 import { Wrapper } from "./Wrapper";
 
 export const Footer: FC = () => (
-  <footer className="mb-4 mt-10 md:my-20 py-4">
+  <footer className="mt-12 py-10 bg-linear-to-b from-white to-teal-200">
     <Wrapper className="text-center" width="max-w-prose">
       <Stack space="mt-2">
         <Copy>

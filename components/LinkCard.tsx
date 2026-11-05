@@ -38,13 +38,13 @@ export const LinkCard: FC<LinkCardProps> = ({
       <Card cover={cover} coverBg={coverBg} badge={badge}>
         <Stack space="mt-2" className="flex flex-1 flex-col" pushLast>
           <Heading level={3}>{title}</Heading>
-          <Copy variant="suppressed">{date}</Copy>
+          <Copy prominence="gentle">{date}</Copy>
           <Copy>{copy}</Copy>
 
           <Copy
             className="flex items-center group-hover:text-teal-500 transition-colors"
             aria-hidden="true"
-            variant="heavy"
+            prominence="heavy"
           >
             {more ?? "More"}
             <ArrowNarrowRightIcon className="ml-1 transition-transform transform group-hover:translate-x-2" />

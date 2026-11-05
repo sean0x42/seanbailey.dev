@@ -21,11 +21,15 @@
   --color-grey-300: #a8abb3;
   --color-grey-200: #d3d5d9;
   --color-grey-100: #e6e7ea;
+  --color-grey-0: #ffffff;
   --color-koi-600: #ff5500;
   --color-koi-500: #ff8902;
   --color-koi-400: #ffa100;
-  --font-sans: var(--font-libron), system-ui, sans-serif;
-  --font-title: var(--font-platypi), system-ui, sans-serif;
+  --font-sans: var(--font-geist), system-ui, sans-serif;
+  /*--font-sans: var(--font-zalando-sans), system-ui, sans-serif;*/
+  /*--font-sans: var(--font-libron), system-ui, sans-serif;*/
+  --font-title: var(--font-zalando-sans-semi-expanded), system-ui, sans-serif;
+  /*--font-title: var(--font-platypi), system-ui, sans-serif;*/
   --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
@@ -49,7 +53,7 @@ body {
 }
 
 body {
-  @apply bg-grey-900;
+  @apply bg-grey-0;
 }
 
 .footnotes {
@@ -100,11 +104,6 @@ body {
 
 .prose blockquote > :last-child {
   @apply mb-0;
-}
-
-.prose p {
-  @apply my-5;
-  @apply font-normal text-grey-200;
 }
 
 /* Ayu Mirage syntax colours. */

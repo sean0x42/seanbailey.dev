@@ -21,8 +21,8 @@ const HomePage: FC = () => {
       <Stack space="mt-24">
         <Wrapper>
           <Stack space="mt-4">
-            <Copy variant="large">Hello!</Copy>
-            <Copy variant="large">
+            <Copy prominence="large">Hello!</Copy>
+            <Copy prominence="large">
               I am{" "}
               <span className="text-white font-medium underline underline-teal-500">
                 designer and developer

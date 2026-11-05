@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Logo } from "./Logo";
+import { Logo } from "./logo";
 import { Wrapper } from "./Wrapper";
 
 export const Header: FC = () => (
