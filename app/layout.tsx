@@ -1,18 +1,43 @@
 import type { Metadata } from "next";
 import type { FC, PropsWithChildren } from "react";
-import { Inter, Red_Hat_Display } from "next/font/google";
+import { Platypi } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.css";
 
-const inter = Inter({
+const platypi = Platypi({
+  adjustFontFallback: false,
   subsets: ["latin"],
-  variable: "--font-inter",
+  style: ["normal", "italic"],
+  variable: "--font-platypi",
+  weight: "variable",
 });
 
-const redHatDisplay = Red_Hat_Display({
-  subsets: ["latin"],
-  weight: ["500", "700"],
-  variable: "--font-red-hat-display",
+const libron = localFont({
+  src: [
+    {
+      path: "./fonts/Libron-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Libron-Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Libron-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Libron-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+  variable: "--font-libron",
 });
 
 export const metadata: Metadata = {
@@ -31,10 +56,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => (
-  <html
-    lang="en-AU"
-    className={`dark ${inter.variable} ${redHatDisplay.variable}`}
-  >
+  <html lang="en-AU" className={`${platypi.variable} ${libron.variable}`}>
     <body>{children}</body>
   </html>
 );

@@ -13,7 +13,7 @@ export const ButtonLink: FC<ButtonLinkProps> = ({
   to,
   children,
 }: ButtonLinkProps) => {
-  const classes = ["inline-flex items-center font-medium dark:text-white"];
+  const classes = ["inline-flex items-center font-medium text-white"];
   if (className) classes.push(className);
 
   return (

@@ -51,7 +51,7 @@ export const Article: FC<ArticleProps> = ({
       </Stack>
     </Wrapper>
 
-    <Wrapper width="max-w-prose" className="text-grey-900 dark:text-grey-200">
+    <Wrapper width="max-w-prose" className="text-grey-200">
       <div className="prose">{children}</div>
 
       <ThanksForReading />

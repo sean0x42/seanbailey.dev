@@ -30,10 +30,16 @@ export async function loadArticle(slug: string) {
 export function formatArticleDate(date?: string) {
   if (!date) return "";
 
-  return new Intl.DateTimeFormat("en-US", {
-    day: "2-digit",
+  const parts = new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
     month: "long",
     year: "numeric",
     timeZone: "UTC",
-  }).format(new Date(`${date}T00:00:00Z`));
+  }).formatToParts(new Date(`${date}T00:00:00Z`));
+
+  const day = parts.find((part) => part.type === "day")?.value;
+  const month = parts.find((part) => part.type === "month")?.value;
+  const year = parts.find((part) => part.type === "year")?.value;
+
+  return `${day} ${month}, ${year}`;
 }

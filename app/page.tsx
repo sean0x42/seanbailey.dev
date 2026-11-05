@@ -7,6 +7,7 @@ import { Layout } from "@/components/Layout";
 import { Stack } from "@/components/layout/Stack";
 import { Wrapper } from "@/components/Wrapper";
 import { formatArticleDate, getArticles } from "@/lib/articles";
+import { Heading } from "@/components/Heading";
 
 export const metadata: Metadata = {
   title: "Sean Bailey (Designer and Developer)",
@@ -23,24 +24,33 @@ const HomePage: FC = () => {
             <Copy variant="large">Hello!</Copy>
             <Copy variant="large">
               I am{" "}
-              <span className="text-grey-900 dark:text-white font-medium underline underline-teal-800 dark:underline-teal-500">
+              <span className="text-white font-medium underline underline-teal-500">
                 designer and developer
               </span>{" "}
               in Sydney, Australia.
               <br />
-              Welcome to my home on the web.
+              Now available for hire.
             </Copy>
           </Stack>
         </Wrapper>
 
         <Wrapper>
-          <ArticleCards
-            articles={articles.map((article) => ({
-              ...article,
-              date: formatArticleDate(article.date),
-              rawDate: article.date ?? "",
-            }))}
-          />
+          <Stack space="mt-8">
+            <Heading>Articles</Heading>
+            <ArticleCards
+              articles={articles.map((article) => ({
+                ...article,
+                date: formatArticleDate(article.date),
+                rawDate: article.date ?? "",
+              }))}
+            />
+          </Stack>
+        </Wrapper>
+
+        <Wrapper>
+          <Stack space="mt-8">
+            <Heading>Projects</Heading>
+          </Stack>
         </Wrapper>
       </Stack>
     </Layout>

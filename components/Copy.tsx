@@ -1,7 +1,7 @@
 import type { FC, HTMLAttributes, ReactNode } from "react";
 
 export const Bold = ({ children }: { children?: ReactNode }) => (
-  <strong className="text-grey-700 dark:text-teal-400 font-bold">
+  <strong className="text-teal-400 font-bold">
     {children}
   </strong>
 );
@@ -15,12 +15,11 @@ export interface CopyProps extends HTMLAttributes<HTMLParagraphElement> {
 }
 
 const impactVariants: Record<Variant, string> = {
-  suppressed: "text-grey-500 dark:text-grey-300",
-  normal: "text-grey-700 dark:text-grey-200",
-  highlighted: "text-teal-800 dark:text-teal-400",
-  heavy: "text-grey-900 dark:text-white",
-  large:
-    "text-grey-800 dark:text-grey-100 font-medium dark:font-medium text-xl",
+  suppressed: "text-grey-300",
+  normal: "text-grey-200",
+  highlighted: "text-teal-400",
+  heavy: "text-white",
+  large: "text-grey-100 font-medium text-xl",
 };
 
 const widthVariants = {

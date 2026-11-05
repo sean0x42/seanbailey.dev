@@ -7,7 +7,7 @@ export interface LinkProps extends PropsWithChildren {
 }
 
 const styles =
-  "underline underline-teal-700 dark:underline-teal-400 text-grey-900 dark:text-white font-normal focus:outline-none focus:ring-2 ring-teal-500";
+  "underline underline-teal-400 text-white font-normal focus:outline-none focus:ring-2 ring-teal-500";
 
 export const Link: FC<LinkProps> = ({ to, external, children }) => {
   if (external) {

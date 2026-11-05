@@ -20,20 +20,30 @@ const articleComponents = {
   Caption: ArticleCaption,
   YouTube,
   h1: ({ children }: MdxTextProps) => (
-    <Heading level={1} className="mt-16">
+    <Heading level={1} className="mt-12">
       {children}
     </Heading>
   ),
   h2: ({ children }: MdxTextProps) => (
-    <Heading level={2} className="mt-12">
+    <Heading level={1} className="mt-8">
       {children}
     </Heading>
   ),
-  a: ({ children, href }: ComponentProps<"a">) => (
-    <Link to={href ?? "#"} external>
-      {children}
-    </Link>
-  ),
+  a: ({ children, href, ...props }: ComponentProps<"a">) => {
+    if ("data-footnote-ref" in props || "data-footnote-backref" in props) {
+      return (
+        <a href={href} {...props}>
+          {children}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={href ?? "#"} external>
+        {children}
+      </Link>
+    );
+  },
   ul: ({ children, ...props }: ComponentProps<"ul">) => (
     <ul className="pl-[1.66667em] my-4 list-disc" {...props}>
       {children}
