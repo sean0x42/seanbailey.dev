@@ -10,6 +10,9 @@ import {
 import localFont from "next/font/local";
 
 import "./globals.css";
+import { SkipLink } from "@/components/skip-link";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/footer";
 
 const geist = Geist({
   adjustFontFallback: false,
@@ -95,7 +98,12 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
     lang="en-AU"
     className={`${zalandoSansSemiExpanded.variable} ${zalandoSans.variable} ${dmSans.variable} ${geist.variable} ${platypi.variable} ${libron.variable}`}
   >
-    <body>{children}</body>
+    <body>
+      <SkipLink />
+      <Header />
+      <main id="main">{children}</main>
+      <Footer />
+    </body>
   </html>
 );
 

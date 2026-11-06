@@ -1,12 +1,12 @@
 import type { FC } from "react";
-import { Copy } from "./Copy";
+import { Copy } from "./prose/copy";
 import { Link } from "./Link";
 import { Stack } from "./layout/Stack";
-import { Wrapper } from "./Wrapper";
+import { Container } from "./layout";
 
 export const Footer: FC = () => (
-  <footer className="mt-12 py-10 bg-linear-to-b from-white to-teal-200">
-    <Wrapper className="text-center" width="max-w-prose">
+  <footer className="mt-12 py-10 bg-linear-to-b from-white to-teal-200 text-center">
+    <Container width="prose">
       <Stack space="mt-2">
         <Copy>
           As seen on{" "}
@@ -23,6 +23,6 @@ export const Footer: FC = () => (
         <Copy>Sean Bailey &copy; {new Date().getFullYear()}</Copy>
         <Copy>ABN 89 833 741 962</Copy>
       </Stack>
-    </Wrapper>
+    </Container>
   </footer>
 );

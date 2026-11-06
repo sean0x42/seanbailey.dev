@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import type { FC, ReactNode } from "react";
 
-import { Bold, Copy } from "../Copy";
-import { Heading } from "../Heading";
+import { Bold, Copy } from "../prose/copy";
+import { Heading } from "../prose/heading";
 import { Link } from "../Link";
 import { Stack } from "../layout/Stack";
-import { Wrapper } from "../Wrapper";
 import { ThanksForReading } from "./ThanksForReading";
 import type { Attribution } from "@/lib/content";
+import { Container } from "../layout";
 
 interface ArticleProps {
   attribution?: Attribution;
@@ -24,7 +24,7 @@ export const Article: FC<ArticleProps> = ({
   children,
 }) => (
   <article>
-    <Wrapper width="max-w-3xl" className="md:my-12">
+    <Container>
       <Stack space="mt-2">
         {date && (
           <Copy className="md:text-center" prominence="gentle" width="none">
@@ -32,13 +32,13 @@ export const Article: FC<ArticleProps> = ({
           </Copy>
         )}
 
-        <Heading level={1} className="md:text-center" variant="title">
+        <Heading size={1} align="center" variant="title">
           {title}
         </Heading>
       </Stack>
-    </Wrapper>
+    </Container>
 
-    <Wrapper width="max-w-prose" className="text-grey-200">
+    <Container width="prose">
       <div className="prose">{children}</div>
 
       <ThanksForReading />
@@ -51,7 +51,7 @@ export const Article: FC<ArticleProps> = ({
           </Link>
         </Copy>
       )}
-    </Wrapper>
+    </Container>
   </article>
 );
 

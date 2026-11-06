@@ -1,13 +1,14 @@
 import type { FC } from "react";
 import Link from "next/link";
+import styles from "./logo.module.css";
 
 export const Logo: FC = () => (
-  <Link href="/">
+  <Link data-component="logo" className={styles.logo} href="/">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 439 95"
       fill="none"
-      className="h-15"
+      className="h-17"
     >
       <path
         fill="#ff8902"

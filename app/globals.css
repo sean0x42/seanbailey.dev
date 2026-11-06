@@ -25,153 +25,94 @@
   --color-koi-600: #ff5500;
   --color-koi-500: #ff8902;
   --color-koi-400: #ffa100;
-  --font-sans: var(--font-geist), system-ui, sans-serif;
-  /*--font-sans: var(--font-zalando-sans), system-ui, sans-serif;*/
-  /*--font-sans: var(--font-libron), system-ui, sans-serif;*/
+  --font-copy: var(--font-dm-sans), system-ui, sans-serif;
+  /*--font-copy: var(--font-geist), system-ui, sans-serif;*/
+  /*--font-copy: var(--font-zalando-sans), system-ui, sans-serif;*/
+  /*--font-copy: var(--font-libron), system-ui, sans-serif;*/
+  --font-heading: var(--font-dm-sans), system-ui, sans-serif;
   --font-title: var(--font-zalando-sans-semi-expanded), system-ui, sans-serif;
   /*--font-title: var(--font-platypi), system-ui, sans-serif;*/
   --font-mono: var(--font-jetbrains-mono), monospace;
-}
 
-:root {
-  font-size: 18px;
+  --container-width-prose: 60ch;
+  --container-width: 72rem;
+
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-7: 48px;
+  --spacing-8: 64px;
+  --spacing-9: 96px;
+  --spacing-10: 128px;
+
+  --focus-outline-width: 4px;
+  --focus-outline-color: var(--color-teal-600);
+  --focus-outline-offset: 2px;
+  --focus-outline-style: solid;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-copy);
   font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  @apply bg-teal-500 text-black;
+[data-align="left"] {
+  text-align: left;
 }
 
-@media (min-width: 1024px) {
-  article {
-    font-size: 18px;
-  }
+[data-align="center"] {
+  text-align: center;
 }
 
-body {
-  @apply bg-grey-0;
+[data-align="right"] {
+  text-align: right;
 }
 
-.footnotes {
-  @apply mt-8 border-t border-grey-500;
-}
-.footnotes hr {
-  @apply mt-8 text-grey-500;
+[data-gap="0"] {
+  gap: var(--spacing-0);
 }
 
-.footnotes ol {
-  @apply mt-4 font-normal text-grey-100;
+[data-gap="1"] {
+  gap: var(--spacing-1);
 }
 
-.prose pre {
-  @apply p-5 sm:p-4 -mx-5 sm:mx-0;
-  @apply bg-grey-800;
-  @apply sm:rounded;
-  @apply font-mono text-sm;
-  @apply overflow-x-auto;
-}
-.prose a[data-footnote-ref],
-.prose a[data-footnote-backref] {
-  @apply underline text-white font-normal focus:outline-none focus:ring-2 ring-teal-500;
-  text-decoration-color: var(--color-teal-400);
+[data-gap="2"] {
+  gap: var(--spacing-2);
 }
 
-.prose figure a {
-  @apply block;
+[data-gap="3"] {
+  gap: var(--spacing-3);
 }
 
-.prose li {
-  @apply font-normal text-grey-200;
+[data-gap="4"] {
+  gap: var(--spacing-4);
 }
 
-.prose blockquote {
-  @apply pl-5 py-3;
-  @apply border-teal-700 border-l-4;
-  @apply text-grey-100 italic;
+[data-gap="5"] {
+  gap: var(--spacing-5);
 }
 
-.prose blockquote p {
-  @apply text-grey-100;
+[data-gap="6"] {
+  gap: var(--spacing-6);
 }
 
-.prose blockquote > :first-child {
-  @apply mt-0;
+[data-gap="7"] {
+  gap: var(--spacing-7);
 }
 
-.prose blockquote > :last-child {
-  @apply mb-0;
+[data-gap="8"] {
+  gap: var(--spacing-8);
 }
 
-/* Ayu Mirage syntax colours. */
-:root {
-  --ayu-comment: #5c6773;
-  --ayu-markup: #f07178;
-  --ayu-constant: #d4bfff;
-  --ayu-operator: #80d4ff;
-  --ayu-tag: #5ccfe6;
-  --ayu-regexp: #95e6cb;
-  --ayu-string: #bbe67e;
-  --ayu-function: #ffd57f;
-  --ayu-special: #ffc44c;
-  --ayu-keyword: #ffae57;
+[data-gap="9"] {
+  gap: var(--spacing-9);
 }
 
-.prose .property {
-  color: var(--ayu-operator);
+[data-gap="10"] {
+  gap: var(--spacing-10);
 }
-
-.prose .language-css {
-  color: var(--ayu-constant);
-}
-
-.prose .language-css .punctuation {
-  color: var(--ayu-function);
-}
-
-.prose .attr-name {
-  color: var(--ayu-tag);
-}
-
-.prose .attr-value {
-  color: var(--ayu-string);
-}
-
-.prose .selector {
-  color: var(--ayu-function);
-}
-
-.prose .tag {
-  color: var(--ayu-keyword);
-}
-
-/* Tailwind v4 uses decoration-*; retain the legacy class names in content. */
-.underline-teal-900 {
-  text-decoration-color: var(--color-teal-900);
-}
-
-.underline-teal-800 {
-  text-decoration-color: var(--color-teal-800);
-}
-
-.underline-teal-700 {
-  text-decoration-color: var(--color-teal-700);
-}
-
-.underline-teal-600 {
-  text-decoration-color: var(--color-teal-600);
-}
-
-.underline-teal-500 {
-  text-decoration-color: var(--color-teal-500);
-}
-
-.underline-teal-400 {
-  text-decoration-color: var(--color-teal-400);
-}
-
-@source "../components";
-@source "../content";

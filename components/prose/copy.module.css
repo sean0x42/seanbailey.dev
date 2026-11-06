@@ -1,0 +1,13 @@
+.copy {
+  font-family: var(--font-copy);
+
+  &[data-size="default"] {
+    font-size: 1rem;
+    line-height: calc(1.5 / 1);
+  }
+
+  &[data-size="large"] {
+    font-size: 1.125rem;
+    line-height: calc(1.75 / 1.125);
+  }
+}

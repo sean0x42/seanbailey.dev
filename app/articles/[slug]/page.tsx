@@ -3,7 +3,6 @@ import type { FC } from "react";
 import { notFound } from "next/navigation";
 
 import { Article } from "@/components/article";
-import { Layout } from "@/components/Layout";
 import { articleComponents, withContentImages } from "@/mdx-components";
 import { formatArticleDate, getArticles, loadArticle } from "@/lib/articles";
 import { readContent } from "@/lib/content";
@@ -29,7 +28,6 @@ export async function generateMetadata({
       title: article.title,
       description: article.excerpt,
       type: "article",
-      ...(article.cover ? { images: [article.cover] } : {}),
     },
   };
 }
@@ -44,19 +42,16 @@ const ArticlePage: FC<PageProps<"/articles/[slug]">> = async ({ params }) => {
   if (!Post) notFound();
 
   return (
-    <Layout>
-      <Article
-        coverImage={article.cover}
-        attribution={article.attribution}
-        title={article.title}
-        date={formatArticleDate(article.date)}
-        excerpt={article.excerpt}
-      >
-        <Post
-          components={withContentImages(articleComponents, "articles", slug)}
-        />
-      </Article>
-    </Layout>
+    <Article
+      attribution={article.attribution}
+      title={article.title}
+      date={formatArticleDate(article.date)}
+      excerpt={article.excerpt}
+    >
+      <Post
+        components={withContentImages(articleComponents, "articles", slug)}
+      />
+    </Article>
   );
 };
 

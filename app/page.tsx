@@ -1,59 +1,52 @@
-import type { Metadata } from "next";
 import type { FC } from "react";
 
 import { ArticleCards } from "@/components/ArticleCards";
-import { Copy } from "@/components/Copy";
-import { Layout } from "@/components/Layout";
-import { Stack } from "@/components/layout/Stack";
-import { Wrapper } from "@/components/Wrapper";
+import { Copy } from "@/components/prose/copy";
 import { formatArticleDate, getArticles } from "@/lib/articles";
-import { Heading } from "@/components/Heading";
-
-export const metadata: Metadata = {
-  title: "Sean Bailey (Designer and Developer)",
-};
+import { Heading } from "@/components/prose/heading";
+import { VBox, Container } from "@/components/layout";
+import { PrimaryButton } from "@/components/button";
 
 const HomePage: FC = () => {
   const articles = getArticles();
 
   return (
-    <Layout>
-      <Stack space="mt-24">
-        <Wrapper>
-          <Stack space="mt-4">
-            <Copy prominence="large">Hello!</Copy>
-            <Copy prominence="large">
-              I am{" "}
-              <span className="text-white font-medium underline underline-teal-500">
-                designer and developer
-              </span>{" "}
-              in Sydney, Australia.
-              <br />
-              Now available for hire.
+    <Container>
+      <VBox gap={7}>
+        <VBox gap={5} items="start" paddingVertical={6}>
+          <VBox gap={3}>
+            <Heading size={1}>
+              Handmade websites, designed with passion.
+            </Heading>
+
+            <Copy size="large">
+              I’ve been delighting users and clients with intuitive, fast, and
+              secure websites and web apps for over 15 years.
             </Copy>
-          </Stack>
-        </Wrapper>
+          </VBox>
 
-        <Wrapper>
-          <Stack space="mt-8">
-            <Heading>Articles</Heading>
-            <ArticleCards
-              articles={articles.map((article) => ({
-                ...article,
-                date: formatArticleDate(article.date),
-                rawDate: article.date ?? "",
-              }))}
-            />
-          </Stack>
-        </Wrapper>
+          <VBox gap={3} items="start">
+            <PrimaryButton>Get in touch</PrimaryButton>
+            <Copy>I typically respond within 24 hours</Copy>
+          </VBox>
+        </VBox>
 
-        <Wrapper>
-          <Stack space="mt-8">
-            <Heading>Projects</Heading>
-          </Stack>
-        </Wrapper>
-      </Stack>
-    </Layout>
+        <VBox gap={5}>
+          <Heading size={1}>Articles</Heading>
+          <ArticleCards
+            articles={articles.map((article) => ({
+              ...article,
+              date: formatArticleDate(article.date),
+              rawDate: article.date ?? "",
+            }))}
+          />
+        </VBox>
+
+        <VBox gap={5}>
+          <Heading size={1}>Projects</Heading>
+        </VBox>
+      </VBox>
+    </Container>
   );
 };
 

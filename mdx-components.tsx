@@ -5,8 +5,8 @@ import type { ComponentProps, ReactNode } from "react";
 import ArticleCaption from "./components/article/Caption";
 import ArticleFigure from "./components/article/Figure";
 import YouTube from "./components/article/YouTube";
-import { Bold, Copy } from "./components/Copy";
-import { Heading } from "./components/Heading";
+import { Bold, Copy } from "./components/prose/copy";
+import { Heading } from "./components/prose/heading";
 import { Link } from "./components/Link";
 
 type ContentType = "articles" | "projects";
@@ -20,12 +20,12 @@ const articleComponents = {
   Caption: ArticleCaption,
   YouTube,
   h1: ({ children }: MdxTextProps) => (
-    <Heading level={1} className="mt-15">
+    <Heading size={1} className="mt-15">
       {children}
     </Heading>
   ),
   h2: ({ children }: MdxTextProps) => (
-    <Heading level={1} className="mt-9">
+    <Heading size={1} className="mt-9">
       {children}
     </Heading>
   ),

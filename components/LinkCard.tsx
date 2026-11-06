@@ -3,9 +3,9 @@ import type { FC, ReactNode } from "react";
 
 import { ArrowNarrowRightIcon } from "./icons/ArrowNarrowRight";
 import { Card } from "./Card";
-import { Copy } from "./Copy";
-import { Heading } from "./Heading";
-import { Stack } from "./layout/Stack";
+import { Copy } from "./prose/copy";
+import { Heading } from "./prose/heading";
+import { VBox } from "./layout";
 
 export interface LinkCardProps {
   className?: string;
@@ -36,8 +36,8 @@ export const LinkCard: FC<LinkCardProps> = ({
   return (
     <NextLink href={to} className={linkStyles.join(" ")}>
       <Card cover={cover} coverBg={coverBg} badge={badge}>
-        <Stack space="mt-2" className="flex flex-1 flex-col" pushLast>
-          <Heading level={3}>{title}</Heading>
+        <VBox gap={2}>
+          <Heading size={3}>{title}</Heading>
           <Copy prominence="gentle">{date}</Copy>
           <Copy>{copy}</Copy>
 
@@ -49,7 +49,7 @@ export const LinkCard: FC<LinkCardProps> = ({
             {more ?? "More"}
             <ArrowNarrowRightIcon className="ml-1 transition-transform transform group-hover:translate-x-2" />
           </Copy>
-        </Stack>
+        </VBox>
       </Card>
     </NextLink>
   );

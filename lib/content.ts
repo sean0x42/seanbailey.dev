@@ -15,7 +15,6 @@ export interface ContentEntry {
   slug: string;
   title: string;
   excerpt: string;
-  cover?: string;
   hidden?: boolean;
   date?: string;
   startDate?: string;
@@ -53,16 +52,12 @@ export function readContent(type: ContentType, slug: string): ContentEntry {
   );
   const parsed = matter(source);
   const data = parsed.data as Record<string, unknown>;
-  const cover = typeof data.cover === "string" ? data.cover : undefined;
 
   return {
     type,
     slug,
     title: String(data.title ?? slug),
     excerpt: excerptFromMarkdown(parsed.content),
-    cover: cover
-      ? `/content/${type}/${slug}/${cover.replace(/^\.\//, "")}`
-      : undefined,
     hidden: data.hidden === true,
     date: normalizeDate(data.date),
     startDate: normalizeDate(data.startDate),
