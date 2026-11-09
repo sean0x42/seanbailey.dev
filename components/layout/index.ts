@@ -1,2 +1,3 @@
-export { Box, VBox, HBox } from "./box";
-export { Container } from "./container";
+export { Box, Stack, Inline, type BoxProps } from "./box";
+export { Container, type ContainerProps } from "./container";
+export { Grid, type GridProps } from "./grid";

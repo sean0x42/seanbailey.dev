@@ -1,13 +1,20 @@
 .copy {
   font-family: var(--font-copy);
+  color: inherit;
+  letter-spacing: -0.025em;
+  margin: 0;
 
   &[data-size="default"] {
-    font-size: 1rem;
-    line-height: calc(1.5 / 1);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
   }
 
   &[data-size="large"] {
-    font-size: 1.125rem;
-    line-height: calc(1.75 / 1.125);
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
   }
+}
+
+.bold {
+  font-weight: 600;
 }

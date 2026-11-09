@@ -9,11 +9,10 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   output: "export",
-  trailingSlash: true,
+  pageExtensions: ["md", "mdx", "ts", "tsx"],
   images: {
     unoptimized: true,
   },
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
 export default withMDX(nextConfig);

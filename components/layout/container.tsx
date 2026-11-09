@@ -1,12 +1,8 @@
 import type { ElementType } from "react";
 import styles from "./container.module.css";
-import { merge } from "@/lib/classname";
-import {
-  Box,
-  type BoxOwnProps,
-  type BoxProps,
-  type PolymorphicProps,
-} from "./box";
+import { merge } from "@/lib/class-name";
+import { Box, type BoxOwnProps, type BoxProps } from "./box";
+import type { PolymorphicProps } from "@/lib/props";
 
 interface ContainerOwnProps extends BoxOwnProps {
   width?: "default" | "prose";
@@ -27,6 +23,7 @@ export function Container<C extends ElementType = "div">({
       data-component="container"
       className={merge(styles.container, className)}
       data-width={width}
+      paddingHorizontal={5}
       {...(props as BoxProps<C>)}
     />
   );

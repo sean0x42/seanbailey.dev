@@ -1,0 +1,5 @@
+.nav {
+  a {
+    font-size: var(--font-size-large);
+  }
+}

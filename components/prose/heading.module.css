@@ -3,7 +3,6 @@
   color: var(--color-grey-900);
 
   &&[data-variant="title"] {
-    font-family: var(--font-title);
     font-size: 2.5rem;
   }
 
@@ -15,7 +14,7 @@
   }
 
   &[data-size="2"] {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.875rem;
     line-height: calc(2 / 1.5);
     letter-spacing: -0.025em;

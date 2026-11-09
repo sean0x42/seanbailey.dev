@@ -1,10 +1,6 @@
 import type { ComponentProps, FC, PropsWithChildren } from "react";
 import styles from "./copy.module.css";
 
-export const Bold: FC<PropsWithChildren> = ({ children }) => (
-  <strong className="text-teal-400 font-bold">{children}</strong>
-);
-
 export interface CopyProps extends Omit<ComponentProps<"p">, "className"> {
   align?: "left" | "center" | "right";
   size?: "default" | "large";
@@ -22,4 +18,10 @@ export const Copy: FC<CopyProps> = ({
     className={styles.copy}
     {...props}
   />
+);
+
+export const Bold: FC<PropsWithChildren> = ({ children }) => (
+  <strong data-component="bold" className={styles.bold}>
+    {children}
+  </strong>
 );

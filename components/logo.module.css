@@ -6,3 +6,8 @@
     outline-offset: var(--focus-outline-offset);
   }
 }
+
+.brandmark {
+  width: 42px;
+  margin-bottom: var(--spacing-1);
+}

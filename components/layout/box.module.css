@@ -1,27 +1,23 @@
 .box {
-  display: flex;
-
   &[data-direction="row"] {
+    display: flex;
     flex-direction: row;
   }
 
   &[data-direction="column"] {
+    display: flex;
     flex-direction: column;
   }
 
-  &[data-items="start"] {
-    align-items: flex-start;
+  &[data-border-radius="small"] {
+    border-radius: var(--border-radius-small);
   }
 
-  &[data-items="center"] {
-    align-items: center;
+  &[data-border-radius="default"] {
+    border-radius: var(--border-radius);
   }
 
-  &[data-items="end"] {
-    align-items: flex-end;
-  }
-
-  &[data-items="stretch"] {
-    align-items: stretch;
+  &[data-border-radius="full"] {
+    border-radius: var(--border-radius-full);
   }
 }

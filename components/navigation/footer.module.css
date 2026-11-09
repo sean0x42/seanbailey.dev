@@ -1,0 +1,17 @@
+.footer {
+  background: var(--color-grey-100);
+}
+
+.socialLink {
+  display: block;
+  padding: var(--spacing-1);
+
+  svg {
+    width: 28px;
+    fill: var(--color-grey-400);
+  }
+
+  &:hover svg {
+    fill: var(--color-grey-800);
+  }
+}

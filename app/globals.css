@@ -12,29 +12,34 @@
   --color-teal-600: #08cda8;
   --color-teal-500: #06dbb3;
   --color-teal-400: #07f6c9;
-  --color-grey-900: #111213;
-  --color-grey-800: #26282c;
-  --color-grey-700: #383c42;
-  --color-grey-600: #494e55;
-  --color-grey-500: #595f69;
-  --color-grey-400: #777e8d;
-  --color-grey-300: #a8abb3;
-  --color-grey-200: #d3d5d9;
-  --color-grey-100: #e6e7ea;
+
   --color-grey-0: #ffffff;
+  --color-grey-100: #f7f7fa;
+  --color-grey-200: #e5e6ee;
+  --color-grey-300: #c6c8d4;
+  --color-grey-400: #979aaa;
+  --color-grey-500: #727588;
+  --color-grey-600: #4d5162;
+  --color-grey-700: #313441;
+  --color-grey-800: #1c1e27;
+  --color-grey-900: #0d0e13;
+
   --color-koi-600: #ff5500;
   --color-koi-500: #ff8902;
   --color-koi-400: #ffa100;
+
   --font-copy: var(--font-dm-sans), system-ui, sans-serif;
-  /*--font-copy: var(--font-geist), system-ui, sans-serif;*/
-  /*--font-copy: var(--font-zalando-sans), system-ui, sans-serif;*/
-  /*--font-copy: var(--font-libron), system-ui, sans-serif;*/
   --font-heading: var(--font-dm-sans), system-ui, sans-serif;
-  --font-title: var(--font-zalando-sans-semi-expanded), system-ui, sans-serif;
-  /*--font-title: var(--font-platypi), system-ui, sans-serif;*/
   --font-mono: var(--font-jetbrains-mono), monospace;
 
-  --container-width-prose: 60ch;
+  --font-size-small: 0.875rem;
+  --font-size: 1rem;
+  --font-size-large: 1.25rem;
+  --line-height-small: calc(1.25 / 0.875);
+  --line-height: calc(1.5 / 1);
+  --line-height-large: calc(1.75 / 1.25);
+
+  --container-width-prose: 70ch;
   --container-width: 72rem;
 
   --spacing-0: 0px;
@@ -49,13 +54,30 @@
   --spacing-9: 96px;
   --spacing-10: 128px;
 
-  --focus-outline-width: 4px;
-  --focus-outline-color: var(--color-teal-600);
+  --border-radius-small: 8px;
+  --border-radius: 16px;
+  --border-radius-full: calc(infinity * 1px);
+
+  --focus-outline-width: 3px;
+  --focus-outline-color: var(--color-teal-800);
   --focus-outline-offset: 2px;
   --focus-outline-style: solid;
 }
 
+:focus-visible {
+  outline-width: var(--focus-outline-width);
+  outline-style: var(--focus-outline-style);
+  outline-color: var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+::selection {
+  color: var(--color-teal-50);
+  background: var(--color-teal-900);
+}
+
 body {
+  color: var(--color-grey-800);
   font-family: var(--font-copy);
   font-weight: 400;
   -moz-osx-font-smoothing: grayscale;
@@ -115,4 +137,32 @@ body {
 
 [data-gap="10"] {
   gap: var(--spacing-10);
+}
+
+[data-items="start"] {
+  align-items: flex-start;
+}
+
+[data-items="center"] {
+  align-items: center;
+}
+
+[data-items="end"] {
+  align-items: flex-end;
+}
+
+[data-items="stretch"] {
+  align-items: stretch;
+}
+
+[data-justify="start"] {
+  justify-content: flex-start;
+}
+
+[data-justify="between"] {
+  justify-content: space-between;
+}
+
+[data-justify="around"] {
+  justify-content: space-around;
 }

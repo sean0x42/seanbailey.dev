@@ -1,17 +1,14 @@
 .primaryButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
   background: var(--color-koi-400);
   padding-block: var(--spacing-4);
   padding-inline: var(--spacing-5);
-  border-radius: calc(infinity * 1px);
+  border-radius: var(--border-radius-full);
   cursor: pointer;
 
-  font-size: 1.125rem;
+  font-size: var(--font-size-large);
   font-weight: 600;
-
-  &:focus-visible {
-    outline-width: var(--focus-outline-width);
-    outline-style: var(--focus-outline-style);
-    outline-color: var(--focus-outline-color);
-    outline-offset: var(--focus-outline-offset);
-  }
+  line-height: var(--line-height-large);
 }

@@ -1,0 +1,25 @@
+.radioGroup {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible [aria-checked="true"] {
+    outline-width: var(--focus-outline-width);
+    outline-style: var(--focus-outline-style);
+    outline-color: var(--focus-outline-color);
+    outline-offset: var(--focus-outline-offset);
+  }
+}
+
+.radioButton {
+  padding: var(--spacing-5);
+  cursor: pointer;
+
+  border: 3px solid;
+  border-radius: var(--border-radius);
+  border-color: var(--color-grey-100);
+
+  font-size: var(--font-size-large);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}

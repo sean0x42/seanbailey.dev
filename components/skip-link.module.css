@@ -3,8 +3,14 @@
   top: var(--spacing-4);
   left: var(--spacing-4);
   z-index: 20;
-  transition: transform 0.3s;
-  transform: translateY(-100%);
+  background: var(--color-white);
+  padding: var(--spacing-4);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: translateY(0);
+  }
 
   &:focus-visible {
     outline-width: var(--focus-outline-width);
