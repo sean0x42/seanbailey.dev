@@ -1,10 +1,9 @@
-import NextLink from "next/link";
 import type { FC, ReactNode } from "react";
+import NextLink from "next/link";
+import { Copy, Heading } from "@sean0x42/koi/prose";
 
 import { ArrowNarrowRightIcon } from "./icons/ArrowNarrowRight";
 import { Card } from "./Card";
-import { Copy } from "./prose/copy";
-import { Heading } from "./prose/heading";
 import { Stack } from "./layout";
 
 export interface LinkCardProps {
@@ -38,13 +37,12 @@ export const LinkCard: FC<LinkCardProps> = ({
       <Card cover={cover} coverBg={coverBg} badge={badge}>
         <Stack gap={2}>
           <Heading size={3}>{title}</Heading>
-          <Copy prominence="gentle">{date}</Copy>
+          <Copy>{date}</Copy>
           <Copy>{copy}</Copy>
 
           <Copy
             className="flex items-center group-hover:text-teal-500 transition-colors"
             aria-hidden="true"
-            prominence="heavy"
           >
             {more ?? "More"}
             <ArrowNarrowRightIcon className="ml-1 transition-transform transform group-hover:translate-x-2" />

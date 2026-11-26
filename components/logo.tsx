@@ -4,12 +4,7 @@ import styles from "./logo.module.css";
 
 export const Logo: FC = () => (
   <Link data-component="logo" className={styles.logo} href="/">
-    <svg
-      className="h-17"
-      viewBox="0 0 439 95"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 439 95" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M52.7027 19.5456C54.9927 19.5456 56.8491 21.3818 56.8491 23.6467V51.8989C56.8491 54.1639 54.9927 56 52.7027 56H23.908C21.618 56 19.7616 54.1639 19.7616 51.8989V23.6467C19.7616 21.3818 21.618 19.5456 23.908 19.5456H52.7027Z"
         fill="#FF8902"

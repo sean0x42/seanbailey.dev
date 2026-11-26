@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import type { FC } from "react";
-import { Container, Stack } from "@/components/layout";
-import { Heading } from "@/components/prose/heading";
-import { Copy } from "@/components/prose/copy";
+import { Container, Stack } from "@sean0x42/koi/layout";
+import { Copy, Heading } from "@sean0x42/koi/prose";
 import { RadioGroup, type RadioOption } from "@/components/forms/radio";
 
 export const metadata: Metadata = {

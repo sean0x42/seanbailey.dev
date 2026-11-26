@@ -1,23 +1,24 @@
 import type { FC } from "react";
-import { Bold, Copy } from "../prose";
-import { Container, Inline, Stack } from "../layout";
+import Link from "next/link";
+import { Bold, Copy } from "@sean0x42/koi/prose";
+import { Container, Inline, Stack } from "@sean0x42/koi/layout";
+
 import styles from "./footer.module.css";
 import { Brandmark } from "../logo";
 import { GitHubIcon } from "./github-icon";
-import Link from "next/link";
 
 export const Footer: FC = () => (
   <Container as="footer" marginTop={8} marginBottom={6}>
     <Inline
       className={styles.footer}
-      items="center"
-      justify="between"
+      alignItems="center"
+      justifyContent="between"
       borderRadius="full"
       gap={4}
       padding={4}
       paddingHorizontal={5}
     >
-      <Inline items="center" gap={4}>
+      <Inline alignItems="center" gap={4}>
         <Link href="/">
           <Brandmark />
         </Link>

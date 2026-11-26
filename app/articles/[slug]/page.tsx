@@ -43,7 +43,6 @@ const ArticlePage: FC<PageProps<"/articles/[slug]">> = async ({ params }) => {
 
   return (
     <Article
-      attribution={article.attribution}
       title={article.title}
       date={formatArticleDate(article.date)}
       excerpt={article.excerpt}

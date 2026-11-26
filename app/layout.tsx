@@ -1,3 +1,5 @@
+import "@sean0x42/koi/reset.css";
+import "@sean0x42/koi/base.css";
 import type { Metadata } from "next";
 import type { FC, PropsWithChildren } from "react";
 import { DM_Sans } from "next/font/google";

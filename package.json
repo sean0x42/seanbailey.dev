@@ -21,6 +21,7 @@
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.3.0",
+    "@sean0x42/koi": "0.1.0-dev.3",
     "@types/mdx": "^2.0.14",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.70.0",

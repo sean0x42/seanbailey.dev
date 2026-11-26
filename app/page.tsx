@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import type { FC } from "react";
 import { ArrowUpRight, ZapIcon } from "lucide-react";
+import { Bold, Copy, Heading } from "@sean0x42/koi/prose";
+import { Stack, Container, Inline, Grid, Box } from "@sean0x42/koi/layout";
 
 // import { ArticleCards } from "@/components/ArticleCards";
-import { Bold, Copy, Heading } from "@/components/prose";
 // import { formatArticleDate, getArticles } from "@/lib/articles";
-import { Stack, Container, Inline, Grid, Box } from "@/components/layout";
 import { PrimaryButton } from "@/components/button";
 
 export const metadata: Metadata = {
@@ -19,12 +19,14 @@ const HomePage: FC = () => {
 
   return (
     <Container>
-      <Stack gap={7}>
-        <Grid columns={2} gap={9} items="center">
-          <Stack gap={6} items="start">
+      <Stack gap={8}>
+        <Grid columns={2} gap={8} alignItems="center">
+          <Stack gap={6} alignItems="start">
             <Stack gap={4}>
               <Heading size={1}>
-                Handmade websites, designed with passion.
+                Handmade websites,
+                <br />
+                designed with passion.
               </Heading>
 
               <Copy size="large">
@@ -33,7 +35,7 @@ const HomePage: FC = () => {
               </Copy>
             </Stack>
 
-            <Stack gap={3} items="start">
+            <Stack gap={3} alignItems="start">
               <PrimaryButton icon={ArrowUpRight} href="/contact">
                 Get a quote
               </PrimaryButton>
@@ -45,7 +47,11 @@ const HomePage: FC = () => {
             </Stack>
           </Stack>
 
-          <div className="h-90 rounded-xl bg-gray-200" />
+          <Box
+            background="grey100"
+            borderRadius="default"
+            style={{ height: "400px" }}
+          />
         </Grid>
 
         <Stack gap={4}>

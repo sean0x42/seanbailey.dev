@@ -1,4 +1,8 @@
 .logo {
+  svg {
+    height: 4.25rem;
+  }
+
   &:focus-visible {
     outline-width: var(--focus-outline-width);
     outline-style: var(--focus-outline-style);

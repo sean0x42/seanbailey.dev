@@ -1,8 +1,0 @@
-.container {
-  margin: 0 auto;
-  max-width: var(--container-width);
-
-  &[data-width="prose"] {
-    max-width: var(--container-width-prose);
-  }
-}

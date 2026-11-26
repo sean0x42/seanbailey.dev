@@ -1,17 +1,18 @@
 import type { FC } from "react";
 import NextLink from "next/link";
+import { Copy, Heading } from "@sean0x42/koi/prose";
 
 export const ThanksForReading: FC = () => (
-  <NextLink href="/">
-    <div>
-      <h2 className="font-title text-white">Thanks for reading!</h2>
-      <p>
-        If you liked that article, why not check out some of my other writing? I
-        write about software engineering, product design, and more.
-      </p>
-      <p aria-hidden="true">
-        See more
-      </p>
-    </div>
-  </NextLink>
+  <div>
+    <Heading size={2}>Thanks for reading!</Heading>
+
+    <Copy>
+      If you liked that article, why not check out some of my other writing? I
+      write about software engineering, product design, and more.
+    </Copy>
+
+    <NextLink href="/">
+      <p aria-hidden="true">See more</p>
+    </NextLink>
+  </div>
 );

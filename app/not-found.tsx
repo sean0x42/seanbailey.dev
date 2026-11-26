@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import type { FC } from "react";
+import { Copy, Heading } from "@sean0x42/koi/prose";
+import { Container, Stack } from "@sean0x42/koi/layout";
 
-import { Copy } from "@/components/prose/copy";
-import { Heading } from "@/components/prose/heading";
-import { Container, Stack } from "@/components/layout";
 import { PrimaryButton } from "@/components/button";
 
 export const metadata: Metadata = {
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const NotFound: FC = () => (
-  <Container width="prose" direction="column" gap={5} items="center">
+  <Container width="prose" direction="column" gap={5} alignItems="center">
     <Stack gap={4}>
       <Heading size={1} align="center">
         404: Page Not Found

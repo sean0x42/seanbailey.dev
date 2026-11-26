@@ -1,35 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import type { MDXComponents } from "mdx/types";
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps } from "react";
+import { Bold, Copy, Heading } from "@sean0x42/koi/prose";
+import { Box } from "@sean0x42/koi/layout";
 
 import ArticleCaption from "./components/article/Caption";
 import ArticleFigure from "./components/article/Figure";
 import YouTube from "./components/article/YouTube";
-import { Bold, Copy } from "./components/prose/copy";
-import { Heading } from "./components/prose/heading";
 import { Link } from "./components/Link";
 
 type ContentType = "articles" | "projects";
-
-interface MdxTextProps {
-  children?: ReactNode;
-}
 
 const articleComponents = {
   Figure: ArticleFigure,
   Caption: ArticleCaption,
   YouTube,
-  h1: ({ children }: MdxTextProps) => (
-    <Heading size={1} className="mt-15">
-      {children}
-    </Heading>
+  h1: ({ children }: MdxTextProps) => <Heading size={1}>{children}</Heading>,
+  h2: ({ children }: MdxTextProps) => <Heading size={1}>{children}</Heading>,
+  p: (props) => (
+    <Box marginVertical={3}>
+      <Copy {...props} />
+    </Box>
   ),
-  h2: ({ children }: MdxTextProps) => (
-    <Heading size={1} className="mt-9">
-      {children}
-    </Heading>
-  ),
-  p: ({ children }: MdxTextProps) => <Copy className="my-5">{children}</Copy>,
   a: ({ children, href, ...props }: ComponentProps<"a">) => {
     if ("data-footnote-ref" in props || "data-footnote-backref" in props) {
       return (
